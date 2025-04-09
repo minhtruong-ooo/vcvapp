@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "VCV_API.Controllers.SecureController",
+    "Method": "GetSecureData",
+    "RelativePath": "api/Secure",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
