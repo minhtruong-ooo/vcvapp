@@ -5,6 +5,7 @@ import DashBoard from "../pages/DashBoard";
 import Login from "../pages/Login";
 import Layout from "../layouts/Layout";
 import PrivateRoute from "./PrivateRoute";
+import Assets from "../pages/Assets";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const AppRoutes: React.FC = () => {
         {/* Các trang cần layout chung được bọc trong PrivateRoute và Layout */}
         <Route element={<PrivateRoute element={<Layout />} />}>
           <Route path="/dashboard" element={<DashBoard />} />
+          <Route path="/assets" element={<Assets />} />
         </Route>
       </Routes>
     </Router>
