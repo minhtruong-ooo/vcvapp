@@ -13,9 +13,10 @@ const AppRoutes: React.FC = () => {
       <Routes>
         {/* Đường dẫn đăng nhập */}
         <Route path="/login" element={<Login />} />
-        
+
         {/* Các trang cần layout chung được bọc trong PrivateRoute và Layout */}
         <Route element={<PrivateRoute element={<Layout />} />}>
+          <Route path="/" element={<DashBoard />} />
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/assets" element={<Assets />} />
         </Route>
