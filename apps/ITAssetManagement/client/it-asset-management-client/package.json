@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-keycloak/web": "^3.4.0",
     "antd": "^5.24.6",
+    "axios": "^1.8.4",
     "keycloak-js": "^23.0.3",
     "react": "18",
     "react-dom": "18",

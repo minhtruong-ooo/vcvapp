@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 import { useKeycloak } from "@react-keycloak/web";
-import { Spin } from "antd"; // 👈 Thêm Ant Design Spin
+import { Spin } from "antd";
 
 interface PrivateRouteProps {
   element: JSX.Element;
@@ -12,7 +12,17 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
 
   if (!initialized)
     return (
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+      <div style={{ 
+        position: "fixed", 
+        top: 0, 
+        left: 0, 
+        right: 0, 
+        bottom: 0, 
+        display: "flex", 
+        justifyContent: "center", 
+        alignItems: "center", 
+        backgroundColor: "rgba(255, 255, 255, 0.8)", // Optional: To give background shade
+      }}>
         <Spin size="large" tip="Loading..." />
       </div>
     );

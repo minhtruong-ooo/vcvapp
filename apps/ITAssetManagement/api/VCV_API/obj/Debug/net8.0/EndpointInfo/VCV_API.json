@@ -5,10 +5,46 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Secure": {
+    "/api/Assets/GetAssets": {
       "get": {
         "tags": [
-          "Secure"
+          "Assets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/AssetStatus/GetAssetStatuses": {
+      "get": {
+        "tags": [
+          "AssetStatus"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/AssetTemplates/GetAssetTemplates": {
+      "get": {
+        "tags": [
+          "AssetTemplates"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/AssetTypes/GetAssetTypes": {
+      "get": {
+        "tags": [
+          "AssetTypes"
         ],
         "responses": {
           "200": {

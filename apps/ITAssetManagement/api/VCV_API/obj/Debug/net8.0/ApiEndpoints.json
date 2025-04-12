@@ -1,8 +1,38 @@
 [
   {
-    "ContainingType": "VCV_API.Controllers.SecureController",
-    "Method": "GetSecureData",
-    "RelativePath": "api/Secure",
+    "ContainingType": "VCV_API.Controllers.AssetsController",
+    "Method": "GetAssets",
+    "RelativePath": "api/Assets/GetAssets",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.AssetStatusController",
+    "Method": "GetAssetStatuses",
+    "RelativePath": "api/AssetStatus/GetAssetStatuses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.AssetTemplatesController",
+    "Method": "GetAssetTemplates",
+    "RelativePath": "api/AssetTemplates/GetAssetTemplates",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.AssetTypesController",
+    "Method": "GetAssetTypes",
+    "RelativePath": "api/AssetTypes/GetAssetTypes",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
