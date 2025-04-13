@@ -1,12 +1,10 @@
-// Assets.tsx (đối với API asset)
-import { useEffect, useState } from 'react';
-import { useKeycloak } from '@react-keycloak/web';
-import { getAssets } from '../../api/assetAPI';
-import { Table, Button, Modal, Typography, Form } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
-import { defaultColumns } from '../../columns';  // Sử dụng các cột chung
-import { formatAssetData } from '../../utils';  // Sử dụng hàm chung xử lý dữ liệu
-import AssetForm from '../../components/modals/AddAssetModal';
+import { useEffect, useState } from "react";
+import { useKeycloak } from "@react-keycloak/web";
+import { getAssets } from "../../api/assetAPI";
+import { Table, Button, Modal, Typography, Form } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
+import { assetColumn } from "../../columns";
+import AssetForm from "../../components/modals/AddAssetModal";
 
 const { Title } = Typography;
 
@@ -18,13 +16,14 @@ const Assets = () => {
 
   useEffect(() => {
     if (initialized && keycloak?.authenticated) {
-      getAssets(keycloak.token ?? '')
+      getAssets(keycloak.token ?? "")
         .then((responseData) => {
-          const apiData = formatAssetData(responseData);
+          const apiData = responseData;
           setData(apiData);
+          console.log("Formatted data:", apiData); // Log formatted data
         })
         .catch((error) => {
-          console.error('Failed to fetch assets', error);
+          console.error("Failed to fetch assets", error);
         });
     }
   }, [initialized, keycloak]);
@@ -35,12 +34,28 @@ const Assets = () => {
 
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
-        <Title level={3} style={{ margin: 0 }}>Assets</Title>
-        <Button icon={<PlusOutlined />} type="default" onClick={showModal}>Add</Button>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginBottom: "16px",
+        }}
+      >
+        <Title level={3} style={{ margin: 0 }}>
+          Assets
+        </Title>
+        <Button icon={<PlusOutlined />} type="default" onClick={showModal}>
+          Add
+        </Button>
       </div>
 
-      <Table dataSource={data} columns={defaultColumns} />
+      <Table
+        size="small"
+        dataSource={data}
+        columns={assetColumn(data)}
+        showSorterTooltip={{ target: "sorter-icon" }}
+        rowKey={"assetTag"}
+      />
 
       <Modal
         title="Add New Asset"

@@ -23,6 +23,8 @@ namespace VCV_API.Controllers
         {
             var statuses = await _context.Assets
                 .Include(a => a.Location)
+                .Include(b => b.Status)
+                .Include(c => c.Template)
                 .ToListAsync();
             return Ok(statuses);
         }

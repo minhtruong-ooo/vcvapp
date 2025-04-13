@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VCV_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f5d76ba815d7086b7344c76f92a73e18d0e43c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da54fd37f947ba4fb5672e4e60aa1e93f49f3072")]
 [assembly: System.Reflection.AssemblyProductAttribute("VCV_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VCV_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
