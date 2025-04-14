@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useKeycloak } from "@react-keycloak/web";
 import { getAssets } from "../../api/assetAPI";
-import { Table, Button, Modal, Typography, Form } from "antd";
+import { Table, Button, Modal, Typography, Form, message } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import { assetColumn } from "../../columns";
 import AssetForm from "../../components/modals/AddAssetModal";
@@ -11,19 +11,22 @@ const { Title } = Typography;
 const Assets = () => {
   const { keycloak, initialized } = useKeycloak();
   const [data, setData] = useState<any[]>([]);
+  const [loading, setLoading] = useState<boolean>(true); // 👈 thêm loading state
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [form] = Form.useForm();
 
   useEffect(() => {
     if (initialized && keycloak?.authenticated) {
+      setLoading(true); // 👈 bắt đầu loading
       getAssets(keycloak.token ?? "")
         .then((responseData) => {
-          const apiData = responseData;
-          setData(apiData);
-          console.log("Formatted data:", apiData); // Log formatted data
+          setData(responseData);
         })
         .catch((error) => {
-          console.error("Failed to fetch assets", error);
+          message.error("Error fetching assets: " + error.message);
+        })
+        .finally(() => {
+          setLoading(false); // 👈 kết thúc loading
         });
     }
   }, [initialized, keycloak]);
@@ -55,6 +58,7 @@ const Assets = () => {
         columns={assetColumn(data)}
         showSorterTooltip={{ target: "sorter-icon" }}
         rowKey={"assetTag"}
+        loading={loading} // 👈 sử dụng loading ở đây
       />
 
       <Modal
