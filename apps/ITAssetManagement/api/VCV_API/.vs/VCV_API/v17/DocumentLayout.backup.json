@@ -54,8 +54,7 @@
               "RelativeToolTip": "Models\\Location.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T10:26:00.777Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T10:26:00.777Z"
             },
             {
               "$type": "Document",
@@ -67,8 +66,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T10:02:55.4Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T10:02:55.4Z"
             },
             {
               "$type": "Document",
@@ -80,8 +78,7 @@
               "RelativeToolTip": "Models\\Asset.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAA7wCoAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T09:38:45.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T09:38:45.531Z"
             },
             {
               "$type": "Document",
@@ -91,7 +88,7 @@
               "RelativeDocumentMoniker": "Data\\AppDBContext.cs",
               "ToolTip": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Data\\AppDBContext.cs",
               "RelativeToolTip": "Data\\AppDBContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBIAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T09:35:07.112Z",
               "EditorCaption": ""
@@ -106,8 +103,7 @@
               "RelativeToolTip": "Controllers\\AssetsController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T09:34:26.415Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T09:34:26.415Z"
             },
             {
               "$type": "Document",
@@ -119,8 +115,7 @@
               "RelativeToolTip": "Controllers\\AssetTypesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T09:27:29.579Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T09:27:29.579Z"
             },
             {
               "$type": "Document",
@@ -132,8 +127,7 @@
               "RelativeToolTip": "Controllers\\AssetStatusController.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAUwAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T09:27:22.822Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T09:27:22.822Z"
             },
             {
               "$type": "Document",
@@ -145,8 +139,7 @@
               "RelativeToolTip": "Controllers\\AssetTemplatesController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T09:23:45.101Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T09:23:45.101Z"
             }
           ]
         }

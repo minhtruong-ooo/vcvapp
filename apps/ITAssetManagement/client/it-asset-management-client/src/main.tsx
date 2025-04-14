@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { ReactKeycloakProvider } from "@react-keycloak/web";
 import keycloak from "./config/keycloak";
+import { DarkModeProvider } from "./context/DarkModeContext";
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -13,6 +14,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       checkLoginIframe: false,
     }}
   >
-    <App />
+    <DarkModeProvider>
+      <App />
+    </DarkModeProvider>
   </ReactKeycloakProvider>
 );
