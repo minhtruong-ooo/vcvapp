@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useKeycloak } from "@react-keycloak/web";
 import { getAssets } from "../../api/assetAPI";
 import { Table, Button, Modal, Typography, Form, message } from "antd";
-import { PlusOutlined } from "@ant-design/icons";
+import { PlusOutlined, DeleteOutlined } from "@ant-design/icons";
 import { assetColumn } from "../../columns";
 import AssetForm from "../../components/modals/AddAssetModal";
 
@@ -17,7 +17,7 @@ const Assets = () => {
 
   useEffect(() => {
     if (initialized && keycloak?.authenticated) {
-      setLoading(true); // 👈 bắt đầu loading
+      setLoading(true);
       getAssets(keycloak.token ?? "")
         .then((responseData) => {
           setData(responseData);
@@ -26,7 +26,7 @@ const Assets = () => {
           message.error("Error fetching assets: " + error.message);
         })
         .finally(() => {
-          setLoading(false); // 👈 kết thúc loading
+          setLoading(false);
         });
     }
   }, [initialized, keycloak]);
@@ -47,9 +47,21 @@ const Assets = () => {
         <Title level={3} style={{ margin: 0 }}>
           Assets
         </Title>
-        <Button icon={<PlusOutlined />} type="default" onClick={showModal}>
-          Add
-        </Button>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            marginBottom: "16px",
+          }}
+        >
+          <Button style={{marginRight : 8}} icon={<PlusOutlined />} type="default" onClick={showModal}>
+            Add
+          </Button>
+          <Button icon={<DeleteOutlined />} type="default" danger>
+            Delete
+          </Button>
+        </div>
+
       </div>
 
       <Table
@@ -58,7 +70,7 @@ const Assets = () => {
         columns={assetColumn(data)}
         showSorterTooltip={{ target: "sorter-icon" }}
         rowKey={"assetTag"}
-        loading={loading} // 👈 sử dụng loading ở đây
+        loading={loading}
       />
 
       <Modal

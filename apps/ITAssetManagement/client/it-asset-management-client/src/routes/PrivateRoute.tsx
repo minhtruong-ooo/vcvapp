@@ -21,7 +21,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
         display: "flex", 
         justifyContent: "center", 
         alignItems: "center", 
-        backgroundColor: "rgba(255, 255, 255, 0.8)", // Optional: To give background shade
+        backgroundColor: "rgba(255, 255, 255, 0.8)",
       }}>
         <Spin size="large" tip="Loading..." />
       </div>

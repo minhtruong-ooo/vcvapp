@@ -7,6 +7,7 @@ import {
   BookOutlined,
   HistoryOutlined,
   DeploymentUnitOutlined,
+  ProjectOutlined,
 } from "@ant-design/icons";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import logo from "../assets/images/logo.png";
@@ -28,10 +29,11 @@ const Layout: React.FC = () => {
 
   const menuKeyMap: { [key: string]: string } = {
     "/dashboard": "1",
-    "/assets": "2",
-    "/maintenance": "3",
-    "/asset-history": "4",
-    "/licenses": "5",
+    "/asset-templates": "2",
+    "/assets": "3",
+    "/maintenance": "4",
+    "/asset-history": "5",
+    "/licenses": "6",
   };
 
   const selectedKey = menuKeyMap[location.pathname] || "1";
@@ -74,16 +76,19 @@ const Layout: React.FC = () => {
             title="IT Asset Management"
             icon={<ProductOutlined />}
           >
-            <Menu.Item key="2" icon={<UnorderedListOutlined />}>
+            <Menu.Item key="2" icon={<ProjectOutlined />}>
+              <Link to="/asset-templates">Asset Templates</Link>
+            </Menu.Item>
+            <Menu.Item key="3" icon={<UnorderedListOutlined />}>
               <Link to="/assets">Asset</Link>
             </Menu.Item>
-            <Menu.Item key="3" icon={<DeploymentUnitOutlined />}>
+            <Menu.Item key="4" icon={<DeploymentUnitOutlined />}>
               <Link to="/maintenance">Maintenance</Link>
             </Menu.Item>
-            <Menu.Item key="4" icon={<HistoryOutlined />}>
+            <Menu.Item key="5" icon={<HistoryOutlined />}>
               <Link to="/asset-history">Asset History</Link>
             </Menu.Item>
-            <Menu.Item key="5" icon={<BookOutlined />}>
+            <Menu.Item key="6" icon={<BookOutlined />}>
               <Link to="/licenses">Licenses</Link>
             </Menu.Item>
           </Menu.SubMenu>

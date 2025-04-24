@@ -4,7 +4,7 @@ import {
   Dropdown,
   Space,
   Avatar,
-  Switch,
+  // Switch,
 } from "antd";
 import { useKeycloak } from "@react-keycloak/web";
 import {
@@ -62,7 +62,7 @@ const AppHeader: React.FC = () => {
         display: "flex",
         justifyContent: "flex-end",
         alignItems: "center",
-        padding: "0 20px",
+        padding: "0 25px",
       }}
     >
       <Dropdown menu={{ items, onClick: handleMenuClick }} trigger={["click"]}>
