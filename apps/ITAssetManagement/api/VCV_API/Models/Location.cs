@@ -4,6 +4,7 @@ namespace VCV_API.Models
 {
     public class Location
     {
+        [Key]
         public int LocationID { get; set; }
 
         [Required]

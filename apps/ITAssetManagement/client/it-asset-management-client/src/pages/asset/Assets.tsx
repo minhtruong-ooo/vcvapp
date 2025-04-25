@@ -4,36 +4,43 @@ import { getAssets } from "../../api/assetAPI";
 import { Table, Button, Modal, Typography, Form, message } from "antd";
 import { PlusOutlined, DeleteOutlined } from "@ant-design/icons";
 import { assetColumn } from "../../columns";
-import AssetForm from "../../components/modals/AddAssetModal";
+import AddAssetModal from "../../components/modals/AddAssetModal"; // đúng tên
 
 const { Title } = Typography;
 
 const Assets = () => {
   const { keycloak, initialized } = useKeycloak();
   const [data, setData] = useState<any[]>([]);
-  const [loading, setLoading] = useState<boolean>(true); // 👈 thêm loading state
+  const [loading, setLoading] = useState<boolean>(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [form] = Form.useForm();
 
+  // Load dữ liệu khi auth sẵn sàng
   useEffect(() => {
     if (initialized && keycloak?.authenticated) {
-      setLoading(true);
-      getAssets(keycloak.token ?? "")
-        .then((responseData) => {
-          setData(responseData);
-        })
-        .catch((error) => {
-          message.error("Error fetching assets: " + error.message);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
+      fetchAssets();
     }
   }, [initialized, keycloak]);
 
+  const fetchAssets = () => {
+    setLoading(true);
+    getAssets(keycloak.token ?? "")
+      .then((responseData) => {
+        setData(responseData);
+      })
+      .catch((error) => {
+        message.error("Error fetching assets: " + error.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   const showModal = () => setIsModalOpen(true);
-  const handleOk = () => setIsModalOpen(false);
-  const handleCancel = () => setIsModalOpen(false);
+  const handleCancel = () => {
+    setIsModalOpen(false);
+    form.resetFields();
+  };
 
   return (
     <>
@@ -47,21 +54,19 @@ const Assets = () => {
         <Title level={3} style={{ margin: 0 }}>
           Assets
         </Title>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            marginBottom: "16px",
-          }}
-        >
-          <Button style={{marginRight : 8}} icon={<PlusOutlined />} type="default" onClick={showModal}>
+        <div style={{ display: "flex", justifyContent: "space-around" }}>
+          <Button
+            style={{ marginRight: 8 }}
+            icon={<PlusOutlined />}
+            type="default"
+            onClick={showModal}
+          >
             Add
           </Button>
           <Button icon={<DeleteOutlined />} type="default" danger>
             Delete
           </Button>
         </div>
-
       </div>
 
       <Table
@@ -71,18 +76,25 @@ const Assets = () => {
         showSorterTooltip={{ target: "sorter-icon" }}
         rowKey={"assetTag"}
         loading={loading}
+        rowSelection={{
+          type: "checkbox",
+          onChange: (selectedRowKeys, selectedRows) => {
+            console.log("Selected Row Keys:", selectedRowKeys);
+            console.log("Selected Rows:", selectedRows);
+          },
+        }}
       />
 
       <Modal
         title="Add New Asset"
         open={isModalOpen}
-        onOk={handleOk}
         onCancel={handleCancel}
         centered
         destroyOnClose
         width={1000}
+        footer={null}
       >
-        <AssetForm form={form} />
+        <AddAssetModal form={form} />
       </Modal>
     </>
   );

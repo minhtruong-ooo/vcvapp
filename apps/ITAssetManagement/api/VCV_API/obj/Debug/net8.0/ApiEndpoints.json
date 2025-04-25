@@ -38,5 +38,15 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.LocationController",
+    "Method": "GetAllLocations",
+    "RelativePath": "api/Location/GetAllLocations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

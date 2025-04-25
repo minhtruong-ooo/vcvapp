@@ -52,6 +52,18 @@
           }
         }
       }
+    },
+    "/api/Location/GetAllLocations": {
+      "get": {
+        "tags": [
+          "Location"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": { }
