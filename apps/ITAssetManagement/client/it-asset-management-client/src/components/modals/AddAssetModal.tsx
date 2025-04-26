@@ -1,4 +1,5 @@
-import { useState } from 'react';
+// AddAssetModal.tsx
+import { useState, useEffect } from 'react';
 import {
   Form,
   Row,
@@ -9,22 +10,54 @@ import {
   Checkbox,
   Button,
   Table,
-  Space,
   message,
-  Flex,
 } from 'antd';
+import dayjs from 'dayjs';
 import type { FormInstance } from 'antd';
+import { useKeycloak } from "@react-keycloak/web";
+import { getAssetTemplates, getLocations, getAssetStatuses, createAsset } from '../../api/assetAPI'; // Đảm bảo đúng path
 
-const AddAssetModal = ({ form }: { form: FormInstance }) => {
+const AddAssetModal = ({ form, onCancel }: { form: FormInstance, onCancel: () => void, onAdd: (newAsset: any) => void }) => {
+  const { keycloak } = useKeycloak();
+  const token = keycloak?.token;
+
   const [addMultiple, setAddMultiple] = useState(false);
   const [tempAssets, setTempAssets] = useState<any[]>([]);
+
+  const [templates, setTemplates] = useState<any[]>([]);
+  const [locations, setLocations] = useState<any[]>([]);
+  const [statuses, setStatuses] = useState<any[]>([]);
+  const [loadingSelects, setLoadingSelects] = useState(true);
+
+  useEffect(() => {
+    if (!token) return;
+
+    const fetchData = async () => {
+      try {
+        const [templatesData, locationsData, statusesData] = await Promise.all([
+          getAssetTemplates(token),
+          getLocations(token),
+          getAssetStatuses(token),
+        ]);
+        setTemplates(templatesData);
+        setLocations(locationsData);
+        setStatuses(statusesData);
+      } catch (error) {
+        console.error("Error loading select options", error);
+      } finally {
+        setLoadingSelects(false);
+      }
+    };
+
+    fetchData();
+  }, [token]);
 
   const handleAddToList = async () => {
     try {
       const values = await form.validateFields();
       const newAsset = {
         ...values,
-        key: `${values.assetTag}-${Date.now()}`,
+        key: `${Math.random()}`,
       };
       setTempAssets([...tempAssets, newAsset]);
       form.resetFields();
@@ -36,13 +69,83 @@ const AddAssetModal = ({ form }: { form: FormInstance }) => {
   const handleRemove = (key: string) => {
     setTempAssets(tempAssets.filter(item => item.key !== key));
   };
+
+  const handleSave = async () => {
+    try {
+      if (!token) {
+        message.error('You are not authenticated. Please login again.');
+        return;
+      }
   
+      if (addMultiple) {
+        if (tempAssets.length === 0) {
+          message.warning('The asset list is empty!');
+          return;
+        }
+  
+        // Lặp qua từng tài sản trong tempAssets và gọi API
+        for (let i = 0; i < tempAssets.length; i++) {
+          const asset = tempAssets[i];
+          const data = {
+            TemplateID: templates.find(t => t.templateName === asset.templateName)?.templateID,
+            SerialNumber: asset.serialNumber,
+            PurchaseDate: asset.purchaseDate ? dayjs(asset.purchaseDate).format('YYYY-MM-DD') : null,
+            WarrantyExpiry: asset.warrantyExpiry ? dayjs(asset.warrantyExpiry).format('YYYY-MM-DD') : null,
+            StatusID: statuses.find(s => s.statusName === asset.status)?.statusID,
+            LocationID: locations.find(l => l.locationName === asset.location)?.locationID,
+          };
+  
+          // Gọi API createAsset
+          await createAsset(token, data);
+        }
+        message.success('Assets created successfully!');
+      } else {
+        const values = await form.validateFields();
+        const singleAsset = {
+          TemplateID: templates.find(t => t.templateName === values.templateName)?.templateID,
+          SerialNumber: values.serialNumber,
+          PurchaseDate: values.purchaseDate ? dayjs(values.purchaseDate).format('YYYY-MM-DD') : null,
+          WarrantyExpiry: values.warrantyExpiry ? dayjs(values.warrantyExpiry).format('YYYY-MM-DD') : null,
+          StatusID: statuses.find(s => s.statusName === values.status)?.statusID,
+          LocationID: locations.find(l => l.locationName === values.location)?.locationID,
+        };
+  
+        // Gọi API createAsset cho tài sản đơn lẻ
+        await createAsset(token, singleAsset);
+        message.success('Asset created successfully!');
+      }
+  
+      // Reset form và danh sách tạm thời
+      form.resetFields();
+      setTempAssets([]);
+      onCancel();
+    } catch (err) {
+      console.error('Save failed', err);
+      message.error('Please complete the form before saving.');
+    }
+  };
   const columns = [
+    {
+      title: 'No.',
+      key: 'no',
+      render: (_: any, __: any, index: number) => index + 1,
+    },
     { title: 'Template Name', dataIndex: 'templateName', key: 'templateName' },
     { title: 'Serial Number', dataIndex: 'serialNumber', key: 'serialNumber' },
-    { title: 'Purchase Date', dataIndex: 'purchaseDate', key: 'purchaseDate' },
-    { title: 'Warranty Expiry', dataIndex: 'warrantyExpiry', key: 'warrantyExpiry' },
+    {
+      title: 'Purchase Date',
+      dataIndex: 'purchaseDate',
+      key: 'purchaseDate',
+      render: (date: any) => date ? dayjs(date).format('YYYY-MM-DD') : '',
+    },
+    {
+      title: 'Warranty Expiry',
+      dataIndex: 'warrantyExpiry',
+      key: 'warrantyExpiry',
+      render: (date: any) => date ? dayjs(date).format('YYYY-MM-DD') : '',
+    },
     { title: 'Location', dataIndex: 'location', key: 'location' },
+    { title: 'Status', dataIndex: 'status', key: 'status' },
     {
       title: 'Action',
       key: 'actions',
@@ -72,8 +175,12 @@ const AddAssetModal = ({ form }: { form: FormInstance }) => {
               name="templateName"
               rules={[{ required: true }]}
             >
-              <Select placeholder="Select Template">
-                <Select.Option value="Active">Active</Select.Option>
+              <Select showSearch placeholder="Select Template" loading={loadingSelects}>
+                {templates.map((template) => (
+                  <Select.Option key={template.templateID} value={template.templateName}>
+                    {template.templateName}
+                  </Select.Option>
+                ))}
               </Select>
             </Form.Item>
           </Col>
@@ -94,17 +201,23 @@ const AddAssetModal = ({ form }: { form: FormInstance }) => {
           </Col>
           <Col span={12}>
             <Form.Item label="Location" name="location">
-              <Select placeholder="Select location">
-                <Select.Option value="Location 1">Location 1</Select.Option>
-                <Select.Option value="Location 2">Location 2</Select.Option>
+              <Select placeholder="Select Location" loading={loadingSelects}>
+                {locations.map((loc) => (
+                  <Select.Option key={loc.locationID} value={loc.locationName}>
+                    {loc.locationName}
+                  </Select.Option>
+                ))}
               </Select>
             </Form.Item>
           </Col>
           <Col span={12}>
             <Form.Item label="Status" name="status">
-              <Select placeholder="Select status">
-                <Select.Option value="Active">Active</Select.Option>
-                <Select.Option value="Inactive">Inactive</Select.Option>
+              <Select placeholder="Select Status" loading={loadingSelects}>
+                {statuses.map((status) => (
+                  <Select.Option key={status.statusID} value={status.statusName}>
+                    {status.statusName}
+                  </Select.Option>
+                ))}
               </Select>
             </Form.Item>
           </Col>
@@ -112,15 +225,15 @@ const AddAssetModal = ({ form }: { form: FormInstance }) => {
 
         {addMultiple && (
           <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 16 }}>
-              <Button type="primary" onClick={handleAddToList}>
-                Add to List
-              </Button>
+            <Button type="primary" onClick={handleAddToList}>
+              Add to List
+            </Button>
           </div>
         )}
       </Form>
 
       {addMultiple && (
-        <div style={{ marginTop: 24 }}>
+        <div style={{ marginTop: 24, maxHeight: 300, overflowY: 'auto' }}>
           <Table
             dataSource={tempAssets}
             columns={columns}
@@ -130,6 +243,11 @@ const AddAssetModal = ({ form }: { form: FormInstance }) => {
           />
         </div>
       )}
+
+      <div style={{ marginTop: 16, display: 'flex', justifyContent: 'flex-end' }}>
+        <Button type='primary' style={{marginRight: 8}} onClick={handleSave}>Save</Button>
+        <Button onClick={onCancel}>Cancel</Button>
+      </div>
     </>
   );
 };

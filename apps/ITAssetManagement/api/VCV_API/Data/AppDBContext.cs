@@ -25,6 +25,7 @@ namespace VCV_API.Data
                 .HasOne(at => at.AssetType)
                 .WithMany()
                 .HasForeignKey(at => at.AssetTypeID);
+
         }
     }
 }

@@ -8,14 +8,10 @@ namespace VCV_API.Models
         [Key]
         public int AssetID { get; set; }
 
-        [Required]
-        [MaxLength(20)]
         public string AssetTag { get; set; } = string.Empty;
 
-        [Required]
         public int TemplateID { get; set; }
 
-        [MaxLength(100)]
         public string? SerialNumber { get; set; }
 
         public DateTime? PurchaseDate { get; set; }
@@ -32,7 +28,6 @@ namespace VCV_API.Models
 
         public DateTime UpdatedAt { get; set; }
 
-        // 👉 Navigation Properties (nếu cần)
         [ForeignKey("TemplateID")]
         public AssetTemplate? Template { get; set; }
 

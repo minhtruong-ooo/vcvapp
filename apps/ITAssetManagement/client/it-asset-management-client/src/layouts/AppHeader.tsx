@@ -19,7 +19,7 @@ const { Header } = Layout;
 
 const AppHeader: React.FC = () => {
   const { keycloak } = useKeycloak();
-  const { darkMode, toggleDarkMode } = useDarkMode();
+  const { darkMode } = useDarkMode();
 
   const items: MenuProps["items"] = [
     {

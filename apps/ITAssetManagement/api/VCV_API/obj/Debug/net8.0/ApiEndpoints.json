@@ -1,6 +1,38 @@
 [
   {
     "ContainingType": "VCV_API.Controllers.AssetsController",
+    "Method": "CreateAsset",
+    "RelativePath": "api/Assets/CreateAsset",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "VCV_API.Models.Add.AssetCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.AssetsController",
+    "Method": "CreateAssets",
+    "RelativePath": "api/Assets/CreateAssets",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "assetList",
+        "Type": "System.Collections.Generic.List\u00601[[VCV_API.Models.Add.AssetCreateDto, VCV_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.AssetsController",
     "Method": "GetAssets",
     "RelativePath": "api/Assets/GetAssets",
     "HttpMethod": "GET",

@@ -62,3 +62,21 @@ export const getAssetStatuses = async (token: string) => {
     throw error;
   }
 };
+
+
+export const createAsset = async (token: string, data: any) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/Assets/CreateAsset`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      timeout: 5000,
+    });
+
+    return response.data;
+  } catch (error: any) {
+    console.error('❌ Lỗi khi tạo tài sản:', error?.response?.data || error.message);
+    throw new Error('Không thể tạo tài sản. Vui lòng thử lại sau.');
+  }
+};

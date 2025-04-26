@@ -36,12 +36,54 @@ const Layout: React.FC = () => {
     "/licenses": "6",
   };
 
+
   const selectedKey = menuKeyMap[location.pathname] || "1";
   const openKeys = ["sub1"];
 
   const siderBg = darkMode ? "#1e1e1e" : "#fff";
   const contentBg = darkMode ? "#141414" : "#fff";
   const menuTheme = darkMode ? "dark" : "light";
+
+  const menuItems = [
+    {
+      key: "1",
+      icon: <DashboardOutlined />,
+      label: <Link to="/dashboard">Dashboard</Link>,
+    },
+    {
+      key: "sub1",
+      icon: <ProductOutlined />,
+      label: "IT Asset Management",
+      children: [
+        {
+          key: "2",
+          icon: <ProjectOutlined />,
+          label: <Link to="/asset-templates">Asset Templates</Link>,
+        },
+        {
+          key: "3",
+          icon: <UnorderedListOutlined />,
+          label: <Link to="/assets">Asset</Link>,
+        },
+        {
+          key: "4",
+          icon: <DeploymentUnitOutlined />,
+          label: <Link to="/maintenance">Maintenance</Link>,
+        },
+        {
+          key: "5",
+          icon: <HistoryOutlined />,
+          label: <Link to="/asset-history">Asset History</Link>,
+        },
+        {
+          key: "6",
+          icon: <BookOutlined />,
+          label: <Link to="/licenses">Licenses</Link>,
+        },
+      ],
+    },
+  ];
+
 
   return (
     <AntLayout style={{ minHeight: "100vh" }}>
@@ -67,32 +109,8 @@ const Layout: React.FC = () => {
           mode="inline"
           selectedKeys={[selectedKey]}
           defaultOpenKeys={openKeys}
-        >
-          <Menu.Item key="1" icon={<DashboardOutlined />}>
-            <Link to="/dashboard">Dashboard</Link>
-          </Menu.Item>
-          <Menu.SubMenu
-            key="sub1"
-            title="IT Asset Management"
-            icon={<ProductOutlined />}
-          >
-            <Menu.Item key="2" icon={<ProjectOutlined />}>
-              <Link to="/asset-templates">Asset Templates</Link>
-            </Menu.Item>
-            <Menu.Item key="3" icon={<UnorderedListOutlined />}>
-              <Link to="/assets">Asset</Link>
-            </Menu.Item>
-            <Menu.Item key="4" icon={<DeploymentUnitOutlined />}>
-              <Link to="/maintenance">Maintenance</Link>
-            </Menu.Item>
-            <Menu.Item key="5" icon={<HistoryOutlined />}>
-              <Link to="/asset-history">Asset History</Link>
-            </Menu.Item>
-            <Menu.Item key="6" icon={<BookOutlined />}>
-              <Link to="/licenses">Licenses</Link>
-            </Menu.Item>
-          </Menu.SubMenu>
-        </Menu>
+          items={menuItems}
+        />
       </Sider>
       <AntLayout>
         <AppHeader />

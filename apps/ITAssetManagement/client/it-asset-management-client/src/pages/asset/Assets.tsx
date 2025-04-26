@@ -1,7 +1,9 @@
+// Assets.tsx
 import { useEffect, useState } from "react";
+import { Form } from 'antd';
 import { useKeycloak } from "@react-keycloak/web";
 import { getAssets } from "../../api/assetAPI";
-import { Table, Button, Modal, Typography, Form, message } from "antd";
+import { Table, Button, Modal, Typography, message } from "antd";
 import { PlusOutlined, DeleteOutlined } from "@ant-design/icons";
 import { assetColumn } from "../../columns";
 import AddAssetModal from "../../components/modals/AddAssetModal"; // đúng tên
@@ -40,6 +42,10 @@ const Assets = () => {
   const handleCancel = () => {
     setIsModalOpen(false);
     form.resetFields();
+  };
+
+  const handleAddAsset = (newAsset: any) => {
+    setData([...data, newAsset]); // Add the new asset to the data state
   };
 
   return (
@@ -91,10 +97,10 @@ const Assets = () => {
         onCancel={handleCancel}
         centered
         destroyOnClose
-        width={1000}
+        width={1200}
         footer={null}
       >
-        <AddAssetModal form={form} />
+        <AddAssetModal form={form} onCancel={handleCancel} onAdd={handleAddAsset} />
       </Modal>
     </>
   );
