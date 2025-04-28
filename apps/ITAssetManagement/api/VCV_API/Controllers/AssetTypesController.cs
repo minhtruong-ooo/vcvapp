@@ -21,8 +21,7 @@ namespace VCV_API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAssetTypes()
         {
-            var assetTypes = await _context.AssetTypes.ToListAsync();
-            return Ok(assetTypes);
+            return Ok();
         }
     }
 }

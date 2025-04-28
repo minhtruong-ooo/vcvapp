@@ -19,8 +19,7 @@ namespace VCV_API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllLocations()
         {
-            var locations = await _context.Locations.ToListAsync();
-            return Ok(locations);
+            return Ok();
         }
     }
 }

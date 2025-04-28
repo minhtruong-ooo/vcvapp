@@ -21,8 +21,7 @@ namespace VCV_API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAssetStatuses()
         {
-            var statuses = await _context.AssetStatuses.ToListAsync();
-            return Ok(statuses);
+            return Ok();
         }
     }
 }

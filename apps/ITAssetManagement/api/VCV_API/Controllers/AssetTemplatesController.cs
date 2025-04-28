@@ -21,10 +21,7 @@ namespace VCV_API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAssetTemplates()
         {
-            var templates = await _context.AssetTemplates
-                .Include(t => t.AssetType)
-                .ToListAsync();
-            return Ok(templates);
+            return Ok();
         }
     }
 }

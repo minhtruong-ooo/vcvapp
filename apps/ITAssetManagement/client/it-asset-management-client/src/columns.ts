@@ -33,7 +33,7 @@ export const assetColumn = (data: any[]): ColumnType<any>[] => {
     },
     {
       title: "Asset Name",
-      dataIndex: ["template", "templateName"],
+      dataIndex: ["templateName"],
       key: "templateName",
       onFilter: (value, record) =>
         record.template?.templateName.includes(value),
@@ -68,23 +68,25 @@ export const assetColumn = (data: any[]): ColumnType<any>[] => {
     },
     {
       title: "Status",
-      dataIndex: ["status", "statusName"],
+      dataIndex: "statusName",
       key: "statusName",
-      render: (_, record) => record.status?.statusName ?? "N/A",
-      filters: statusFilters,
-      onFilter: (value, record) => record.status?.statusName === value,
+      sorter: (a, b) => a.statusName.localeCompare(b.statusName),
+      onFilter: (value, record) => record.statusName.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.statusName))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
     },
     {
       title: "Location",
-      dataIndex: ["location", "locationName"],
+      dataIndex: "locationName",
       key: "locationName",
-      render: (_, record) => record.location?.locationName ?? "N/A",
-      filters: locationFilters,
-      onFilter: (value, record) => record.location?.locationName === value,
-      sorter: (a, b) =>
-        (a.location?.locationName || "").localeCompare(
-          b.location?.locationName || ""
-        ),
+      sorter: (a, b) => a.locationName.localeCompare(b.locationName),
+      onFilter: (value, record) => record.locationName.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.locationName))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
     },
   ];
 };
