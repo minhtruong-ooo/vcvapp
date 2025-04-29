@@ -1,11 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
-using VCV_API.Data;
-using VCV_API.Models.Add;
-using VCV_API.Models;
+using VCV_API.Models.Asset;
 using VCV_API.Services.Interfaces;
 
 namespace VCV_API.Controllers
@@ -19,7 +14,6 @@ namespace VCV_API.Controllers
         public AssetsController(IAssetService assetService)
         {
             _assetService = assetService;
-            
         }
 
         [HttpGet]
@@ -44,15 +38,38 @@ namespace VCV_API.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> CreateAsset([FromBody] AssetCreateDto dto)
+        public async Task<IActionResult> CreateAsset([FromBody] AssetCreateDto assetDto)
         {
-            return Ok();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                var newId = await _assetService.CreateAssetAsync(assetDto);
+                return Ok(new { AssetID = newId });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    Message = "Đã xảy ra lỗi khi tạo tài sản.",
+                    Details = ex.Message
+                });
+            }
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateAssets([FromBody] List<AssetCreateDto> assetList)
         {
-            return Ok();
+            try
+            {
+                var createdAssets = await _assetService.CreateAssetsAsync(assetList);
+                return Ok(createdAssets);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Lỗi khi tạo tài sản hàng loạt", detail = ex.Message });
+            }
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using VCV_API.Data;
+using VCV_API.Services.Interfaces;
 
 namespace VCV_API.Controllers
 {
@@ -11,17 +9,30 @@ namespace VCV_API.Controllers
     [Authorize]
     public class AssetTemplatesController : ControllerBase
     {
-        private readonly AppDbContext _context;
-
-        public AssetTemplatesController(AppDbContext context)
+        private readonly IAssetTemplates _assetTemplateService;
+        public AssetTemplatesController(IAssetTemplates assetTemplateService)
         {
-            _context = context;
+            _assetTemplateService = assetTemplateService;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAssetTemplates()
+        public async Task<IActionResult> GetAssetTemplates_Select()
         {
-            return Ok();
+            try
+            {
+                var assetsTemplates = await _assetTemplateService.GetAllAssetTemplatesAsync();
+
+                if (assetsTemplates == null || assetsTemplates.Count == 0)
+                {
+                    return NotFound("Không tìm thấy tài sản.");
+                }
+
+                return Ok(assetsTemplates);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Lỗi khi lấy dữ liệu: {ex.Message}");
+            }
         }
     }
 }

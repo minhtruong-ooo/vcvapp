@@ -36,11 +36,9 @@ const Layout: React.FC = () => {
     "/licenses": "6",
   };
 
-
   const selectedKey = menuKeyMap[location.pathname] || "1";
   const openKeys = ["sub1"];
 
-  const siderBg = darkMode ? "#1e1e1e" : "#fff";
   const contentBg = darkMode ? "#141414" : "#fff";
   const menuTheme = darkMode ? "dark" : "light";
 
@@ -63,7 +61,7 @@ const Layout: React.FC = () => {
         {
           key: "3",
           icon: <UnorderedListOutlined />,
-          label: <Link to="/assets">Asset</Link>,
+          label: <Link to="/assets">Assets</Link>,
         },
         {
           key: "4",
@@ -84,7 +82,6 @@ const Layout: React.FC = () => {
     },
   ];
 
-
   return (
     <AntLayout style={{ minHeight: "100vh" }}>
       <Sider
@@ -92,9 +89,15 @@ const Layout: React.FC = () => {
         collapsible
         collapsed={collapsed}
         onCollapse={toggleCollapsed}
-        style={{ background: siderBg }}
+        style={{
+          background: darkMode ? "#1e1e1c" : "#fff", // Dark background for dark mode
+          color: darkMode ? "#fff" : "#000", // Adjust text color for dark mode
+        }}
       >
-        <div className="logo" style={{ textAlign: "center", padding: "10px 0" }}>
+        <div
+          className="logo"
+          style={{ textAlign: "center", padding: "10px 0" }}
+        >
           <img
             src={collapsed ? logo_small : logo}
             alt="Logo"
@@ -105,21 +108,25 @@ const Layout: React.FC = () => {
           />
         </div>
         <Menu
-          theme={menuTheme}
+          key={menuTheme} // Add this
           mode="inline"
           selectedKeys={[selectedKey]}
           defaultOpenKeys={openKeys}
           items={menuItems}
+          style={{
+            background: darkMode ? "#1e1e1c" : "#fff", // Dark background for dark mode
+            color: darkMode ? "#fff" : "#000", // Adjust text color for dark mode
+          }}
         />
       </Sider>
       <AntLayout>
         <AppHeader />
         <Content
           style={{
-            margin: "12px 8px",
             padding: 12,
             background: contentBg,
             minHeight: 280,
+            color: darkMode ? "#fff" : "#000", // thêm dòng này
           }}
         >
           <Outlet />

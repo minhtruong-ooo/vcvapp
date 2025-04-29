@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "wtenVPb8RQbZlYvJxa8o8OMLpCDjn38v1ZhU6xDrKHw=",
+  "Hash": "rdlUSqxlJOoBZ1Ah0zn0FY2suZoTOOuLMvvC6TXK4MM=",
   "Source": "VCV_API",
   "BasePath": "_content/VCV_API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

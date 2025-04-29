@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using VCV_API.Data;
+using VCV_API.Services.Interfaces;
 
 namespace VCV_API.Controllers
 {
@@ -11,17 +9,31 @@ namespace VCV_API.Controllers
     [Authorize]
     public class AssetStatusController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly IAssetStatus _assetStatus;
 
-        public AssetStatusController(AppDbContext context)
+        public AssetStatusController(IAssetStatus assetStatus)
         {
-            _context = context;
+            _assetStatus = assetStatus;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAssetStatuses()
         {
-            return Ok();
+            try
+            {
+                var assetsStatus = await _assetStatus.GetAssetStatusesAsync();
+
+                if (assetsStatus == null || assetsStatus.Count == 0)
+                {
+                    return NotFound("Asset Location not found");
+                }
+
+                return Ok(assetsStatus);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Lỗi khi lấy dữ liệu: {ex.Message}");
+            }
         }
     }
 }

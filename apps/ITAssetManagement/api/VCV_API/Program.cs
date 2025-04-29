@@ -25,6 +25,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IAssetService, AssetService>();
+builder.Services.AddScoped<IAssetTemplates, AssetTemplatesService>();
+builder.Services.AddScoped<IAssetStatus, AssetStatusService>();
+builder.Services.AddScoped<IAssetLocation, AssetLocationService>();
 
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>

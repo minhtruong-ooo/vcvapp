@@ -41,34 +41,3 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-body.darkmode {
-	background-color: #1e1e1e;
-	color: #f0f0f0;
-  }
-  
-  body.darkmode .ant-layout,
-  body.darkmode .ant-layout-content {
-	background-color: #1e1e1e !important;
-  }
-  
-  body.darkmode .ant-table,
-  body.darkmode .ant-card,
-  body.darkmode .ant-dropdown-menu {
-	background-color: #1e1e1e !important;
-	color: #f0f0f0 !important;
-  }
-  
-  body.darkmode .ant-table-cell,
-  body.darkmode .ant-dropdown-menu-item {
-	color: #f0f0f0 !important;
-  }
-  
-  body.darkmode {
-	background-color: #141414;
-	color: #f0f0f0;
-  }
-  
-  body.darkmode a {
-	color: #91caff;
-  }

@@ -1,4 +1,4 @@
-﻿namespace VCV_API.Models
+﻿namespace VCV_API.Models.AssetType
 {
     public class AssetType
     {

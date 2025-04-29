@@ -1,21 +1,30 @@
 // Assets.tsx
 import { useEffect, useState } from "react";
-import { Form } from 'antd';
+import { Form } from "antd";
 import { useKeycloak } from "@react-keycloak/web";
 import { getAssets } from "../../api/assetAPI";
 import { Table, Button, Modal, Typography, message } from "antd";
 import { PlusOutlined, DeleteOutlined } from "@ant-design/icons";
 import { assetColumn } from "../../columns";
-import AddAssetModal from "../../components/modals/AddAssetModal"; // đúng tên
+import AddAssetModal from "../../components/modals/AddAssetModal";
+import { useDarkMode } from "../../context/DarkModeContext";
 
 const { Title } = Typography;
 
 const Assets = () => {
+  const { darkMode } = useDarkMode();
   const { keycloak, initialized } = useKeycloak();
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [form] = Form.useForm();
+  const [paginationState, setPaginationState] = useState({
+    current: 1,
+    pageSize: 15,
+  });
+  const handlePaginationChange = (page: number, pageSize: number) => {
+    setPaginationState({ current: page, pageSize });
+  };
 
   // Load dữ liệu khi auth sẵn sàng
   useEffect(() => {
@@ -57,12 +66,19 @@ const Assets = () => {
           marginBottom: "16px",
         }}
       >
-        <Title level={3} style={{ margin: 0 }}>
+        <Title
+          level={3}
+          style={{ margin: 0, color: darkMode ? "#fff" : "#000" }}
+        >
           Assets
         </Title>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
           <Button
-            style={{ marginRight: 8 }}
+            style={{
+              marginRight: 8,
+              backgroundColor: darkMode ? "#2a2a2a" : undefined,
+              color: darkMode ? "#fff" : undefined,
+            }}
             icon={<PlusOutlined />}
             type="default"
             onClick={showModal}
@@ -76,7 +92,9 @@ const Assets = () => {
       </div>
 
       <Table
-        size="small"
+        key={darkMode ? "dark" : "light"}
+        size="middle"
+        bordered
         dataSource={data}
         columns={assetColumn(data)}
         showSorterTooltip={{ target: "sorter-icon" }}
@@ -89,9 +107,29 @@ const Assets = () => {
             console.log("Selected Rows:", selectedRows);
           },
         }}
+        pagination={{
+          current: paginationState.current, // Trang hiện tại từ state
+          pageSize: paginationState.pageSize, // Số lượng hàng trên mỗi trang từ state
+          pageSizeOptions: ["15", "25", "50"], // Các tùy chọn số lượng hàng trên mỗi trang
+          total: data.length, // Tổng số bản ghi
+          showSizeChanger: true, // Cho phép thay đổi số lượng hàng trên mỗi trang
+          onChange: handlePaginationChange, // Cập nhật state khi thay đổi trang
+          showTotal: (total) => `Total: ${total} item`, // Hiển thị tổng số mục
+          position: ["bottomRight"], // Cố định phân trang ở dưới
+          hideOnSinglePage: true, // Ẩn phân trang nếu chỉ có một trang
+          style: {
+            color: darkMode ? "#fff" : "#000",
+          },
+        }}
+        scroll={{ x: "max-content", y: 650 }} // Cuộn ngang và cuộn dọc nếu cần
       />
 
       <Modal
+        style={{
+          backgroundColor: darkMode ? "#1f1f1f" : "#fff",
+          color: darkMode ? "#fff" : "#000",
+          borderRadius: "5px",
+        }}
         title="Add New Asset"
         open={isModalOpen}
         onCancel={handleCancel}
@@ -100,7 +138,12 @@ const Assets = () => {
         width={1200}
         footer={null}
       >
-        <AddAssetModal form={form} onCancel={handleCancel} onAdd={handleAddAsset} />
+        <AddAssetModal
+          form={form}
+          onCancel={handleCancel}
+          onAdd={handleAddAsset}
+          onSuccess={fetchAssets}
+        />
       </Modal>
     </>
   );

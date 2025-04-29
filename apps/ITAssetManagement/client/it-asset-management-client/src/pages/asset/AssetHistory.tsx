@@ -1,9 +1,5 @@
-import React from 'react'
-
 const AssetHistory = () => {
-  return (
-    <div>AssetHistory</div>
-  )
-}
+  return <div>AssetHistory</div>;
+};
 
-export default AssetHistory
+export default AssetHistory;

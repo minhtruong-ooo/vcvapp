@@ -1,6 +1,6 @@
-﻿namespace VCV_API.Models
+﻿namespace VCV_API.Models.AssetLocation
 {
-    public class Location
+    public class AssetLocation
     {
         public int LocationID { get; set; }
         public string? LocationName { get; set; }
