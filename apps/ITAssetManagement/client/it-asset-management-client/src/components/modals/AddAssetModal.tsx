@@ -22,7 +22,9 @@ import {
   getAssetStatuses,
   createAsset,
   createAssets,
-} from "../../api/assetAPI"; // Đảm bảo đúng path
+} from "../../api/assetAPI";
+import { AssetInput } from "../../interfaces/interfaces";
+import { AssetMapper } from "../../interfaces/AssetMapper";
 
 const AddAssetModal = ({
   form,
@@ -110,66 +112,50 @@ const AddAssetModal = ({
         return;
       }
 
+      const mapper = new AssetMapper({ templates, statuses, locations });
+
       if (addMultiple) {
         if (tempAssets.length === 0) {
           message.warning("The asset list is empty!");
           return;
         }
 
-        const assetList = tempAssets.map((asset) => ({
-          TemplateID: templates.find(
-            (t) => t.templateName === asset.templateName
-          )?.templateID,
-          SerialNumber: asset.serialNumber,
-          PurchaseDate: asset.purchaseDate
-            ? dayjs(asset.purchaseDate).format("YYYY-MM-DD")
-            : null,
-          WarrantyExpiry: asset.warrantyExpiry
-            ? dayjs(asset.warrantyExpiry).format("YYYY-MM-DD")
-            : null,
-          StatusID: statuses.find((s) => s.statusName === asset.status)
-            ?.statusID,
-          LocationID: locations.find((l) => l.locationName === asset.location)
-            ?.locationID,
-        }));
-
+        const assetList = mapper.mapMany(tempAssets as AssetInput[]);
         await createAssets(token, assetList);
         message.success("Assets created successfully!");
       } else {
+        // validateFields sẽ tự động throw lỗi nếu field nào đó thiếu
         const values = await form.validateFields();
-        const singleAsset = {
-          TemplateID: templates.find(
-            (t) => t.templateName === values.templateName
-          )?.templateID,
-          SerialNumber: values.serialNumber,
-          PurchaseDate: values.purchaseDate
-            ? dayjs(values.purchaseDate).format("YYYY-MM-DD")
-            : null,
-          WarrantyExpiry: values.warrantyExpiry
-            ? dayjs(values.warrantyExpiry).format("YYYY-MM-DD")
-            : null,
-          StatusID: statuses.find((s) => s.statusName === values.status)
-            ?.statusID,
-          LocationID: locations.find((l) => l.locationName === values.location)
-            ?.locationID,
+
+        const singleAsset: AssetInput = {
+          templateName: values.templateName,
+          serialNumber: values.serialNumber,
+          purchaseDate: values.purchaseDate,
+          warrantyExpiry: values.warrantyExpiry,
+          status: values.status,
+          location: values.location,
         };
 
-        // Gọi API createAsset cho tài sản đơn lẻ
-        await createAsset(token, singleAsset);
+        const mappedAsset = mapper.map(singleAsset);
+        await createAsset(token, mappedAsset);
         message.success("Asset created successfully!");
       }
 
-      // Reset form và danh sách tạm thời
       form.resetFields();
       onSuccess();
       setTempAssets([]);
       onCancel();
     } catch (err) {
-      message.error(err instanceof Error ? err.message : String(err));
+      if (err && typeof err === "object" && "errorFields" in err) {
+        message.error("Please fill in all the required fields.");
+      } else {
+        message.error(err instanceof Error ? err.message : String(err));
+      }
     } finally {
       setLoading(false);
     }
   };
+
   const columns = [
     {
       title: "No.",
@@ -216,7 +202,7 @@ const AddAssetModal = ({
         onChange={(e) => setAddMultiple(e.target.checked)}
         style={{ marginBottom: 16 }}
       >
-        Add more assets
+        Multiple Assets
       </Checkbox>
 
       <Form form={form} layout="vertical" name="assetForm">

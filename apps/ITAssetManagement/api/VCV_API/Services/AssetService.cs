@@ -151,5 +151,47 @@ namespace VCV_API.Services
 
             return result;
         }
+
+        public async Task<int?> DeleteAssetsAsync(List<AssetDeleteDto> assetDeleteDtos)
+        {
+            if (assetDeleteDtos == null || assetDeleteDtos.Count == 0)
+            {
+                return 0;
+            }    
+
+            var table = new DataTable();
+            table.Columns.Add("AssetTag", typeof(int));
+
+            foreach (var id in assetDeleteDtos)
+                table.Rows.Add(id);
+
+            var connection = _context.Database.GetDbConnection();
+            await connection.OpenAsync();
+
+            using var command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "Asset_DeleteAssets";
+
+            var parameter = new SqlParameter
+            {
+                ParameterName = "@AssetIDs",
+                SqlDbType = SqlDbType.Structured,
+                TypeName = "dbo.AssetIdTableType",
+                Value = table
+            };
+
+            command.Parameters.Add(parameter);
+
+            int result = 0;
+            using (var reader = await command.ExecuteReaderAsync())
+            {
+                if (await reader.ReadAsync())
+                {
+                    result = reader.GetInt32(reader.GetOrdinal("DeletedCount"));
+                }
+            }
+
+            return result;
+        }
     }
 }

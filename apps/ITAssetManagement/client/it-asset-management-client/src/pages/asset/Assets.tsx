@@ -3,7 +3,15 @@ import { useEffect, useState } from "react";
 import { Form } from "antd";
 import { useKeycloak } from "@react-keycloak/web";
 import { getAssets } from "../../api/assetAPI";
-import { Table, Button, Modal, Typography, message } from "antd";
+import {
+  Table,
+  Button,
+  Modal,
+  Typography,
+  message,
+  Space,
+  Popconfirm,
+} from "antd";
 import { PlusOutlined, DeleteOutlined } from "@ant-design/icons";
 import { assetColumn } from "../../columns";
 import AddAssetModal from "../../components/modals/AddAssetModal";
@@ -22,9 +30,7 @@ const Assets = () => {
     current: 1,
     pageSize: 15,
   });
-  const handlePaginationChange = (page: number, pageSize: number) => {
-    setPaginationState({ current: page, pageSize });
-  };
+  const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
 
   // Load dữ liệu khi auth sẵn sàng
   useEffect(() => {
@@ -57,6 +63,30 @@ const Assets = () => {
     setData([...data, newAsset]); // Add the new asset to the data state
   };
 
+  const handlePaginationChange = (page: number, pageSize: number) => {
+    setPaginationState({ current: page, pageSize });
+  };
+
+  const handleDelete = () => {
+    // Ví dụ: gọi API xóa theo assetTag hoặc key
+
+    console.log(selectedRowKeys); // Xóa các asset đã chọn
+    // Promise.all(
+    //   selectedRowKeys.map((key) =>
+    //     deleteAssetById(key, keycloak.token ?? "") // bạn cần implement `deleteAssetById`
+    //   )
+    // )
+    //   .then(() => {
+    //     message.success("Deleted successfully");
+    //     fetchAssets(); // Refresh data
+    //     setSelectedRowKeys([]); // Clear selection
+    //   })
+    //   .catch((err) => {
+    //     console.error(err);
+    //     message.error("Failed to delete selected assets");
+    //   });
+  };
+
   return (
     <>
       <div
@@ -73,21 +103,35 @@ const Assets = () => {
           Assets
         </Title>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
-          <Button
-            style={{
-              marginRight: 8,
-              backgroundColor: darkMode ? "#2a2a2a" : undefined,
-              color: darkMode ? "#fff" : undefined,
-            }}
-            icon={<PlusOutlined />}
-            type="default"
-            onClick={showModal}
-          >
-            Add
-          </Button>
-          <Button icon={<DeleteOutlined />} type="default" danger>
-            Delete
-          </Button>
+          <Space>
+            <Button
+              style={{
+                backgroundColor: darkMode ? "#2a2a2a" : undefined,
+                color: darkMode ? "#fff" : undefined,
+              }}
+              icon={<PlusOutlined />}
+              type="default"
+              onClick={showModal}
+            >
+              Add
+            </Button>
+            <Popconfirm
+              title="Are you sure to delete selected assets?"
+              onConfirm={handleDelete}
+              okText="Yes"
+              cancelText="No"
+              disabled={selectedRowKeys.length === 0}
+            >
+              <Button
+                icon={<DeleteOutlined />}
+                type="default"
+                danger
+                disabled={selectedRowKeys.length === 0}
+              >
+                Delete
+              </Button>
+            </Popconfirm>
+          </Space>
         </div>
       </div>
 
@@ -102,10 +146,8 @@ const Assets = () => {
         loading={loading}
         rowSelection={{
           type: "checkbox",
-          onChange: (selectedRowKeys, selectedRows) => {
-            console.log("Selected Row Keys:", selectedRowKeys);
-            console.log("Selected Rows:", selectedRows);
-          },
+          selectedRowKeys,
+          onChange: (keys) => setSelectedRowKeys(keys),
         }}
         pagination={{
           current: paginationState.current, // Trang hiện tại từ state

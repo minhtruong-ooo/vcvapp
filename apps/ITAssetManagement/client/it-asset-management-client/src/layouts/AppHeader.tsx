@@ -36,6 +36,9 @@ const AppHeader: React.FC = () => {
       disabled: false,
     },
     {
+      type: "divider",
+    },
+    {
       key: "2",
       label: "Logout",
       icon: <LogoutOutlined />,
@@ -59,7 +62,7 @@ const AppHeader: React.FC = () => {
         padding: "0 25px",
       }}
     >
-      <Dropdown menu={{ items, onClick: handleMenuClick }} trigger={["click"]}>
+      <Dropdown menu={{ items, onClick: handleMenuClick }} trigger={["hover"]}>
         <a onClick={(e) => e.preventDefault()}>
           <Space style={{ color: darkMode ? "#fff" : "#000" }}>
             <Avatar
