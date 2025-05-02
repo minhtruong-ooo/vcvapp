@@ -145,12 +145,18 @@ const Assets = () => {
         showSorterTooltip={{ target: "sorter-icon" }}
         rowKey={"assetTag"}
         loading={loading}
-        onRow={(record) => {
-          return {
-            onClick: () => {
-              navigate(`/assets/${record.assetTag}`);
-            },
-          }}}
+        onRow={(record) => ({
+          onClick: (event) => {
+            const target = event.target as HTMLElement;
+
+            const isCheckboxColumn = target.closest(
+              "td.ant-table-selection-column"
+            );
+            if (isCheckboxColumn) return;
+
+            navigate(`/assets/${record.assetTag}`);
+          },
+        })}
         rowSelection={{
           type: "checkbox",
           selectedRowKeys,

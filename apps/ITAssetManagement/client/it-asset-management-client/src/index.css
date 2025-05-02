@@ -41,6 +41,29 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/* Hiệu lực cho Chrome, Edge, và Safari */
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.3); /* màu cuộn */
+	border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+	background: transparent;
+  }
+  
+  /* Firefox */
+  * {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(0,0,0,0.3) transparent;
+  }
+  
+
+
 
 .asset_info {
 	font-size: 14px;

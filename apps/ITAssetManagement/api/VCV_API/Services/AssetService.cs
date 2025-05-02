@@ -54,7 +54,7 @@ namespace VCV_API.Services
 
                             assets.Add(asset);
                         }
-                    }       
+                    }
                 }
             }
             catch (Exception ex)
@@ -157,7 +157,7 @@ namespace VCV_API.Services
             if (assetDeleteDtos == null || assetDeleteDtos.Count == 0)
             {
                 return 0;
-            }    
+            }
 
             var table = new DataTable();
             table.Columns.Add("AssetTag", typeof(int));
@@ -218,9 +218,9 @@ namespace VCV_API.Services
                     AssetTag = reader.GetString(reader.GetOrdinal("AssetTag")),
                     TemplateID = reader.GetInt32(reader.GetOrdinal("TemplateID")),
                     TemplateName = reader.GetString(reader.GetOrdinal("TemplateName")),
-                    SerialNumber = reader.IsDBNull("SerialNumber") ? null : reader.GetString(reader.GetOrdinal("SerialNumber")),
-                    PurchaseDate = reader.IsDBNull("PurchaseDate") ? null : reader.GetDateTime(reader.GetOrdinal("PurchaseDate")),
-                    WarrantyExpiry = reader.IsDBNull("WarrantyExpiry") ? null : reader.GetDateTime(reader.GetOrdinal("WarrantyExpiry")),
+                    SerialNumber = reader.IsDBNull(reader.GetOrdinal("SerialNumber")) ? null : reader.GetString(reader.GetOrdinal("SerialNumber")),
+                    PurchaseDate = reader.IsDBNull(reader.GetOrdinal("PurchaseDate")) ? null : reader.GetDateTime(reader.GetOrdinal("PurchaseDate")).ToString("yyyy-MM-dd"),
+                    WarrantyExpiry = reader.IsDBNull(reader.GetOrdinal("WarrantyExpiry")) ? null : reader.GetDateTime(reader.GetOrdinal("WarrantyExpiry")).ToString("yyyy-MM-dd"),
                     StatusID = reader.GetInt32(reader.GetOrdinal("StatusID")),
                     StatusName = reader.GetString(reader.GetOrdinal("StatusName")),
                     LocationID = reader.GetInt32(reader.GetOrdinal("LocationID")),

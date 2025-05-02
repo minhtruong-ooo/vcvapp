@@ -83,15 +83,21 @@ const Layout: React.FC = () => {
   ];
 
   return (
-    <AntLayout style={{ minHeight: "100vh" }}>
+    <AntLayout style={{ height: "100vh", overflow: "hidden" }}>
+      {/* SIDEBAR FIXED */}
       <Sider
         width={250}
         collapsible
         collapsed={collapsed}
         onCollapse={toggleCollapsed}
         style={{
-          background: darkMode ? "#1e1e1c" : "#fff", // Dark background for dark mode
-          color: darkMode ? "#fff" : "#000", // Adjust text color for dark mode
+          position: "fixed",
+          height: "100vh",
+          left: 0,
+          top: 0,
+          bottom: 0,
+          background: darkMode ? "#1e1e1c" : "#fff",
+          zIndex: 1000,
         }}
       >
         <div
@@ -108,25 +114,43 @@ const Layout: React.FC = () => {
           />
         </div>
         <Menu
-          key={menuTheme} // Add this
+          key={menuTheme}
           mode="inline"
           selectedKeys={[selectedKey]}
           defaultOpenKeys={openKeys}
           items={menuItems}
           style={{
-            background: darkMode ? "#1e1e1c" : "#fff", // Dark background for dark mode
-            color: darkMode ? "#fff" : "#000", // Adjust text color for dark mode
+            background: darkMode ? "#1e1e1c" : "#fff",
+            color: darkMode ? "#fff" : "#000",
           }}
         />
       </Sider>
-      <AntLayout>
-        <AppHeader />
+
+      {/* MAIN LAYOUT */}
+      <AntLayout style={{ marginLeft: collapsed ? 80 : 250 }}>
+        {/* HEADER FIXED */}
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: collapsed ? 80 : 250,
+            right: 0,
+            zIndex: 999,
+            background: "#fff",
+          }}
+        >
+          <AppHeader />
+        </div>
+
+        {/* CONTENT SCROLLABLE */}
         <Content
           style={{
+            marginTop: 64, // height of AppHeader
             padding: 12,
             background: contentBg,
-            minHeight: 280,
-            color: darkMode ? "#fff" : "#000", // thêm dòng này
+            height: "calc(100vh - 64px)",
+            overflowY: "auto",
+            color: darkMode ? "#fff" : "#000",
           }}
         >
           <Outlet />
