@@ -193,5 +193,44 @@ namespace VCV_API.Services
 
             return result;
         }
+
+        public async Task<AssetDetailDto?> GetAssetDetailByTagAsync(string assetTag)
+        {
+            using var connection = _context.Database.GetDbConnection();
+            await connection.OpenAsync();
+
+            using var command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "Asset_GetDetailByTag";
+
+            var param = new SqlParameter("@AssetTag", SqlDbType.NVarChar, 20)
+            {
+                Value = assetTag
+            };
+            command.Parameters.Add(param);
+
+            using var reader = await command.ExecuteReaderAsync();
+            if (await reader.ReadAsync())
+            {
+                return new AssetDetailDto
+                {
+                    AssetID = reader.GetInt32(reader.GetOrdinal("AssetID")),
+                    AssetTag = reader.GetString(reader.GetOrdinal("AssetTag")),
+                    TemplateID = reader.GetInt32(reader.GetOrdinal("TemplateID")),
+                    TemplateName = reader.GetString(reader.GetOrdinal("TemplateName")),
+                    SerialNumber = reader.IsDBNull("SerialNumber") ? null : reader.GetString(reader.GetOrdinal("SerialNumber")),
+                    PurchaseDate = reader.IsDBNull("PurchaseDate") ? null : reader.GetDateTime(reader.GetOrdinal("PurchaseDate")),
+                    WarrantyExpiry = reader.IsDBNull("WarrantyExpiry") ? null : reader.GetDateTime(reader.GetOrdinal("WarrantyExpiry")),
+                    StatusID = reader.GetInt32(reader.GetOrdinal("StatusID")),
+                    StatusName = reader.GetString(reader.GetOrdinal("StatusName")),
+                    LocationID = reader.GetInt32(reader.GetOrdinal("LocationID")),
+                    LocationName = reader.GetString(reader.GetOrdinal("LocationName")),
+                    CreatedAt = reader.GetDateTime(reader.GetOrdinal("CreatedAt")),
+                    UpdatedAt = reader.GetDateTime(reader.GetOrdinal("UpdatedAt"))
+                };
+            }
+
+            return null;
+        }
     }
 }

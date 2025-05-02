@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "VCV_API.Controllers.AssetLocationController",
+    "Method": "GetAllLocations",
+    "RelativePath": "api/AssetLocation/GetAllLocations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "VCV_API.Controllers.AssetsController",
     "Method": "CreateAsset",
     "RelativePath": "api/Assets/CreateAsset",
@@ -8,8 +18,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "VCV_API.Models.Add.AssetCreateDto",
+        "Name": "assetDto",
+        "Type": "VCV_API.Models.Asset.AssetCreateDto",
         "IsRequired": true
       }
     ],
@@ -25,7 +35,7 @@
     "Parameters": [
       {
         "Name": "assetList",
-        "Type": "System.Collections.Generic.List\u00601[[VCV_API.Models.Add.AssetCreateDto, VCV_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[VCV_API.Models.Asset.AssetCreateDto, VCV_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],
@@ -42,6 +52,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "VCV_API.Controllers.AssetsController",
+    "Method": "GetDetailAsset",
+    "RelativePath": "api/Assets/GetDetailAsset/{assetTag}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "assetTag",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "VCV_API.Controllers.AssetStatusController",
     "Method": "GetAssetStatuses",
     "RelativePath": "api/AssetStatus/GetAssetStatuses",
@@ -53,8 +79,8 @@
   },
   {
     "ContainingType": "VCV_API.Controllers.AssetTemplatesController",
-    "Method": "GetAssetTemplates",
-    "RelativePath": "api/AssetTemplates/GetAssetTemplates",
+    "Method": "GetAssetTemplates_Select",
+    "RelativePath": "api/AssetTemplates/GetAssetTemplates_Select",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -65,16 +91,6 @@
     "ContainingType": "VCV_API.Controllers.AssetTypesController",
     "Method": "GetAssetTypes",
     "RelativePath": "api/AssetTypes/GetAssetTypes",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "VCV_API.Controllers.LocationController",
-    "Method": "GetAllLocations",
-    "RelativePath": "api/Location/GetAllLocations",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

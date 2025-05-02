@@ -107,3 +107,21 @@ export const createAssets = async (token: string, data: any) => {
     throw new Error(error?.response?.data?.details || "Unknown error occurred");
   }
 };
+
+export const getAssetDetail = async (token: string, assetTag: string) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/Assets/GetDetailAsset/${encodeURIComponent(assetTag)}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        timeout: 5000,
+      }
+    );
+    return response.data;
+  } catch (error: any) {
+    console.error("❌ Lỗi khi lấy chi tiết tài sản:", error?.response?.data?.details || error.message);
+    throw new Error(error?.response?.data?.details || "Không thể lấy chi tiết tài sản");
+  }
+};

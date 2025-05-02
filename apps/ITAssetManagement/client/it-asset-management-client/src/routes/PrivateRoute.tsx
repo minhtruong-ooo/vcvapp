@@ -10,7 +10,7 @@ interface PrivateRouteProps {
 
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
   const { keycloak, initialized } = useKeycloak();
-  const { darkMode } = useDarkMode(); // lấy trạng thái darkMode
+  const { darkMode } = useDarkMode();
 
   if (!initialized)
     return (
@@ -33,6 +33,8 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
       </div>
     );
 
+  // ✅ Nếu đã xác thực thì hiển thị nội dung
+  // 🚪 Nếu không thì chuyển về trang login
   return keycloak.authenticated ? element : <Navigate to="/login" />;
 };
 

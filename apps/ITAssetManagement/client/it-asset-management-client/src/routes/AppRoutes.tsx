@@ -9,6 +9,7 @@ import AssetHistory from "../pages/asset/AssetHistory";
 import Licenses from "../pages/asset/Licenses";
 import Maintenance from "../pages/asset/Maintenance";
 import AssetTemplates from "../pages/asset/AssetTemplates";
+import AssetDetailPage from "../pages/asset/AssetDetailPage";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const AppRoutes: React.FC = () => {
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/asset-templates" element={<AssetTemplates />} />
           <Route path="/assets" element={<Assets />} />
+          <Route path="/assets/:id" element={<AssetDetailPage />} />
           <Route path="/asset-history" element={<AssetHistory />} />
           <Route path="/licenses" element={<Licenses />} />
           <Route path="/maintenance" element={<Maintenance />} />

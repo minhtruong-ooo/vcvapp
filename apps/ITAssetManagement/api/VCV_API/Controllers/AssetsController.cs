@@ -36,7 +36,6 @@ namespace VCV_API.Controllers
             }
         }
 
-
         [HttpPost]
         public async Task<IActionResult> CreateAsset([FromBody] AssetCreateDto assetDto)
         {
@@ -70,6 +69,16 @@ namespace VCV_API.Controllers
             {
                 return BadRequest(new { message = "Lỗi khi tạo tài sản hàng loạt", detail = ex.Message });
             }
+        }
+
+        [HttpGet("{assetTag}")]
+        public async Task<IActionResult> GetDetailAsset(string assetTag)
+        {
+            var detail = await _assetService.GetAssetDetailByTagAsync(assetTag);
+            if (detail == null)
+                return NotFound($"Không tìm thấy tài sản với mã {assetTag}");
+
+            return Ok(detail);
         }
     }
 }

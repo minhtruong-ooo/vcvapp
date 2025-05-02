@@ -1,5 +1,5 @@
-// Assets.tsx
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Form } from "antd";
 import { useKeycloak } from "@react-keycloak/web";
 import { getAssets } from "../../api/assetAPI";
@@ -21,6 +21,7 @@ const { Title } = Typography;
 
 const Assets = () => {
   const { darkMode } = useDarkMode();
+  const navigate = useNavigate();
   const { keycloak, initialized } = useKeycloak();
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -144,6 +145,12 @@ const Assets = () => {
         showSorterTooltip={{ target: "sorter-icon" }}
         rowKey={"assetTag"}
         loading={loading}
+        onRow={(record) => {
+          return {
+            onClick: () => {
+              navigate(`/assets/${record.assetTag}`);
+            },
+          }}}
         rowSelection={{
           type: "checkbox",
           selectedRowKeys,

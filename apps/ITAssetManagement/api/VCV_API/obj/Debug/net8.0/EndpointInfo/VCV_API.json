@@ -5,6 +5,18 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/AssetLocation/GetAllLocations": {
+      "get": {
+        "tags": [
+          "AssetLocation"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Assets/GetAssets": {
       "get": {
         "tags": [
@@ -88,6 +100,28 @@
         }
       }
     },
+    "/api/Assets/GetDetailAsset/{assetTag}": {
+      "get": {
+        "tags": [
+          "Assets"
+        ],
+        "parameters": [
+          {
+            "name": "assetTag",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/AssetStatus/GetAssetStatuses": {
       "get": {
         "tags": [
@@ -100,7 +134,7 @@
         }
       }
     },
-    "/api/AssetTemplates/GetAssetTemplates": {
+    "/api/AssetTemplates/GetAssetTemplates_Select": {
       "get": {
         "tags": [
           "AssetTemplates"
@@ -116,18 +150,6 @@
       "get": {
         "tags": [
           "AssetTypes"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Location/GetAllLocations": {
-      "get": {
-        "tags": [
-          "Location"
         ],
         "responses": {
           "200": {
