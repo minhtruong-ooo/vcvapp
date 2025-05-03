@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useKeycloak } from "@react-keycloak/web";
 import { Asset } from "../../interfaces/interfaces";
 import { getAssetDetail } from "../../api/assetAPI";
+import { fetchImage } from "../../api/imageAPI";
 import {
   message,
   Typography,
@@ -18,7 +19,7 @@ import {
 } from "antd";
 import type { TabsProps } from "antd";
 import { useDarkMode } from "../../context/DarkModeContext";
-import { Map2D } from "../../components/Map2d";
+import { Map2D } from "../../components/Map2D";
 import image from "../../assets/images/1F2F.png";
 
 const { Title, Text } = Typography;
@@ -41,12 +42,13 @@ const items: TabsProps["items"] = [
 ];
 
 const AssetDetailPage = () => {
-  const { keycloak, initialized } = useKeycloak();
+  const { keycloak } = useKeycloak();
   const { darkMode } = useDarkMode();
 
   const { id } = useParams();
   const [asset, setAsset] = useState<Asset | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [imageUrl, setImageUrl] = useState<string | null>(null); // Use object URL
 
   useEffect(() => {
     const fetchAsset = async () => {
@@ -64,7 +66,15 @@ const AssetDetailPage = () => {
         }
 
         const data = await getAssetDetail(token, id);
-        setAsset(data); 
+        setAsset(data);
+
+        // Fetch the image after the asset is loaded
+        if (data?.images && data.images.length > 0) {
+          const imgUrl = data.images[0].imageUrl;
+          const blob = await fetchImage(token, imgUrl);
+          const objectUrl = URL.createObjectURL(blob);
+          setImageUrl(objectUrl);
+        }
       } catch (error: any) {
         message.error("Failed to load asset detail: " + error.message);
       } finally {
@@ -73,7 +83,7 @@ const AssetDetailPage = () => {
     };
 
     fetchAsset();
-  }, [id, initialized, keycloak]);
+  }, [id, keycloak.token]);
 
   if (!asset) return <p>No asset found.</p>;
 
@@ -113,7 +123,14 @@ const AssetDetailPage = () => {
             style={{ width: "100%" }}
           >
             <Row gutter={16}>
-              <Col span={4}>
+              <Col span={3}>
+                <QRCode
+                  errorLevel="H"
+                  value={`http://localhost:5173/assets/${asset.assetTag}`}
+                  icon="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+                />
+              </Col>
+              <Col span={7}>
                 <Text className="asset_info" strong>
                   Asset ID:{" "}
                 </Text>
@@ -124,29 +141,31 @@ const AssetDetailPage = () => {
                 </Text>
                 <Text className="asset_info">{asset.assetTag}</Text>
                 <br />
-              </Col>
-              <Col span={10}>
+                <Text className="asset_info" strong>
+                  Asset Type:{" "}
+                </Text>
+                <Text className="asset_info">{asset.typeName}</Text>
+                <br />
                 <Text className="asset_info" strong>
                   Asset Name:{" "}
                 </Text>
                 <Text className="asset_info">{asset.templateName}</Text>
-                <br />
+              </Col>
+              <Col span={5}>
                 <Text className="asset_info" strong>
                   Serial Number:{" "}
                 </Text>
                 <Text className="asset_info">{asset.serialNumber}</Text>
                 <br />
-              </Col>
-              <Col span={6}>
                 <Text className="asset_info" strong>
-                  Purchase Date:{" "}
+                  Model:{" "}
                 </Text>
-                <Text className="asset_info">{asset.purchaseDate}</Text>
+                <Text className="asset_info">{asset.model}</Text>
                 <br />
                 <Text className="asset_info" strong>
-                  Warranty Expiry:{" "}
+                  Manufacturer:{" "}
                 </Text>
-                <Text className="asset_info">{asset.warrantyExpiry}</Text>
+                <Tag color="#b73939">{asset.manufacturer}</Tag>
                 <br />
               </Col>
               <Col span={4}>
@@ -161,6 +180,42 @@ const AssetDetailPage = () => {
                 <Text className="asset_info">{asset.locationName}</Text>
                 <br />
               </Col>
+              <Col span={5}>
+                <Text className="asset_info" strong>
+                  Purchase Date:{" "}
+                </Text>
+                <Text className="asset_info">{asset.purchaseDate}</Text>
+                <br />
+                <Text className="asset_info" strong>
+                  Warranty Expiry:{" "}
+                </Text>
+                <Text className="asset_info">{asset.warrantyExpiry}</Text>
+                <br />
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+      </Row>
+
+      <Row gutter={16} style={{ marginTop: "16px" }}>
+        <Col span={24}>
+          <Card
+            loading={loading}
+            title="Asset Specifications"
+            style={{ width: "100%" }}
+          >
+            <Row gutter={[16, 16]}>
+              {asset.specifications.map((spec) => (
+                <Col key={spec.specificationID} span={12} md={12} lg={4}>
+                  <div style={{ border: "1px solid #eee", borderRadius: 4, padding: 12 }}>
+                    <div style={{ fontWeight: "bold", textAlign: "center" }}>{spec.specificationName}</div>
+                    <div style={{ textAlign: "center" }}>
+                      {spec.value}
+                      {spec.unit ? ` ${spec.unit}` : ""}
+                    </div>
+                  </div>
+                </Col>
+              ))}
             </Row>
           </Card>
         </Col>
@@ -179,45 +234,34 @@ const AssetDetailPage = () => {
                   level={5}
                   style={{ marginBottom: 8, color: darkMode ? "#fff" : "#000" }}
                 >
-                  Asset QR Code
-                </Title>
-                <QRCode
-                  errorLevel="H"
-                  value={`http://localhost:5173/assets/${asset.assetTag}`}
-                  icon="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
-                />
-              </Col>
-              <Col span={5}>
-                <Title
-                  level={5}
-                  style={{ marginBottom: 8, color: darkMode ? "#fff" : "#000" }}
-                >
                   Asset Image
                 </Title>
-                <Image.PreviewGroup
-                  items={[
-                    "https://gw.alipayobjects.com/zos/antfincdn/LlvErxo8H9/photo-1503185912284-5271ff81b9a8.webp",
-                  ]}
-                >
-                  <Image
-                    width={200}
-                    src="https://gw.alipayobjects.com/zos/antfincdn/LlvErxo8H9/photo-1503185912284-5271ff81b9a8.webp"
-                  />
-                </Image.PreviewGroup>
+                {imageUrl ? (
+                  <Image.PreviewGroup  items={[imageUrl]} >
+                    <Image
+                      width="100%"
+                      src={imageUrl}
+                      alt={asset.templateName}
+                    />
+                  </Image.PreviewGroup>
+
+                ) : (
+                  <Text>No image available for this asset.</Text>
+                )}
               </Col>
-              <Col span={14}>
+              <Col span={18}>
                 <Title
                   level={5}
                   style={{ marginBottom: 8, color: darkMode ? "#fff" : "#000" }}
                 >
                   Asset Location (Map)
-                  <Map2D
+                  {/* <Map2D
                     imageUrl={image}
                     marker={{ x: 82.61084407708549, y: 11.25 }}
                     onMapClick={(pos) => {
                       console.log("Clicked position:", pos);
                     }}
-                  />
+                  /> */}
                 </Title>
               </Col>
             </Row>

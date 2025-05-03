@@ -6,6 +6,9 @@
         public string? AssetTag { get; set; }
         public int TemplateID { get; set; }
         public string? TemplateName { get; set; }
+        public string? TypeName { get; set; }
+        public string? Manufacturer { get; set; }
+        public string? Model { get; set; }
         public string? SerialNumber { get; set; }
         public string? PurchaseDate { get; set; }
         public string? WarrantyExpiry { get; set; }
@@ -15,6 +18,11 @@
         public string? LocationName { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+
+
+
+        public List<AssetSpecificationValueDto> Specifications { get; set; } = new();
+        public List<AssetImageDto> Images { get; set; } = new();
 
     }
 }

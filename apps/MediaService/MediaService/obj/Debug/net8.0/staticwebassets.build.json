@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "Hash": "Y0BPKjkTdiappqsyFAAB4wHaGZdf8yL6E5H2vMANGz0=",
+  "Source": "MediaService",
+  "BasePath": "_content/MediaService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "MediaService\\wwwroot",
+      "Source": "MediaService",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\1.jpg",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "images/1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "o2y5ydj8wg",
+      "Integrity": "QN7JO3x2BiXrKyjGsngut7TtJjr3K1MV0Q0wzH9KKJk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\1.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "images/1.jpg",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3666042"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QN7JO3x2BiXrKyjGsngut7TtJjr3K1MV0Q0wzH9KKJk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Jan 2025 09:56:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QN7JO3x2BiXrKyjGsngut7TtJjr3K1MV0Q0wzH9KKJk="
+        }
+      ]
+    },
+    {
+      "Route": "images/1.o2y5ydj8wg.jpg",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3666042"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QN7JO3x2BiXrKyjGsngut7TtJjr3K1MV0Q0wzH9KKJk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 14 Jan 2025 09:56:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o2y5ydj8wg"
+        },
+        {
+          "Name": "label",
+          "Value": "images/1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QN7JO3x2BiXrKyjGsngut7TtJjr3K1MV0Q0wzH9KKJk="
+        }
+      ]
+    }
+  ]
+}

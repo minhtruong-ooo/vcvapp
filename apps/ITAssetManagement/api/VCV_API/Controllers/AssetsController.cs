@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http.Headers;
+using System.Net.Http;
 using VCV_API.Models.Asset;
 using VCV_API.Services.Interfaces;
 
@@ -11,9 +14,11 @@ namespace VCV_API.Controllers
     public class AssetsController : ControllerBase
     {
         private readonly IAssetService _assetService;
-        public AssetsController(IAssetService assetService)
+        private readonly IHttpClientFactory _httpClientFactory;
+        public AssetsController(IAssetService assetService, IHttpClientFactory httpClientFactory)
         {
             _assetService = assetService;
+            _httpClientFactory = httpClientFactory;
         }
 
         [HttpGet]

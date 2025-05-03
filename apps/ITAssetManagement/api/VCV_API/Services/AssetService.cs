@@ -210,14 +210,20 @@ namespace VCV_API.Services
             command.Parameters.Add(param);
 
             using var reader = await command.ExecuteReaderAsync();
+
+            AssetDetailDto? assetDetail = null;
+
             if (await reader.ReadAsync())
             {
-                return new AssetDetailDto
+                assetDetail = new AssetDetailDto
                 {
                     AssetID = reader.GetInt32(reader.GetOrdinal("AssetID")),
                     AssetTag = reader.GetString(reader.GetOrdinal("AssetTag")),
                     TemplateID = reader.GetInt32(reader.GetOrdinal("TemplateID")),
                     TemplateName = reader.GetString(reader.GetOrdinal("TemplateName")),
+                    TypeName = reader.IsDBNull(reader.GetOrdinal("TypeName")) ? null : reader.GetString(reader.GetOrdinal("TypeName")),
+                    Manufacturer = reader.IsDBNull(reader.GetOrdinal("Manufacturer")) ? null : reader.GetString(reader.GetOrdinal("Manufacturer")),
+                    Model = reader.IsDBNull(reader.GetOrdinal("Model")) ? null : reader.GetString(reader.GetOrdinal("Model")),
                     SerialNumber = reader.IsDBNull(reader.GetOrdinal("SerialNumber")) ? null : reader.GetString(reader.GetOrdinal("SerialNumber")),
                     PurchaseDate = reader.IsDBNull(reader.GetOrdinal("PurchaseDate")) ? null : reader.GetDateTime(reader.GetOrdinal("PurchaseDate")).ToString("yyyy-MM-dd"),
                     WarrantyExpiry = reader.IsDBNull(reader.GetOrdinal("WarrantyExpiry")) ? null : reader.GetDateTime(reader.GetOrdinal("WarrantyExpiry")).ToString("yyyy-MM-dd"),
@@ -226,11 +232,54 @@ namespace VCV_API.Services
                     LocationID = reader.GetInt32(reader.GetOrdinal("LocationID")),
                     LocationName = reader.GetString(reader.GetOrdinal("LocationName")),
                     CreatedAt = reader.GetDateTime(reader.GetOrdinal("CreatedAt")),
-                    UpdatedAt = reader.GetDateTime(reader.GetOrdinal("UpdatedAt"))
+                    UpdatedAt = reader.GetDateTime(reader.GetOrdinal("UpdatedAt")),
+                    Specifications = new List<AssetSpecificationValueDto>(),
+                    Images = new List<AssetImageDto>()
                 };
             }
 
-            return null;
+            if (assetDetail == null)
+                return null;
+
+            // Next result set: Specification values
+            if (await reader.NextResultAsync())
+            {
+                while (await reader.ReadAsync())
+                {
+                    assetDetail.Specifications.Add(new AssetSpecificationValueDto
+                    {
+                        ValueID = reader.GetInt32(reader.GetOrdinal("ValueID")),
+                        AssetID = reader.GetInt32(reader.GetOrdinal("AssetID")),
+                        SpecificationID = reader.GetInt32(reader.GetOrdinal("SpecificationID")),
+                        SpecificationName = reader.GetString(reader.GetOrdinal("SpecificationName")),
+                        Unit = reader.IsDBNull(reader.GetOrdinal("Unit")) ? null : reader.GetString(reader.GetOrdinal("Unit")),
+                        DataType = reader.GetString(reader.GetOrdinal("DataType")),
+                        IsRequired = reader.GetBoolean(reader.GetOrdinal("IsRequired")),
+                        Value = reader.GetString(reader.GetOrdinal("Value"))
+                    });
+                }
+            }
+
+            // Next result set: Asset Images
+            if (await reader.NextResultAsync())
+            {
+                while (await reader.ReadAsync())
+                {
+                    assetDetail.Images.Add(new AssetImageDto
+                    {
+                        ImageID = reader.GetInt32(reader.GetOrdinal("ImageID")),
+                        AssetID = reader.GetInt32(reader.GetOrdinal("AssetID")),
+                        ImageUrl = reader.IsDBNull(reader.GetOrdinal("ImageUrl")) ? null : reader.GetString(reader.GetOrdinal("ImageUrl")),
+                        Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? null : reader.GetString(reader.GetOrdinal("Description")),
+                        UploadedBy = reader.IsDBNull(reader.GetOrdinal("UploadedBy")) ? null : reader.GetString(reader.GetOrdinal("UploadedBy")),
+                        UploadedAt = reader.IsDBNull(reader.GetOrdinal("UploadedAt")) ? null : reader.GetDateTime(reader.GetOrdinal("UploadedAt"))
+                    });
+                }
+            }
+
+
+            return assetDetail;
         }
+
     }
 }

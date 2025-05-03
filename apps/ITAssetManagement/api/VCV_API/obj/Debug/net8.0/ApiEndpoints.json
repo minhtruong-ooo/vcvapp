@@ -68,6 +68,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "VCV_API.Controllers.AssetsController",
+    "Method": "ProxyImage",
+    "RelativePath": "api/Assets/ProxyImage/proxy/image/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "VCV_API.Controllers.AssetStatusController",
     "Method": "GetAssetStatuses",
     "RelativePath": "api/AssetStatus/GetAssetStatuses",
@@ -95,6 +111,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.ProxyController",
+    "Method": "GetImage",
+    "RelativePath": "api/Proxy/image/{fileName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

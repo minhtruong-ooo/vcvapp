@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "MediaService.Controllers.MediaController",
+    "Method": "GetProtectedImage",
+    "RelativePath": "api/Media/image/{fileName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

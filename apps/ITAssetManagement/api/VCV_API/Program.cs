@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Net.Http.Headers;
 using VCV_API.Data;
+using VCV_API.Infrastructure.HttpHandlers;
 using VCV_API.Services;
 using VCV_API.Services.Interfaces;
 
@@ -36,6 +38,11 @@ builder.Services.AddAuthentication("Bearer")
         options.RequireHttpsMetadata = false;
         options.Audience = audience;
     });
+
+builder.Services.AddHttpClient("media", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7299");
+});
 
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
