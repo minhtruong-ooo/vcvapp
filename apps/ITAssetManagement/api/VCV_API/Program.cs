@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Net.Http.Headers;
 using VCV_API.Data;
-using VCV_API.Infrastructure.HttpHandlers;
 using VCV_API.Services;
 using VCV_API.Services.Interfaces;
 

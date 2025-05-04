@@ -2,8 +2,9 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useKeycloak } from "@react-keycloak/web";
 import { Asset } from "../../interfaces/interfaces";
+import { QRModel } from "../../interfaces/QRCode";
 import { getAssetDetail } from "../../api/assetAPI";
-import { fetchImage } from "../../api/imageAPI";
+import { fetchImage, generateQrPdfUrl } from "../../api/mediaAPI";
 import {
   message,
   Typography,
@@ -16,8 +17,10 @@ import {
   Image,
   Tag,
   Tabs,
+  Button,
 } from "antd";
 import type { TabsProps } from "antd";
+import { PrinterOutlined, HomeOutlined } from "@ant-design/icons";
 import { useDarkMode } from "../../context/DarkModeContext";
 import { Map2D } from "../../components/Map2D";
 import image from "../../assets/images/1F2F.png";
@@ -48,7 +51,7 @@ const AssetDetailPage = () => {
   const { id } = useParams();
   const [asset, setAsset] = useState<Asset | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const [imageUrl, setImageUrl] = useState<string | null>(null); // Use object URL
+  const [imageUrls, setImageUrls] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchAsset = async () => {
@@ -68,12 +71,20 @@ const AssetDetailPage = () => {
         const data = await getAssetDetail(token, id);
         setAsset(data);
 
-        // Fetch the image after the asset is loaded
         if (data?.images && data.images.length > 0) {
-          const imgUrl = data.images[0].imageUrl;
-          const blob = await fetchImage(token, imgUrl);
-          const objectUrl = URL.createObjectURL(blob);
-          setImageUrl(objectUrl);
+          const urls: string[] = [];
+
+          for (const img of data.images) {
+            try {
+              const blob = await fetchImage(token, img.imageUrl);
+              const objectUrl = URL.createObjectURL(blob);
+              urls.push(objectUrl);
+            } catch (err) {
+              console.error("Failed to fetch image", img.imageUrl, err);
+            }
+          }
+
+          setImageUrls(urls);
         }
       } catch (error: any) {
         message.error("Failed to load asset detail: " + error.message);
@@ -84,6 +95,35 @@ const AssetDetailPage = () => {
 
     fetchAsset();
   }, [id, keycloak.token]);
+
+  const handlePrint = async () => {
+    if (!asset) {
+      message.error("Asset data is not available.");
+      return;
+    }
+
+    try {
+      const token = keycloak.token;
+      if (!token) {
+        message.error("Authentication token not found.");
+        return;
+      }
+
+      const qrModel: QRModel = {
+        assetTag: asset.assetTag,
+        assetName: asset.templateName || "Unknown Asset",
+        purchaseDate: asset.purchaseDate || undefined,
+        assetURL: `http://localhost:5173/assets/${asset.assetTag}`,
+      };
+
+      const pdfUrl = await generateQrPdfUrl(token, [qrModel]);
+      console.log("PDF URL:", pdfUrl);
+      window.open(pdfUrl, "_blank"); // Mở tab mới
+    } catch (error) {
+      message.error("Failed to print label.");
+      console.error(error);
+    }
+  };
 
   if (!asset) return <p>No asset found.</p>;
 
@@ -100,18 +140,38 @@ const AssetDetailPage = () => {
         </Space>
       </div>
 
-      <div style={{ margin: "16px 0" }}>
+      <div
+        style={{
+          margin: "16px 0",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
         <Space>
           <Breadcrumb
             items={[
               {
-                title: <a href="/assets">Assets</a>,
+                title: <HomeOutlined />,
+              },
+              {
+                href: "/assets",
+                title: "Assets",
               },
               {
                 title: <strong>{asset.templateName}</strong>,
               },
             ]}
           />
+        </Space>
+
+        <Space>
+          <Button
+            onClick={handlePrint}
+            icon={<PrinterOutlined />}
+            type="primary"
+          >
+            Print Label
+          </Button>
         </Space>
       </div>
 
@@ -153,9 +213,9 @@ const AssetDetailPage = () => {
               </Col>
               <Col span={5}>
                 <Text className="asset_info" strong>
-                  Serial Number:{" "}
+                  Manufacturer:{" "}
                 </Text>
-                <Text className="asset_info">{asset.serialNumber}</Text>
+                <Tag color="#b73939">{asset.manufacturer}</Tag>
                 <br />
                 <Text className="asset_info" strong>
                   Model:{" "}
@@ -163,9 +223,9 @@ const AssetDetailPage = () => {
                 <Text className="asset_info">{asset.model}</Text>
                 <br />
                 <Text className="asset_info" strong>
-                  Manufacturer:{" "}
+                  Serial Number:{" "}
                 </Text>
-                <Tag color="#b73939">{asset.manufacturer}</Tag>
+                <Text className="asset_info">{asset.serialNumber}</Text>
                 <br />
               </Col>
               <Col span={4}>
@@ -207,8 +267,16 @@ const AssetDetailPage = () => {
             <Row gutter={[16, 16]}>
               {asset.specifications.map((spec) => (
                 <Col key={spec.specificationID} span={12} md={12} lg={4}>
-                  <div style={{ border: "1px solid #eee", borderRadius: 4, padding: 12 }}>
-                    <div style={{ fontWeight: "bold", textAlign: "center" }}>{spec.specificationName}</div>
+                  <div
+                    style={{
+                      border: "1px solid #eee",
+                      borderRadius: 4,
+                      padding: 12,
+                    }}
+                  >
+                    <div style={{ fontWeight: "bold", textAlign: "center" }}>
+                      {spec.specificationName}
+                    </div>
                     <div style={{ textAlign: "center" }}>
                       {spec.value}
                       {spec.unit ? ` ${spec.unit}` : ""}
@@ -236,15 +304,15 @@ const AssetDetailPage = () => {
                 >
                   Asset Image
                 </Title>
-                {imageUrl ? (
-                  <Image.PreviewGroup  items={[imageUrl]} >
+                {imageUrls.length > 0 ? (
+                  <Image.PreviewGroup items={imageUrls}>
                     <Image
                       width="100%"
-                      src={imageUrl}
+                      src={imageUrls[0]}
                       alt={asset.templateName}
+                      style={{ cursor: "pointer" }}
                     />
                   </Image.PreviewGroup>
-
                 ) : (
                   <Text>No image available for this asset.</Text>
                 )}

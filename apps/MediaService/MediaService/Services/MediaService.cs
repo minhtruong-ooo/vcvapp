@@ -1,5 +1,21 @@
-﻿using MediaService.Interfaces;
-
+﻿using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Threading.Tasks;
+using iText.Kernel.Pdf;
+using iText.Kernel.Geom;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.IO.Image;
+using QRCoder;
+using MediaService.Interfaces;
+using iText.Layout.Properties;
+using iText.Layout.Borders;
+using MediaService.Models;
+using Path = System.IO.Path;
+using iText.IO.Font;
+using iText.Kernel.Font;
+using iText.Kernel.Pdf.Canvas;
 namespace MediaService.Services
 {
     public class MediaService : IMediaService
@@ -12,15 +28,120 @@ namespace MediaService.Services
             _env = env;
         }
 
+        public Task<string> GeneratePdfWithQRCodes(List<QRModel> items)
+        {
+            return Task.Run(() =>
+            {
+                string folder = "qr";
+                string folderPath = Path.Combine(_env.WebRootPath, folder);
+                if (!Directory.Exists(folderPath))
+                    Directory.CreateDirectory(folderPath);
+
+                string fileName = $"{Guid.NewGuid()}.pdf";
+                string filePath = Path.Combine(folderPath, fileName);
+
+                var pageSize = new PageSize(212.6f, 42.5f);
+                string fontPath = Path.Combine(_env.WebRootPath, "fonts", "calibri.ttf");
+                PdfFont calibri = PdfFontFactory.CreateFont(fontPath, PdfEncodings.WINANSI);
+
+                string logoPath = Path.Combine(_env.WebRootPath, "images", "logo", "logo.png");
+
+                // Tạo hình ảnh logo
+                ImageData logoImageData = ImageDataFactory.Create(logoPath);
+
+                // Kích thước logo
+                float logoWidth = 15;
+                float logoHeight = 15;
+
+                // Tính toán vị trí logo (dưới bên phải)
+                float x = pageSize.GetWidth() - logoWidth - 5;
+                float y = 5; // 5px từ bottom
+
+                using (var writer = new PdfWriter(filePath))
+                using (var pdf = new PdfDocument(writer))
+                {
+                    var document = new Document(pdf);
+                    foreach (var item in items)
+                    {
+                        // Create new page with specific size
+                        pdf.AddNewPage(pageSize);
+                        document.SetMargins(0, 1, 1, 1);
+
+                        // Generate QR Code
+                        using (var qrGenerator = new QRCodeGenerator())
+                        {
+                            QRCodeData qrCodeData = qrGenerator.CreateQrCode(item.AssetURL.ToString(), QRCodeGenerator.ECCLevel.Q);
+                            using (var qrCode = new PngByteQRCode(qrCodeData))
+                            {
+                                byte[] qrBytes = qrCode.GetGraphic(20);
+
+                                // Add QR code image to PDF
+                                Image qrImage = new Image(ImageDataFactory.Create(qrBytes));
+                                qrImage.ScaleToFit(40, 40);
+
+                                // Create text paragraph
+                                Paragraph para = new Paragraph()
+                                    .Add($"VCV - IT Asset Management Label\n")
+                                    .Add($"Asset Tag: {item.AssetTag}\n")
+                                    .Add($"Asset Name: {item.AssetName}\n")
+                                    .Add($"Handover Date: {item.PurchaseDate}")
+                                    .SetFontSize(5).SetFont(calibri);
+
+                                // Create table for QR and text layout
+                                Table table = new Table(UnitValue.CreatePercentArray(new float[] { 1, 3 }));
+                                table.SetWidth(UnitValue.CreatePercentValue(100));
+
+                                var qrCell = new Cell()
+                                    .Add(qrImage)
+                                    .SetBorder(Border.NO_BORDER)
+                                    .SetVerticalAlignment(VerticalAlignment.MIDDLE);
+
+                                var textCell = new Cell()
+                                    .Add(para)
+                                    .SetBorder(Border.NO_BORDER)
+                                    .SetVerticalAlignment(VerticalAlignment.MIDDLE);
+
+                                table.AddCell(qrCell);
+                                table.AddCell(textCell);
+
+                                document.Add(table);
+                            }
+                        }
+                        // Đường dẫn tới logo
+
+
+                        // Lấy trang hiện tại
+                        PdfPage page = pdf.GetLastPage();
+
+                        // Tạo đối tượng PdfCanvas và vẽ logo lên trang
+                        PdfCanvas pdfCanvas = new PdfCanvas(page); // Sử dụng PdfPage chứ không phải PdfDocument
+
+                        // Sử dụng Rectangle làm rootArea cho Canvas
+                        iText.Kernel.Geom.Rectangle rootArea = page.GetPageSize(); // Rectangle đại diện cho kích thước trang
+                        Canvas canvas = new Canvas(pdfCanvas, rootArea, true); // Immediate flush = true
+
+                        Image logoImage = new Image(logoImageData).ScaleToFit(logoWidth, logoHeight);
+                        logoImage.SetFixedPosition(x, y);
+                        canvas.Add(logoImage);
+                        canvas.Close();
+                    }
+                    document.Close();
+                }
+
+                return $"/{folder}/{fileName}".Replace("\\", "/");
+            });
+        }
+
+
         public async Task<string> SaveImageAsync(IFormFile imageFile, string folder = "images")
         {
-            var folderPath = Path.Combine(_env.WebRootPath, folder);
+            var folderPath = System.IO.Path.Combine(_env.WebRootPath, folder);
 
             if (!Directory.Exists(folderPath))
                 Directory.CreateDirectory(folderPath);
 
-            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(imageFile.FileName)}";
-            var filePath = Path.Combine(folderPath, fileName);
+            var fileName = $"{Guid.NewGuid()}{System.IO.Path.GetExtension(imageFile.FileName)}";
+            var filePath = System.IO.Path.Combine(folderPath, fileName);
 
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
@@ -29,5 +150,8 @@ namespace MediaService.Services
 
             return $"/{folder}/{fileName}".Replace("\\", "/"); // Return relative path
         }
+
+
+
     }
 }

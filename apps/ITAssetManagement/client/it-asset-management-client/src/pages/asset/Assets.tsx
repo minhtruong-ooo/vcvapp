@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Form } from "antd";
 import { useKeycloak } from "@react-keycloak/web";
 import { getAssets } from "../../api/assetAPI";
+import { generateQrPdfUrl } from "../../api/mediaAPI";
 import {
   Table,
   Button,
@@ -12,7 +13,11 @@ import {
   Space,
   Popconfirm,
 } from "antd";
-import { PlusOutlined, DeleteOutlined } from "@ant-design/icons";
+import {
+  PlusOutlined,
+  DeleteOutlined,
+  PrinterOutlined,
+} from "@ant-design/icons";
 import { assetColumn } from "../../columns";
 import AddAssetModal from "../../components/modals/AddAssetModal";
 import { useDarkMode } from "../../context/DarkModeContext";
@@ -88,6 +93,32 @@ const Assets = () => {
     //   });
   };
 
+  const handlePrint = async () => {
+    if (!selectedRowKeys.length) {
+      message.warning("Please select at least one asset to print");
+      return;
+    }
+
+    const selectedAssets = data.filter((item) =>
+      selectedRowKeys.includes(item.assetTag)
+    );
+
+    const qrModels = selectedAssets.map((asset) => ({
+      assetTag: asset.assetTag,
+      assetName: asset.templateName,
+      purchaseDate: asset.purchaseDate?.split("T")[0],
+      assetURL: `${window.location.origin}/assets/${asset.assetTag}`,
+    }));
+
+    try {
+      const pdfUrl = await generateQrPdfUrl(keycloak.token ?? "", qrModels);
+      window.open(pdfUrl, "_blank");
+    } catch (error) {
+      console.error(error);
+      message.error("Failed to print labels");
+    }
+  };
+
   return (
     <>
       <div
@@ -105,15 +136,7 @@ const Assets = () => {
         </Title>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
           <Space>
-            <Button
-              style={{
-                backgroundColor: darkMode ? "#2a2a2a" : undefined,
-                color: darkMode ? "#fff" : undefined,
-              }}
-              icon={<PlusOutlined />}
-              type="default"
-              onClick={showModal}
-            >
+            <Button icon={<PlusOutlined />} type="default" onClick={showModal}>
               Add
             </Button>
             <Popconfirm
@@ -132,6 +155,14 @@ const Assets = () => {
                 Delete
               </Button>
             </Popconfirm>
+            <Button
+              icon={<PrinterOutlined />}
+              type="default"
+              disabled={selectedRowKeys.length === 0}
+              onClick={handlePrint}
+            >
+              Print
+            </Button>
           </Space>
         </div>
       </div>

@@ -1,3 +1,6 @@
+using MediaService.Interfaces;
+using MediaService.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,6 +19,8 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddScoped<IMediaService, MediaService.Services.MediaService>();
+
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
     {
@@ -28,6 +33,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 
@@ -45,7 +51,7 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-//app.UseStaticFiles();
+app.UseStaticFiles();
 
 app.MapControllers();
 
