@@ -1,4 +1,6 @@
-﻿namespace VCV_API.Models.Asset
+﻿using VCV_API.Models.AssetAsignment;
+
+namespace VCV_API.Models.Asset
 {
     public class AssetDetailDto
     {
@@ -19,10 +21,9 @@
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
 
-
-
         public List<AssetSpecificationValueDto> Specifications { get; set; } = new();
         public List<AssetImageDto> Images { get; set; } = new();
-
+        public List<AssetAssignment> Assignments { get; set; } = new();
+        public List<AssetLicense.AssetLicense> Licenses { get; set; } = new();
     }
 }

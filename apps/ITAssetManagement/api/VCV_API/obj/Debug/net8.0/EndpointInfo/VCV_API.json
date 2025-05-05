@@ -122,29 +122,6 @@
         }
       }
     },
-    "/api/Assets/ProxyImage/proxy/image/{id}": {
-      "get": {
-        "tags": [
-          "Assets"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/AssetStatus/GetAssetStatuses": {
       "get": {
         "tags": [
@@ -173,28 +150,6 @@
       "get": {
         "tags": [
           "AssetTypes"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Proxy/image/{fileName}": {
-      "get": {
-        "tags": [
-          "Proxy"
-        ],
-        "parameters": [
-          {
-            "name": "fileName",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {

@@ -19,6 +19,7 @@ export const fetchImage = async (
   return response.blob();
 };
 
+
 export const generateQrPdfUrl = async (
   token: string,
   qrModels: QRModel[]

@@ -19,11 +19,11 @@ namespace MediaService.Controllers
             _mediaService = mediaService;
         }
 
-        [HttpGet("image/{fileName}")]
+        [HttpGet("image/{folder}/{fileName}")]
         [Authorize]
-        public IActionResult GetProtectedImage(string fileName)
+        public IActionResult GetProtectedImage(string folder, string fileName)
         {
-            var imagePath = Path.Combine(_env.WebRootPath, "images", fileName);
+            var imagePath = Path.Combine(_env.WebRootPath, "images", folder, fileName);
             if (!System.IO.File.Exists(imagePath))
                 return NotFound();
 
@@ -31,6 +31,7 @@ namespace MediaService.Controllers
             var bytes = System.IO.File.ReadAllBytes(imagePath);
             return File(bytes, mimeType);
         }
+
 
         private string GetMimeType(string fileName)
         {

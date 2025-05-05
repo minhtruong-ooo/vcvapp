@@ -17,6 +17,8 @@ export interface Asset {
   updatedAt: string;
   specifications: Specification[];
   images: AssetImage[];
+  assignments: AssetAssignment[];
+  licenses: AssetLicense[];
 }
 
 export interface Specification {
@@ -39,6 +41,14 @@ export interface AssetImage {
   updatedAt: string;
 }
 
+export interface AssetAssignment {
+  employeeCode: string;
+  fullName: string;
+  avatar: string;
+  departmentName: string;
+  assignmentDate: string;
+}
+
 export interface AssetInput {
   templateName: string;
   serialNumber: string;
@@ -46,6 +56,16 @@ export interface AssetInput {
   warrantyExpiry?: string | null;
   status: string;
   location: string;
+}
+ 
+export interface AssetLicense {
+  licenseKey: number;
+  softwareName: string;
+  licenseType: string;
+  purchaseDate: string | null;
+  expiryDate: string | null;
+  assignedBy: string;
+  assignedDate: string | null;
 }
 
 export interface AssetMapped {

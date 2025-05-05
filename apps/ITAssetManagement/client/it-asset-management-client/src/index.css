@@ -69,3 +69,11 @@ table {
 	font-size: 14px;
 	margin: 4px 0;
 }
+
+.assign_user_info {
+	margin: 10px 0;
+}
+
+.assign_user_info > span a {
+	font-size: 16px;
+}

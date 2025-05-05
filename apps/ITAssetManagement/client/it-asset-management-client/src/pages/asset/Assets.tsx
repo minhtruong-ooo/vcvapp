@@ -37,6 +37,7 @@ const Assets = () => {
     pageSize: 15,
   });
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
+  const [printing, setPrinting] = useState(false);
 
   // Load dữ liệu khi auth sẵn sàng
   useEffect(() => {
@@ -103,6 +104,8 @@ const Assets = () => {
       selectedRowKeys.includes(item.assetTag)
     );
 
+    setPrinting(true); // Bắt đầu loading
+
     const qrModels = selectedAssets.map((asset) => ({
       assetTag: asset.assetTag,
       assetName: asset.templateName,
@@ -116,6 +119,8 @@ const Assets = () => {
     } catch (error) {
       console.error(error);
       message.error("Failed to print labels");
+    } finally {
+      setPrinting(false); // Kết thúc loading
     }
   };
 
@@ -160,6 +165,7 @@ const Assets = () => {
               type="default"
               disabled={selectedRowKeys.length === 0}
               onClick={handlePrint}
+              loading={printing}
             >
               Print
             </Button>

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Data;
 using VCV_API.Data;
 using VCV_API.Models.Asset;
+using VCV_API.Models.AssetAsignment;
 using VCV_API.Services.Interfaces;
 
 namespace VCV_API.Services
@@ -275,8 +276,45 @@ namespace VCV_API.Services
                         UploadedAt = reader.IsDBNull(reader.GetOrdinal("UploadedAt")) ? null : reader.GetDateTime(reader.GetOrdinal("UploadedAt"))
                     });
                 }
-            }
 
+
+                // Next result set: Asset Licenses
+                if (await reader.NextResultAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        assetDetail.Licenses.Add(new Models.AssetLicense.AssetLicense
+                        {
+                            LicenseID = reader.GetInt32(reader.GetOrdinal("LicenseID")),
+                            SoftwareName = reader.IsDBNull(reader.GetOrdinal("SoftwareName")) ? null : reader.GetString(reader.GetOrdinal("SoftwareName")),
+                            LicenseType = reader.IsDBNull(reader.GetOrdinal("LicenseType")) ? null : reader.GetString(reader.GetOrdinal("LicenseType")),
+                            LicenseKey = reader.IsDBNull(reader.GetOrdinal("LicenseKey")) ? null : reader.GetString(reader.GetOrdinal("LicenseKey")),
+                            ExpiryDate = reader.IsDBNull(reader.GetOrdinal("ExpiryDate")) ? null : reader.GetDateTime(reader.GetOrdinal("ExpiryDate")).ToString("yyyy-MM-dd"),
+                            PurchaseDate = reader.IsDBNull(reader.GetOrdinal("PurchaseDate")) ? null : reader.GetDateTime(reader.GetOrdinal("PurchaseDate")).ToString("yyyy-MM-dd"),
+                            AssignedDate = reader.IsDBNull(reader.GetOrdinal("AssignedDate")) ? null : reader.GetDateTime(reader.GetOrdinal("AssignedDate")).ToString("yyyy-MM-dd"),
+                            AssignedBy = reader.IsDBNull(reader.GetOrdinal("AssignedBy")) ? null : reader.GetString(reader.GetOrdinal("AssignedBy")),
+                        });
+                    }
+                }
+
+                // Next result set: Employee Assignments
+                if (await reader.NextResultAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        assetDetail.Assignments.Add(new AssetAssignment
+                        {
+                            EmployeeCode = reader.IsDBNull(reader.GetOrdinal("EmployeeCode")) ? null : reader.GetString(reader.GetOrdinal("EmployeeCode")),
+                            FullName = reader.IsDBNull(reader.GetOrdinal("FullName")) ? null : reader.GetString(reader.GetOrdinal("FullName")),
+                            Avatar = reader.IsDBNull(reader.GetOrdinal("Avatar")) ? null : reader.GetString(reader.GetOrdinal("Avatar")),
+                            DepartmentName = reader.IsDBNull(reader.GetOrdinal("DepartmentName")) ? null : reader.GetString(reader.GetOrdinal("DepartmentName")),
+                            AssignmentDate = reader.IsDBNull(reader.GetOrdinal("AssignmentDate")) ? null : reader.GetDateTime(reader.GetOrdinal("AssignmentDate")).ToString("yyyy-MM-dd"),
+                        });
+
+                    }
+                }
+
+            }
 
             return assetDetail;
         }

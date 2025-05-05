@@ -44,19 +44,6 @@ namespace MediaService.Services
                 string fontPath = Path.Combine(_env.WebRootPath, "fonts", "calibri.ttf");
                 PdfFont calibri = PdfFontFactory.CreateFont(fontPath, PdfEncodings.WINANSI);
 
-                string logoPath = Path.Combine(_env.WebRootPath, "images", "logo", "logo.png");
-
-                // Tạo hình ảnh logo
-                ImageData logoImageData = ImageDataFactory.Create(logoPath);
-
-                // Kích thước logo
-                float logoWidth = 15;
-                float logoHeight = 15;
-
-                // Tính toán vị trí logo (dưới bên phải)
-                float x = pageSize.GetWidth() - logoWidth - 5;
-                float y = 5; // 5px từ bottom
-
                 using (var writer = new PdfWriter(filePath))
                 using (var pdf = new PdfDocument(writer))
                 {
@@ -107,23 +94,6 @@ namespace MediaService.Services
                                 document.Add(table);
                             }
                         }
-                        // Đường dẫn tới logo
-
-
-                        // Lấy trang hiện tại
-                        PdfPage page = pdf.GetLastPage();
-
-                        // Tạo đối tượng PdfCanvas và vẽ logo lên trang
-                        PdfCanvas pdfCanvas = new PdfCanvas(page); // Sử dụng PdfPage chứ không phải PdfDocument
-
-                        // Sử dụng Rectangle làm rootArea cho Canvas
-                        iText.Kernel.Geom.Rectangle rootArea = page.GetPageSize(); // Rectangle đại diện cho kích thước trang
-                        Canvas canvas = new Canvas(pdfCanvas, rootArea, true); // Immediate flush = true
-
-                        Image logoImage = new Image(logoImageData).ScaleToFit(logoWidth, logoHeight);
-                        logoImage.SetFixedPosition(x, y);
-                        canvas.Add(logoImage);
-                        canvas.Close();
                     }
                     document.Close();
                 }

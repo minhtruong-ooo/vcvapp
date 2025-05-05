@@ -1,12 +1,33 @@
 [
   {
     "ContainingType": "MediaService.Controllers.MediaController",
+    "Method": "GeneratePdf",
+    "RelativePath": "api/Media/generate-qrs",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "items",
+        "Type": "System.Collections.Generic.List\u00601[[MediaService.Models.QRModel, MediaService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediaService.Controllers.MediaController",
     "Method": "GetProtectedImage",
-    "RelativePath": "api/Media/image/{fileName}",
+    "RelativePath": "api/Media/image/{folder}/{fileName}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "folder",
+        "Type": "System.String",
+        "IsRequired": true
+      },
       {
         "Name": "fileName",
         "Type": "System.String",
