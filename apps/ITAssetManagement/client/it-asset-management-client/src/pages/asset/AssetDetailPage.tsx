@@ -90,11 +90,13 @@ const AssetDetailPage = () => {
           setImageUrls(urls);
 
           if (data?.assignments?.[0]?.avatar) {
-            const fetchAva = await fetchImage(token, data.assignments[0].avatar);
+            const fetchAva = await fetchImage(
+              token,
+              data.assignments[0].avatar
+            );
             const avatarUrl = URL.createObjectURL(fetchAva);
             setImageAva(avatarUrl);
           }
-
         }
       } catch (error: any) {
         message.error("Failed to load asset detail: " + error.message);
@@ -119,7 +121,7 @@ const AssetDetailPage = () => {
         return;
       }
 
-      setPrinting(true); // Bắt đầu loading
+      setPrinting(true);
 
       const qrModel: QRModel = {
         assetTag: asset.assetTag,
@@ -138,8 +140,6 @@ const AssetDetailPage = () => {
       setPrinting(false); // Kết thúc loading
     }
   };
-
-
 
   if (!asset) return <p>No asset found.</p>;
 
@@ -183,7 +183,6 @@ const AssetDetailPage = () => {
           <Button
             onClick={handlePrint}
             icon={<PrinterOutlined />}
-            type="primary"
             loading={printing}
           >
             Print Label
@@ -261,7 +260,7 @@ const AssetDetailPage = () => {
             </Row>
           </Card>
         </Col>
-      </Row >
+      </Row>
 
       <Row gutter={16} style={{ marginTop: "16px" }}>
         <Col span={24}>
@@ -271,7 +270,9 @@ const AssetDetailPage = () => {
             style={{ width: "100%" }}
           >
             {asset.specifications.length === 0 ? (
-              <Text type="secondary">No Asset Specifications available for this asset.</Text>
+              <Text type="secondary">
+                No Asset Specifications available for this asset.
+              </Text>
             ) : (
               <Row gutter={[16, 16]}>
                 {asset.specifications.map((spec) => (
@@ -299,175 +300,172 @@ const AssetDetailPage = () => {
         </Col>
       </Row>
 
-
-
-
-      <Row style={{ marginTop: "16px" }}>
-        <Col span={24}>
-          <Card
-            loading={loading}
-            title="Asset Users and Licenses"
-            style={{ width: "100%" }}
+      <Row gutter={16} style={{ marginTop: "16px", display: "flex" }}>
+        <Col span={10}>
+          <div
+            style={{ height: "100%", display: "flex", flexDirection: "column" }}
           >
-            {asset.assignments.length === 0 && asset.licenses.length === 0 ? (
-              <Text type="secondary">No Asset Users and Licenses available for this asset.</Text>
-            ) : (
-              <Row>
-                {asset.assignments.length > 0 && (
-                  <Col span={9}>
-                    <Title style={{ marginBottom: "24px" }} level={5}>
-                      User Information
-                    </Title>
-                    <Row>
-                      {asset.assignments.map((assignment) => (
-                        <Row key={assignment.employeeCode} style={{ marginBottom: 16 }}>
-                          <Col span={8}>
-                            <div
-                              style={{
-                                width: 200,
-                                height: 200,
-                                borderRadius: "50%",
-                                overflow: "hidden",
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                backgroundColor: "#f0f0f0", // fallback nếu ảnh lỗi
-                              }}
-                            >
-                              <Image
-                                preview={false}
-                                src={imageAva || ""}
-                                style={{
-                                  width: "100%",
-                                  height: "100%",
-                                  objectFit: "cover",
-                                }}
-                              />
-                            </div>
-                          </Col>
-                          <Col span={16}>
-                            <div style={{ marginBottom: 8, marginLeft: 70 }}>
-                              <div className="assign_user_info">
-                                <Text strong>Employee ID: </Text>
-                                <Text>{assignment.employeeCode}</Text>
-                              </div>
-                              <div className="assign_user_info">
-                                <Text strong>Full Name: </Text>
-                                <Text>{assignment.fullName}</Text>
-                              </div>
-                              <div className="assign_user_info">
-                                <Text strong>Department: </Text>
-                                <Text>{assignment.departmentName}</Text>
-                              </div>
-                              <div className="assign_user_info">
-                                <a>View User</a>
-                              </div>
-                            </div>
-                          </Col>
-                        </Row>
-                      ))}
-                    </Row>
-                  </Col>
-                )}
-
-                {asset.licenses.length > 0 && (
-                  <Col span={15}>
-                    <Title style={{ marginBottom: "24px" }} level={5}>
-                      License Information
-                    </Title>
-                    <Table
-                      dataSource={asset.licenses}
-                      rowKey="licenseKey"
-                      pagination={false}
-                      bordered
+            <Card
+              loading={loading}
+              title="Asset User"
+              style={{ height: "100%", flex: 1 }}
+            >
+              {asset.assignments.map((assignment) => (
+                <Row key={assignment.employeeCode} style={{ marginBottom: 16 }}>
+                  <Col span={10}>
+                    <div
+                      style={{
+                        width: 200,
+                        height: 200,
+                        borderRadius: "50%",
+                        overflow: "hidden",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        backgroundColor: "#f0f0f0",
+                      }}
                     >
-                      <Table.Column
-                        title="Software Name"
-                        dataIndex="softwareName"
-                        key="softwareName"
+                      <Image
+                        preview={false}
+                        src={imageAva || ""}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
                       />
-                      <Table.Column
-                        title="License Key"
-                        dataIndex="licenseKey"
-                        key="licenseKey"
-                      />
-                      <Table.Column
-                        title="License Type"
-                        dataIndex="licenseType"
-                        key="licenseType"
-                        render={(licenseType) => (
-                          <Tag color="#87d068">{licenseType}</Tag>
-                        )}
-                      />
-                      <Table.Column
-                        title="Purchase Date"
-                        dataIndex="purchaseDate"
-                        key="purchaseDate"
-                      />
-                      <Table.Column
-                        title="Expiry Date"
-                        dataIndex="expiryDate"
-                        key="expiryDate"
-                      />
-                      <Table.Column
-                        title="Assigned By"
-                        dataIndex="assignedBy"
-                        key="assignedBy"
-                      />
-                    </Table>
+                    </div>
                   </Col>
-                )}
-              </Row>
-            )}
-          </Card>
+                  <Col span={10}>
+                    <div style={{ marginBottom: 8 }}>
+                      <div className="assign_user_info">
+                        <Text strong>Employee ID: </Text>
+                        <Text>{assignment.employeeCode}</Text>
+                      </div>
+                      <div className="assign_user_info">
+                        <Text strong>Full Name: </Text>
+                        <Text>{assignment.fullName}</Text>
+                      </div>
+                      <div className="assign_user_info">
+                        <Text strong>Department: </Text>
+                        <Text>{assignment.departmentName}</Text>
+                      </div>
+                      <div className="assign_user_info">
+                        <a>View User</a>
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              ))}
+            </Card>
+          </div>
+        </Col>
+        <Col span={14}>
+          <div
+            style={{ height: "100%", display: "flex", flexDirection: "column" }}
+          >
+            <Card
+              loading={loading}
+              title="Asset Images"
+              style={{ height: "100%", flex: 1 }}
+            >
+              {imageUrls.length > 0 ? (
+                <Image.PreviewGroup items={imageUrls}>
+                  <Row gutter={[16, 16]}>
+                    {imageUrls.map((url, index) => (
+                      <Col key={index} span={8} md={8} lg={6}>
+                        <Image
+                          src={url}
+                          alt={asset.templateName}
+                          style={{
+                            width: "200px",
+                            height: "200px",
+                            objectFit: "cover",
+                            borderRadius: "8px",
+                            cursor: "pointer",
+                          }}
+                        />
+                      </Col>
+                    ))}
+                  </Row>
+                </Image.PreviewGroup>
+              ) : (
+                <Text type="secondary">No image available for this asset.</Text>
+              )}
+            </Card>
+          </div>
         </Col>
       </Row>
-
 
       <Row gutter={16} style={{ marginTop: "16px" }}>
         <Col span={24}>
           <Card
             loading={loading}
-            title="Asset Information"
+            title="Asset Location (Map)"
             style={{ width: "100%" }}
           >
-            <Row gutter={16}>
-              <Col span={5}>
-                <Title
-                  level={5}
-                  style={{ marginBottom: 8, color: darkMode ? "#fff" : "#000" }}
-                >
-                  Asset Image
-                </Title>
-                {imageUrls.length > 0 ? (
-                  <Image.PreviewGroup items={imageUrls}>
-                    <Image
-                      width="100%"
-                      src={imageUrls[0]}
-                      alt={asset.templateName}
-                      style={{ cursor: "pointer", borderRadius: "8px" }}
-                    />
-                  </Image.PreviewGroup>
-                ) : (
-                  <Text type="secondary">No image available for this asset.</Text>
-                )}
-              </Col>
-              <Col span={18}>
-                <Title
-                  level={5}
-                  style={{ marginBottom: 8, color: darkMode ? "#fff" : "#000" }}
-                >
-                  Asset Location (Map)
-                  {/* <Map2D
-                    imageUrl={image}
-                    marker={{ x: 82.61084407708549, y: 11.25 }}
-                    onMapClick={(pos) => {
-                      console.log("Clicked position:", pos);
-                    }}
-                  /> */}
-                </Title>
-              </Col>
-            </Row>
+            <Map2D
+              imageUrl={image}
+              marker={{ x: 64.51204055766794, y: 20 }}
+              onMapClick={(pos) => {
+                console.log("Clicked position:", pos);
+              }}
+            />
+          </Card>
+        </Col>
+      </Row>
+
+      <Row style={{ marginTop: "16px" }}>
+        <Col span={24}>
+          <Card
+            loading={loading}
+            title="Licenses Attached To The Asset"
+            style={{ width: "100%" }}
+          >
+            {asset.licenses.length > 0 ? (
+              <Table
+                dataSource={asset.licenses}
+                rowKey="licenseKey"
+                pagination={false}
+                bordered
+              >
+                <Table.Column
+                  title="Software Name"
+                  dataIndex="softwareName"
+                  key="softwareName"
+                />
+                <Table.Column
+                  title="License Key"
+                  dataIndex="licenseKey"
+                  key="licenseKey"
+                />
+                <Table.Column
+                  title="License Type"
+                  dataIndex="licenseType"
+                  key="licenseType"
+                  render={(licenseType) => (
+                    <Tag color="#87d068">{licenseType}</Tag>
+                  )}
+                />
+                <Table.Column
+                  title="Purchase Date"
+                  dataIndex="purchaseDate"
+                  key="purchaseDate"
+                />
+                <Table.Column
+                  title="Expiry Date"
+                  dataIndex="expiryDate"
+                  key="expiryDate"
+                />
+                <Table.Column
+                  title="Assigned By"
+                  dataIndex="assignedBy"
+                  key="assignedBy"
+                />
+              </Table>
+            ) : (
+              <Text type="secondary">No license information available.</Text>
+            )}
           </Card>
         </Col>
       </Row>

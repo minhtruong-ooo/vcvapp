@@ -42,13 +42,12 @@ export const Map2D = ({
       onClick={handleClick}
       style={{
         width: "100%",
-        height: "400px",
+        height: "600px",
         backgroundImage: `url(${imageUrl})`,
         backgroundSize: "contain", // giữ tỷ lệ ảnh
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         position: "relative",
-        border: "1px solid #ccc",
         cursor: "crosshair",
       }}
     >
