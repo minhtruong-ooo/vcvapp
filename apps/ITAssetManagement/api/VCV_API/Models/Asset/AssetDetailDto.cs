@@ -25,5 +25,6 @@ namespace VCV_API.Models.Asset
         public List<AssetImageDto> Images { get; set; } = new();
         public List<AssetAssignment> Assignments { get; set; } = new();
         public List<AssetLicense.AssetLicense> Licenses { get; set; } = new();
+        public List<AssetHistory.AssetHistory> History { get; set; } = new();
     }
 }

@@ -28,23 +28,6 @@ import image from "../../assets/images/1F2F.png";
 import logo4x4 from "../../assets/images/logo_main.png";
 
 const { Title, Text } = Typography;
-const items: TabsProps["items"] = [
-  {
-    key: "1",
-    label: "Asset",
-    children: "Content of Tab Pane 1",
-  },
-  {
-    key: "2",
-    label: "Maintenance",
-    children: "Content of Tab Pane 2",
-  },
-  {
-    key: "3",
-    label: "Assignment",
-    children: "Content of Tab Pane 3",
-  },
-];
 
 const AssetDetailPage = () => {
   const { keycloak } = useKeycloak();
@@ -271,7 +254,7 @@ const AssetDetailPage = () => {
           >
             {asset.specifications.length === 0 ? (
               <Text type="secondary">
-                No Asset Specifications available for this asset.
+                No asset specifications available for this asset.
               </Text>
             ) : (
               <Row gutter={[16, 16]}>
@@ -310,53 +293,57 @@ const AssetDetailPage = () => {
               title="Asset User"
               style={{ height: "100%", flex: 1 }}
             >
-              {asset.assignments.map((assignment) => (
-                <Row key={assignment.employeeCode} style={{ marginBottom: 16 }}>
+                {asset.assignments.length > 0 ? (
+                asset.assignments.map((assignment) => (
+                  <Row key={assignment.employeeCode} style={{ marginBottom: 16 }}>
                   <Col span={10}>
                     <div
-                      style={{
-                        width: 200,
-                        height: 200,
-                        borderRadius: "50%",
-                        overflow: "hidden",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        backgroundColor: "#f0f0f0",
-                      }}
+                    style={{
+                      width: 200,
+                      height: 200,
+                      borderRadius: "50%",
+                      overflow: "hidden",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      backgroundColor: "#f0f0f0",
+                    }}
                     >
-                      <Image
-                        preview={false}
-                        src={imageAva || ""}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                        }}
-                      />
+                    <Image
+                      preview={false}
+                      src={imageAva || ""}
+                      style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      }}
+                    />
                     </div>
                   </Col>
                   <Col span={10}>
                     <div style={{ marginBottom: 8 }}>
-                      <div className="assign_user_info">
-                        <Text strong>Employee ID: </Text>
-                        <Text>{assignment.employeeCode}</Text>
-                      </div>
-                      <div className="assign_user_info">
-                        <Text strong>Full Name: </Text>
-                        <Text>{assignment.fullName}</Text>
-                      </div>
-                      <div className="assign_user_info">
-                        <Text strong>Department: </Text>
-                        <Text>{assignment.departmentName}</Text>
-                      </div>
-                      <div className="assign_user_info">
-                        <a>View User</a>
-                      </div>
+                    <div className="assign_user_info">
+                      <Text strong>Employee ID: </Text>
+                      <Text>{assignment.employeeCode}</Text>
+                    </div>
+                    <div className="assign_user_info">
+                      <Text strong>Full Name: </Text>
+                      <Text>{assignment.fullName}</Text>
+                    </div>
+                    <div className="assign_user_info">
+                      <Text strong>Department: </Text>
+                      <Text>{assignment.departmentName}</Text>
+                    </div>
+                    <div className="assign_user_info">
+                      <a>View User</a>
+                    </div>
                     </div>
                   </Col>
-                </Row>
-              ))}
+                  </Row>
+                ))
+                ) : (
+                <Text type="secondary">No users are using this asset.</Text>
+                )}
             </Card>
           </div>
         </Col>
@@ -419,15 +406,15 @@ const AssetDetailPage = () => {
         <Col span={24}>
           <Card
             loading={loading}
-            title="Licenses Attached To The Asset"
+            title="Licenses Attached To Asset"
             style={{ width: "100%" }}
           >
             {asset.licenses.length > 0 ? (
               <Table
                 dataSource={asset.licenses}
                 rowKey="licenseKey"
-                pagination={false}
                 bordered
+                size="small"
               >
                 <Table.Column
                   title="Software Name"
@@ -464,7 +451,7 @@ const AssetDetailPage = () => {
                 />
               </Table>
             ) : (
-              <Text type="secondary">No license information available.</Text>
+              <Text type="secondary">No license available for this asset.</Text>
             )}
           </Card>
         </Col>
@@ -472,15 +459,75 @@ const AssetDetailPage = () => {
 
       <Row style={{ marginTop: "16px" }}>
         <Col span={24}>
-          <Card
-            loading={loading}
-            title="Asset History"
-            style={{ width: "100%" }}
-          >
-            <Tabs defaultActiveKey="1" items={items} />
+          <Card loading={loading} title="Asset History" style={{ width: "100%" }}>
+            <Tabs
+              defaultActiveKey="1"
+              items={[
+                {
+                  key: "1",
+                  label: "History",
+                  children: asset.history.length > 0 ? (
+                    <Table
+                      dataSource={asset.history}
+                      rowKey="historyID"
+                      bordered
+                      size="small"
+                    >
+                      <Table.Column
+                        title="Action Type"
+                        dataIndex="actionType"
+                        key="actionType"
+                        render={(actionType) => (
+                          <Tag color="#84d068">{actionType}</Tag>
+                        )}
+                      />
+                      <Table.Column
+                        title="Change Date"
+                        dataIndex="changeDate"
+                        key="changeDate"
+                      />
+                      <Table.Column
+                        title="Changed By"
+                        dataIndex="changedBy"
+                        key="changedBy"
+                      />
+                      <Table.Column
+                        title="Field Changed"
+                        dataIndex="fieldChanged"
+                        key="fieldChanged"
+                      />
+                      <Table.Column
+                        title="Old Value"
+                        dataIndex="oldValue"
+                        key="oldValue"
+                      />
+                      <Table.Column
+                        title="New Value"
+                        dataIndex="newValue"
+                        key="newValue"
+                      />
+                      <Table.Column
+                        title="Note"
+                        dataIndex="note"
+                        key="note"
+                      />
+                    </Table>
+                  ) : (
+                    <Text type="secondary">No asset history.</Text>
+                  ),
+                },
+                // Bạn có thể thêm các tab khác ở đây
+                // {
+                //   key: "2",
+                //   label: "Other Tab",
+                //   children: <div>Other content</div>,
+                // },
+              ]}
+            />
           </Card>
         </Col>
       </Row>
+
     </>
   );
 };

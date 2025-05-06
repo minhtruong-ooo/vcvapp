@@ -19,6 +19,7 @@ export interface Asset {
   images: AssetImage[];
   assignments: AssetAssignment[];
   licenses: AssetLicense[];
+  history: AssetHistory[];
 }
 
 export interface Specification {
@@ -66,6 +67,18 @@ export interface AssetLicense {
   expiryDate: string | null;
   assignedBy: string;
   assignedDate: string | null;
+}
+
+export interface AssetHistory {
+  historyID: number;
+  assetID: number;
+  actionType: string;
+  changeDate: string;
+  changedBy: string;
+  fieldChanged: string;
+  oldValue: string | null;
+  newValue: string;
+  note: string | null;
 }
 
 export interface AssetMapped {

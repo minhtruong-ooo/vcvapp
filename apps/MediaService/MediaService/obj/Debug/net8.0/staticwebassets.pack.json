@@ -65,6 +65,10 @@
       "PackagePath": "staticwebassets\\qr\\efacc4fc-cc6e-4aba-896d-0345195ad91a.pdf"
     },
     {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MediaService.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MediaService.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

@@ -4,6 +4,7 @@ using System.Data;
 using VCV_API.Data;
 using VCV_API.Models.Asset;
 using VCV_API.Models.AssetAsignment;
+using VCV_API.Models.AssetHistory;
 using VCV_API.Services.Interfaces;
 
 namespace VCV_API.Services
@@ -311,6 +312,26 @@ namespace VCV_API.Services
                             AssignmentDate = reader.IsDBNull(reader.GetOrdinal("AssignmentDate")) ? null : reader.GetDateTime(reader.GetOrdinal("AssignmentDate")).ToString("yyyy-MM-dd"),
                         });
 
+                    }
+                }
+
+                // Next result set: Asset History
+                if (await reader.NextResultAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        assetDetail.History.Add(new AssetHistory
+                        {
+                            HistoryID = reader.GetInt32(reader.GetOrdinal("HistoryID")),
+                            AssetID = reader.GetInt32(reader.GetOrdinal("AssetID")),
+                            ActionType = reader.IsDBNull(reader.GetOrdinal("ActionType")) ? null : reader.GetString(reader.GetOrdinal("ActionType")),
+                            ChangeDate = reader.IsDBNull(reader.GetOrdinal("ChangeDate")) ? null : reader.GetDateTime(reader.GetOrdinal("ChangeDate")).ToString(),
+                            ChangedBy = reader.IsDBNull(reader.GetOrdinal("ChangedBy")) ? null : reader.GetString(reader.GetOrdinal("ChangedBy")),
+                            FieldChanged = reader.IsDBNull(reader.GetOrdinal("FieldChanged")) ? null : reader.GetString(reader.GetOrdinal("FieldChanged")),
+                            OldValue = reader.IsDBNull(reader.GetOrdinal("OldValue")) ? null : reader.GetString(reader.GetOrdinal("OldValue")),
+                            NewValue = reader.IsDBNull(reader.GetOrdinal("NewValue")) ? null : reader.GetString(reader.GetOrdinal("NewValue")),
+                            Note = reader.IsDBNull(reader.GetOrdinal("Note")) ? null : reader.GetString(reader.GetOrdinal("Note")),
+                        });
                     }
                 }
 
