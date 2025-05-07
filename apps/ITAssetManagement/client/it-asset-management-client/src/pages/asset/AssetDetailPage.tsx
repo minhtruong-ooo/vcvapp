@@ -20,7 +20,6 @@ import {
   Button,
   Table,
 } from "antd";
-import type { TabsProps } from "antd";
 import { PrinterOutlined, HomeOutlined } from "@ant-design/icons";
 import { useDarkMode } from "../../context/DarkModeContext";
 import { Map2D } from "../../components/Map2D";

@@ -8,9 +8,3 @@ wwwroot\images\assets\1.jpg
 wwwroot\images\assets\2.jpg
 wwwroot\images\employees\avatar1.jpg
 wwwroot\images\logo\logo.png
-wwwroot\qr\17799adc-7430-4ce4-a5c8-4c0377dd675a.pdf
-wwwroot\qr\75d5d375-3f02-4fce-8240-d55ae35b5380.pdf
-wwwroot\qr\91caa796-9a08-4972-9ebc-bea17b34f42b.pdf
-wwwroot\qr\bbd157f7-da73-4f47-b570-b1b647966a04.pdf
-wwwroot\qr\e6b9e874-bb3c-4484-9b76-8cd6115cb2b7.pdf
-wwwroot\qr\efacc4fc-cc6e-4aba-896d-0345195ad91a.pdf

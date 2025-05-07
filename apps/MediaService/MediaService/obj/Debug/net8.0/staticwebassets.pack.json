@@ -41,30 +41,6 @@
       "PackagePath": "staticwebassets\\images\\logo\\logo.png"
     },
     {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\17799adc-7430-4ce4-a5c8-4c0377dd675a.pdf",
-      "PackagePath": "staticwebassets\\qr\\17799adc-7430-4ce4-a5c8-4c0377dd675a.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\75d5d375-3f02-4fce-8240-d55ae35b5380.pdf",
-      "PackagePath": "staticwebassets\\qr\\75d5d375-3f02-4fce-8240-d55ae35b5380.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\91caa796-9a08-4972-9ebc-bea17b34f42b.pdf",
-      "PackagePath": "staticwebassets\\qr\\91caa796-9a08-4972-9ebc-bea17b34f42b.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\bbd157f7-da73-4f47-b570-b1b647966a04.pdf",
-      "PackagePath": "staticwebassets\\qr\\bbd157f7-da73-4f47-b570-b1b647966a04.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\e6b9e874-bb3c-4484-9b76-8cd6115cb2b7.pdf",
-      "PackagePath": "staticwebassets\\qr\\e6b9e874-bb3c-4484-9b76-8cd6115cb2b7.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\efacc4fc-cc6e-4aba-896d-0345195ad91a.pdf",
-      "PackagePath": "staticwebassets\\qr\\efacc4fc-cc6e-4aba-896d-0345195ad91a.pdf"
-    },
-    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MediaService.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
