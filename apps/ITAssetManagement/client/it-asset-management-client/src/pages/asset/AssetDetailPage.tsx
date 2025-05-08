@@ -71,10 +71,10 @@ const AssetDetailPage = () => {
           }
           setImageUrls(urls);
 
-          if (data?.assignments?.[0]?.avatar) {
+          if (data?.assignmentsCurrent?.[0]?.avatar) {
             const fetchAva = await fetchImage(
               token,
-              data.assignments[0].avatar
+              data.assignmentsCurrent[0].avatar
             );
             const avatarUrl = URL.createObjectURL(fetchAva);
             setImageAva(avatarUrl);
@@ -122,7 +122,7 @@ const AssetDetailPage = () => {
       setPrinting(false); // Kết thúc loading
     }
   };
-
+  
   if (!asset) return <p>No asset found.</p>;
 
   return (
@@ -218,6 +218,10 @@ const AssetDetailPage = () => {
                   <Text strong>Serial Number: </Text>
                   <Text>{asset.serialNumber}</Text>
                 </div>
+                <div className="asset_info">
+                  <Text strong>Unit: </Text>
+                  <Text>{asset.unit}</Text>
+                </div>
               </Col>
               <Col span={4}>
                 <div className="asset_info">
@@ -292,9 +296,9 @@ const AssetDetailPage = () => {
               title="Asset User"
               style={{ height: "100%", flex: 1 }}
             >
-                {asset.assignments.length > 0 ? (
-                asset.assignments.map((assignment) => (
-                  <Row key={assignment.employeeCode} style={{ marginBottom: 16 }}>
+                {asset.assignmentsCurrent.length > 0 ? (
+                asset.assignmentsCurrent.map((assignmentCurrent) => (
+                  <Row key={assignmentCurrent.employeeCode} style={{ marginBottom: 16 }}>
                   <Col span={10}>
                     <div
                     style={{
@@ -323,15 +327,15 @@ const AssetDetailPage = () => {
                     <div style={{ marginBottom: 8 }}>
                     <div className="assign_user_info">
                       <Text strong>Employee ID: </Text>
-                      <Text>{assignment.employeeCode}</Text>
+                      <Text>{assignmentCurrent.employeeCode}</Text>
                     </div>
                     <div className="assign_user_info">
                       <Text strong>Full Name: </Text>
-                      <Text>{assignment.fullName}</Text>
+                      <Text>{assignmentCurrent.fullName}</Text>
                     </div>
                     <div className="assign_user_info">
                       <Text strong>Department: </Text>
-                      <Text>{assignment.departmentName}</Text>
+                      <Text>{assignmentCurrent.departmentName}</Text>
                     </div>
                     <div className="assign_user_info">
                       <a>View User</a>
@@ -515,18 +519,61 @@ const AssetDetailPage = () => {
                     <Text type="secondary">No asset history.</Text>
                   ),
                 },
-                // Bạn có thể thêm các tab khác ở đây
-                // {
-                //   key: "2",
-                //   label: "Other Tab",
-                //   children: <div>Other content</div>,
-                // },
+                {
+                  key: "2",
+                  label: "Assignments",
+                  children: asset.assignmentsHistory.length > 0 ? (
+                    <Table
+                      dataSource={asset.assignmentsHistory}
+                      rowKey="assignmentID"
+                      bordered
+                      size="small"
+                    >
+                      <Table.Column
+                        title="Assignment Code"
+                        dataIndex="assignmentCode"
+                        key="assignmentCode"
+                      />
+                      <Table.Column
+                        title="Assignment Action"
+                        dataIndex="assignmentAction"
+                        key="assignmentAction"
+                      />
+                      <Table.Column
+                        title="Assigned Date"
+                        dataIndex="assignmentDate"
+                        key="assignmentDate"
+                      />
+                      <Table.Column
+                        title="Assigned To"
+                        dataIndex="assignedToName"
+                        key="assignedToName"
+                      />
+                      <Table.Column
+                        title="Assigned By"
+                        dataIndex="assignedByName"
+                        key="assignedByName"
+                      />
+                      <Table.Column
+                        title="Notes"
+                        dataIndex="notes"
+                        key="notes"
+                      />
+                      <Table.Column
+                        title="Assign Status"
+                        dataIndex="assignStatus"
+                        key="assignStatus"
+                      />
+                    </Table>
+                  ) : (
+                    <Text type="secondary">No asset history.</Text>
+                  ),
+                },
               ]}
             />
           </Card>
         </Col>
       </Row>
-
     </>
   );
 };

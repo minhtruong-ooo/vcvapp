@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Asset } from "../interfaces/interfaces";
 
 const BASE_URL = "https://localhost:7142/api";
 
@@ -110,7 +111,7 @@ export const createAssets = async (token: string, data: any) => {
 
 export const getAssetDetail = async (token: string, assetTag: string) => {
   try {
-    const response = await axios.get(
+    const response = await axios.get<Asset>(
       `${BASE_URL}/Assets/GetDetailAsset/${encodeURIComponent(assetTag)}`,
       {
         headers: {
@@ -119,6 +120,7 @@ export const getAssetDetail = async (token: string, assetTag: string) => {
         timeout: 5000,
       }
     );
+    console.log(response.data);
     return response.data;
   } catch (error: any) {
     console.error("❌ Lỗi khi lấy chi tiết tài sản:", error?.response?.data?.details || error.message);

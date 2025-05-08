@@ -15,11 +15,13 @@ export interface Asset {
   locationName: string;
   createdAt: string;
   updatedAt: string;
+  unit: string | null;
   specifications: Specification[];
   images: AssetImage[];
-  assignments: AssetAssignment[];
+  assignmentsCurrent: AssetAssignment[];
   licenses: AssetLicense[];
   history: AssetHistory[];
+  assignmentsHistory: AssetAssignmentHistory[];
 }
 
 export interface Specification {
@@ -79,6 +81,17 @@ export interface AssetHistory {
   oldValue: string | null;
   newValue: string;
   note: string | null;
+}
+
+export interface AssetAssignmentHistory {
+  assignmentID : number;
+  assignmentCode : string;
+  assignmentAction : string;
+  assignmentDate : string;
+  assignedToName : string;
+  assignedByName : string;
+  assignStatus : string;
+  notes : string | null;
 }
 
 export interface AssetMapped {

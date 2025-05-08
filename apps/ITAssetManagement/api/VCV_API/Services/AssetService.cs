@@ -3,9 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using System.Data;
 using VCV_API.Data;
 using VCV_API.Models.Asset;
-using VCV_API.Models.AssetAsignment;
+using VCV_API.Models.AssetAssignment;
 using VCV_API.Models.AssetHistory;
 using VCV_API.Services.Interfaces;
+using static Azure.Core.HttpHeader;
 
 namespace VCV_API.Services
 {
@@ -235,6 +236,7 @@ namespace VCV_API.Services
                     LocationName = reader.GetString(reader.GetOrdinal("LocationName")),
                     CreatedAt = reader.GetDateTime(reader.GetOrdinal("CreatedAt")),
                     UpdatedAt = reader.GetDateTime(reader.GetOrdinal("UpdatedAt")),
+                    Unit = reader.IsDBNull(reader.GetOrdinal("Unit")) ? null : reader.GetString(reader.GetOrdinal("Unit")),
                     Specifications = new List<AssetSpecificationValueDto>(),
                     Images = new List<AssetImageDto>()
                 };
@@ -298,12 +300,12 @@ namespace VCV_API.Services
                     }
                 }
 
-                // Next result set: Employee Assignments
+                // Next result set: Current Employee Assignments
                 if (await reader.NextResultAsync())
                 {
                     while (await reader.ReadAsync())
                     {
-                        assetDetail.Assignments.Add(new AssetAssignment
+                        assetDetail.AssignmentsCurrent.Add(new AssetAssignmentCurrent
                         {
                             EmployeeCode = reader.IsDBNull(reader.GetOrdinal("EmployeeCode")) ? null : reader.GetString(reader.GetOrdinal("EmployeeCode")),
                             FullName = reader.IsDBNull(reader.GetOrdinal("FullName")) ? null : reader.GetString(reader.GetOrdinal("FullName")),
@@ -311,7 +313,6 @@ namespace VCV_API.Services
                             DepartmentName = reader.IsDBNull(reader.GetOrdinal("DepartmentName")) ? null : reader.GetString(reader.GetOrdinal("DepartmentName")),
                             AssignmentDate = reader.IsDBNull(reader.GetOrdinal("AssignmentDate")) ? null : reader.GetDateTime(reader.GetOrdinal("AssignmentDate")).ToString("yyyy-MM-dd"),
                         });
-
                     }
                 }
 
@@ -331,6 +332,25 @@ namespace VCV_API.Services
                             OldValue = reader.IsDBNull(reader.GetOrdinal("OldValue")) ? null : reader.GetString(reader.GetOrdinal("OldValue")),
                             NewValue = reader.IsDBNull(reader.GetOrdinal("NewValue")) ? null : reader.GetString(reader.GetOrdinal("NewValue")),
                             Note = reader.IsDBNull(reader.GetOrdinal("Note")) ? null : reader.GetString(reader.GetOrdinal("Note")),
+                        });
+                    }
+                }
+
+                // Next result set: Asset Assignment History
+                if (await reader.NextResultAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        assetDetail.AssignmentsHistory.Add(new AssetAssignmentHistory
+                        {
+                            AssignmentID = reader.GetInt32(reader.GetOrdinal("AssignmentID")),
+                            AssignmentCode = reader.IsDBNull(reader.GetOrdinal("AssignmentCode")) ? null : reader.GetString(reader.GetOrdinal("AssignmentCode")),
+                            AssignmentDate = reader.IsDBNull(reader.GetOrdinal("AssignmentDate")) ? null : reader.GetDateTime(reader.GetOrdinal("AssignmentDate")).ToString("yyyy-MM-dd"),
+                            AssignmentAction = reader.IsDBNull(reader.GetOrdinal("AssignmentAction")) ? null : reader.GetString(reader.GetOrdinal("AssignmentAction")),
+                            Notes = reader.IsDBNull(reader.GetOrdinal("Notes")) ? null : reader.GetString(reader.GetOrdinal("Notes")),
+                            AssignStatus = reader.IsDBNull(reader.GetOrdinal("AssignStatus")) ? null : reader.GetString(reader.GetOrdinal("AssignStatus")),
+                            AssignedToName = reader.IsDBNull(reader.GetOrdinal("AssignedToName")) ? null : reader.GetString(reader.GetOrdinal("AssignedToName")),
+                            AssignedByName = reader.IsDBNull(reader.GetOrdinal("AssignedByName")) ? null : reader.GetString(reader.GetOrdinal("AssignedByName")),
                         });
                     }
                 }

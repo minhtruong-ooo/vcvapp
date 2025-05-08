@@ -57,7 +57,10 @@ namespace MediaService.Services
                         // Generate QR Code
                         using (var qrGenerator = new QRCodeGenerator())
                         {
-                            QRCodeData qrCodeData = qrGenerator.CreateQrCode(item.AssetURL.ToString(), QRCodeGenerator.ECCLevel.Q);
+                            if (string.IsNullOrEmpty(item.AssetURL))
+                                throw new ArgumentNullException(nameof(item.AssetURL), "AssetURL cannot be null or empty.");
+
+                            QRCodeData qrCodeData = qrGenerator.CreateQrCode(item.AssetURL, QRCodeGenerator.ECCLevel.Q);
                             using (var qrCode = new PngByteQRCode(qrCodeData))
                             {
                                 byte[] qrBytes = qrCode.GetGraphic(20);
@@ -71,7 +74,7 @@ namespace MediaService.Services
                                     .Add($"VCV - IT Asset Management Label\n")
                                     .Add($"Asset Tag: {item.AssetTag}\n")
                                     .Add($"Asset Name: {item.AssetName}\n")
-                                    .Add($"Handover Date: {item.PurchaseDate}")
+                                    .Add($"Purchase Date: {item.PurchaseDate}")
                                     .SetFontSize(5).SetFont(calibri);
 
                                 // Create table for QR and text layout

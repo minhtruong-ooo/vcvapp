@@ -32,6 +32,11 @@ export const assetColumn = (data: any[]): ColumnType<any>[] => {
       dataIndex: "serialNumber",
       key: "serialNumber",
       width: 200,
+      onFilter: (value, record) => record.serialNumber.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.serialNumber))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
     },
     {
       title: "Purchase Date",

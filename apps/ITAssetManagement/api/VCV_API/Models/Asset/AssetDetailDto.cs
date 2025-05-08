@@ -1,4 +1,4 @@
-﻿using VCV_API.Models.AssetAsignment;
+﻿using VCV_API.Models.AssetAssignment;
 
 namespace VCV_API.Models.Asset
 {
@@ -20,11 +20,14 @@ namespace VCV_API.Models.Asset
         public string? LocationName { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+        public string? Unit { get; set; }
+
 
         public List<AssetSpecificationValueDto> Specifications { get; set; } = new();
         public List<AssetImageDto> Images { get; set; } = new();
-        public List<AssetAssignment> Assignments { get; set; } = new();
+        public List<AssetAssignmentCurrent> AssignmentsCurrent { get; set; } = new();
         public List<AssetLicense.AssetLicense> Licenses { get; set; } = new();
         public List<AssetHistory.AssetHistory> History { get; set; } = new();
+        public List<AssetAssignmentHistory> AssignmentsHistory { get; set; } = new();
     }
 }
