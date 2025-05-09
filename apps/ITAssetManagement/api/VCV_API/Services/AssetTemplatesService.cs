@@ -46,7 +46,7 @@ namespace VCV_API.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Lỗi khi lấy danh sách mẫu tài sản: {ex.Message}", ex);
+                throw new Exception($"Error: {ex.Message}", ex);
             }
 
             return assetTemplates;

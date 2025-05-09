@@ -157,6 +157,18 @@
           }
         }
       }
+    },
+    "/api/Assign/GetAssignments": {
+      "get": {
+        "tags": [
+          "Assign"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {

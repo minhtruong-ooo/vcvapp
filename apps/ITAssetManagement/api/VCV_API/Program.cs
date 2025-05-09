@@ -29,6 +29,7 @@ builder.Services.AddScoped<IAssetService, AssetService>();
 builder.Services.AddScoped<IAssetTemplates, AssetTemplatesService>();
 builder.Services.AddScoped<IAssetStatus, AssetStatusService>();
 builder.Services.AddScoped<IAssetLocation, AssetLocationService>();
+builder.Services.AddScoped<IAssetAssign, AssetAssignment>();
 
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>

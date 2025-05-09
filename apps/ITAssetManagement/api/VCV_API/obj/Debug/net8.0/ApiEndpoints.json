@@ -96,5 +96,15 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.AssignController",
+    "Method": "GetAssignments",
+    "RelativePath": "api/Assign/GetAssignments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

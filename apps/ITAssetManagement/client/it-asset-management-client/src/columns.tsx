@@ -1,6 +1,6 @@
 import { ColumnType } from "antd/es/table";
 import { formatDate } from "./utils"; // Adjust the import path as necessary
-import { DatePicker, Button } from "antd";
+import { DatePicker, Button, Tag } from "antd";
 import dayjs from "dayjs";
 
 export const assetColumn = (data: any[]): ColumnType<any>[] => {
@@ -40,11 +40,11 @@ export const assetColumn = (data: any[]): ColumnType<any>[] => {
     },
     {
       title: "Purchase Date",
-      dataIndex: "purchaseDate",
-      key: "purchaseDate",
+      dataIndex: "assignmentDate",
+      key: "assignmentDate",
       render: (text: string) => (text ? dayjs(text).format("YYYY-MM-DD") : ""),
       sorter: (a, b) =>
-        new Date(a.purchaseDate).getTime() - new Date(b.purchaseDate).getTime(),
+        new Date(a.assignmentDate).getTime() - new Date(b.assignmentDate).getTime(),
       filterDropdown: ({
         setSelectedKeys,
         selectedKeys,
@@ -83,7 +83,7 @@ export const assetColumn = (data: any[]): ColumnType<any>[] => {
         </div>
       ),
       onFilter: (value, record) => {
-        const recordDate = dayjs(record.purchaseDate).format("YYYY-MM-DD");
+        const recordDate = dayjs(record.assignmentDate).format("YYYY-MM-DD");
         return recordDate === value;
       },
     },
@@ -122,3 +122,131 @@ export const assetColumn = (data: any[]): ColumnType<any>[] => {
     },
   ];
 };
+
+export const assetAssignmentColumn = (data: any[]): ColumnType<any>[] => {
+  return [
+    {
+      title: "Assignment Code",
+      dataIndex: "assignmentCode",
+      key: "assignmentCode",
+      sorter: (a, b) => a.assignmentCode.localeCompare(b.assignmentCode),
+      onFilter: (value, record) => record.assignmentCode.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.assignmentCode))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+    {
+      title: "Employee Code",
+      dataIndex: ["employeeCode"],
+      key: "employeeCode",
+      sorter: (a, b) => a.employeeCode.localeCompare(b.employeeCode),
+      onFilter: (value, record) => record.employeeCode.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.employeeCode))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+    {
+      title: "Employee Name",
+      dataIndex: ["employeeName"],
+      key: "employeeName",
+      sorter: (a, b) => a.employeeName.localeCompare(b.employeeName),
+      onFilter: (value, record) => record.employeeName.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.employeeName))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+    {
+      title: "Department",
+      dataIndex: "departmentName",
+      key: "departmentName",
+      width: 200,
+      onFilter: (value, record) => record.departmentName.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.departmentName))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+    {
+      title: "Assignment Date",
+      dataIndex: "assignmentDate",
+      key: "assignmentDate",
+      render: (text: string) => (text ? dayjs(text).format("YYYY-MM-DD") : ""),
+      sorter: (a, b) =>
+        new Date(a.assignmentDate).getTime() - new Date(b.assignmentDate).getTime(),
+      filterDropdown: ({
+        setSelectedKeys,
+        selectedKeys,
+        confirm,
+        clearFilters,
+      }) => (
+        <div style={{ padding: 8 }}>
+          <DatePicker
+            onChange={(date) => {
+              const formatted = date ? date.format("YYYY-MM-DD") : "";
+              setSelectedKeys(formatted ? [formatted] : []);
+            }}
+            value={selectedKeys[0] ? dayjs(String(selectedKeys[0])) : null}
+            style={{ marginBottom: 8, display: "block" }}
+          />
+          <Button
+            type="primary"
+            onClick={() => confirm()}
+            size="small"
+            style={{ width: "100%", marginBottom: 4 }}
+          >
+            Filter
+          </Button>
+          <Button
+            onClick={() => {
+              if (clearFilters) {
+                clearFilters();
+              }
+              confirm();
+            }}
+            size="small"
+            style={{ width: "100%" }}
+          >
+            Reset
+          </Button>
+        </div>
+      ),
+      onFilter: (value, record) => {
+        const recordDate = dayjs(record.assignmentDate).format("YYYY-MM-DD");
+        return recordDate === value;
+      },
+    },
+    {
+      title: "Assignment Action",
+      dataIndex: "assignmentAction",
+      key: "assignmentAction",
+      width: 200,
+      onFilter: (value, record) => record.assignmentAction.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.assignmentAction))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+      render: (text: string) => {
+        const statusColor = text === "Assign" ? "green" : "red";
+        return (
+          <Tag color={statusColor} style={{ marginRight: 8 }}>
+            {text}
+          </Tag>
+        );
+      }
+    },
+    {
+      title: "Assign Status",
+      dataIndex: "assignStatus",
+      key: "assignStatus",
+      width: 200,
+      onFilter: (value, record) => record.assignStatus.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.assignStatus))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+  ];
+}

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lxHdUY+W/KH8iJgWV8VjubOABLHmVMezx9RTaxyJeq8=",
+  "Hash": "ZUHZQcv3vpJHsczlkzysgn9ascWSsoQrlaNTSKaPBY4=",
   "Source": "MediaService",
   "BasePath": "_content/MediaService",
   "Mode": "Default",
@@ -351,6 +351,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\qr\\d02c7879-2b12-4b2e-971b-1c7b29d8b33c.pdf"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\e5d0307a-d51c-4f79-88d3-6d95cb4a2967.pdf",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "qr/e5d0307a-d51c-4f79-88d3-6d95cb4a2967#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "v6ndv834vh",
+      "Integrity": "p4UyWpP8aOl8irN0jEi+d5jRJnkQhsMHKI5p/9tPZrc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\qr\\e5d0307a-d51c-4f79-88d3-6d95cb4a2967.pdf"
     }
   ],
   "Endpoints": [
@@ -1663,6 +1684,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Q7xDyQ2E069Y6nRUdK8GW6Kk09ObL009NfTEDW3BCiU="
+        }
+      ]
+    },
+    {
+      "Route": "qr/e5d0307a-d51c-4f79-88d3-6d95cb4a2967.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\e5d0307a-d51c-4f79-88d3-6d95cb4a2967.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46436"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p4UyWpP8aOl8irN0jEi+d5jRJnkQhsMHKI5p/9tPZrc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 04:38:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-p4UyWpP8aOl8irN0jEi+d5jRJnkQhsMHKI5p/9tPZrc="
+        }
+      ]
+    },
+    {
+      "Route": "qr/e5d0307a-d51c-4f79-88d3-6d95cb4a2967.v6ndv834vh.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\e5d0307a-d51c-4f79-88d3-6d95cb4a2967.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "46436"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"p4UyWpP8aOl8irN0jEi+d5jRJnkQhsMHKI5p/9tPZrc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 08 May 2025 04:38:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "v6ndv834vh"
+        },
+        {
+          "Name": "label",
+          "Value": "qr/e5d0307a-d51c-4f79-88d3-6d95cb4a2967.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-p4UyWpP8aOl8irN0jEi+d5jRJnkQhsMHKI5p/9tPZrc="
         }
       ]
     }

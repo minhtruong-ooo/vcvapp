@@ -213,7 +213,7 @@ const Assets = () => {
             color: darkMode ? "#fff" : "#000",
           },
         }}
-        scroll={{ x: "max-content", y: 650 }} // Cuộn ngang và cuộn dọc nếu cần
+        scroll={{ x: "max-content", y: 650 }}
       />
 
       <Modal

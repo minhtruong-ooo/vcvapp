@@ -192,5 +192,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Q7xDyQ2E069Y6nRUdK8GW6Kk09ObL009NfTEDW3BCiU="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"46190"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022Q7xDyQ2E069Y6nRUdK8GW6Kk09ObL009NfTEDW3BCiU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 07 May 2025 01:56:41 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/qr/e5d0307a-d51c-4f79-88d3-6d95cb4a2967.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qr\e5d0307a-d51c-4f79-88d3-6d95cb4a2967.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-p4UyWpP8aOl8irN0jEi\u002Bd5jRJnkQhsMHKI5p/9tPZrc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"46436"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022p4UyWpP8aOl8irN0jEi\u002Bd5jRJnkQhsMHKI5p/9tPZrc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 08 May 2025 04:38:14 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/qr/e5d0307a-d51c-4f79-88d3-6d95cb4a2967.v6ndv834vh.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qr\e5d0307a-d51c-4f79-88d3-6d95cb4a2967.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"v6ndv834vh"},{"Name":"integrity","Value":"sha256-p4UyWpP8aOl8irN0jEi\u002Bd5jRJnkQhsMHKI5p/9tPZrc="},{"Name":"label","Value":"_content/MediaService/qr/e5d0307a-d51c-4f79-88d3-6d95cb4a2967.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"46436"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022p4UyWpP8aOl8irN0jEi\u002Bd5jRJnkQhsMHKI5p/9tPZrc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 08 May 2025 04:38:14 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

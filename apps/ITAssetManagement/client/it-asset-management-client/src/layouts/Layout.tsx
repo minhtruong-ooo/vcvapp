@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Layout as AntLayout, Menu } from "antd";
 import {
-  UnorderedListOutlined,
+  DesktopOutlined,
   DashboardOutlined,
   ProductOutlined,
   BookOutlined,
-  HistoryOutlined,
   DeploymentUnitOutlined,
-  ProjectOutlined,
+  SolutionOutlined
 } from "@ant-design/icons";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import logo from "../assets/images/logo.png";
@@ -29,11 +28,10 @@ const Layout: React.FC = () => {
 
   const menuKeyMap: { [key: string]: string } = {
     "/dashboard": "1",
-    "/asset-templates": "2",
-    "/assets": "3",
+    "/assets": "2",
+    "/assignments": "3",
     "/maintenance": "4",
-    "/asset-history": "5",
-    "/licenses": "6",
+    "/licenses": "5",
   };
 
   const selectedKey = menuKeyMap[location.pathname] || "1";
@@ -55,13 +53,13 @@ const Layout: React.FC = () => {
       children: [
         {
           key: "2",
-          icon: <ProjectOutlined />,
-          label: <Link to="/asset-templates">Asset Templates</Link>,
+          icon: <DesktopOutlined />,
+          label: <Link to="/assets">Assets</Link>,
         },
         {
           key: "3",
-          icon: <UnorderedListOutlined />,
-          label: <Link to="/assets">Assets</Link>,
+          icon: <SolutionOutlined />,
+          label: <Link to="/assignments">Assignments</Link>,
         },
         {
           key: "4",
@@ -70,11 +68,6 @@ const Layout: React.FC = () => {
         },
         {
           key: "5",
-          icon: <HistoryOutlined />,
-          label: <Link to="/asset-history">Asset History</Link>,
-        },
-        {
-          key: "6",
           icon: <BookOutlined />,
           label: <Link to="/licenses">Licenses</Link>,
         },
