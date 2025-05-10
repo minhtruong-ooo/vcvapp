@@ -49,8 +49,6 @@ namespace VCV_API.Services
                                 CreateAt = reader.IsDBNull(reader.GetOrdinal("CreateAt")) ? null : reader.GetDateTime(reader.GetOrdinal("CreateAt")),
                                 UpdateAt = reader.IsDBNull(reader.GetOrdinal("UpdateAt")) ? null : reader.GetDateTime(reader.GetOrdinal("UpdateAt")),
                             };
-                            
-
                             assetAssigns.Add(assetAssign);
                         }
                     }

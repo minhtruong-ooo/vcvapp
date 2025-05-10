@@ -26,19 +26,6 @@ const AppHeader: React.FC = () => {
       type: "divider",
     },
     {
-      key: "darkmode",
-      label: (
-        <Space>
-          Dark Mode
-          <Switch size="small" checked={darkMode} onChange={toggleDarkMode} />
-        </Space>
-      ),
-      disabled: false,
-    },
-    {
-      type: "divider",
-    },
-    {
       key: "2",
       label: "Logout",
       icon: <LogoutOutlined />,
@@ -62,6 +49,9 @@ const AppHeader: React.FC = () => {
         padding: "0 25px",
       }}
     >
+      <div style={{ marginRight: "15px" }}>
+          <Switch checkedChildren="☀️" unCheckedChildren="🌑" checked={darkMode} onChange={toggleDarkMode} />
+      </div>
       <Dropdown menu={{ items, onClick: handleMenuClick }} trigger={["hover"]}>
         <a onClick={(e) => e.preventDefault()}>
           <Space style={{ color: darkMode ? "#fff" : "#000" }}>

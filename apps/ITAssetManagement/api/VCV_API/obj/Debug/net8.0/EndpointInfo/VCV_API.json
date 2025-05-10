@@ -122,6 +122,18 @@
         }
       }
     },
+    "/api/Assets/GetUnusedAssets": {
+      "get": {
+        "tags": [
+          "Assets"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/AssetStatus/GetAssetStatuses": {
       "get": {
         "tags": [

@@ -396,7 +396,7 @@ const AssetDetailPage = () => {
           >
             <Map2D
               imageUrl={image}
-              marker={{ x: 64.51204055766794, y: 20 }}
+              marker={{ x: 60.51204055766794, y: 20 }}
               onMapClick={(pos) => {
                 console.log("Clicked position:", pos);
               }}

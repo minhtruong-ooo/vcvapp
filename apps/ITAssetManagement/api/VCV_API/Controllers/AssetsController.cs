@@ -85,5 +85,19 @@ namespace VCV_API.Controllers
 
             return Ok(detail);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetUnusedAssets()
+        {
+            try
+            {
+                var assets = await _assetService.GetUnusedAssetsAsync();
+                return Ok(assets);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Lỗi khi lấy dữ liệu: {ex.Message}");
+            }
+        }
     }
 }

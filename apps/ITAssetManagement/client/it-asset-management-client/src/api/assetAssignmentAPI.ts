@@ -15,4 +15,19 @@ export const getAssetAssignments = async (token: string) => {
       console.error("Failed to fetch: ", error);
       throw error;
     }
-  };
+};
+
+export const getUnusedAssets = async (token: string) => {
+    try {
+      const response = await axios.get(`${BASE_URL}/Assets/GetUnusedAssets`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        timeout: 5000,
+      }); 
+      return response.data;
+    } catch (error) {
+      console.error("Failed to fetch: ", error);
+      throw error;
+    }
+};

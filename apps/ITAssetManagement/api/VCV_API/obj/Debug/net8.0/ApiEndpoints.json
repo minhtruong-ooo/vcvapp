@@ -68,6 +68,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "VCV_API.Controllers.AssetsController",
+    "Method": "GetUnusedAssets",
+    "RelativePath": "api/Assets/GetUnusedAssets",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "VCV_API.Controllers.AssetStatusController",
     "Method": "GetAssetStatuses",
     "RelativePath": "api/AssetStatus/GetAssetStatuses",

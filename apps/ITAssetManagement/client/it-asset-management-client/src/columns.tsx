@@ -250,3 +250,41 @@ export const assetAssignmentColumn = (data: any[]): ColumnType<any>[] => {
     },
   ];
 }
+
+export const assetUnUsedColumn = (data: any[]): ColumnType<any>[] => {
+  return [
+    {
+      title: "Asset Tag",
+      dataIndex: "assetTag",
+      key: "assetTag",
+      sorter: (a, b) => a.assetTag.localeCompare(b.assetTag),
+      onFilter: (value, record) => record.assetTag.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.assetTag))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+    {
+      title: "Asset Name",
+      dataIndex: ["templateName"],
+      key: "templateName",
+      sorter: (a, b) => a.templateName.localeCompare(b.templateName),
+      onFilter: (value, record) => record.templateName.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.templateName))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+    {
+      title: "Serial Number",
+      dataIndex: "serialNumber",
+      key: "serialNumber",
+      width: 200,
+      onFilter: (value, record) => record.serialNumber.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.serialNumber))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+  ];
+}

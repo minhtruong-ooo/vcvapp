@@ -369,5 +369,40 @@ namespace VCV_API.Services
 
         }
 
+        public async Task<List<Asset>> GetUnusedAssetsAsync()
+        {
+            var assets = new List<Asset>();
+            try
+            {
+                var connection = _context.Database.GetDbConnection();
+                await connection.OpenAsync();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "Asset_Table_GetUnusedAssetsAsync";
+                    using (var reader = await command.ExecuteReaderAsync())
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            var asset = new Asset
+                            {
+                                AssetID = reader.GetInt32(reader.GetOrdinal("AssetID")),
+                                AssetTag = reader.GetString(reader.GetOrdinal("AssetTag")),
+                                TemplateName = reader.IsDBNull(reader.GetOrdinal("TemplateName")) ? null : reader.GetString(reader.GetOrdinal("TemplateName")),
+                                SerialNumber = reader.IsDBNull(reader.GetOrdinal("SerialNumber")) ? null : reader.GetString(reader.GetOrdinal("SerialNumber")),
+                                StatusName = reader.IsDBNull(reader.GetOrdinal("StatusName")) ? null : reader.GetString(reader.GetOrdinal("StatusName")),
+                            };
+                            assets.Add(asset);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error: {ex.Message}", ex);
+            }
+            return assets;
+        }
+
     }
 }

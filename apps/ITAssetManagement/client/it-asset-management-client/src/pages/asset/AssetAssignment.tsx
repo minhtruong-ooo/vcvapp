@@ -68,13 +68,13 @@ const AssetAssignment = () => {
     const showModal = () => setIsModalOpen(true);
 
     const handleCancel = () => {
-      setIsModalOpen(false);
-      form.resetFields();
+        setIsModalOpen(false);
+        form.resetFields();
     };
 
     const handleAddAsset = (newAsset: any) => {
         setData([...data, newAsset]); // Add the new asset to the data state
-      };
+    };
 
     return (
         <>
@@ -94,7 +94,7 @@ const AssetAssignment = () => {
                 <div style={{ display: "flex", justifyContent: "space-around" }}>
                     <Space>
                         <Button icon={<PlusOutlined />} type="default"
-                        onClick={showModal}
+                            onClick={showModal}
                         >
                             Add
                         </Button>
@@ -172,17 +172,12 @@ const AssetAssignment = () => {
 
 
             <Modal
-                style={{
-                    backgroundColor: darkMode ? "#1f1f1f" : "#fff",
-                    color: darkMode ? "#fff" : "#000",
-                    borderRadius: "5px",
-                }}
+                width="80vw"
                 title="Add New Asset Assignment"
                 open={isModalOpen}
                 onCancel={handleCancel}
                 centered
                 destroyOnClose
-                width={1200}
                 footer={null}
             >
                 <AddAssetAssignmentModal
