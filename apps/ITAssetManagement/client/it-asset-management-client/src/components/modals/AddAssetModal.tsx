@@ -52,6 +52,7 @@ const AddAssetModal = ({
 
     const fetchData = async () => {
       try {
+        setLoadingSelects(true);
         const [templatesData, locationsData, statusesData] = await Promise.all([
           GetAssetTemplates_Select(token),
           getLocations(token),

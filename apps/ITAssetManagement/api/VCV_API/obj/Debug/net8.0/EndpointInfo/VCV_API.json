@@ -181,6 +181,18 @@
           }
         }
       }
+    },
+    "/api/Employee/GetAllEmployeesSingle": {
+      "get": {
+        "tags": [
+          "Employee"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {

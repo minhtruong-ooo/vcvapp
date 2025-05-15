@@ -1,8 +1,4 @@
-﻿using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Threading.Tasks;
-using iText.Kernel.Pdf;
+﻿using iText.Kernel.Pdf;
 using iText.Kernel.Geom;
 using iText.Layout;
 using iText.Layout.Element;
@@ -15,7 +11,6 @@ using MediaService.Models;
 using Path = System.IO.Path;
 using iText.IO.Font;
 using iText.Kernel.Font;
-using iText.Kernel.Pdf.Canvas;
 namespace MediaService.Services
 {
     public class MediaService : IMediaService
@@ -108,13 +103,13 @@ namespace MediaService.Services
 
         public async Task<string> SaveImageAsync(IFormFile imageFile, string folder = "images")
         {
-            var folderPath = System.IO.Path.Combine(_env.WebRootPath, folder);
+            var folderPath = Path.Combine(_env.WebRootPath, folder);
 
             if (!Directory.Exists(folderPath))
                 Directory.CreateDirectory(folderPath);
 
-            var fileName = $"{Guid.NewGuid()}{System.IO.Path.GetExtension(imageFile.FileName)}";
-            var filePath = System.IO.Path.Combine(folderPath, fileName);
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(imageFile.FileName)}";
+            var filePath = Path.Combine(folderPath, fileName);
 
             using (var stream = new FileStream(filePath, FileMode.Create))
             {

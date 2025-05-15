@@ -108,3 +108,7 @@ export interface LookupLists {
   statuses: { statusID: number; statusName: string }[];
   locations: { locationID: number; locationName: string }[];
 }
+
+export interface EmployeeSingle {
+  employeeInfo: string;
+}

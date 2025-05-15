@@ -116,5 +116,15 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.EmployeeController",
+    "Method": "GetAllEmployeesSingle",
+    "RelativePath": "api/Employee/GetAllEmployeesSingle",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

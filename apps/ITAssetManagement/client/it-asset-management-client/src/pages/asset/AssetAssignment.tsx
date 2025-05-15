@@ -7,7 +7,6 @@ import { assetAssignmentColumn } from "../../columns";
 import { useNavigate } from "react-router-dom";
 import { Form } from "antd";
 import AddAssetAssignmentModal from '../../components/modals/AddAssetAssignmentModal';
-
 import { getAssetAssignments } from '../../api/assetAssignmentAPI';
 
 

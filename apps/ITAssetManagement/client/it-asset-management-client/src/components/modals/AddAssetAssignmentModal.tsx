@@ -1,9 +1,10 @@
 // AddAssetAssignmentModal.tsx
 import React, { useState, useEffect } from 'react';
 import type { FormInstance } from 'antd';
-import { Form, Input, Select, Row, Col, Switch, Card, message } from 'antd';
+import { Form, Input, Select, Row, Col, Switch, Card, message, Button } from 'antd';
 import { useKeycloak } from '@react-keycloak/web';
 import { getUnusedAssets } from '../../api/assetAssignmentAPI';
+import { getEmployeeSingle } from '../../api/employeeAPI';
 import type { TransferItem } from 'antd/es/transfer';
 import TableTransfer from '../TableTransfer';
 
@@ -33,37 +34,62 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
   const [loadingSelects, setLoadingSelects] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(true);
   const [assets, setAssets] = useState<AssetItem[]>([]);
+  const [employees, setEmployee] = useState<any[]>([]);
   const [targetKeys, setTargetKeys] = useState<string[]>([]);
 
   useEffect(() => {
-    const fetchAssets = async () => {
-      try {
-        if (!token) return;
-        setLoading(true);
-        const usedAssets = await getUnusedAssets(token);
-        console.log('Raw assets from API:', usedAssets);
-        const processedAssets = usedAssets.map((item: any) => {
-          const assetTag = String(item.assetTag); // Đảm bảo assetTag là string
-          return {
-            ...item,
-            key: assetTag, // Dùng assetTag làm key
-            assetID: String(item.assetID),
-            assetTag: assetTag,
-          };
-        });
-        console.log('Processed assets:', processedAssets);
-        setAssets(processedAssets);
-      } catch (error) {
-        console.error('Error fetching assets: ', error);
-        message.error('Error fetching assets: ' + error);
-      } finally {
-        setLoading(false);
-        setLoadingSelects(false);
-      }
-    };
+    try {
+      setLoadingSelects(true);
+      fetchAssets();
+      fetchEmployees();
+    } catch (error) {
+      setLoadingSelects(false);
+      message.error("Error")
+    }
 
-    fetchAssets();
   }, [token]);
+
+  const fetchAssets = async () => {
+    try {
+      if (!token) return;
+      setLoading(true);
+      const usedAssets = await getUnusedAssets(token);
+      console.log('Raw assets from API:', usedAssets);
+      const processedAssets = usedAssets.map((item: any) => {
+        const assetTag = String(item.assetTag); // Đảm bảo assetTag là string
+        return {
+          ...item,
+          key: assetTag, // Dùng assetTag làm key
+          assetID: String(item.assetID),
+          assetTag: assetTag,
+        };
+      });
+      console.log('Processed assets:', processedAssets);
+      setAssets(processedAssets);
+    } catch (error) {
+      console.error('Error fetching assets: ', error);
+      message.error('Error fetching assets: ' + error);
+    } finally {
+      setLoading(false);
+      setLoadingSelects(false);
+    }
+  };
+
+  const fetchEmployees = async () => {
+    setLoading(true);
+    getEmployeeSingle(keycloak.token ?? "")
+      .then((responseData) => {
+        setEmployee(responseData);
+      })
+      .catch((error) => {
+        message.error("Error fetching assets: " + error.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  
 
   return (
     <>
@@ -84,15 +110,19 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
                   showSearch
                   placeholder="Select Employee"
                   loading={loadingSelects}
-                />
+                >
+                  {employees.map((employee) => (
+                    <Select.Option
+                      key={employee.employeeCode}
+                      value={employee.employeeInfo}
+                    >
+                      {employee.employeeInfo}
+                    </Select.Option>
+                  ))}
+                </Select>
               </Form.Item>
             </Col>
-            <Col span={8}>
-              <Form.Item label="Department" name="department">
-                <Input disabled />
-              </Form.Item>
-            </Col>
-            <Col span={8}>
+            <Col span={16}>
               <Form.Item label="Notes" name="notes">
                 <Input />
               </Form.Item>
@@ -112,6 +142,20 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
           </div>
         </Row>
       </Card>
+
+      <div
+        style={{ marginTop: 16, display: "flex", justifyContent: "flex-end" }}
+      >
+        <Button
+          loading={loading}
+          type="primary"
+          style={{ marginRight: 8 }}
+          // onClick={handleSave}
+        >
+          Save
+        </Button>
+        <Button onClick={onCancel}>Cancel</Button>
+      </div>
     </>
   );
 };
