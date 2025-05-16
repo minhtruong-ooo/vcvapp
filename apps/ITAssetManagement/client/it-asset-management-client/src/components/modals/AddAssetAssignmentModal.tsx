@@ -1,9 +1,9 @@
 // AddAssetAssignmentModal.tsx
 import React, { useState, useEffect } from 'react';
 import type { FormInstance } from 'antd';
-import { Form, Input, Select, Row, Col, Switch, Card, message, Button } from 'antd';
+import { Form, Input, Select, Row, Col, Switch, Card, message, Button, Spin } from 'antd';
 import { useKeycloak } from '@react-keycloak/web';
-import { getUnusedAssets } from '../../api/assetAssignmentAPI';
+import { getUnusedAssets, getAssignedAssets } from '../../api/assetAssignmentAPI';
 import { getEmployeeSingle } from '../../api/employeeAPI';
 import type { TransferItem } from 'antd/es/transfer';
 import TableTransfer from '../TableTransfer';
@@ -25,8 +25,8 @@ interface AssetItem extends TransferItem {
 const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
   form,
   onCancel,
-  onAdd,
-  onSuccess,
+  // onAdd,
+  // onSuccess,
 }) => {
   const { keycloak } = useKeycloak();
   const token = keycloak?.token;
@@ -36,17 +36,14 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
   const [assets, setAssets] = useState<AssetItem[]>([]);
   const [employees, setEmployee] = useState<any[]>([]);
   const [targetKeys, setTargetKeys] = useState<string[]>([]);
+  const [isAssignMode, setIsAssignMode] = useState(true);
+  const [selectedEmployeeID, setSelectedEmployeeID] = useState<string>("");
+  const [employeeChangeLoading, setEmployeeChangeLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    try {
-      setLoadingSelects(true);
-      fetchAssets();
-      fetchEmployees();
-    } catch (error) {
-      setLoadingSelects(false);
-      message.error("Error")
-    }
-
+    setLoadingSelects(true);
+    fetchEmployees();
+    fetchAssets(); // Default: load unused assets for assignment
   }, [token]);
 
   const fetchAssets = async () => {
@@ -54,17 +51,12 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
       if (!token) return;
       setLoading(true);
       const usedAssets = await getUnusedAssets(token);
-      console.log('Raw assets from API:', usedAssets);
-      const processedAssets = usedAssets.map((item: any) => {
-        const assetTag = String(item.assetTag); // Đảm bảo assetTag là string
-        return {
-          ...item,
-          key: assetTag, // Dùng assetTag làm key
-          assetID: String(item.assetID),
-          assetTag: assetTag,
-        };
-      });
-      console.log('Processed assets:', processedAssets);
+      const processedAssets = usedAssets.map((item: any) => ({
+        ...item,
+        key: String(item.assetTag),
+        assetID: String(item.assetID),
+        assetTag: String(item.assetTag),
+      }));
       setAssets(processedAssets);
     } catch (error) {
       console.error('Error fetching assets: ', error);
@@ -75,46 +67,96 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
     }
   };
 
-  const fetchEmployees = async () => {
-    setLoading(true);
-    getEmployeeSingle(keycloak.token ?? "")
-      .then((responseData) => {
-        setEmployee(responseData);
-      })
-      .catch((error) => {
-        message.error("Error fetching assets: " + error.message);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+  const fetchAssignedAssets = async (employeeID: string) => {
+    try {
+      if (!token) return;
+      setLoading(true);
+      const assignedAssets = await getAssignedAssets(token, employeeID);
+      const processedAssets = assignedAssets.map((item: any) => ({
+        ...item,
+        key: String(item.assetTag),
+        assetID: String(item.assetID),
+        assetTag: String(item.assetTag),
+      }));
+      setAssets(processedAssets);
+    } catch (error) {
+      console.error('Error fetching assigned assets: ', error);
+      message.error('Error fetching assigned assets: ' + error);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  
+  const fetchEmployees = async () => {
+    setLoading(true);
+    try {
+      const responseData = await getEmployeeSingle(keycloak.token ?? "");
+      setEmployee(responseData);
+    } catch (error: any) {
+      message.error("Error fetching employees: " + error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleEmployeeSelect = async (employeeID: string) => {
+    setSelectedEmployeeID(employeeID);
+    if (!isAssignMode) {
+      setEmployeeChangeLoading(true);
+      try {
+        await fetchAssignedAssets(employeeID);
+      } catch (err) {
+        message.error("Lỗi khi load tài sản của nhân viên");
+      } finally {
+        setEmployeeChangeLoading(false);
+      }
+    }
+  };
+
+  const handleModeChange = (checked: boolean) => {
+    setIsAssignMode(checked);
+    setAssets([]);
+    setTargetKeys([]);
+    if (checked) {
+      fetchAssets();
+    } else if (selectedEmployeeID) {
+      fetchAssignedAssets(selectedEmployeeID);
+    }
+  };
 
   return (
     <>
       <div>
-        <Switch checkedChildren="Assign" unCheckedChildren="Return" defaultChecked />
+        <Switch
+          checkedChildren="Assign"
+          unCheckedChildren="Return"
+          checked={isAssignMode}
+          onChange={handleModeChange}
+        />
       </div>
 
-      <Card title="Assign Information" style={{ marginTop: 16 }}>
+      <Card title="General Information" style={{ marginTop: 16 }}>
         <Form form={form} layout="vertical" name="assetForm">
           <Row gutter={16}>
             <Col span={8}>
               <Form.Item
                 label="Employee"
-                name="employeeName"
-                rules={[{ required: true }]}
+                name="employeeID"
+                rules={[{ required: true, message: 'Please select an employee' }]}
               >
                 <Select
                   showSearch
                   placeholder="Select Employee"
                   loading={loadingSelects}
+                  onChange={(employeeID) => handleEmployeeSelect(employeeID)}
+                  filterOption={(input, option) =>
+                    String(option?.children).toLowerCase().includes(input.toLowerCase())
+                  }
                 >
                   {employees.map((employee) => (
                     <Select.Option
-                      key={employee.employeeCode}
-                      value={employee.employeeInfo}
+                      key={employee.employeeID} // key được dùng bởi React, không ảnh hưởng
+                      value={employee.employeeID} // đây là giá trị được truyền ra ngoài
                     >
                       {employee.employeeInfo}
                     </Select.Option>
@@ -131,27 +173,23 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
         </Form>
       </Card>
 
-      <Card loading={loading} title="Assign Asset" style={{ marginTop: 16 }}>
-        <Row gutter={16}>
-          <div style={{ width: '100%' }}>
-            <TableTransfer
-              dataSource={assets}
-              targetKeys={targetKeys}
-              onChange={setTargetKeys}
-            />
-          </div>
-        </Row>
+      <Card title={isAssignMode ? "Assign Assets" : "Return Assets"} style={{ marginTop: 16 }}>
+        <Spin spinning={loading || employeeChangeLoading}>
+          <TableTransfer
+            dataSource={assets}
+            targetKeys={targetKeys}
+            onChange={setTargetKeys}
+            titles={
+              isAssignMode
+                ? ['Unused Assets', 'Assets to Assign']
+                : ['Assigned Assets', 'Assets to Return']
+            }
+          />
+        </Spin>
       </Card>
 
-      <div
-        style={{ marginTop: 16, display: "flex", justifyContent: "flex-end" }}
-      >
-        <Button
-          loading={loading}
-          type="primary"
-          style={{ marginRight: 8 }}
-          // onClick={handleSave}
-        >
+      <div style={{ marginTop: 16, display: "flex", justifyContent: "flex-end" }}>
+        <Button loading={loading} type="primary" style={{ marginRight: 8 }}>
           Save
         </Button>
         <Button onClick={onCancel}>Cancel</Button>

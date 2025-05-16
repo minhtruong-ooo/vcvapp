@@ -15,12 +15,14 @@ interface TableTransferProps {
   dataSource: AssetItem[];
   targetKeys: string[];
   onChange: (nextTargetKeys: string[]) => void;
+  titles: [string, string];
 }
 
 const TableTransfer: React.FC<TableTransferProps> = ({
   dataSource,
   targetKeys,
   onChange,
+  titles
 }) => {
   const [sourceSelectedKeys, setSourceSelectedKeys] = useState<string[]>([]);
   const [targetSelectedKeys, setTargetSelectedKeys] = useState<string[]>([]);
@@ -35,9 +37,9 @@ const TableTransfer: React.FC<TableTransferProps> = ({
   return (
     <Transfer
       dataSource={dataSource}
-      titles={['Unused Assets', 'Assets Assigned']}
+      titles={titles}
       targetKeys={targetKeys}
-      onChange={(nextTargetKeys, direction, moveKeys) => {
+      onChange={(nextTargetKeys) => {
         onChange(nextTargetKeys.map((key) => String(key)));
         setSourceSelectedKeys([]);
         setTargetSelectedKeys([]);
@@ -55,8 +57,8 @@ const TableTransfer: React.FC<TableTransferProps> = ({
         item.assetName?.toLowerCase().includes(inputValue.toLowerCase()) ||
         item.serialNumber?.toLowerCase().includes(inputValue.toLowerCase())
       }
-      rowKey={(record) => record.assetTag} // Đổi sang assetTag
-      render={(item) => item.assetTag} // Hiển thị assetTag
+      rowKey={(record) => record.assetID} // Đổi sang assetID
+      render={(item) => item.assetID} // Hiển thị assetID
       listStyle={{ width: '48%', height: 300 }}
       style={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}
       operations={["Add", "Remove"]}
@@ -78,23 +80,23 @@ const TableTransfer: React.FC<TableTransferProps> = ({
             }
           },
           onSelect: (record: AssetItem, selected: boolean) => {
-            onItemSelect(record.assetTag, selected);
+            onItemSelect(record.assetID, selected);
             if (direction === 'left') {
               setSourceSelectedKeys((prev) =>
                 selected
-                  ? [...prev, record.assetTag]
-                  : prev.filter((key) => key !== record.assetTag)
+                  ? [...prev, record.assetID]
+                  : prev.filter((key) => key !== record.assetID)
               );
             } else {
               setTargetSelectedKeys((prev) =>
                 selected
-                  ? [...prev, record.assetTag]
-                  : prev.filter((key) => key !== record.assetTag)
+                  ? [...prev, record.assetID]
+                  : prev.filter((key) => key !== record.assetID)
               );
             }
           },
-          onSelectAll: (selected: boolean, selectedRows: AssetItem[], changeRows: AssetItem[]) => {
-            const keys = changeRows.map((item) => item.assetTag); // phải dùng changeRows chứ không phải selectedRows
+          onSelectAll: (selected: boolean, changeRows: AssetItem[]) => {
+            const keys = changeRows.map((item) => item.assetID); // phải dùng changeRows chứ không phải selectedRows
             onItemSelectAll(keys, selected);
 
             if (direction === 'left') {
@@ -121,7 +123,7 @@ const TableTransfer: React.FC<TableTransferProps> = ({
                 columns={columns}
                 dataSource={filteredItems as AssetItem[]}
                 size="small"
-                rowKey="assetTag" // Đảm bảo là 'assetTag'
+                rowKey="assetID" // Đảm bảo là 'assetID'
                 pagination={false}
                 style={{ width: '100%' }}
                 scroll={{ y: "100%", x: "100%" }} // giữ table nằm trong vùng height đã định

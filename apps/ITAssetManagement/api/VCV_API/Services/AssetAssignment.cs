@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 using VCV_API.Data;
 using VCV_API.Models.Asset;
@@ -59,6 +60,47 @@ namespace VCV_API.Services
                 throw new Exception($"Error: {ex.Message}", ex);
             }
             return assetAssigns;
+        }
+
+        public async Task<List<Asset>> GetAssignedAssets(string employeeID)
+        {
+            var assets = new List<Asset>();
+            try
+            {
+                var connection = _context.Database.GetDbConnection();
+                await connection.OpenAsync();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.CommandText = "Asset_GetAssignAssetByEmployeeID";
+
+                    var param = new SqlParameter("@EmployeeID", SqlDbType.Int, 20)
+                    {
+                        Value = employeeID
+                    };
+                    command.Parameters.Add(param);
+
+                    using var reader = await command.ExecuteReaderAsync();
+
+                    while (await reader.ReadAsync())
+                    {
+                        var asset = new Asset
+                        {
+                            AssetID = reader.GetInt32(reader.GetOrdinal("AssetID")),
+                            AssetTag = reader.GetString(reader.GetOrdinal("AssetTag")),
+                            TemplateName = reader.IsDBNull(reader.GetOrdinal("TemplateName")) ? null : reader.GetString(reader.GetOrdinal("TemplateName")),
+                            SerialNumber = reader.IsDBNull(reader.GetOrdinal("SerialNumber")) ? null : reader.GetString(reader.GetOrdinal("SerialNumber")),
+                        };
+
+                        assets.Add(asset);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error: {ex.Message}", ex);
+            }
+            return assets;
         }
     }
 }

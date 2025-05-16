@@ -2,7 +2,7 @@
 {
     public class EmployeeSingleCol
     {
-        public string? EmployeeCode { get; set; }
+        public int? EmployeeID { get; set; }
         public string? EmployeeInfo { get; set; }
     }
 }

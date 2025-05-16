@@ -35,9 +35,8 @@ namespace VCV_API.Services
                         {
                             var employee = new EmployeeSingleCol
                             {
+                                EmployeeID = reader.IsDBNull(reader.GetOrdinal("EmployeeID")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("EmployeeID")),
                                 EmployeeInfo = reader.IsDBNull(reader.GetOrdinal("EmployeeInfo")) ? null : reader.GetString(reader.GetOrdinal("EmployeeInfo")),
-                                EmployeeCode = reader.IsDBNull(reader.GetOrdinal("EmployeeCode")) ? null : reader.GetString(reader.GetOrdinal("EmployeeCode")),
-
                             };
 
                             employeess.Add(employee);

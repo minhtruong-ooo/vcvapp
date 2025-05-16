@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Models\\QRModel.cs",
               "ToolTip": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Models\\QRModel.cs",
               "RelativeToolTip": "Models\\QRModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-05T02:31:29.454Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "Interfaces\\IMediaService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T08:07:44.097Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T08:07:44.097Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Services\\MediaService.cs",
               "ViewState": "AgIAAF0AAAAAAAAAAAAowDYAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T07:52:53.326Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T07:52:53.326Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "Controllers\\MediaController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T06:48:36.542Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T06:48:36.542Z"
             }
           ]
         }

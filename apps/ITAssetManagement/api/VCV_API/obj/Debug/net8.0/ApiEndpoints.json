@@ -109,6 +109,22 @@
   },
   {
     "ContainingType": "VCV_API.Controllers.AssignController",
+    "Method": "GetAssignedAssetsByEmployeeID",
+    "RelativePath": "api/Assign/GetAssignedAssetsByEmployeeID/{employeeID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "employeeID",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.AssignController",
     "Method": "GetAssignments",
     "RelativePath": "api/Assign/GetAssignments",
     "HttpMethod": "GET",

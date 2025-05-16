@@ -182,6 +182,28 @@
         }
       }
     },
+    "/api/Assign/GetAssignedAssetsByEmployeeID/{employeeID}": {
+      "get": {
+        "tags": [
+          "Assign"
+        ],
+        "parameters": [
+          {
+            "name": "employeeID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Employee/GetAllEmployeesSingle": {
       "get": {
         "tags": [

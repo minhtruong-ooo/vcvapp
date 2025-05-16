@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using VCV_API.Services;
 using VCV_API.Services.Interfaces;
 
 namespace VCV_API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class AssignController : ControllerBase
     {
@@ -14,7 +15,7 @@ namespace VCV_API.Controllers
             _assetAssignService = assetAssignService;
         }
 
-        [HttpGet("GetAssignments")]
+        [HttpGet]
         public async Task<IActionResult> GetAssignments()
         {
             try
@@ -25,6 +26,22 @@ namespace VCV_API.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+
+
+        [HttpGet("{employeeID}")]
+        public async Task<IActionResult> GetAssignedAssetsByEmployeeID(string employeeID)
+        {
+            try
+            {
+                var assets = await _assetAssignService.GetAssignedAssets(employeeID);
+                return Ok(assets);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Lỗi khi lấy dữ liệu: {ex.Message}");
             }
         }
     }
