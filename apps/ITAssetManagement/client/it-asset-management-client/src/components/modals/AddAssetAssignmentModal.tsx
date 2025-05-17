@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import type { FormInstance } from 'antd';
 import { Form, Input, Select, Row, Col, Switch, Card, message, Button, Spin } from 'antd';
 import { useKeycloak } from '@react-keycloak/web';
-import { getUnusedAssets, getAssignedAssets } from '../../api/assetAssignmentAPI';
+import { getUnusedAssets, getAssignedAssets, createAssignment } from '../../api/assetAssignmentAPI';
 import { getEmployeeSingle } from '../../api/employeeAPI';
 import type { TransferItem } from 'antd/es/transfer';
 import TableTransfer from '../TableTransfer';
@@ -26,11 +26,11 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
   form,
   onCancel,
   // onAdd,
-  // onSuccess,
+  onSuccess,
 }) => {
   const { keycloak } = useKeycloak();
   const token = keycloak?.token;
-
+  const assignmentBy = keycloak.tokenParsed?.employeeID;
   const [loadingSelects, setLoadingSelects] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(true);
   const [assets, setAssets] = useState<AssetItem[]>([]);
@@ -124,6 +124,37 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
     }
   };
 
+const handleSave = async () => {
+  try {
+    if (!token) {
+      message.error("Không có token xác thực. Vui lòng đăng nhập lại.");
+      return;
+    }
+
+    // Validate và lấy dữ liệu từ form (bao gồm notes)
+    const values = await form.validateFields();
+
+    const payload = {
+      employeeId: Number(selectedEmployeeID),
+      notes: values.notes,
+      assignmentAction: isAssignMode ? "Assign" : "Return",
+      assets: targetKeys.map(Number),
+      assignmentBy: Number(assignmentBy),
+    };
+
+    const result = await createAssignment(token, payload);
+
+    // ✅ Hiển thị message trả về từ API (nếu có)
+    message.success(result.message || "Tạo bàn giao thành công!");
+    onCancel();
+    onSuccess();
+  } catch (error: any) {
+    console.error("❌ Error creating assignment:", error);
+    // ✅ Nếu API trả về message lỗi, hiển thị nó
+    message.error(error.message || "Đã xảy ra lỗi khi tạo bàn giao");
+  }
+};
+
   return (
     <>
       <div>
@@ -189,7 +220,7 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
       </Card>
 
       <div style={{ marginTop: 16, display: "flex", justifyContent: "flex-end" }}>
-        <Button loading={loading} type="primary" style={{ marginRight: 8 }}>
+        <Button onClick={handleSave} loading={loading} type="primary" style={{ marginRight: 8 }}>
           Save
         </Button>
         <Button onClick={onCancel}>Cancel</Button>

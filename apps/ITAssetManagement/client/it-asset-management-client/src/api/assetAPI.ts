@@ -120,7 +120,6 @@ export const getAssetDetail = async (token: string, assetTag: string) => {
         timeout: 5000,
       }
     );
-    console.log(response.data);
     return response.data;
   } catch (error: any) {
     console.error("❌ Lỗi khi lấy chi tiết tài sản:", error?.response?.data?.details || error.message);

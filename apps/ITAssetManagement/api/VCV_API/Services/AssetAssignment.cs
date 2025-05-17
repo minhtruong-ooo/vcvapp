@@ -102,5 +102,40 @@ namespace VCV_API.Services
             }
             return assets;
         }
+
+        public async Task<bool> CreateAssignmentAsync(AssignmentRequestDto dto)
+        {
+            using var connection = _context.Database.GetDbConnection();
+            await connection.OpenAsync();
+
+            using var command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "Asset_Assignment_Create";
+
+            var table = new DataTable();
+            table.Columns.Add("AssetID", typeof(int));
+            foreach (var id in dto.Assets)
+            {
+                table.Rows.Add(id);
+            }
+
+            command.Parameters.AddRange(new[]
+            {
+            new SqlParameter("@EmployeeID", dto.EmployeeId),
+            new SqlParameter("@Notes", dto.Notes ?? (object)DBNull.Value),
+            new SqlParameter("@AssignmentAction", dto.AssignmentAction),
+            new SqlParameter("@AssignmentBy", dto.AssignmentBy),
+            new SqlParameter
+            {
+                ParameterName = "@Assets",
+                SqlDbType = SqlDbType.Structured,
+                TypeName = "AssetIdListType",
+                Value = table
+            }
+        });
+
+            var rows = await command.ExecuteNonQueryAsync();
+            return rows > 0;
+        }
     }
 }

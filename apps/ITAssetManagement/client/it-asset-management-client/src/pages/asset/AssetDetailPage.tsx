@@ -70,8 +70,9 @@ const AssetDetailPage = () => {
             }
           }
           setImageUrls(urls);
+        }
 
-          if (data?.assignmentsCurrent?.[0]?.avatar) {
+        if (data?.assignmentsCurrent?.[0]?.avatar) {
             const fetchAva = await fetchImage(
               token,
               data.assignmentsCurrent[0].avatar
@@ -79,7 +80,8 @@ const AssetDetailPage = () => {
             const avatarUrl = URL.createObjectURL(fetchAva);
             setImageAva(avatarUrl);
           }
-        }
+
+
       } catch (error: any) {
         message.error("Failed to load asset detail: " + error.message);
       } finally {
@@ -160,7 +162,6 @@ const AssetDetailPage = () => {
             ]}
           />
         </Space>
-
         <Space>
           <Button
             onClick={handlePrint}
@@ -566,7 +567,7 @@ const AssetDetailPage = () => {
                       />
                     </Table>
                   ) : (
-                    <Text type="secondary">No asset history.</Text>
+                    <Text type="secondary">No assignment history.</Text>
                   ),
                 },
               ]}

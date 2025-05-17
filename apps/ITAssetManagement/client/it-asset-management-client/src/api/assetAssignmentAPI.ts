@@ -46,3 +46,30 @@ export const getAssignedAssets = async (token: string, employeeID: string) => {
       throw error;
     }
 };
+
+export const createAssignment = async (token: string, data: {
+  employeeId: number;
+  notes: string;
+  assignmentAction: string;
+  assets: number[];
+  assignmentBy: number;
+}) => {
+  try {
+    console.log(data);
+    const response = await axios.post(`${BASE_URL}/Assign/CreateAssignment`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      timeout: 5000,
+    });
+
+    return response.data;
+  } catch (error: any) {
+    console.error(
+      "Unknown error occurred:",
+      error?.response?.data?.details || error.message
+    );
+    throw new Error(error?.response?.data?.details || "Unknown error occurred");
+  }
+};

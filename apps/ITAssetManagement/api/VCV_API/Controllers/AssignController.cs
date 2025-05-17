@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using VCV_API.Models.AssetAssignment;
 using VCV_API.Services;
 using VCV_API.Services.Interfaces;
 
@@ -42,6 +43,20 @@ namespace VCV_API.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500, $"Lỗi khi lấy dữ liệu: {ex.Message}");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAssignment([FromBody] AssignmentRequestDto dto)
+        {
+            try
+            {
+                await _assetAssignService.CreateAssignmentAsync(dto);
+                return Ok(new { message = "Assignment created successfully" }); 
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Failed to create assignment", error = ex.Message });
             }
         }
     }

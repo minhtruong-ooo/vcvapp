@@ -109,6 +109,22 @@
   },
   {
     "ContainingType": "VCV_API.Controllers.AssignController",
+    "Method": "CreateAssignment",
+    "RelativePath": "api/Assign/CreateAssignment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "VCV_API.Models.AssetAssignment.AssignmentRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.AssignController",
     "Method": "GetAssignedAssetsByEmployeeID",
     "RelativePath": "api/Assign/GetAssignedAssetsByEmployeeID/{employeeID}",
     "HttpMethod": "GET",

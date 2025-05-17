@@ -7,5 +7,6 @@ namespace VCV_API.Services.Interfaces
     {
         Task<List<AssetAssignmentModel>> GetAssetAssignments();
         Task<List<Asset>> GetAssignedAssets(string employeeID);
+        Task<bool> CreateAssignmentAsync(AssignmentRequestDto request);
     }
 }
