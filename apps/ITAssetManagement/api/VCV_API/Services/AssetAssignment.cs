@@ -62,9 +62,9 @@ namespace VCV_API.Services
             return assetAssigns;
         }
 
-        public async Task<List<Asset>> GetAssignedAssets(string employeeID)
+        public async Task<List<AssetReturnViewModel>> GetAssignedAssets(string employeeID)
         {
-            var assets = new List<Asset>();
+            var assets = new List<AssetReturnViewModel>();
             try
             {
                 var connection = _context.Database.GetDbConnection();
@@ -74,7 +74,7 @@ namespace VCV_API.Services
                     command.CommandType = CommandType.StoredProcedure;
                     command.CommandText = "Asset_GetAssignAssetByEmployeeID";
 
-                    var param = new SqlParameter("@EmployeeID", SqlDbType.Int, 20)
+                    var param = new SqlParameter("@EmployeeID", SqlDbType.NVarChar, 20)
                     {
                         Value = employeeID
                     };
@@ -84,12 +84,13 @@ namespace VCV_API.Services
 
                     while (await reader.ReadAsync())
                     {
-                        var asset = new Asset
+                        var asset = new AssetReturnViewModel
                         {
                             AssetID = reader.GetInt32(reader.GetOrdinal("AssetID")),
                             AssetTag = reader.GetString(reader.GetOrdinal("AssetTag")),
                             TemplateName = reader.IsDBNull(reader.GetOrdinal("TemplateName")) ? null : reader.GetString(reader.GetOrdinal("TemplateName")),
                             SerialNumber = reader.IsDBNull(reader.GetOrdinal("SerialNumber")) ? null : reader.GetString(reader.GetOrdinal("SerialNumber")),
+                            DetailID = reader.IsDBNull(reader.GetOrdinal("DetailID")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("DetailID")),
                         };
 
                         assets.Add(asset);
@@ -105,37 +106,51 @@ namespace VCV_API.Services
 
         public async Task<bool> CreateAssignmentAsync(AssignmentRequestDto dto)
         {
-            using var connection = _context.Database.GetDbConnection();
-            await connection.OpenAsync();
-
-            using var command = connection.CreateCommand();
-            command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "Asset_Assignment_Create";
-
-            var table = new DataTable();
-            table.Columns.Add("AssetID", typeof(int));
-            foreach (var id in dto.Assets)
+            try
             {
-                table.Rows.Add(id);
+                using var connection = _context.Database.GetDbConnection();
+                await connection.OpenAsync();
+
+
+                using var command = connection.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "Asset_Assignment_Create";
+
+                // Tạo DataTable phù hợp với TVP: AssetID + DetailID
+                var table = new DataTable();
+                table.Columns.Add("AssetID", typeof(int));
+                table.Columns.Add("SourceDetailID", typeof(int));
+
+                foreach (var item in dto.Assets ?? Enumerable.Empty<AssetAssignedDetailDto>())
+                {
+                    table.Rows.Add(item.AssetID, item.DetailID ?? (object)DBNull.Value);
+                }
+
+                command.Parameters.AddRange(new[]
+                {
+                new SqlParameter("@EmployeeID", dto.EmployeeId),
+                new SqlParameter("@Notes", dto.Notes ?? (object)DBNull.Value),
+                new SqlParameter("@AssignmentDate", dto.Date ?? (object)DBNull.Value),
+                new SqlParameter("@AssignmentAction", dto.AssignmentAction ?? (object)DBNull.Value),
+                new SqlParameter("@AssignmentBy", dto.AssignmentBy),
+                new SqlParameter
+                {
+                    ParameterName = "@Assets",
+                    SqlDbType = SqlDbType.Structured,
+                    TypeName = "AssetIdListType", // TVP phải định nghĩa có 2 cột AssetID & DetailID
+                    Value = table
+                }
+            });
+
+                var rows = await command.ExecuteNonQueryAsync();
+                return rows > 0;
+
             }
-
-            command.Parameters.AddRange(new[]
+            catch (Exception ex)
             {
-            new SqlParameter("@EmployeeID", dto.EmployeeId),
-            new SqlParameter("@Notes", dto.Notes ?? (object)DBNull.Value),
-            new SqlParameter("@AssignmentAction", dto.AssignmentAction),
-            new SqlParameter("@AssignmentBy", dto.AssignmentBy),
-            new SqlParameter
-            {
-                ParameterName = "@Assets",
-                SqlDbType = SqlDbType.Structured,
-                TypeName = "AssetIdListType",
-                Value = table
+                throw new Exception($"Error: {ex.Message}", ex);
+                throw;
             }
-        });
-
-            var rows = await command.ExecuteNonQueryAsync();
-            return rows > 0;
         }
     }
 }

@@ -37,8 +37,16 @@
       "PackagePath": "staticwebassets\\images\\employees\\avatar1.jpg"
     },
     {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\employees\\hnp.jpg",
+      "PackagePath": "staticwebassets\\images\\employees\\hnp.jpg"
+    },
+    {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\logo\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo\\logo.png"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\1d8637a7-c7f1-443c-9366-d3a831cbe4bf.pdf",
+      "PackagePath": "staticwebassets\\qr\\1d8637a7-c7f1-443c-9366-d3a831cbe4bf.pdf"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MediaService.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

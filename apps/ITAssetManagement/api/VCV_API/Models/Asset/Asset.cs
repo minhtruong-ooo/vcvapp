@@ -6,6 +6,8 @@
 
         public string AssetTag { get; set; } = string.Empty;
 
+        public int? DetailID { get; set; }
+
         public int TemplateID { get; set; }
 
         public string? TemplateName { get; set; }

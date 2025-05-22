@@ -59,7 +59,7 @@ const Layout: React.FC = () => {
         {
           key: "3",
           icon: <SolutionOutlined />,
-          label: <Link to="/assignments">Assignments</Link>,
+          label: <Link to="/assignments">Assign & Return</Link>,
         },
         {
           key: "4",

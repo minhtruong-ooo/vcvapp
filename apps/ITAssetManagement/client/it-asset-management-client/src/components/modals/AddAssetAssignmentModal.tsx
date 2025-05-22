@@ -1,7 +1,7 @@
 // AddAssetAssignmentModal.tsx
 import React, { useState, useEffect } from 'react';
 import type { FormInstance } from 'antd';
-import { Form, Input, Select, Row, Col, Switch, Card, message, Button, Spin } from 'antd';
+import { Form, Input, Select, Row, Col, Switch, Card, message, Button, Spin, DatePicker } from 'antd';
 import { useKeycloak } from '@react-keycloak/web';
 import { getUnusedAssets, getAssignedAssets, createAssignment } from '../../api/assetAssignmentAPI';
 import { getEmployeeSingle } from '../../api/employeeAPI';
@@ -74,9 +74,10 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
       const assignedAssets = await getAssignedAssets(token, employeeID);
       const processedAssets = assignedAssets.map((item: any) => ({
         ...item,
-        key: String(item.assetTag),
+        key: String(item.assetID),
         assetID: String(item.assetID),
         assetTag: String(item.assetTag),
+        detailID: String(item.detailID),
       }));
       setAssets(processedAssets);
     } catch (error) {
@@ -124,36 +125,46 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
     }
   };
 
-const handleSave = async () => {
-  try {
-    if (!token) {
-      message.error("Không có token xác thực. Vui lòng đăng nhập lại.");
-      return;
+  const handleSave = async () => {
+    try {
+      if (!token) {
+        message.error("Không có token xác thực. Vui lòng đăng nhập lại.");
+        return;
+      }
+
+      const values = await form.validateFields();
+
+      // Lọc các asset đã chọn từ bảng Transfer (bảng bên phải)
+      const selectedAssets = assets.filter((asset) =>
+        targetKeys.includes(asset.assetID)
+      );
+
+      // Lấy danh sách assetID (kiểu number) cho assets
+      const mappedAssets = selectedAssets.map((asset) => ({
+        assetID: Number(asset.assetID),
+        detailID: isAssignMode ? null : Number(asset.detailID),
+      }));
+
+
+      const payload = {
+        employeeId: Number(selectedEmployeeID),
+        notes: values.notes,
+        date: values.date ? values.date.format("YYYY-MM-DD") : null,
+        assignmentAction: isAssignMode ? "Assign" : "Return",
+        assets: mappedAssets, 
+        assignmentBy: Number(assignmentBy),
+      };
+
+      console.log("✅ Payload to send:", payload);
+      const result = await createAssignment(token, payload);
+      message.success(result.message || "Tạo bàn giao thành công!");
+      onCancel();
+      onSuccess();
+    } catch (error: any) {
+      console.error("❌ Error creating assignment:", error);
+      message.error(error.message || "Đã xảy ra lỗi khi tạo bàn giao");
     }
-
-    // Validate và lấy dữ liệu từ form (bao gồm notes)
-    const values = await form.validateFields();
-
-    const payload = {
-      employeeId: Number(selectedEmployeeID),
-      notes: values.notes,
-      assignmentAction: isAssignMode ? "Assign" : "Return",
-      assets: targetKeys.map(Number),
-      assignmentBy: Number(assignmentBy),
-    };
-
-    const result = await createAssignment(token, payload);
-
-    // ✅ Hiển thị message trả về từ API (nếu có)
-    message.success(result.message || "Tạo bàn giao thành công!");
-    onCancel();
-    onSuccess();
-  } catch (error: any) {
-    console.error("❌ Error creating assignment:", error);
-    // ✅ Nếu API trả về message lỗi, hiển thị nó
-    message.error(error.message || "Đã xảy ra lỗi khi tạo bàn giao");
-  }
-};
+  };
 
   return (
     <>
@@ -186,8 +197,8 @@ const handleSave = async () => {
                 >
                   {employees.map((employee) => (
                     <Select.Option
-                      key={employee.employeeID} // key được dùng bởi React, không ảnh hưởng
-                      value={employee.employeeID} // đây là giá trị được truyền ra ngoài
+                      key={employee.employeeID}
+                      value={employee.employeeID}
                     >
                       {employee.employeeInfo}
                     </Select.Option>
@@ -195,7 +206,12 @@ const handleSave = async () => {
                 </Select>
               </Form.Item>
             </Col>
-            <Col span={16}>
+            <Col span={8}>
+              <Form.Item label="Date" name="date">
+                <DatePicker style={{ width: "100%" }} />
+              </Form.Item>
+            </Col>
+            <Col span={8}>
               <Form.Item label="Notes" name="notes">
                 <Input />
               </Form.Item>

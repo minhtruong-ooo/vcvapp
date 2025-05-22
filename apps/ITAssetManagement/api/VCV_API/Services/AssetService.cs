@@ -6,7 +6,6 @@ using VCV_API.Models.Asset;
 using VCV_API.Models.AssetAssignment;
 using VCV_API.Models.AssetHistory;
 using VCV_API.Services.Interfaces;
-using static Azure.Core.HttpHeader;
 
 namespace VCV_API.Services
 {
@@ -403,6 +402,5 @@ namespace VCV_API.Services
             }
             return assets;
         }
-
     }
 }

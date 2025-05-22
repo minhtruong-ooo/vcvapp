@@ -250,6 +250,21 @@
   },
   "components": {
     "schemas": {
+      "AssetAssignedDetailDto": {
+        "type": "object",
+        "properties": {
+          "assetID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "detailID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "AssetCreateDto": {
         "type": "object",
         "properties": {
@@ -299,6 +314,11 @@
             "type": "string",
             "nullable": true
           },
+          "date": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
           "assignmentAction": {
             "type": "string",
             "nullable": true
@@ -306,8 +326,7 @@
           "assets": {
             "type": "array",
             "items": {
-              "type": "integer",
-              "format": "int32"
+              "$ref": "#/components/schemas/AssetAssignedDetailDto"
             },
             "nullable": true
           }

@@ -9,6 +9,7 @@ import Licenses from "../pages/asset/Licenses";
 import Maintenance from "../pages/asset/Maintenance";
 import AssetDetailPage from "../pages/asset/AssetDetailPage";
 import AssetAssignment from "../pages/asset/AssetAssignment";
+import AssignmentDetailPage from "../pages/asset/AssignmentDetailPage";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -26,6 +27,7 @@ const AppRoutes: React.FC = () => {
           <Route path="/licenses" element={<Licenses />} />
           <Route path="/maintenance" element={<Maintenance />} />
           <Route path="/assignments" element={<AssetAssignment />} />
+          <Route path="/assignments/:id" element={<AssignmentDetailPage />} />
         </Route>
       </Routes>
     </Router>

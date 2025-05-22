@@ -40,57 +40,57 @@ const AssetDetailPage = () => {
   const [imageAva, setImageAva] = useState<string>();
 
   useEffect(() => {
-    const fetchAsset = async () => {
-      try {
-        setLoading(true);
-        const token = keycloak.token;
-        if (!token) {
-          message.error("Authentication token not found.");
-          return;
-        }
-
-        if (!id) {
-          message.error("Asset ID is missing in URL.");
-          return;
-        }
-
-        const data = await getAssetDetail(token, id);
-        setAsset(data);
-
-        if (data?.images && data.images.length > 0) {
-          const urls: string[] = [];
-
-          for (const img of data.images) {
-            try {
-              const blob = await fetchImage(token, img.imageUrl);
-              const objectUrl = URL.createObjectURL(blob);
-              urls.push(objectUrl);
-            } catch (err) {
-              console.error("Failed to fetch image", img.imageUrl, err);
-            }
-          }
-          setImageUrls(urls);
-        }
-
-        if (data?.assignmentsCurrent?.[0]?.avatar) {
-            const fetchAva = await fetchImage(
-              token,
-              data.assignmentsCurrent[0].avatar
-            );
-            const avatarUrl = URL.createObjectURL(fetchAva);
-            setImageAva(avatarUrl);
-          }
-
-
-      } catch (error: any) {
-        message.error("Failed to load asset detail: " + error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchAsset();
   }, [id, keycloak.token]);
+
+  const fetchAsset = async () => {
+    try {
+      setLoading(true);
+      const token = keycloak.token;
+      if (!token) {
+        message.error("Authentication token not found.");
+        return;
+      }
+
+      if (!id) {
+        message.error("Asset ID is missing in URL.");
+        return;
+      }
+
+      const data = await getAssetDetail(token, id);
+      setAsset(data);
+
+      if (data?.images && data.images.length > 0) {
+        const urls: string[] = [];
+
+        for (const img of data.images) {
+          try {
+            const blob = await fetchImage(token, img.imageUrl);
+            const objectUrl = URL.createObjectURL(blob);
+            urls.push(objectUrl);
+          } catch (err) {
+            console.error("Failed to fetch image", img.imageUrl, err);
+          }
+        }
+        setImageUrls(urls);
+      }
+
+      if (data?.assignmentsCurrent?.[0]?.avatar) {
+        const fetchAva = await fetchImage(
+          token,
+          data.assignmentsCurrent[0].avatar
+        );
+        const avatarUrl = URL.createObjectURL(fetchAva);
+        setImageAva(avatarUrl);
+      }
+
+
+    } catch (error: any) {
+      message.error("Failed to load asset detail: " + error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handlePrint = async () => {
     if (!asset) {
@@ -124,7 +124,7 @@ const AssetDetailPage = () => {
       setPrinting(false); // Kết thúc loading
     }
   };
-  
+
   if (!asset) return <p>No asset found.</p>;
 
   return (
@@ -133,7 +133,7 @@ const AssetDetailPage = () => {
         <Space>
           <Title
             level={3}
-            style={{ margin: 0, color: darkMode ? "#fff" : "#000" }}
+            style={{ margin: 0 }}
           >
             Asset Detail
           </Title>
@@ -297,57 +297,58 @@ const AssetDetailPage = () => {
               title="Asset User"
               style={{ height: "100%", flex: 1 }}
             >
-                {asset.assignmentsCurrent.length > 0 ? (
+              {asset.assignmentsCurrent.length > 0 ? (
                 asset.assignmentsCurrent.map((assignmentCurrent) => (
                   <Row key={assignmentCurrent.employeeCode} style={{ marginBottom: 16 }}>
-                  <Col span={10}>
-                    <div
-                    style={{
-                      width: 200,
-                      height: 200,
-                      borderRadius: "50%",
-                      overflow: "hidden",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      backgroundColor: "#f0f0f0",
-                    }}
-                    >
-                    <Image
-                      preview={false}
-                      src={imageAva || ""}
-                      style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      }}
-                    />
-                    </div>
-                  </Col>
-                  <Col span={10}>
-                    <div style={{ marginBottom: 8 }}>
-                    <div className="assign_user_info">
-                      <Text strong>Employee ID: </Text>
-                      <Text>{assignmentCurrent.employeeCode}</Text>
-                    </div>
-                    <div className="assign_user_info">
-                      <Text strong>Full Name: </Text>
-                      <Text>{assignmentCurrent.fullName}</Text>
-                    </div>
-                    <div className="assign_user_info">
-                      <Text strong>Department: </Text>
-                      <Text>{assignmentCurrent.departmentName}</Text>
-                    </div>
-                    <div className="assign_user_info">
-                      <a>View User</a>
-                    </div>
-                    </div>
-                  </Col>
+                    <Col span={10}>
+                      <div
+                        style={{
+                          width: 200,
+                          height: 200,
+                          borderRadius: "50%",
+                          overflow: "hidden",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          backgroundColor: "#f0f0f0",
+                        }}
+                      >
+                        <Image
+                          loading="lazy"
+                          preview={false}
+                          src={imageAva || ""}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                          }}
+                        />
+                      </div>
+                    </Col>
+                    <Col span={10}>
+                      <div style={{ marginBottom: 8 }}>
+                        <div className="assign_user_info">
+                          <Text strong>Employee ID: </Text>
+                          <Text>{assignmentCurrent.employeeCode}</Text>
+                        </div>
+                        <div className="assign_user_info">
+                          <Text strong>Full Name: </Text>
+                          <Text>{assignmentCurrent.fullName}</Text>
+                        </div>
+                        <div className="assign_user_info">
+                          <Text strong>Department: </Text>
+                          <Text>{assignmentCurrent.departmentName}</Text>
+                        </div>
+                        <div className="assign_user_info">
+                          <a>View User</a>
+                        </div>
+                      </div>
+                    </Col>
                   </Row>
                 ))
-                ) : (
+              ) : (
                 <Text type="secondary">No users are using this asset.</Text>
-                )}
+              )}
             </Card>
           </div>
         </Col>

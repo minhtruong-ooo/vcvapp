@@ -88,7 +88,7 @@ const AssetAssignment = () => {
                     level={3}
                     style={{ margin: 0, color: darkMode ? "#fff" : "#000" }}
                 >
-                    Assignments
+                    Assign & Return
                 </Title>
                 <div style={{ display: "flex", justifyContent: "space-around" }}>
                     <Space>
@@ -144,7 +144,7 @@ const AssetAssignment = () => {
                         );
                         if (isCheckboxColumn) return;
 
-                        navigate(`/assignment/${record.assignmentCode}`);
+                        navigate(`/assignments/${record.assignmentCode}`);
                     },
                 })}
                 rowSelection={{

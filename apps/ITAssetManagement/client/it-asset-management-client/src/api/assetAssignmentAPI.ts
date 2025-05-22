@@ -51,7 +51,7 @@ export const createAssignment = async (token: string, data: {
   employeeId: number;
   notes: string;
   assignmentAction: string;
-  assets: number[];
+  assets: { assetID: number; detailID: number | null }[];
   assignmentBy: number;
 }) => {
   try {

@@ -50,7 +50,7 @@ const AppHeader: React.FC = () => {
       }}
     >
       <div style={{ marginRight: "15px" }}>
-          <Switch checkedChildren="☀️" unCheckedChildren="🌑" checked={darkMode} onChange={toggleDarkMode} />
+          <Switch checkedChildren="🌑" unCheckedChildren="☀️" checked={darkMode} onChange={toggleDarkMode} />
       </div>
       <Dropdown menu={{ items, onClick: handleMenuClick }} trigger={["hover"]}>
         <a onClick={(e) => e.preventDefault()}>

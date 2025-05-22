@@ -7,4 +7,6 @@ wwwroot\fonts\CALIBRIZ.TTF
 wwwroot\images\assets\1.jpg
 wwwroot\images\assets\2.jpg
 wwwroot\images\employees\avatar1.jpg
+wwwroot\images\employees\hnp.jpg
 wwwroot\images\logo\logo.png
+wwwroot\qr\1d8637a7-c7f1-443c-9366-d3a831cbe4bf.pdf

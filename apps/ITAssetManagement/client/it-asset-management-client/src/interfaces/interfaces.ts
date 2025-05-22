@@ -103,6 +103,19 @@ export interface AssetMapped {
   LocationID?: number;
 }
 
+export interface CreateAssignmentPayload {
+  employeeId: number;
+  notes: string;
+  assignmentAction: string;
+  assets: AssetItem[];
+  assignmentBy: number;
+}
+
+interface AssetItem {
+  assetID: number;
+  detailID: number | null;
+}
+
 export interface LookupLists {
   templates: { templateID: number; templateName: string }[];
   statuses: { statusID: number; statusName: string }[];
@@ -112,3 +125,4 @@ export interface LookupLists {
 export interface EmployeeSingle {
   employeeInfo: string;
 }
+
