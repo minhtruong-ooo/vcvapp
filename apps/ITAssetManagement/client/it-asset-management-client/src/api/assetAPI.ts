@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Asset } from "../interfaces/interfaces";
 
-const BASE_URL = "https://localhost:7142/api";
+const BASE_URL = import.meta.env.VITE_VCV_API_URL;
 
 export const getAssets = async (token: string) => {
   try {

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using System.Net.Http.Headers;
 using VCV_API.Data;
 using VCV_API.Services;
@@ -12,6 +13,29 @@ var audience = keycloakConfig["Audience"];
 
 // Add services to the container.
 
+builder.Services.AddAuthentication("Bearer")
+    .AddJwtBearer("Bearer", options =>
+    {
+        options.Authority = authority;
+        options.RequireHttpsMetadata = false;
+        options.Audience = audience;
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidIssuer = authority, // hoặc issuer lấy từ metadata
+            ValidateIssuer = true,
+            ValidateAudience = true,
+        };
+        options.Events = new JwtBearerEvents
+        {
+            OnAuthenticationFailed = context =>
+            {
+                var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
+                logger.LogError(context.Exception, "Authentication failed.");
+                return Task.CompletedTask;
+            }
+        };
+    });
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
@@ -21,6 +45,8 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader();
     });
 });
+
+
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -32,13 +58,7 @@ builder.Services.AddScoped<IAssetLocation, AssetLocationService>();
 builder.Services.AddScoped<IAssetAssign, AssetAssignment>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
-builder.Services.AddAuthentication("Bearer")
-    .AddJwtBearer("Bearer", options =>
-    {
-        options.Authority = authority;
-        options.RequireHttpsMetadata = false;
-        options.Audience = audience;
-    });
+
 
 builder.Services.AddHttpClient("media", client =>
 {

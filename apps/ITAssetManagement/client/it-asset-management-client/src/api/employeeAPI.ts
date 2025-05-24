@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://localhost:7142/api";
+const BASE_URL = import.meta.env.VITE_VCV_API_URL;
 
 export const getEmployeeSingle = async (token: string) => {
     try {

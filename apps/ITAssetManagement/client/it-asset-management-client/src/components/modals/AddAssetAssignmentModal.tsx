@@ -145,24 +145,29 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
         detailID: isAssignMode ? null : Number(asset.detailID),
       }));
 
+      if (mappedAssets.length === 0) {
+        message.error("Please select at least one asset.");
+        return;
+      }
+
 
       const payload = {
         employeeId: Number(selectedEmployeeID),
         notes: values.notes,
         date: values.date ? values.date.format("YYYY-MM-DD") : null,
         assignmentAction: isAssignMode ? "Assign" : "Return",
-        assets: mappedAssets, 
+        assets: mappedAssets,
         assignmentBy: Number(assignmentBy),
       };
 
       console.log("✅ Payload to send:", payload);
       const result = await createAssignment(token, payload);
-      message.success(result.message || "Tạo bàn giao thành công!");
+      message.success(result.message || "Create Assignment Success!");
       onCancel();
       onSuccess();
     } catch (error: any) {
       console.error("❌ Error creating assignment:", error);
-      message.error(error.message || "Đã xảy ra lỗi khi tạo bàn giao");
+      message.error(error.message || "Error creating assignment");
     }
   };
 
@@ -184,7 +189,7 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
               <Form.Item
                 label="Employee"
                 name="employeeID"
-                rules={[{ required: true, message: 'Please select an employee' }]}
+                rules={[{ required: true, message: 'Please select an Employee' }]}
               >
                 <Select
                   showSearch
@@ -207,7 +212,7 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
               </Form.Item>
             </Col>
             <Col span={8}>
-              <Form.Item label="Date" name="date">
+              <Form.Item label="Date" name="date" rules={[{ required: true, message: 'Please input Date' }]}>
                 <DatePicker style={{ width: "100%" }} />
               </Form.Item>
             </Col>
