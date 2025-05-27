@@ -11,6 +11,7 @@ import {
   Table,
   message,
   Space,
+  Card
 } from "antd";
 import dayjs from "dayjs";
 import type { FormInstance } from "antd";
@@ -39,13 +40,14 @@ const AddAssetModal = ({
   const token = keycloak?.token;
 
   const [loading, setLoading] = useState(false);
+  const [loadingSelects, setLoadingSelects] = useState(true);
   const [addMultiple, setAddMultiple] = useState(false);
   const [tempAssets, setTempAssets] = useState<any[]>([]);
-
+  // const [specs, setSpecs] = useState<any[]>([]);
+  // const [loadingSpec, setLoadingSpec] = useState(true);
   const [templates, setTemplates] = useState<any[]>([]);
   const [locations, setLocations] = useState<any[]>([]);
   const [statuses, setStatuses] = useState<any[]>([]);
-  const [loadingSelects, setLoadingSelects] = useState(true);
 
   useEffect(() => {
     if (!token) return;
@@ -70,6 +72,26 @@ const AddAssetModal = ({
 
     fetchData();
   }, [token]);
+
+
+  // const handleTemplateChange = async (templateID: number) => {
+  //   form.setFieldsValue({ templateID });
+  //   if (!token) {
+  //     message.error("You are not authenticated. Please login again.");
+  //     return;
+  //   }
+  //   try {
+  //     setLoadingSpec(true);
+  //     const specsList = await getSpecs(token, templateID);
+  //     setSpecs(specsList);
+  //   } catch (err) {
+  //     message.error("Không thể tải thông số tài sản.");
+  //     console.error(err);
+  //   } finally {
+  //     setLoadingSpec(false);
+  //   }
+  // };
+
 
   const handleAddToList = async () => {
     try {
@@ -124,8 +146,9 @@ const AddAssetModal = ({
         await createAssets(token, assetList);
         message.success("Assets created successfully!");
       } else {
-        // validateFields sẽ tự động throw lỗi nếu field nào đó thiếu
+
         const values = await form.validateFields();
+        
 
         const singleAsset: AssetInput = {
           templateName: values.templateName,
@@ -137,6 +160,9 @@ const AddAssetModal = ({
         };
 
         const mappedAsset = mapper.map(singleAsset);
+
+        console.log(values);
+
         await createAsset(token, mappedAsset);
         message.success("Asset created successfully!");
       }
@@ -205,93 +231,135 @@ const AddAssetModal = ({
         Multiple Assets
       </Checkbox>
 
-      <Form form={form} layout="vertical" name="assetForm">
-        <Row gutter={16}>
-          <Col span={12}>
-            <Form.Item
-              label="Template Name"
-              name="templateName"
-              rules={[{ required: true }]}
-            >
-              <Select
-                showSearch
-                placeholder="Select Template"
-                loading={loadingSelects}
+
+      <Card
+        title="Asset Information"
+        style={{ marginBottom: 16 }}>
+        <Form form={form} layout="vertical" name="assetForm">
+          <Row gutter={16}>
+            <Col span={6}>
+              <Form.Item
+                label="Template Name"
+                name="templateName"
+                rules={[{ required: true }]}
               >
-                {templates.map((template) => (
-                  <Select.Option
-                    key={template.templateID}
-                    value={template.templateName}
-                  >
-                    {template.templateName}
-                  </Select.Option>
-                ))}
-              </Select>
-            </Form.Item>
-          </Col>
-          <Col span={12}>
-            <Form.Item label="Serial Number" name="serialNumber">
-              <Input />
-            </Form.Item>
-          </Col>
-          <Col span={12}>
-            <Form.Item label="Purchase Date" name="purchaseDate">
-              <DatePicker style={{ width: "100%" }} />
-            </Form.Item>
-          </Col>
-          <Col span={12}>
-            <Form.Item label="Warranty Expiry" name="warrantyExpiry">
-              <DatePicker style={{ width: "100%" }} />
-            </Form.Item>
-          </Col>
-          <Col span={12}>
-            <Form.Item label="Location" name="location">
-              <Select placeholder="Select Location" loading={loadingSelects}>
-                {locations.map((loc) => (
-                  <Select.Option key={loc.locationID} value={loc.locationName}>
-                    {loc.locationName}
-                  </Select.Option>
-                ))}
-              </Select>
-            </Form.Item>
-          </Col>
-          <Col span={12}>
-            <Form.Item label="Status" name="status">
-              <Select placeholder="Select Status" loading={loadingSelects}>
-                {statuses.map((status) => (
-                  <Select.Option
-                    key={status.statusID}
-                    value={status.statusName}
-                  >
-                    {status.statusName}
-                  </Select.Option>
-                ))}
-              </Select>
-            </Form.Item>
-          </Col>
+                <Select
+                  showSearch
+                  optionFilterProp="children"
+                  placeholder="Select Template"
+                  loading={loadingSelects}
+                  // onChange={handleTemplateChange}
+                >
+                  {templates.map((template) => (
+                    <Select.Option
+                      key={template.templateID}
+                      value={template.templateID}
+                    >
+                      {template.templateName}
+                    </Select.Option>
+                  ))}
+                </Select>
+              </Form.Item>
+            </Col>
+            <Col span={6}>
+              <Form.Item label="Serial Number" name="serialNumber">
+                <Input />
+              </Form.Item>
+            </Col>
+            <Col span={6}>
+              <Form.Item label="Purchase Date" name="purchaseDate">
+                <DatePicker style={{ width: "100%" }} />
+              </Form.Item>
+            </Col>
+            <Col span={6}>
+              <Form.Item label="Warranty Expiry" name="warrantyExpiry">
+                <DatePicker style={{ width: "100%" }} />
+              </Form.Item>
+            </Col>
+            <Col span={6}>
+              <Form.Item label="Location" name="location">
+                <Select placeholder="Select Location" loading={loadingSelects}>
+                  {locations.map((loc) => (
+                    <Select.Option key={loc.locationID} value={loc.locationName}>
+                      {loc.locationName}
+                    </Select.Option>
+                  ))}
+                </Select>
+              </Form.Item>
+            </Col>
+            <Col span={6}>
+              <Form.Item label="Status" name="status">
+                <Select placeholder="Select Status" loading={loadingSelects}>
+                  {statuses.map((status) => (
+                    <Select.Option
+                      key={status.statusID}
+                      value={status.statusName}
+                    >
+                      {status.statusName}
+                    </Select.Option>
+                  ))}
+                </Select>
+              </Form.Item>
+            </Col>
+          </Row>
+        </Form>
+      </Card>
+
+      {/* <Card
+        loading={loadingSpec}
+        style={{ marginBottom: 16 }}
+        title="Asset Specifications">
+        <Row gutter={16}>
+          {specs.map((spec) => {
+            const name = `spec_${spec.specificationID}`;
+            const label = `${spec.specificationName}${spec.unit ? ` (${spec.unit})` : ""}`;
+            const rules = spec.isRequired
+              ? [{ required: true, message: `Vui lòng nhập ${spec.specificationName}` }]
+              : [];
+
+            const formItem = (() => {
+              switch (spec.dataType?.toLowerCase()) {
+                case "number":
+                  return <Input type="number" style={{ width: "100%" }} />;
+                case "date":
+                  return <DatePicker style={{ width: "100%" }} />;
+                default:
+                  return <Input />;
+              }
+            })();
+
+            return (
+              <Col span={4} key={name}>
+                <Form.Item name={name} label={label} rules={rules}>
+                  {formItem}
+                </Form.Item>
+              </Col>
+            );
+          })}
         </Row>
 
-        {addMultiple && (
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "flex-end",
-              marginTop: 16,
-            }}
-          >
-            <Button type="primary" onClick={handleAddToList}>
-              Add to List
-            </Button>
-          </div>
-        )}
-      </Form>
+      </Card> */}
+
+      {addMultiple && (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                marginTop: 16,
+              }}
+            >
+              <Button type="primary" onClick={handleAddToList}>
+                Add to List
+              </Button>
+            </div>
+          )}
 
       {addMultiple && (
         <div
           style={{
             marginTop: 24,
-            height: 300,
             overflowY: "auto",
+            maxHeight: 200,
           }}
         >
           <Table

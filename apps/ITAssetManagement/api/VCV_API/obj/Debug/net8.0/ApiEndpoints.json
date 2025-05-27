@@ -78,6 +78,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "VCV_API.Controllers.AssetSpecController",
+    "Method": "GetAssetSpecsByTemplateID",
+    "RelativePath": "api/AssetSpec/GetAssetSpecsByTemplateID/{templateID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "templateID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "VCV_API.Controllers.AssetStatusController",
     "Method": "GetAssetStatuses",
     "RelativePath": "api/AssetStatus/GetAssetStatuses",

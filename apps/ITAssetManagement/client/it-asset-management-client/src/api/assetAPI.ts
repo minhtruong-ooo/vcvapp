@@ -126,3 +126,21 @@ export const getAssetDetail = async (token: string, assetTag: string) => {
     throw new Error(error?.response?.data?.details || "Không thể lấy chi tiết tài sản");
   }
 };
+
+export const getSpecs = async (token: string, templateID: number) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/AssetSpec/GetAssetSpecsByTemplateID/${encodeURIComponent(templateID)}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        timeout: 5000,
+      }
+    );
+    return response.data; // Trả về array luôn
+  } catch (error: any) {
+    console.error("❌ Lỗi khi lấy thông số kỹ thuật:", error?.response?.data?.details || error.message);
+    throw new Error(error?.response?.data?.details || "Lỗi khi lấy thông số kỹ thuật");
+  }
+};

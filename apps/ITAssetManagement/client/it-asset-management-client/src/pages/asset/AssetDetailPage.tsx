@@ -294,7 +294,7 @@ const AssetDetailPage = () => {
           >
             <Card
               loading={loading}
-              title="Asset User"
+              title="Most Recent User Assignment"
               style={{ height: "100%", flex: 1 }}
             >
               {asset.assignmentsCurrent.length > 0 ? (

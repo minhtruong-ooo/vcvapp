@@ -134,6 +134,29 @@
         }
       }
     },
+    "/api/AssetSpec/GetAssetSpecsByTemplateID/{templateID}": {
+      "get": {
+        "tags": [
+          "AssetSpec"
+        ],
+        "parameters": [
+          {
+            "name": "templateID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/AssetStatus/GetAssetStatuses": {
       "get": {
         "tags": [

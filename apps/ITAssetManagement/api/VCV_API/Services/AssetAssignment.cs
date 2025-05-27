@@ -92,7 +92,6 @@ namespace VCV_API.Services
                             SerialNumber = reader.IsDBNull(reader.GetOrdinal("SerialNumber")) ? null : reader.GetString(reader.GetOrdinal("SerialNumber")),
                             DetailID = reader.IsDBNull(reader.GetOrdinal("DetailID")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("DetailID")),
                         };
-
                         assets.Add(asset);
                     }
                 }

@@ -126,3 +126,9 @@ export interface EmployeeSingle {
   employeeInfo: string;
 }
 
+export interface AssetSpecificationDto {
+  specificationID: number;
+  specificationName: string;
+  dataType: string | null;
+  isRequired: boolean;
+}

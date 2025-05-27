@@ -14,11 +14,9 @@ namespace VCV_API.Controllers
     public class AssetsController : ControllerBase
     {
         private readonly IAssetService _assetService;
-        private readonly IHttpClientFactory _httpClientFactory;
-        public AssetsController(IAssetService assetService, IHttpClientFactory httpClientFactory)
+        public AssetsController(IAssetService assetService)
         {
             _assetService = assetService;
-            _httpClientFactory = httpClientFactory;
         }
 
         [HttpGet]
