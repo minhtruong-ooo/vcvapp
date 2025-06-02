@@ -7,7 +7,7 @@ export class AssetMapper {
   public map(asset: AssetInput): AssetMapped {
     const { templates, statuses, locations } = this.lookups;
     return {
-      TemplateID: templates.find((t) => t.templateName === asset.templateName)
+      TemplateID: templates.find((t) => t.templateID === asset.templateID)
         ?.templateID,
       SerialNumber: asset.serialNumber,
       PurchaseDate: asset.purchaseDate
@@ -19,6 +19,7 @@ export class AssetMapper {
       StatusID: statuses.find((s) => s.statusName === asset.status)?.statusID,
       LocationID: locations.find((l) => l.locationName === asset.location)
         ?.locationID,
+      ChangeBy: asset.changeBy,
     };
   }
 

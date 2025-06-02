@@ -10,3 +10,5 @@ wwwroot\images\employees\avatar1.jpg
 wwwroot\images\employees\hnp.jpg
 wwwroot\images\logo\logo.png
 wwwroot\qr\1d8637a7-c7f1-443c-9366-d3a831cbe4bf.pdf
+wwwroot\qr\1e4500f2-2ac0-445c-9798-73b1e8c61b17.pdf
+wwwroot\qr\e39f4d7f-8f28-4cb0-b3af-1d8eafc3f45a.pdf

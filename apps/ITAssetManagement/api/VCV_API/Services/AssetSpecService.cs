@@ -2,8 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 using VCV_API.Data;
-using VCV_API.Models.Asset;
-using VCV_API.Models.AssetAssignment;
 using VCV_API.Models.AssetSpec;
 using VCV_API.Services.Interfaces;
 namespace VCV_API.Services

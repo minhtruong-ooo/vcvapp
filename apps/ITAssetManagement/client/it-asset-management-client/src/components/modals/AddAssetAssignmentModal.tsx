@@ -31,6 +31,8 @@ const AddAssetAssignmentModal: React.FC<AddAssetAssignmentModalProps> = ({
   const { keycloak } = useKeycloak();
   const token = keycloak?.token;
   const assignmentBy = keycloak.tokenParsed?.employeeID;
+
+  
   const [loadingSelects, setLoadingSelects] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(true);
   const [assets, setAssets] = useState<AssetItem[]>([]);

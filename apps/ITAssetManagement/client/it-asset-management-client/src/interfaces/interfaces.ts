@@ -52,14 +52,7 @@ export interface AssetAssignment {
   assignmentDate: string;
 }
 
-export interface AssetInput {
-  templateName: string;
-  serialNumber: string;
-  purchaseDate?: string | null;
-  warrantyExpiry?: string | null;
-  status: string;
-  location: string;
-}
+
  
 export interface AssetLicense {
   licenseKey: number;
@@ -101,6 +94,23 @@ export interface AssetMapped {
   WarrantyExpiry: string | null;
   StatusID?: number;
   LocationID?: number;
+  ChangeBy: string;
+}
+
+export interface LookupLists {
+  templates: { templateID: number; templateName: string }[];
+  statuses: { statusID: number; statusName: string }[];
+  locations: { locationID: number; locationName: string }[];
+}
+
+export interface AssetInput {
+  templateID: number;
+  serialNumber: string;
+  purchaseDate?: string | null;
+  warrantyExpiry?: string | null;
+  status: string;
+  location: string;
+  changeBy: string;
 }
 
 export interface CreateAssignmentPayload {
@@ -116,11 +126,7 @@ interface AssetItem {
   detailID: number | null;
 }
 
-export interface LookupLists {
-  templates: { templateID: number; templateName: string }[];
-  statuses: { statusID: number; statusName: string }[];
-  locations: { locationID: number; locationName: string }[];
-}
+
 
 export interface EmployeeSingle {
   employeeInfo: string;

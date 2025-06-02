@@ -40,11 +40,11 @@ export const assetColumn = (data: any[]): ColumnType<any>[] => {
     },
     {
       title: "Purchase Date",
-      dataIndex: "assignmentDate",
-      key: "assignmentDate",
+      dataIndex: "purchaseDate",
+      key: "purchaseDate",
       render: (text: string) => (text ? dayjs(text).format("YYYY-MM-DD") : ""),
       sorter: (a, b) =>
-        new Date(a.assignmentDate).getTime() - new Date(b.assignmentDate).getTime(),
+        new Date(a.purchaseDate).getTime() - new Date(b.purchaseDate).getTime(),
       filterDropdown: ({
         setSelectedKeys,
         selectedKeys,
@@ -83,7 +83,7 @@ export const assetColumn = (data: any[]): ColumnType<any>[] => {
         </div>
       ),
       onFilter: (value, record) => {
-        const recordDate = dayjs(record.assignmentDate).format("YYYY-MM-DD");
+        const recordDate = dayjs(record.purchaseDate).format("YYYY-MM-DD");
         return recordDate === value;
       },
     },

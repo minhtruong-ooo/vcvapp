@@ -49,6 +49,14 @@
       "PackagePath": "staticwebassets\\qr\\1d8637a7-c7f1-443c-9366-d3a831cbe4bf.pdf"
     },
     {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\1e4500f2-2ac0-445c-9798-73b1e8c61b17.pdf",
+      "PackagePath": "staticwebassets\\qr\\1e4500f2-2ac0-445c-9798-73b1e8c61b17.pdf"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\e39f4d7f-8f28-4cb0-b3af-1d8eafc3f45a.pdf",
+      "PackagePath": "staticwebassets\\qr\\e39f4d7f-8f28-4cb0-b3af-1d8eafc3f45a.pdf"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MediaService.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

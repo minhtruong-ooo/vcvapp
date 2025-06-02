@@ -6,7 +6,7 @@
         public int AssetID { get; set; }
         public string? ActionType { get; set; }
         public string? ChangeDate { get; set; }
-        public string? ChangedBy { get; set; }
+        public int? ChangedBy { get; set; }
         public string? FieldChanged { get; set; }
         public string? OldValue { get; set; }
         public string? NewValue { get; set; }

@@ -87,6 +87,7 @@ namespace VCV_API.Services
                     command.Parameters.Add(new SqlParameter("@WarrantyExpiry", (object?)assetDto.WarrantyExpiry ?? DBNull.Value));
                     command.Parameters.Add(new SqlParameter("@StatusID", (object?)assetDto.StatusID ?? DBNull.Value));
                     command.Parameters.Add(new SqlParameter("@LocationID", (object?)assetDto.LocationID ?? DBNull.Value));
+                    command.Parameters.Add(new SqlParameter("@ChangedBy", (object?)assetDto.ChangeBy ?? DBNull.Value));
 
                     var result = await command.ExecuteReaderAsync();
                     if (await result.ReadAsync())
@@ -123,6 +124,7 @@ namespace VCV_API.Services
                 table.Columns.Add("WarrantyExpiry", typeof(DateTime));
                 table.Columns.Add("StatusID", typeof(int));
                 table.Columns.Add("LocationID", typeof(int));
+
 
                 foreach (var a in assets)
                 {
@@ -329,7 +331,7 @@ namespace VCV_API.Services
                                 AssetID = reader.GetInt32(reader.GetOrdinal("AssetID")),
                                 ActionType = reader.IsDBNull(reader.GetOrdinal("ActionType")) ? null : reader.GetString(reader.GetOrdinal("ActionType")),
                                 ChangeDate = reader.IsDBNull(reader.GetOrdinal("ChangeDate")) ? null : reader.GetDateTime(reader.GetOrdinal("ChangeDate")).ToString(),
-                                ChangedBy = reader.IsDBNull(reader.GetOrdinal("ChangedBy")) ? null : reader.GetString(reader.GetOrdinal("ChangedBy")),
+                                ChangedBy = reader.GetInt32(reader.GetOrdinal("ChangedBy")),
                                 FieldChanged = reader.IsDBNull(reader.GetOrdinal("FieldChanged")) ? null : reader.GetString(reader.GetOrdinal("FieldChanged")),
                                 OldValue = reader.IsDBNull(reader.GetOrdinal("OldValue")) ? null : reader.GetString(reader.GetOrdinal("OldValue")),
                                 NewValue = reader.IsDBNull(reader.GetOrdinal("NewValue")) ? null : reader.GetString(reader.GetOrdinal("NewValue")),
