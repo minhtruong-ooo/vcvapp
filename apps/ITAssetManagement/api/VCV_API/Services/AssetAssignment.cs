@@ -151,5 +151,74 @@ namespace VCV_API.Services
                 throw;
             }
         }
+
+        public async Task<AssetAsignmentDto?> GetAssetAssignmentDetailsByCode(string assignmentCode)
+        {
+            AssetAsignmentDto? assetAsignmentDto = null;
+
+            try
+            {
+                using var connection = _context.Database.GetDbConnection();
+                await connection.OpenAsync();
+
+                using var command = connection.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "Assignment_GetAssetAssignmentDetailsByCode";
+
+                var param = new SqlParameter("@AssignmentCode", SqlDbType.NVarChar, 20)
+                {
+                    Value = assignmentCode
+                };
+                command.Parameters.Add(param);
+
+                using var reader = await command.ExecuteReaderAsync();
+
+                if (await reader.ReadAsync())
+                {
+                    assetAsignmentDto = new AssetAsignmentDto
+                    {
+                        AssignmentID = reader.GetInt32(reader.GetOrdinal("AssignmentID")),
+                        AssignmentCode = reader.IsDBNull(reader.GetOrdinal("AssignmentCode")) ? null : reader.GetString(reader.GetOrdinal("AssignmentCode")),
+                        EmployeeID = reader.GetInt32(reader.GetOrdinal("EmployeeID")),
+                        EmployeeName = reader.IsDBNull(reader.GetOrdinal("EmployeeName")) ? null : reader.GetString(reader.GetOrdinal("EmployeeName")),
+                        AssignmentBy = reader.GetInt32(reader.GetOrdinal("AssignmentBy")),
+                        AssignmentByName = reader.IsDBNull(reader.GetOrdinal("AssignmentByName")) ? null : reader.GetString(reader.GetOrdinal("AssignmentByName")),
+                        AssignmentAction = reader.IsDBNull(reader.GetOrdinal("AssignmentAction")) ? null : reader.GetString(reader.GetOrdinal("AssignmentAction")),
+                        AssignmentDate = reader.GetDateTime(reader.GetOrdinal("AssignmentDate")),
+                        Notes = reader.IsDBNull(reader.GetOrdinal("Notes")) ? string.Empty : reader.GetString(reader.GetOrdinal("Notes")),
+                        AssignStatus = reader.IsDBNull(reader.GetOrdinal("AssignStatus")) ? null : reader.GetString(reader.GetOrdinal("AssignStatus")),
+                        CreateAt = reader.IsDBNull(reader.GetOrdinal("CreateAt")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("CreateAt")),
+                        UpdateAt = reader.IsDBNull(reader.GetOrdinal("UpdateAt")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("UpdateAt"))
+                    };
+                }
+
+                if (assetAsignmentDto == null)
+                {
+                    return null;
+                }
+
+                if (await reader.NextResultAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        assetAsignmentDto.AssetAssignments.Add(new AssetAssignmentDetail
+                        {
+                            DetailID = reader.GetInt32(reader.GetOrdinal("DetailID")),
+                            AssetID = reader.GetInt32(reader.GetOrdinal("AssetID")),
+                            AssetTag = reader.IsDBNull(reader.GetOrdinal("AssetTag")) ? null : reader.GetString(reader.GetOrdinal("AssetTag")),
+                            TemplateName = reader.IsDBNull(reader.GetOrdinal("TemplateName")) ? null : reader.GetString(reader.GetOrdinal("TemplateName")),
+                            SerialNumber = reader.IsDBNull(reader.GetOrdinal("SerialNumber")) ? null : reader.GetString(reader.GetOrdinal("SerialNumber")),
+                        });
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error: {ex.Message}", ex);
+            }
+
+            return assetAsignmentDto;
+        }
     }
 }

@@ -157,6 +157,22 @@
   },
   {
     "ContainingType": "VCV_API.Controllers.AssignController",
+    "Method": "GetAssignmentDetailsByCode",
+    "RelativePath": "api/Assign/GetAssignmentDetailsByCode/{assignmentCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "assignmentCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.AssignController",
     "Method": "GetAssignments",
     "RelativePath": "api/Assign/GetAssignments",
     "HttpMethod": "GET",

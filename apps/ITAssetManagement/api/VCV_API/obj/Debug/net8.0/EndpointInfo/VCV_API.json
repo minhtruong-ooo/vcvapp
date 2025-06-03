@@ -258,6 +258,28 @@
         }
       }
     },
+    "/api/Assign/GetAssignmentDetailsByCode/{assignmentCode}": {
+      "get": {
+        "tags": [
+          "Assign"
+        ],
+        "parameters": [
+          {
+            "name": "assignmentCode",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Employee/GetAllEmployeesSingle": {
       "get": {
         "tags": [

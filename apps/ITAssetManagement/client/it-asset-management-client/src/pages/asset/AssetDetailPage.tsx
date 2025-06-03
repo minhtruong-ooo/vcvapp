@@ -21,7 +21,6 @@ import {
   Table,
 } from "antd";
 import { PrinterOutlined, HomeOutlined } from "@ant-design/icons";
-import { useDarkMode } from "../../context/DarkModeContext";
 import { Map2D } from "../../components/Map2D";
 import image from "../../assets/images/1F2F.png";
 import logo4x4 from "../../assets/images/logo_main.png";
@@ -30,8 +29,6 @@ const { Title, Text } = Typography;
 
 const AssetDetailPage = () => {
   const { keycloak } = useKeycloak();
-  const { darkMode } = useDarkMode();
-
   const { id } = useParams();
   const [asset, setAsset] = useState<Asset | null>(null);
   const [loading, setLoading] = useState<boolean>(true);

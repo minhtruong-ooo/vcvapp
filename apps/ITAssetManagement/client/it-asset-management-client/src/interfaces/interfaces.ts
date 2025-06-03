@@ -138,3 +138,29 @@ export interface AssetSpecificationDto {
   dataType: string | null;
   isRequired: boolean;
 }
+
+
+export interface AssetAssignmentDto {
+  assignmentID: number;
+  assignmentCode: string;
+  employeeID: string;
+  employeeName: string;
+  assignmentBy: number;
+  assignmentByName: string;
+  assignmentAction: string;
+  assignmentDate: string;
+  notes: string | null;
+  assignStatus: string;
+  createAt: string;
+  updateAt: string;
+  assetAssignments: AssetAssignmentItem[];
+}
+
+export interface AssetAssignmentItem {
+  detailID: number;
+  assetID: number | null;
+  assignmentID: number | null;
+  assetTag: string;
+  templateName: string;
+  serialNumber: string;
+}

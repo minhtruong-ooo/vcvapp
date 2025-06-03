@@ -60,7 +60,23 @@ namespace VCV_API.Controllers
             }
         }
 
-
+        [HttpGet("{assignmentCode}")]
+        public async Task<IActionResult> GetAssignmentDetailsByCode(string assignmentCode)
+        {
+            try
+            {
+                var assignmentDetails = await _assetAssignService.GetAssetAssignmentDetailsByCode(assignmentCode);
+                if (assignmentDetails == null)
+                {
+                    return NotFound(new { message = "Assignment not found" });
+                }
+                return Ok(assignmentDetails);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
 
     }
 }

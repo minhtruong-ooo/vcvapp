@@ -241,8 +241,6 @@ namespace VCV_API.Services
                         CreatedAt = reader.GetDateTime(reader.GetOrdinal("CreatedAt")),
                         UpdatedAt = reader.GetDateTime(reader.GetOrdinal("UpdatedAt")),
                         Unit = reader.IsDBNull(reader.GetOrdinal("Unit")) ? null : reader.GetString(reader.GetOrdinal("Unit")),
-                        Specifications = new List<AssetSpecificationValueDto>(),
-                        Images = new List<AssetImageDto>()
                     };
                 }
 
