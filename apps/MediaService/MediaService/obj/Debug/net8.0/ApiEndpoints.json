@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "MediaService.Controllers.MediaController",
+    "Method": "ExportAssignmentPdf",
+    "RelativePath": "api/Media/assignment/pdf",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "data",
+        "Type": "MediaService.Models.AssetAssignmentModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediaService.Controllers.MediaController",
     "Method": "GeneratePdf",
     "RelativePath": "api/Media/generate-qrs",
     "HttpMethod": "POST",

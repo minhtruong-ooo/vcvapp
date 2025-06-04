@@ -1,5 +1,203 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\2a5b8540-59ad-4040-818d-86ddd6132e82.xlsx'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>excel/2a5b8540-59ad-4040-818d-86ddd6132e82.xlsx</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ub2g59io09</Fingerprint>
+      <Integrity>Nod7t3u3Ioj1ulh03ZuprW9VR9cXGzEQekxLqoeTz7g=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\2a5b8540-59ad-4040-818d-86ddd6132e82.xlsx'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.xlsx'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>excel/3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.xlsx</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>bsbeqi6c0n</Fingerprint>
+      <Integrity>K3WFvNRp9j1Jtz1EBlZrJkSUtk4bv6GEorqW6k8wsHk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.xlsx'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\4154343c-e8de-4987-8e18-44ca8e559621.xlsx'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>excel/4154343c-e8de-4987-8e18-44ca8e559621.xlsx</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>chbrweg86c</Fingerprint>
+      <Integrity>IHXqoR8hnACbFDHptIBLUmDsQFbik0JRM9TKbJ8Eq9I=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\4154343c-e8de-4987-8e18-44ca8e559621.xlsx'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\514aeee0-dc88-48bd-9d59-b98e43dee600.xlsx'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>excel/514aeee0-dc88-48bd-9d59-b98e43dee600.xlsx</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>erhs0hpu0a</Fingerprint>
+      <Integrity>6jyFYACtwwYXP2KEuD+1L32/iDpJzFZ3D0Q4zUc8hdg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\514aeee0-dc88-48bd-9d59-b98e43dee600.xlsx'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.xlsx'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>excel/7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.xlsx</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>hmsuhie59u</Fingerprint>
+      <Integrity>l7obw70D50yTm21zRlyr87PY4nVZ9+65B2UUoKJwJZg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.xlsx'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\80d714d6-ba1a-4252-8a24-1bd90947b177.xlsx'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>excel/80d714d6-ba1a-4252-8a24-1bd90947b177.xlsx</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>mtvzhfkedp</Fingerprint>
+      <Integrity>2piC7Mn79k0a+P6ZlY0kwf0UYl/q0a4TKWITAYuERxw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\80d714d6-ba1a-4252-8a24-1bd90947b177.xlsx'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\8c3e8b89-1426-4879-9028-bbf5584fe491.xlsx'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>excel/8c3e8b89-1426-4879-9028-bbf5584fe491.xlsx</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>onpf58bt2r</Fingerprint>
+      <Integrity>pGRhE+pe4IIqiQhnc1jxcqnHOkQQM1UYFS5XIDvJJ8c=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\8c3e8b89-1426-4879-9028-bbf5584fe491.xlsx'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\b5da2f77-1661-4768-b9da-817f3ea3da17.xlsx'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>excel/b5da2f77-1661-4768-b9da-817f3ea3da17.xlsx</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>0btyllbtpe</Fingerprint>
+      <Integrity>JJ4JWn/ZM6nUBV/Bn9gKOPYH5t4M7hIzrz9vKnUBa08=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\b5da2f77-1661-4768-b9da-817f3ea3da17.xlsx'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\c683de53-d0bb-4903-82e5-110f7777d7f9.xlsx'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>excel/c683de53-d0bb-4903-82e5-110f7777d7f9.xlsx</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>3kdrexv9ka</Fingerprint>
+      <Integrity>nWB373Oi4ha/I8yXXiD1JPWD9W1LCs4Ekvjoksvr8Bs=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\c683de53-d0bb-4903-82e5-110f7777d7f9.xlsx'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\da89327f-60dc-466c-b4ec-b9def23250fc.xlsx'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>excel/da89327f-60dc-466c-b4ec-b9def23250fc.xlsx</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>uarvdy7al8</Fingerprint>
+      <Integrity>Cn+lQ+rhOsPA8w8s7m/2cBebqu2l3CvoY3UKf41s7Tg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\da89327f-60dc-466c-b4ec-b9def23250fc.xlsx'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\edda9dd5-7bde-4018-9f53-f92f5210eb3d.xlsx'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>excel/edda9dd5-7bde-4018-9f53-f92f5210eb3d.xlsx</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>0mmrpnp757</Fingerprint>
+      <Integrity>yI9pAagT4CCrUve0NpppQ+yUJifBKJZdWfocUA+3tXQ=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\edda9dd5-7bde-4018-9f53-f92f5210eb3d.xlsx'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\CALIBRI.TTF'))">
       <SourceType>Package</SourceType>
       <SourceId>MediaService</SourceId>
@@ -198,59 +396,203 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\logo\logo.png'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qr\1d8637a7-c7f1-443c-9366-d3a831cbe4bf.pdf'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\2a5b8540-59ad-4040-818d-86ddd6132e82.pdf'))">
       <SourceType>Package</SourceType>
       <SourceId>MediaService</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/MediaService</BasePath>
-      <RelativePath>qr/1d8637a7-c7f1-443c-9366-d3a831cbe4bf.pdf</RelativePath>
+      <RelativePath>pdf/2a5b8540-59ad-4040-818d-86ddd6132e82.pdf</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>tupqd3r56x</Fingerprint>
-      <Integrity>ZQ4oR0ahi9Z6EX0tnqCw7QdAJMAsifvntcJUTdfO3M0=</Integrity>
+      <Fingerprint>dhtgn9sx7d</Fingerprint>
+      <Integrity>v8tv+3aU7k+DydhLjtvLhtzq9QXc4QAP48rMjopVPUY=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qr\1d8637a7-c7f1-443c-9366-d3a831cbe4bf.pdf'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\2a5b8540-59ad-4040-818d-86ddd6132e82.pdf'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qr\1e4500f2-2ac0-445c-9798-73b1e8c61b17.pdf'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.pdf'))">
       <SourceType>Package</SourceType>
       <SourceId>MediaService</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/MediaService</BasePath>
-      <RelativePath>qr/1e4500f2-2ac0-445c-9798-73b1e8c61b17.pdf</RelativePath>
+      <RelativePath>pdf/3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.pdf</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>h4znw9lfki</Fingerprint>
-      <Integrity>b/r8MGiloBvuQJtnhuzex1aNvOg2jIE/tOaWqNd1jHc=</Integrity>
+      <Fingerprint>3mpw6kj4ur</Fingerprint>
+      <Integrity>qw9nIQHX9+5IicOy2q1a1VwIKkebke3A4/+pMililWU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qr\1e4500f2-2ac0-445c-9798-73b1e8c61b17.pdf'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.pdf'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qr\e39f4d7f-8f28-4cb0-b3af-1d8eafc3f45a.pdf'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\4154343c-e8de-4987-8e18-44ca8e559621.pdf'))">
       <SourceType>Package</SourceType>
       <SourceId>MediaService</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/MediaService</BasePath>
-      <RelativePath>qr/e39f4d7f-8f28-4cb0-b3af-1d8eafc3f45a.pdf</RelativePath>
+      <RelativePath>pdf/4154343c-e8de-4987-8e18-44ca8e559621.pdf</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>d9jti00c8k</Fingerprint>
-      <Integrity>P6cKEMpUG9SAXcxUpM5GMcyi4eyu3iL+qtqeAEG3JdM=</Integrity>
+      <Fingerprint>izj765ph4y</Fingerprint>
+      <Integrity>7ipbZkk6a2wDgO86ad75xwSN8OlNXB/J+1sOCUtBkyI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\qr\e39f4d7f-8f28-4cb0-b3af-1d8eafc3f45a.pdf'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\4154343c-e8de-4987-8e18-44ca8e559621.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\514aeee0-dc88-48bd-9d59-b98e43dee600.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>pdf/514aeee0-dc88-48bd-9d59-b98e43dee600.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>j2ed67v629</Fingerprint>
+      <Integrity>ezrcBmA5pzsWBoB2ULL6nLd+xNxL/R60HdcRosr51yU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\514aeee0-dc88-48bd-9d59-b98e43dee600.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>pdf/7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>7w5z8e2l3p</Fingerprint>
+      <Integrity>aZeEFo/auobc7c7LoxGSokRPOe4mZoYO69I4/Prw7W0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\80d714d6-ba1a-4252-8a24-1bd90947b177.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>pdf/80d714d6-ba1a-4252-8a24-1bd90947b177.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>2wuashhwd1</Fingerprint>
+      <Integrity>HrW8lwdww7/bv2pFocWVvTB+4AYrxbjIJsxK8ah4Seo=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\80d714d6-ba1a-4252-8a24-1bd90947b177.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\8c3e8b89-1426-4879-9028-bbf5584fe491.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>pdf/8c3e8b89-1426-4879-9028-bbf5584fe491.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>kjrp4wh8jr</Fingerprint>
+      <Integrity>UJTBWmy6I3u5aPjvAk8E9mgxGwadHG3qXj6REEjLYSc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\8c3e8b89-1426-4879-9028-bbf5584fe491.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\b5da2f77-1661-4768-b9da-817f3ea3da17.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>pdf/b5da2f77-1661-4768-b9da-817f3ea3da17.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>cxsznkpu1p</Fingerprint>
+      <Integrity>MNT0bXG+Ma0LlM8Gn/VlR8hxHjGcNTGw/ok1AxmFi3Q=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\b5da2f77-1661-4768-b9da-817f3ea3da17.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\c683de53-d0bb-4903-82e5-110f7777d7f9.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>pdf/c683de53-d0bb-4903-82e5-110f7777d7f9.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>3mpw6kj4ur</Fingerprint>
+      <Integrity>qw9nIQHX9+5IicOy2q1a1VwIKkebke3A4/+pMililWU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\c683de53-d0bb-4903-82e5-110f7777d7f9.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\edda9dd5-7bde-4018-9f53-f92f5210eb3d.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>pdf/edda9dd5-7bde-4018-9f53-f92f5210eb3d.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>59s5m2wlix</Fingerprint>
+      <Integrity>SXxQpmESem0de9UGWa5nslofATwHuS8QoV9zb1G5kf4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\edda9dd5-7bde-4018-9f53-f92f5210eb3d.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\templates\IT_BBBG_Template.xlsx'))">
+      <SourceType>Package</SourceType>
+      <SourceId>MediaService</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/MediaService</BasePath>
+      <RelativePath>templates/IT_BBBG_Template.xlsx</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>418qnevl7q</Fingerprint>
+      <Integrity>2LXNvVqhaH3okeAcZXTZZHxrWaV5wiqyRhLiFSWOI+s=</Integrity>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\templates\IT_BBBG_Template.xlsx'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

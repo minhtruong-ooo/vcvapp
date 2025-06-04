@@ -179,12 +179,14 @@ namespace VCV_API.Services
                     {
                         AssignmentID = reader.GetInt32(reader.GetOrdinal("AssignmentID")),
                         AssignmentCode = reader.IsDBNull(reader.GetOrdinal("AssignmentCode")) ? null : reader.GetString(reader.GetOrdinal("AssignmentCode")),
-                        EmployeeID = reader.GetInt32(reader.GetOrdinal("EmployeeID")),
+                        EmployeeCode = reader.IsDBNull(reader.GetOrdinal("EmployeeCode")) ? null : reader.GetString(reader.GetOrdinal("EmployeeCode")),
                         EmployeeName = reader.IsDBNull(reader.GetOrdinal("EmployeeName")) ? null : reader.GetString(reader.GetOrdinal("EmployeeName")),
-                        AssignmentBy = reader.GetInt32(reader.GetOrdinal("AssignmentBy")),
+                        DepartmentName = reader.IsDBNull(reader.GetOrdinal("DepartmentName")) ? null : reader.GetString(reader.GetOrdinal("DepartmentName")),
+                        AssignerCode = reader.IsDBNull(reader.GetOrdinal("AssignerCode")) ? null : reader.GetString(reader.GetOrdinal("AssignerCode")),
                         AssignmentByName = reader.IsDBNull(reader.GetOrdinal("AssignmentByName")) ? null : reader.GetString(reader.GetOrdinal("AssignmentByName")),
                         AssignmentAction = reader.IsDBNull(reader.GetOrdinal("AssignmentAction")) ? null : reader.GetString(reader.GetOrdinal("AssignmentAction")),
-                        AssignmentDate = reader.GetDateTime(reader.GetOrdinal("AssignmentDate")),
+                        AssignerDepartment = reader.IsDBNull(reader.GetOrdinal("AssignerDepartment")) ? null : reader.GetString(reader.GetOrdinal("AssignerDepartment")),
+                        AssignmentDate = reader.IsDBNull(reader.GetOrdinal("AssignmentDate")) ? null : reader.GetDateTime(reader.GetOrdinal("AssignmentDate")).ToString("yyyy-MM-dd"),
                         Notes = reader.IsDBNull(reader.GetOrdinal("Notes")) ? string.Empty : reader.GetString(reader.GetOrdinal("Notes")),
                         AssignStatus = reader.IsDBNull(reader.GetOrdinal("AssignStatus")) ? null : reader.GetString(reader.GetOrdinal("AssignStatus")),
                         CreateAt = reader.IsDBNull(reader.GetOrdinal("CreateAt")) ? DateTime.MinValue : reader.GetDateTime(reader.GetOrdinal("CreateAt")),
@@ -208,6 +210,22 @@ namespace VCV_API.Services
                             AssetTag = reader.IsDBNull(reader.GetOrdinal("AssetTag")) ? null : reader.GetString(reader.GetOrdinal("AssetTag")),
                             TemplateName = reader.IsDBNull(reader.GetOrdinal("TemplateName")) ? null : reader.GetString(reader.GetOrdinal("TemplateName")),
                             SerialNumber = reader.IsDBNull(reader.GetOrdinal("SerialNumber")) ? null : reader.GetString(reader.GetOrdinal("SerialNumber")),
+                            Unit = reader.IsDBNull(reader.GetOrdinal("Unit")) ? null : reader.GetString(reader.GetOrdinal("Unit")),
+                        });
+                    }
+                }
+
+                if (await reader.NextResultAsync())
+                {
+                    while (await reader.ReadAsync())
+                    {
+                        assetAsignmentDto.EmployeeInfomation.Add(new AssetAssignmentCurrent
+                        {
+                            EmployeeCode = reader.IsDBNull(reader.GetOrdinal("EmployeeCode")) ? null : reader.GetString(reader.GetOrdinal("EmployeeCode")),
+                            FullName = reader.IsDBNull(reader.GetOrdinal("FullName")) ? null : reader.GetString(reader.GetOrdinal("FullName")),
+                            Avatar = reader.IsDBNull(reader.GetOrdinal("Avatar")) ? null : reader.GetString(reader.GetOrdinal("Avatar")),
+                            DepartmentName = reader.IsDBNull(reader.GetOrdinal("DepartmentName")) ? null : reader.GetString(reader.GetOrdinal("DepartmentName")),
+                            AssignmentDate = reader.IsDBNull(reader.GetOrdinal("AssignmentDate")) ? null : reader.GetDateTime(reader.GetOrdinal("AssignmentDate")).ToString("yyyy-MM-dd"),
                         });
                     }
                 }

@@ -144,15 +144,36 @@ export interface AssetAssignmentDto {
   assignmentID: number;
   assignmentCode: string;
   employeeID: string;
+  employeeCode: string;
   employeeName: string;
+  departmentName: string;
+  assignerCode: string;
   assignmentBy: number;
   assignmentByName: string;
+  assignerDepartment: string;
   assignmentAction: string;
   assignmentDate: string;
   notes: string | null;
   assignStatus: string;
   createAt: string;
   updateAt: string;
+  assetAssignments: AssetAssignmentItem[];
+  employeeInfomation: AssetAssignment[];
+}
+
+export interface AssetAssignmentPrintModel {
+  assignmentCode: string;
+  employeeCode: string;
+  employeeName: string;
+  departmentName: string;
+  assignerCode: string;
+  assignmentBy: number;
+  assignmentByName: string;
+  assignerDepartment: string;
+  assignmentAction: string;
+  assignmentDate: string;
+  notes: string | null;
+  assignStatus: string;
   assetAssignments: AssetAssignmentItem[];
 }
 
@@ -163,4 +184,6 @@ export interface AssetAssignmentItem {
   assetTag: string;
   templateName: string;
   serialNumber: string;
+  unit: string | null;
+  quantity: string | "1";
 }

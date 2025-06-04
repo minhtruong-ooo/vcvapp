@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3z6vt2HGZWItwFHeHd3v5tuIHy1G2oFDF18OIL/44ic=",
+  "Hash": "aA2FqVSwpyJjHgSe/ZHuCRv6OCmu14+/EH8CF4LC8+Q=",
   "Source": "MediaService",
   "BasePath": "_content/MediaService",
   "Mode": "Default",
@@ -16,6 +16,237 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\2a5b8540-59ad-4040-818d-86ddd6132e82.xlsx",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "excel/2a5b8540-59ad-4040-818d-86ddd6132e82#[.{fingerprint}]?.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ub2g59io09",
+      "Integrity": "Nod7t3u3Ioj1ulh03ZuprW9VR9cXGzEQekxLqoeTz7g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\excel\\2a5b8540-59ad-4040-818d-86ddd6132e82.xlsx"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.xlsx",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "excel/3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b#[.{fingerprint}]?.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bsbeqi6c0n",
+      "Integrity": "K3WFvNRp9j1Jtz1EBlZrJkSUtk4bv6GEorqW6k8wsHk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\excel\\3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.xlsx"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\4154343c-e8de-4987-8e18-44ca8e559621.xlsx",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "excel/4154343c-e8de-4987-8e18-44ca8e559621#[.{fingerprint}]?.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "chbrweg86c",
+      "Integrity": "IHXqoR8hnACbFDHptIBLUmDsQFbik0JRM9TKbJ8Eq9I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\excel\\4154343c-e8de-4987-8e18-44ca8e559621.xlsx"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\514aeee0-dc88-48bd-9d59-b98e43dee600.xlsx",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "excel/514aeee0-dc88-48bd-9d59-b98e43dee600#[.{fingerprint}]?.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "erhs0hpu0a",
+      "Integrity": "6jyFYACtwwYXP2KEuD+1L32/iDpJzFZ3D0Q4zUc8hdg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\excel\\514aeee0-dc88-48bd-9d59-b98e43dee600.xlsx"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.xlsx",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "excel/7cf76340-1d27-4bbf-bab5-459d5a1ed4ea#[.{fingerprint}]?.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "hmsuhie59u",
+      "Integrity": "l7obw70D50yTm21zRlyr87PY4nVZ9+65B2UUoKJwJZg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\excel\\7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.xlsx"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\80d714d6-ba1a-4252-8a24-1bd90947b177.xlsx",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "excel/80d714d6-ba1a-4252-8a24-1bd90947b177#[.{fingerprint}]?.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mtvzhfkedp",
+      "Integrity": "2piC7Mn79k0a+P6ZlY0kwf0UYl/q0a4TKWITAYuERxw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\excel\\80d714d6-ba1a-4252-8a24-1bd90947b177.xlsx"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\8c3e8b89-1426-4879-9028-bbf5584fe491.xlsx",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "excel/8c3e8b89-1426-4879-9028-bbf5584fe491#[.{fingerprint}]?.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "onpf58bt2r",
+      "Integrity": "pGRhE+pe4IIqiQhnc1jxcqnHOkQQM1UYFS5XIDvJJ8c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\excel\\8c3e8b89-1426-4879-9028-bbf5584fe491.xlsx"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\b5da2f77-1661-4768-b9da-817f3ea3da17.xlsx",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "excel/b5da2f77-1661-4768-b9da-817f3ea3da17#[.{fingerprint}]?.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0btyllbtpe",
+      "Integrity": "JJ4JWn/ZM6nUBV/Bn9gKOPYH5t4M7hIzrz9vKnUBa08=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\excel\\b5da2f77-1661-4768-b9da-817f3ea3da17.xlsx"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\c683de53-d0bb-4903-82e5-110f7777d7f9.xlsx",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "excel/c683de53-d0bb-4903-82e5-110f7777d7f9#[.{fingerprint}]?.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3kdrexv9ka",
+      "Integrity": "nWB373Oi4ha/I8yXXiD1JPWD9W1LCs4Ekvjoksvr8Bs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\excel\\c683de53-d0bb-4903-82e5-110f7777d7f9.xlsx"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\da89327f-60dc-466c-b4ec-b9def23250fc.xlsx",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "excel/da89327f-60dc-466c-b4ec-b9def23250fc#[.{fingerprint}]?.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "uarvdy7al8",
+      "Integrity": "Cn+lQ+rhOsPA8w8s7m/2cBebqu2l3CvoY3UKf41s7Tg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\excel\\da89327f-60dc-466c-b4ec-b9def23250fc.xlsx"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\edda9dd5-7bde-4018-9f53-f92f5210eb3d.xlsx",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "excel/edda9dd5-7bde-4018-9f53-f92f5210eb3d#[.{fingerprint}]?.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0mmrpnp757",
+      "Integrity": "yI9pAagT4CCrUve0NpppQ+yUJifBKJZdWfocUA+3tXQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\excel\\edda9dd5-7bde-4018-9f53-f92f5210eb3d.xlsx"
+    },
     {
       "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRI.TTF",
       "SourceId": "MediaService",
@@ -248,12 +479,12 @@
       "OriginalItemSpec": "wwwroot\\images\\logo\\logo.png"
     },
     {
-      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\1d8637a7-c7f1-443c-9366-d3a831cbe4bf.pdf",
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\2a5b8540-59ad-4040-818d-86ddd6132e82.pdf",
       "SourceId": "MediaService",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
       "BasePath": "_content/MediaService",
-      "RelativePath": "qr/1d8637a7-c7f1-443c-9366-d3a831cbe4bf#[.{fingerprint}]?.pdf",
+      "RelativePath": "pdf/2a5b8540-59ad-4040-818d-86ddd6132e82#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -262,19 +493,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "tupqd3r56x",
-      "Integrity": "ZQ4oR0ahi9Z6EX0tnqCw7QdAJMAsifvntcJUTdfO3M0=",
+      "Fingerprint": "dhtgn9sx7d",
+      "Integrity": "v8tv+3aU7k+DydhLjtvLhtzq9QXc4QAP48rMjopVPUY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\qr\\1d8637a7-c7f1-443c-9366-d3a831cbe4bf.pdf"
+      "OriginalItemSpec": "wwwroot\\pdf\\2a5b8540-59ad-4040-818d-86ddd6132e82.pdf"
     },
     {
-      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\1e4500f2-2ac0-445c-9798-73b1e8c61b17.pdf",
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.pdf",
       "SourceId": "MediaService",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
       "BasePath": "_content/MediaService",
-      "RelativePath": "qr/1e4500f2-2ac0-445c-9798-73b1e8c61b17#[.{fingerprint}]?.pdf",
+      "RelativePath": "pdf/3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -283,19 +514,19 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "h4znw9lfki",
-      "Integrity": "b/r8MGiloBvuQJtnhuzex1aNvOg2jIE/tOaWqNd1jHc=",
+      "Fingerprint": "3mpw6kj4ur",
+      "Integrity": "qw9nIQHX9+5IicOy2q1a1VwIKkebke3A4/+pMililWU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\qr\\1e4500f2-2ac0-445c-9798-73b1e8c61b17.pdf"
+      "OriginalItemSpec": "wwwroot\\pdf\\3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.pdf"
     },
     {
-      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\e39f4d7f-8f28-4cb0-b3af-1d8eafc3f45a.pdf",
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\4154343c-e8de-4987-8e18-44ca8e559621.pdf",
       "SourceId": "MediaService",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
       "BasePath": "_content/MediaService",
-      "RelativePath": "qr/e39f4d7f-8f28-4cb0-b3af-1d8eafc3f45a#[.{fingerprint}]?.pdf",
+      "RelativePath": "pdf/4154343c-e8de-4987-8e18-44ca8e559621#[.{fingerprint}]?.pdf",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -304,14 +535,1084 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "d9jti00c8k",
-      "Integrity": "P6cKEMpUG9SAXcxUpM5GMcyi4eyu3iL+qtqeAEG3JdM=",
+      "Fingerprint": "izj765ph4y",
+      "Integrity": "7ipbZkk6a2wDgO86ad75xwSN8OlNXB/J+1sOCUtBkyI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\qr\\e39f4d7f-8f28-4cb0-b3af-1d8eafc3f45a.pdf"
+      "OriginalItemSpec": "wwwroot\\pdf\\4154343c-e8de-4987-8e18-44ca8e559621.pdf"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\514aeee0-dc88-48bd-9d59-b98e43dee600.pdf",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "pdf/514aeee0-dc88-48bd-9d59-b98e43dee600#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "j2ed67v629",
+      "Integrity": "ezrcBmA5pzsWBoB2ULL6nLd+xNxL/R60HdcRosr51yU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pdf\\514aeee0-dc88-48bd-9d59-b98e43dee600.pdf"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.pdf",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "pdf/7cf76340-1d27-4bbf-bab5-459d5a1ed4ea#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7w5z8e2l3p",
+      "Integrity": "aZeEFo/auobc7c7LoxGSokRPOe4mZoYO69I4/Prw7W0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pdf\\7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.pdf"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\80d714d6-ba1a-4252-8a24-1bd90947b177.pdf",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "pdf/80d714d6-ba1a-4252-8a24-1bd90947b177#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2wuashhwd1",
+      "Integrity": "HrW8lwdww7/bv2pFocWVvTB+4AYrxbjIJsxK8ah4Seo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pdf\\80d714d6-ba1a-4252-8a24-1bd90947b177.pdf"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\8c3e8b89-1426-4879-9028-bbf5584fe491.pdf",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "pdf/8c3e8b89-1426-4879-9028-bbf5584fe491#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kjrp4wh8jr",
+      "Integrity": "UJTBWmy6I3u5aPjvAk8E9mgxGwadHG3qXj6REEjLYSc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pdf\\8c3e8b89-1426-4879-9028-bbf5584fe491.pdf"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\b5da2f77-1661-4768-b9da-817f3ea3da17.pdf",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "pdf/b5da2f77-1661-4768-b9da-817f3ea3da17#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cxsznkpu1p",
+      "Integrity": "MNT0bXG+Ma0LlM8Gn/VlR8hxHjGcNTGw/ok1AxmFi3Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pdf\\b5da2f77-1661-4768-b9da-817f3ea3da17.pdf"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\c683de53-d0bb-4903-82e5-110f7777d7f9.pdf",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "pdf/c683de53-d0bb-4903-82e5-110f7777d7f9#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3mpw6kj4ur",
+      "Integrity": "qw9nIQHX9+5IicOy2q1a1VwIKkebke3A4/+pMililWU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pdf\\c683de53-d0bb-4903-82e5-110f7777d7f9.pdf"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\edda9dd5-7bde-4018-9f53-f92f5210eb3d.pdf",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "pdf/edda9dd5-7bde-4018-9f53-f92f5210eb3d#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "59s5m2wlix",
+      "Integrity": "SXxQpmESem0de9UGWa5nslofATwHuS8QoV9zb1G5kf4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pdf\\edda9dd5-7bde-4018-9f53-f92f5210eb3d.pdf"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\templates\\IT_BBBG_Template.xlsx",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "templates/IT_BBBG_Template#[.{fingerprint}]?.xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "418qnevl7q",
+      "Integrity": "2LXNvVqhaH3okeAcZXTZZHxrWaV5wiqyRhLiFSWOI+s=",
+      "CopyToOutputDirectory": "Always",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\templates\\IT_BBBG_Template.xlsx"
     }
   ],
   "Endpoints": [
+    {
+      "Route": "excel/2a5b8540-59ad-4040-818d-86ddd6132e82.ub2g59io09.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\2a5b8540-59ad-4040-818d-86ddd6132e82.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20394"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Nod7t3u3Ioj1ulh03ZuprW9VR9cXGzEQekxLqoeTz7g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:56:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ub2g59io09"
+        },
+        {
+          "Name": "label",
+          "Value": "excel/2a5b8540-59ad-4040-818d-86ddd6132e82.xlsx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Nod7t3u3Ioj1ulh03ZuprW9VR9cXGzEQekxLqoeTz7g="
+        }
+      ]
+    },
+    {
+      "Route": "excel/2a5b8540-59ad-4040-818d-86ddd6132e82.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\2a5b8540-59ad-4040-818d-86ddd6132e82.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20394"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Nod7t3u3Ioj1ulh03ZuprW9VR9cXGzEQekxLqoeTz7g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:56:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Nod7t3u3Ioj1ulh03ZuprW9VR9cXGzEQekxLqoeTz7g="
+        }
+      ]
+    },
+    {
+      "Route": "excel/3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.bsbeqi6c0n.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20360"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"K3WFvNRp9j1Jtz1EBlZrJkSUtk4bv6GEorqW6k8wsHk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:49:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bsbeqi6c0n"
+        },
+        {
+          "Name": "label",
+          "Value": "excel/3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.xlsx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-K3WFvNRp9j1Jtz1EBlZrJkSUtk4bv6GEorqW6k8wsHk="
+        }
+      ]
+    },
+    {
+      "Route": "excel/3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20360"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"K3WFvNRp9j1Jtz1EBlZrJkSUtk4bv6GEorqW6k8wsHk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:49:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-K3WFvNRp9j1Jtz1EBlZrJkSUtk4bv6GEorqW6k8wsHk="
+        }
+      ]
+    },
+    {
+      "Route": "excel/4154343c-e8de-4987-8e18-44ca8e559621.chbrweg86c.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\4154343c-e8de-4987-8e18-44ca8e559621.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20347"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IHXqoR8hnACbFDHptIBLUmDsQFbik0JRM9TKbJ8Eq9I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:56:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "chbrweg86c"
+        },
+        {
+          "Name": "label",
+          "Value": "excel/4154343c-e8de-4987-8e18-44ca8e559621.xlsx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IHXqoR8hnACbFDHptIBLUmDsQFbik0JRM9TKbJ8Eq9I="
+        }
+      ]
+    },
+    {
+      "Route": "excel/4154343c-e8de-4987-8e18-44ca8e559621.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\4154343c-e8de-4987-8e18-44ca8e559621.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20347"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IHXqoR8hnACbFDHptIBLUmDsQFbik0JRM9TKbJ8Eq9I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:56:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IHXqoR8hnACbFDHptIBLUmDsQFbik0JRM9TKbJ8Eq9I="
+        }
+      ]
+    },
+    {
+      "Route": "excel/514aeee0-dc88-48bd-9d59-b98e43dee600.erhs0hpu0a.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\514aeee0-dc88-48bd-9d59-b98e43dee600.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20362"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6jyFYACtwwYXP2KEuD+1L32/iDpJzFZ3D0Q4zUc8hdg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:54:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "erhs0hpu0a"
+        },
+        {
+          "Name": "label",
+          "Value": "excel/514aeee0-dc88-48bd-9d59-b98e43dee600.xlsx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6jyFYACtwwYXP2KEuD+1L32/iDpJzFZ3D0Q4zUc8hdg="
+        }
+      ]
+    },
+    {
+      "Route": "excel/514aeee0-dc88-48bd-9d59-b98e43dee600.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\514aeee0-dc88-48bd-9d59-b98e43dee600.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20362"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6jyFYACtwwYXP2KEuD+1L32/iDpJzFZ3D0Q4zUc8hdg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:54:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6jyFYACtwwYXP2KEuD+1L32/iDpJzFZ3D0Q4zUc8hdg="
+        }
+      ]
+    },
+    {
+      "Route": "excel/7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.hmsuhie59u.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20354"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"l7obw70D50yTm21zRlyr87PY4nVZ9+65B2UUoKJwJZg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:55:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hmsuhie59u"
+        },
+        {
+          "Name": "label",
+          "Value": "excel/7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.xlsx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-l7obw70D50yTm21zRlyr87PY4nVZ9+65B2UUoKJwJZg="
+        }
+      ]
+    },
+    {
+      "Route": "excel/7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20354"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"l7obw70D50yTm21zRlyr87PY4nVZ9+65B2UUoKJwJZg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:55:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-l7obw70D50yTm21zRlyr87PY4nVZ9+65B2UUoKJwJZg="
+        }
+      ]
+    },
+    {
+      "Route": "excel/80d714d6-ba1a-4252-8a24-1bd90947b177.mtvzhfkedp.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\80d714d6-ba1a-4252-8a24-1bd90947b177.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20482"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2piC7Mn79k0a+P6ZlY0kwf0UYl/q0a4TKWITAYuERxw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:40:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mtvzhfkedp"
+        },
+        {
+          "Name": "label",
+          "Value": "excel/80d714d6-ba1a-4252-8a24-1bd90947b177.xlsx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2piC7Mn79k0a+P6ZlY0kwf0UYl/q0a4TKWITAYuERxw="
+        }
+      ]
+    },
+    {
+      "Route": "excel/80d714d6-ba1a-4252-8a24-1bd90947b177.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\80d714d6-ba1a-4252-8a24-1bd90947b177.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20482"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2piC7Mn79k0a+P6ZlY0kwf0UYl/q0a4TKWITAYuERxw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:40:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2piC7Mn79k0a+P6ZlY0kwf0UYl/q0a4TKWITAYuERxw="
+        }
+      ]
+    },
+    {
+      "Route": "excel/8c3e8b89-1426-4879-9028-bbf5584fe491.onpf58bt2r.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\8c3e8b89-1426-4879-9028-bbf5584fe491.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20353"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pGRhE+pe4IIqiQhnc1jxcqnHOkQQM1UYFS5XIDvJJ8c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:45:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "onpf58bt2r"
+        },
+        {
+          "Name": "label",
+          "Value": "excel/8c3e8b89-1426-4879-9028-bbf5584fe491.xlsx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pGRhE+pe4IIqiQhnc1jxcqnHOkQQM1UYFS5XIDvJJ8c="
+        }
+      ]
+    },
+    {
+      "Route": "excel/8c3e8b89-1426-4879-9028-bbf5584fe491.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\8c3e8b89-1426-4879-9028-bbf5584fe491.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20353"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pGRhE+pe4IIqiQhnc1jxcqnHOkQQM1UYFS5XIDvJJ8c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:45:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pGRhE+pe4IIqiQhnc1jxcqnHOkQQM1UYFS5XIDvJJ8c="
+        }
+      ]
+    },
+    {
+      "Route": "excel/b5da2f77-1661-4768-b9da-817f3ea3da17.0btyllbtpe.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\b5da2f77-1661-4768-b9da-817f3ea3da17.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20520"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JJ4JWn/ZM6nUBV/Bn9gKOPYH5t4M7hIzrz9vKnUBa08=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 12:24:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0btyllbtpe"
+        },
+        {
+          "Name": "label",
+          "Value": "excel/b5da2f77-1661-4768-b9da-817f3ea3da17.xlsx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JJ4JWn/ZM6nUBV/Bn9gKOPYH5t4M7hIzrz9vKnUBa08="
+        }
+      ]
+    },
+    {
+      "Route": "excel/b5da2f77-1661-4768-b9da-817f3ea3da17.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\b5da2f77-1661-4768-b9da-817f3ea3da17.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20520"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JJ4JWn/ZM6nUBV/Bn9gKOPYH5t4M7hIzrz9vKnUBa08=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 12:24:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JJ4JWn/ZM6nUBV/Bn9gKOPYH5t4M7hIzrz9vKnUBa08="
+        }
+      ]
+    },
+    {
+      "Route": "excel/c683de53-d0bb-4903-82e5-110f7777d7f9.3kdrexv9ka.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\c683de53-d0bb-4903-82e5-110f7777d7f9.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20360"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nWB373Oi4ha/I8yXXiD1JPWD9W1LCs4Ekvjoksvr8Bs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:47:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3kdrexv9ka"
+        },
+        {
+          "Name": "label",
+          "Value": "excel/c683de53-d0bb-4903-82e5-110f7777d7f9.xlsx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-nWB373Oi4ha/I8yXXiD1JPWD9W1LCs4Ekvjoksvr8Bs="
+        }
+      ]
+    },
+    {
+      "Route": "excel/c683de53-d0bb-4903-82e5-110f7777d7f9.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\c683de53-d0bb-4903-82e5-110f7777d7f9.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20360"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"nWB373Oi4ha/I8yXXiD1JPWD9W1LCs4Ekvjoksvr8Bs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:47:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-nWB373Oi4ha/I8yXXiD1JPWD9W1LCs4Ekvjoksvr8Bs="
+        }
+      ]
+    },
+    {
+      "Route": "excel/da89327f-60dc-466c-b4ec-b9def23250fc.uarvdy7al8.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\da89327f-60dc-466c-b4ec-b9def23250fc.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24185"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Cn+lQ+rhOsPA8w8s7m/2cBebqu2l3CvoY3UKf41s7Tg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:56:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uarvdy7al8"
+        },
+        {
+          "Name": "label",
+          "Value": "excel/da89327f-60dc-466c-b4ec-b9def23250fc.xlsx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Cn+lQ+rhOsPA8w8s7m/2cBebqu2l3CvoY3UKf41s7Tg="
+        }
+      ]
+    },
+    {
+      "Route": "excel/da89327f-60dc-466c-b4ec-b9def23250fc.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\da89327f-60dc-466c-b4ec-b9def23250fc.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24185"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Cn+lQ+rhOsPA8w8s7m/2cBebqu2l3CvoY3UKf41s7Tg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:56:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Cn+lQ+rhOsPA8w8s7m/2cBebqu2l3CvoY3UKf41s7Tg="
+        }
+      ]
+    },
+    {
+      "Route": "excel/edda9dd5-7bde-4018-9f53-f92f5210eb3d.0mmrpnp757.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\edda9dd5-7bde-4018-9f53-f92f5210eb3d.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20430"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yI9pAagT4CCrUve0NpppQ+yUJifBKJZdWfocUA+3tXQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 12:34:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0mmrpnp757"
+        },
+        {
+          "Name": "label",
+          "Value": "excel/edda9dd5-7bde-4018-9f53-f92f5210eb3d.xlsx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yI9pAagT4CCrUve0NpppQ+yUJifBKJZdWfocUA+3tXQ="
+        }
+      ]
+    },
+    {
+      "Route": "excel/edda9dd5-7bde-4018-9f53-f92f5210eb3d.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\edda9dd5-7bde-4018-9f53-f92f5210eb3d.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20430"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yI9pAagT4CCrUve0NpppQ+yUJifBKJZdWfocUA+3tXQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 12:34:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yI9pAagT4CCrUve0NpppQ+yUJifBKJZdWfocUA+3tXQ="
+        }
+      ]
+    },
     {
       "Route": "fonts/CALIBRI.t5t2ravmyq.TTF",
       "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRI.TTF",
@@ -1215,8 +2516,8 @@
       ]
     },
     {
-      "Route": "qr/1d8637a7-c7f1-443c-9366-d3a831cbe4bf.pdf",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\1d8637a7-c7f1-443c-9366-d3a831cbe4bf.pdf",
+      "Route": "pdf/2a5b8540-59ad-4040-818d-86ddd6132e82.dhtgn9sx7d.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\2a5b8540-59ad-4040-818d-86ddd6132e82.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1225,7 +2526,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "46436"
+          "Value": "86866"
         },
         {
           "Name": "Content-Type",
@@ -1233,48 +2534,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZQ4oR0ahi9Z6EX0tnqCw7QdAJMAsifvntcJUTdfO3M0=\""
+          "Value": "\"v8tv+3aU7k+DydhLjtvLhtzq9QXc4QAP48rMjopVPUY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 10:25:32 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ZQ4oR0ahi9Z6EX0tnqCw7QdAJMAsifvntcJUTdfO3M0="
-        }
-      ]
-    },
-    {
-      "Route": "qr/1d8637a7-c7f1-443c-9366-d3a831cbe4bf.tupqd3r56x.pdf",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\1d8637a7-c7f1-443c-9366-d3a831cbe4bf.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "46436"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ZQ4oR0ahi9Z6EX0tnqCw7QdAJMAsifvntcJUTdfO3M0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 10:25:32 GMT"
+          "Value": "Wed, 04 Jun 2025 11:56:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1284,21 +2548,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "tupqd3r56x"
+          "Value": "dhtgn9sx7d"
         },
         {
           "Name": "label",
-          "Value": "qr/1d8637a7-c7f1-443c-9366-d3a831cbe4bf.pdf"
+          "Value": "pdf/2a5b8540-59ad-4040-818d-86ddd6132e82.pdf"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZQ4oR0ahi9Z6EX0tnqCw7QdAJMAsifvntcJUTdfO3M0="
+          "Value": "sha256-v8tv+3aU7k+DydhLjtvLhtzq9QXc4QAP48rMjopVPUY="
         }
       ]
     },
     {
-      "Route": "qr/1e4500f2-2ac0-445c-9798-73b1e8c61b17.h4znw9lfki.pdf",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\1e4500f2-2ac0-445c-9798-73b1e8c61b17.pdf",
+      "Route": "pdf/2a5b8540-59ad-4040-818d-86ddd6132e82.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\2a5b8540-59ad-4040-818d-86ddd6132e82.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1307,7 +2571,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "46450"
+          "Value": "86866"
         },
         {
           "Name": "Content-Type",
@@ -1315,56 +2579,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"b/r8MGiloBvuQJtnhuzex1aNvOg2jIE/tOaWqNd1jHc=\""
+          "Value": "\"v8tv+3aU7k+DydhLjtvLhtzq9QXc4QAP48rMjopVPUY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 27 May 2025 09:43:57 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "h4znw9lfki"
-        },
-        {
-          "Name": "label",
-          "Value": "qr/1e4500f2-2ac0-445c-9798-73b1e8c61b17.pdf"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-b/r8MGiloBvuQJtnhuzex1aNvOg2jIE/tOaWqNd1jHc="
-        }
-      ]
-    },
-    {
-      "Route": "qr/1e4500f2-2ac0-445c-9798-73b1e8c61b17.pdf",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\1e4500f2-2ac0-445c-9798-73b1e8c61b17.pdf",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "46450"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/pdf"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"b/r8MGiloBvuQJtnhuzex1aNvOg2jIE/tOaWqNd1jHc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 27 May 2025 09:43:57 GMT"
+          "Value": "Wed, 04 Jun 2025 11:56:55 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1374,13 +2593,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-b/r8MGiloBvuQJtnhuzex1aNvOg2jIE/tOaWqNd1jHc="
+          "Value": "sha256-v8tv+3aU7k+DydhLjtvLhtzq9QXc4QAP48rMjopVPUY="
         }
       ]
     },
     {
-      "Route": "qr/e39f4d7f-8f28-4cb0-b3af-1d8eafc3f45a.d9jti00c8k.pdf",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\e39f4d7f-8f28-4cb0-b3af-1d8eafc3f45a.pdf",
+      "Route": "pdf/3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.3mpw6kj4ur.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1389,7 +2608,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "46824"
+          "Value": "85454"
         },
         {
           "Name": "Content-Type",
@@ -1397,11 +2616,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"P6cKEMpUG9SAXcxUpM5GMcyi4eyu3iL+qtqeAEG3JdM=\""
+          "Value": "\"qw9nIQHX9+5IicOy2q1a1VwIKkebke3A4/+pMililWU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 30 May 2025 04:28:36 GMT"
+          "Value": "Wed, 04 Jun 2025 11:49:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1411,21 +2630,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "d9jti00c8k"
+          "Value": "3mpw6kj4ur"
         },
         {
           "Name": "label",
-          "Value": "qr/e39f4d7f-8f28-4cb0-b3af-1d8eafc3f45a.pdf"
+          "Value": "pdf/3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.pdf"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-P6cKEMpUG9SAXcxUpM5GMcyi4eyu3iL+qtqeAEG3JdM="
+          "Value": "sha256-qw9nIQHX9+5IicOy2q1a1VwIKkebke3A4/+pMililWU="
         }
       ]
     },
     {
-      "Route": "qr/e39f4d7f-8f28-4cb0-b3af-1d8eafc3f45a.pdf",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\e39f4d7f-8f28-4cb0-b3af-1d8eafc3f45a.pdf",
+      "Route": "pdf/3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\3ae445dc-c5bd-46d4-a7e2-c0d2fbef634b.pdf",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1434,7 +2653,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "46824"
+          "Value": "85454"
         },
         {
           "Name": "Content-Type",
@@ -1442,11 +2661,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"P6cKEMpUG9SAXcxUpM5GMcyi4eyu3iL+qtqeAEG3JdM=\""
+          "Value": "\"qw9nIQHX9+5IicOy2q1a1VwIKkebke3A4/+pMililWU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 30 May 2025 04:28:36 GMT"
+          "Value": "Wed, 04 Jun 2025 11:49:35 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1456,7 +2675,745 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-P6cKEMpUG9SAXcxUpM5GMcyi4eyu3iL+qtqeAEG3JdM="
+          "Value": "sha256-qw9nIQHX9+5IicOy2q1a1VwIKkebke3A4/+pMililWU="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/4154343c-e8de-4987-8e18-44ca8e559621.izj765ph4y.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\4154343c-e8de-4987-8e18-44ca8e559621.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "86403"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7ipbZkk6a2wDgO86ad75xwSN8OlNXB/J+1sOCUtBkyI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:56:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "izj765ph4y"
+        },
+        {
+          "Name": "label",
+          "Value": "pdf/4154343c-e8de-4987-8e18-44ca8e559621.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7ipbZkk6a2wDgO86ad75xwSN8OlNXB/J+1sOCUtBkyI="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/4154343c-e8de-4987-8e18-44ca8e559621.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\4154343c-e8de-4987-8e18-44ca8e559621.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "86403"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7ipbZkk6a2wDgO86ad75xwSN8OlNXB/J+1sOCUtBkyI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:56:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7ipbZkk6a2wDgO86ad75xwSN8OlNXB/J+1sOCUtBkyI="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/514aeee0-dc88-48bd-9d59-b98e43dee600.j2ed67v629.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\514aeee0-dc88-48bd-9d59-b98e43dee600.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "85454"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ezrcBmA5pzsWBoB2ULL6nLd+xNxL/R60HdcRosr51yU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:54:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "j2ed67v629"
+        },
+        {
+          "Name": "label",
+          "Value": "pdf/514aeee0-dc88-48bd-9d59-b98e43dee600.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ezrcBmA5pzsWBoB2ULL6nLd+xNxL/R60HdcRosr51yU="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/514aeee0-dc88-48bd-9d59-b98e43dee600.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\514aeee0-dc88-48bd-9d59-b98e43dee600.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "85454"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ezrcBmA5pzsWBoB2ULL6nLd+xNxL/R60HdcRosr51yU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:54:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ezrcBmA5pzsWBoB2ULL6nLd+xNxL/R60HdcRosr51yU="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.7w5z8e2l3p.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "85440"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aZeEFo/auobc7c7LoxGSokRPOe4mZoYO69I4/Prw7W0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:55:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7w5z8e2l3p"
+        },
+        {
+          "Name": "label",
+          "Value": "pdf/7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-aZeEFo/auobc7c7LoxGSokRPOe4mZoYO69I4/Prw7W0="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\7cf76340-1d27-4bbf-bab5-459d5a1ed4ea.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "85440"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aZeEFo/auobc7c7LoxGSokRPOe4mZoYO69I4/Prw7W0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:55:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-aZeEFo/auobc7c7LoxGSokRPOe4mZoYO69I4/Prw7W0="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/80d714d6-ba1a-4252-8a24-1bd90947b177.2wuashhwd1.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\80d714d6-ba1a-4252-8a24-1bd90947b177.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "85563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HrW8lwdww7/bv2pFocWVvTB+4AYrxbjIJsxK8ah4Seo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:40:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2wuashhwd1"
+        },
+        {
+          "Name": "label",
+          "Value": "pdf/80d714d6-ba1a-4252-8a24-1bd90947b177.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HrW8lwdww7/bv2pFocWVvTB+4AYrxbjIJsxK8ah4Seo="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/80d714d6-ba1a-4252-8a24-1bd90947b177.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\80d714d6-ba1a-4252-8a24-1bd90947b177.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "85563"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HrW8lwdww7/bv2pFocWVvTB+4AYrxbjIJsxK8ah4Seo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:40:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HrW8lwdww7/bv2pFocWVvTB+4AYrxbjIJsxK8ah4Seo="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/8c3e8b89-1426-4879-9028-bbf5584fe491.kjrp4wh8jr.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\8c3e8b89-1426-4879-9028-bbf5584fe491.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "85474"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UJTBWmy6I3u5aPjvAk8E9mgxGwadHG3qXj6REEjLYSc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:45:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kjrp4wh8jr"
+        },
+        {
+          "Name": "label",
+          "Value": "pdf/8c3e8b89-1426-4879-9028-bbf5584fe491.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-UJTBWmy6I3u5aPjvAk8E9mgxGwadHG3qXj6REEjLYSc="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/8c3e8b89-1426-4879-9028-bbf5584fe491.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\8c3e8b89-1426-4879-9028-bbf5584fe491.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "85474"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UJTBWmy6I3u5aPjvAk8E9mgxGwadHG3qXj6REEjLYSc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:45:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UJTBWmy6I3u5aPjvAk8E9mgxGwadHG3qXj6REEjLYSc="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/b5da2f77-1661-4768-b9da-817f3ea3da17.cxsznkpu1p.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\b5da2f77-1661-4768-b9da-817f3ea3da17.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "86991"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MNT0bXG+Ma0LlM8Gn/VlR8hxHjGcNTGw/ok1AxmFi3Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 12:24:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cxsznkpu1p"
+        },
+        {
+          "Name": "label",
+          "Value": "pdf/b5da2f77-1661-4768-b9da-817f3ea3da17.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MNT0bXG+Ma0LlM8Gn/VlR8hxHjGcNTGw/ok1AxmFi3Q="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/b5da2f77-1661-4768-b9da-817f3ea3da17.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\b5da2f77-1661-4768-b9da-817f3ea3da17.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "86991"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MNT0bXG+Ma0LlM8Gn/VlR8hxHjGcNTGw/ok1AxmFi3Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 12:24:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MNT0bXG+Ma0LlM8Gn/VlR8hxHjGcNTGw/ok1AxmFi3Q="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/c683de53-d0bb-4903-82e5-110f7777d7f9.3mpw6kj4ur.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\c683de53-d0bb-4903-82e5-110f7777d7f9.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "85454"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qw9nIQHX9+5IicOy2q1a1VwIKkebke3A4/+pMililWU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:47:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3mpw6kj4ur"
+        },
+        {
+          "Name": "label",
+          "Value": "pdf/c683de53-d0bb-4903-82e5-110f7777d7f9.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qw9nIQHX9+5IicOy2q1a1VwIKkebke3A4/+pMililWU="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/c683de53-d0bb-4903-82e5-110f7777d7f9.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\c683de53-d0bb-4903-82e5-110f7777d7f9.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "85454"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qw9nIQHX9+5IicOy2q1a1VwIKkebke3A4/+pMililWU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:47:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qw9nIQHX9+5IicOy2q1a1VwIKkebke3A4/+pMililWU="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/edda9dd5-7bde-4018-9f53-f92f5210eb3d.59s5m2wlix.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\edda9dd5-7bde-4018-9f53-f92f5210eb3d.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "86050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SXxQpmESem0de9UGWa5nslofATwHuS8QoV9zb1G5kf4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 12:34:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "59s5m2wlix"
+        },
+        {
+          "Name": "label",
+          "Value": "pdf/edda9dd5-7bde-4018-9f53-f92f5210eb3d.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SXxQpmESem0de9UGWa5nslofATwHuS8QoV9zb1G5kf4="
+        }
+      ]
+    },
+    {
+      "Route": "pdf/edda9dd5-7bde-4018-9f53-f92f5210eb3d.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\edda9dd5-7bde-4018-9f53-f92f5210eb3d.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "86050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SXxQpmESem0de9UGWa5nslofATwHuS8QoV9zb1G5kf4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 12:34:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SXxQpmESem0de9UGWa5nslofATwHuS8QoV9zb1G5kf4="
+        }
+      ]
+    },
+    {
+      "Route": "templates/IT_BBBG_Template.418qnevl7q.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\templates\\IT_BBBG_Template.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25727"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2LXNvVqhaH3okeAcZXTZZHxrWaV5wiqyRhLiFSWOI+s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:58:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "418qnevl7q"
+        },
+        {
+          "Name": "label",
+          "Value": "templates/IT_BBBG_Template.xlsx"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2LXNvVqhaH3okeAcZXTZZHxrWaV5wiqyRhLiFSWOI+s="
+        }
+      ]
+    },
+    {
+      "Route": "templates/IT_BBBG_Template.xlsx",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\templates\\IT_BBBG_Template.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25727"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2LXNvVqhaH3okeAcZXTZZHxrWaV5wiqyRhLiFSWOI+s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 04 Jun 2025 11:58:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2LXNvVqhaH3okeAcZXTZZHxrWaV5wiqyRhLiFSWOI+s="
         }
       ]
     }

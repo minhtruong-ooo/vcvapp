@@ -74,10 +74,128 @@
           }
         }
       }
+    },
+    "/api/Media/assignment/pdf": {
+      "post": {
+        "tags": [
+          "Media"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetAssignmentModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetAssignmentModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssetAssignmentModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "AssetAssignment": {
+        "type": "object",
+        "properties": {
+          "detailID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "assetID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "assetTag": {
+            "type": "string",
+            "nullable": true
+          },
+          "templateName": {
+            "type": "string",
+            "nullable": true
+          },
+          "serialNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "unit": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetAssignmentModel": {
+        "type": "object",
+        "properties": {
+          "assignmentCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeName": {
+            "type": "string",
+            "nullable": true
+          },
+          "employeeCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "departmentName": {
+            "type": "string",
+            "nullable": true
+          },
+          "assignerCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "assignmentByName": {
+            "type": "string",
+            "nullable": true
+          },
+          "assignerDepartment": {
+            "type": "string",
+            "nullable": true
+          },
+          "assignmentAction": {
+            "type": "string",
+            "nullable": true
+          },
+          "assignmentDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "assetAssignments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AssetAssignment"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "QRModel": {
         "type": "object",
         "properties": {

@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.1.1" />
+    <PackageReference Include="FreeSpire.XLS" Version="14.2.0" />
     <PackageReference Include="itext.bouncy-castle-adapter" Version="9.1.0" />
     <PackageReference Include="itext7" Version="9.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
@@ -16,7 +18,14 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\excel\" />
+    <Folder Include="wwwroot\pdf\" />
     <Folder Include="wwwroot\qr\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\templates\IT_BBBG_Template.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
