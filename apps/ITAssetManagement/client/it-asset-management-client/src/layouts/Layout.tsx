@@ -6,7 +6,8 @@ import {
   ProductOutlined,
   BookOutlined,
   DeploymentUnitOutlined,
-  SolutionOutlined
+  SolutionOutlined,
+  ReadOutlined
 } from "@ant-design/icons";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import logo from "../assets/images/logo.png";
@@ -32,6 +33,7 @@ const Layout: React.FC = () => {
     "/assignments": "3",
     "/maintenance": "4",
     "/licenses": "5",
+    "/templates": "6",
   };
 
   const selectedKey = menuKeyMap[location.pathname] || "1";
@@ -70,6 +72,11 @@ const Layout: React.FC = () => {
           key: "5",
           icon: <BookOutlined />,
           label: <Link to="/licenses">Licenses</Link>,
+        },
+        {
+          key: "6",
+          icon: <ReadOutlined />,
+          label: <Link to="/templates">Templates</Link>,
         },
       ],
     },

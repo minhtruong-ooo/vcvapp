@@ -59,6 +59,6 @@ export const generateAssignmentPdfUrl = async (
     throw new Error("Failed to generate QR PDF");
   }
 
-  const data = await response.json(); // 👈 Parse JSON
-  return data.url; // 👈 Ghép thành URL đầy đủ
+  const data = await response.json();
+  return data.url;
 };

@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|d:\\project\\vcvapp\\apps\\itassetmanagement\\api\\vcv_api\\services\\assetassignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|solutionrelative:services\\assetassignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|d:\\project\\vcvapp\\apps\\itassetmanagement\\api\\vcv_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|d:\\project\\vcvapp\\apps\\itassetmanagement\\api\\vcv_api\\services\\interfaces\\iassetassign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|solutionrelative:services\\interfaces\\iassetassign.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|d:\\project\\vcvapp\\apps\\itassetmanagement\\api\\vcv_api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|d:\\project\\vcvapp\\apps\\itassetmanagement\\api\\vcv_api\\services\\assetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|solutionrelative:services\\assetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|d:\\project\\vcvapp\\apps\\itassetmanagement\\api\\vcv_api\\models\\assetassignment\\assetasignmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|solutionrelative:models\\assetassignment\\assetasignmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|d:\\project\\vcvapp\\apps\\itassetmanagement\\api\\vcv_api\\models\\asset\\assetdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|solutionrelative:models\\asset\\assetdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|d:\\project\\vcvapp\\apps\\itassetmanagement\\api\\vcv_api\\controllers\\assetscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|solutionrelative:controllers\\assetscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,44 +26,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AssetDetailDto.cs",
-              "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Models\\Asset\\AssetDetailDto.cs",
-              "RelativeDocumentMoniker": "Models\\Asset\\AssetDetailDto.cs",
-              "ToolTip": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Models\\Asset\\AssetDetailDto.cs",
-              "RelativeToolTip": "Models\\Asset\\AssetDetailDto.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAmwBsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T07:46:37.031Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IAssetAssign.cs",
-              "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Services\\Interfaces\\IAssetAssign.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IAssetAssign.cs",
-              "ToolTip": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Services\\Interfaces\\IAssetAssign.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IAssetAssign.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T08:23:57.289Z",
+              "WhenOpened": "2025-06-06T04:50:25.559Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AssetAsignmentDto.cs",
-              "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Models\\AssetAssignment\\AssetAsignmentDto.cs",
-              "RelativeDocumentMoniker": "Models\\AssetAssignment\\AssetAsignmentDto.cs",
-              "ToolTip": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Models\\AssetAssignment\\AssetAsignmentDto.cs",
-              "RelativeToolTip": "Models\\AssetAssignment\\AssetAsignmentDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Data\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDBContext.cs",
+              "ToolTip": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Data\\AppDBContext.cs",
+              "RelativeToolTip": "Data\\AppDBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T08:19:25Z",
+              "WhenOpened": "2025-06-06T04:50:14.719Z",
               "EditorCaption": ""
             },
             {
@@ -78,23 +62,22 @@
               "RelativeDocumentMoniker": "Services\\AssetService.cs",
               "ToolTip": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Services\\AssetService.cs",
               "RelativeToolTip": "Services\\AssetService.cs",
-              "ViewState": "AgIAACwBAAAAAAAAAAAmwDUBAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAAAAAAIAwwHQAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T08:11:17.011Z",
+              "WhenOpened": "2025-06-05T03:06:29.851Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AssetAssignment.cs",
-              "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Services\\AssetAssignment.cs",
-              "RelativeDocumentMoniker": "Services\\AssetAssignment.cs",
-              "ToolTip": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Services\\AssetAssignment.cs",
-              "RelativeToolTip": "Services\\AssetAssignment.cs",
-              "ViewState": "AgIAAJgAAAAAAAAAAAAIwKEAAAAtAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "AssetsController.cs",
+              "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Controllers\\AssetsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AssetsController.cs",
+              "ToolTip": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Controllers\\AssetsController.cs",
+              "RelativeToolTip": "Controllers\\AssetsController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-03T08:10:00.791Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T03:06:17.841Z"
             }
           ]
         }

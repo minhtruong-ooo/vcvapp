@@ -76,7 +76,6 @@ const AssignmentDetailPage = () => {
 
     console.log(assignment.assignerDepartment);
 
-    // Tạo assignmentModel theo AssetAssignmentPrintModel
     const assignmentModel: AssetAssignmentPrintModel = {
       assignmentCode: assignment.assignmentCode,
       employeeCode: assignment.employeeCode,
@@ -291,8 +290,8 @@ const AssignmentDetailPage = () => {
             }}
             >
               <Table.Column
-                title="STT"
-                key="stt"
+                title="NO."
+                key="NO."
                 render={(text, record, index) =>
                 (currentPage - 1) * pageSize + index + 1
               }

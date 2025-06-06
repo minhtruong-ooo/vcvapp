@@ -8,8 +8,24 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "data",
+        "Name": "model",
         "Type": "MediaService.Models.AssetAssignmentModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediaService.Controllers.MediaController",
+    "Method": "ExportAssignmentsZip",
+    "RelativePath": "api/Media/assignment/zip",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "models",
+        "Type": "System.Collections.Generic.List\u00601[[MediaService.Models.AssetAssignmentModel, MediaService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],

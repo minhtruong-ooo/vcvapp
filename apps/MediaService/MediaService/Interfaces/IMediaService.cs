@@ -6,5 +6,7 @@ namespace MediaService.Interfaces
     {
         Task<string> SaveImageAsync(IFormFile file, string folder = "uploads");
         Task<string> GeneratePdfWithQRCodes(List<QRModel> items);
+        Task<string> ExportAssignmentPdfAsync(AssetAssignmentModel model);
+        Task<string> ExportAssignmentsZipAsync(List<AssetAssignmentModel> dataList);
     }
 }

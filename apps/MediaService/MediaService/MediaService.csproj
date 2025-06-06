@@ -18,11 +18,15 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\excel\" />
+    <Folder Include="wwwroot\zip\" />
     <Folder Include="wwwroot\pdf\" />
     <Folder Include="wwwroot\qr\" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="wwwroot\templates\IT_BBTH_Template.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\templates\IT_BBBG_Template.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

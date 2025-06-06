@@ -11,6 +11,10 @@ using MediaService.Models;
 using Path = System.IO.Path;
 using iText.IO.Font;
 using iText.Kernel.Font;
+using OfficeOpenXml;
+using Spire.Xls;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.IO.Compression;
 namespace MediaService.Services
 {
     public class MediaService : IMediaService
@@ -21,6 +25,99 @@ namespace MediaService.Services
         public MediaService(IWebHostEnvironment env)
         {
             _env = env;
+        }
+
+        public async Task<string> ExportAssignmentPdfAsync(AssetAssignmentModel model)
+        {
+            string fileName = $"{Guid.NewGuid()}";
+            string templatePath = Path.Combine(_env.WebRootPath, "templates", "IT_BBBG_Template.xlsx");
+            string excelPath = Path.Combine(_env.WebRootPath, "excel", $"{fileName}.xlsx");
+            string pdfPath = Path.Combine(_env.WebRootPath, "pdf", $"{fileName}.pdf");
+
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            using (var package = new ExcelPackage(new FileInfo(templatePath)))
+            {
+                var ws = package.Workbook.Worksheets[0];
+                FillAssignmentData(ws, model);
+                package.SaveAs(new FileInfo(excelPath));
+            }
+
+            var workbook = new Workbook();
+            workbook.LoadFromFile(excelPath);
+            workbook.SaveToFile(pdfPath, FileFormat.PDF);
+
+            return $"/pdf/{fileName}.pdf";
+        }
+
+        public async Task<string> ExportAssignmentsZipAsync(List<AssetAssignmentModel> dataList)
+        {
+            string zipName = $"{Guid.NewGuid()}.zip";
+            string zipPath = Path.Combine(_env.WebRootPath, "zip", zipName);
+            Directory.CreateDirectory(Path.GetDirectoryName(zipPath)!);
+
+            List<string> pdfPaths = new();
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            foreach (var data in dataList)
+            {
+                string id = Guid.NewGuid().ToString();
+                string excelPath = Path.Combine(_env.WebRootPath, "excel", $"{id}.xlsx");
+                string pdfPath = Path.Combine(_env.WebRootPath, "pdf", $"{id}.pdf");
+
+                using (var package = new ExcelPackage(new FileInfo(Path.Combine(_env.WebRootPath, "templates", "IT_BBBG_Template.xlsx"))))
+                {
+                    var ws = package.Workbook.Worksheets[0];
+                    FillAssignmentData(ws, data);
+                    package.SaveAs(new FileInfo(excelPath));
+                }
+
+                var workbook = new Workbook();
+                workbook.LoadFromFile(excelPath);
+                workbook.SaveToFile(pdfPath, FileFormat.PDF);
+                pdfPaths.Add(pdfPath);
+            }
+
+            using (var zipStream = new FileStream(zipPath, FileMode.Create))
+            using (var archive = new ZipArchive(zipStream, ZipArchiveMode.Create))
+            {
+                foreach (var pdf in pdfPaths)
+                {
+                    var entryName = Path.GetFileName(pdf);
+                    archive.CreateEntryFromFile(pdf, entryName);
+                }
+            }
+
+            foreach (var pdf in pdfPaths)
+            {
+                if (File.Exists(pdf)) File.Delete(pdf);
+            }
+
+            return $"/zip/{zipName}";
+        }
+
+        private void FillAssignmentData(ExcelWorksheet ws, AssetAssignmentModel data)
+        {
+            ws.Cells["C11"].Value = data.assignmentCode;
+            ws.Cells["C16"].Value = data.employeeName;
+            ws.Cells["C17"].Value = data.employeeCode;
+            ws.Cells["C12"].Value = data.assignmentByName;
+            ws.Cells["C13"].Value = data.assignerCode;
+            ws.Cells["C20"].Value = data.notes;
+            ws.Cells["C50"].Value = data.assignmentDate;
+            ws.Cells["H16"].Value = data.departmentName;
+            ws.Cells["H12"].Value = data.assignerDepartment;
+
+            int rowStart = 24;
+            for (int i = 0; i < data.assetAssignments.Count; i++)
+            {
+                var item = data.assetAssignments[i];
+                ws.Cells[rowStart + i, 1].Value = i + 1;
+                ws.Cells[rowStart + i, 2].Value = item.templateName ?? "";
+                ws.Cells[rowStart + i, 5].Value = item.assetTag ?? "";
+                ws.Cells[rowStart + i, 6].Value = item.serialNumber ?? "";
+                ws.Cells[rowStart + i, 7].Value = item.unit ?? "";
+                ws.Cells[rowStart + i, 8].Value = item.quantity ?? "1";
+            }
         }
 
         public Task<string> GeneratePdfWithQRCodes(List<QRModel> items)
@@ -118,8 +215,5 @@ namespace MediaService.Services
 
             return $"/{folder}/{fileName}".Replace("\\", "/"); // Return relative path
         }
-
-
-
     }
 }
