@@ -105,6 +105,16 @@
   },
   {
     "ContainingType": "VCV_API.Controllers.AssetTemplatesController",
+    "Method": "GetAssetTemplates",
+    "RelativePath": "api/AssetTemplates/GetAssetTemplates",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.AssetTemplatesController",
     "Method": "GetAssetTemplates_Select",
     "RelativePath": "api/AssetTemplates/GetAssetTemplates_Select",
     "HttpMethod": "GET",

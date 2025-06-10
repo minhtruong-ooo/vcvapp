@@ -34,5 +34,23 @@ namespace VCV_API.Controllers
                 return StatusCode(500, $"Lỗi khi lấy dữ liệu: {ex.Message}");
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAssetTemplates()
+        {
+            try
+            {
+                var assetsTemplates = await _assetTemplateService.GetAssetTemplateAsync();
+                if (assetsTemplates == null || assetsTemplates.Count == 0)
+                {
+                    return NotFound("Không tìm thấy mẫu tài sản.");
+                }
+                return Ok(assetsTemplates);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Lỗi khi lấy dữ liệu: {ex.Message}");
+            }
+        }
     }
 }

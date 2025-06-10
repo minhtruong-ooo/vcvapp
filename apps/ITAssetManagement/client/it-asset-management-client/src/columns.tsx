@@ -288,3 +288,74 @@ export const assetUnUsedColumn = (data: any[]): ColumnType<any>[] => {
     },
   ];
 }
+
+export const assetTemplateColumn = (data: any[]): ColumnType<any>[] => {
+  return [
+    {
+      title: "Type",
+      dataIndex: "typeName",
+      key: "typeName",
+      sorter: (a, b) => a.typeName.localeCompare(b.typeName),
+      onFilter: (value, record) => record.typeName.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.typeName))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+    {
+      title: "Template Name",
+      dataIndex: "templateName",
+      key: "templateName",
+      sorter: (a, b) => a.templateName.localeCompare(b.templateName),
+      onFilter: (value, record) => record.templateName.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.templateName))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+    {
+      title: "Model",
+      dataIndex: "model",
+      key: "model",
+      sorter: (a, b) => a.model.localeCompare(b.model),
+      onFilter: (value, record) => record.model.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.model))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+    {
+      title: "Manufacturer",
+      dataIndex: "manufacturer",
+      key: "manufacturer",
+      width: 200,
+      onFilter: (value, record) => record.manufacturer.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.manufacturer))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+    {
+      title: "Warranty Months",
+      dataIndex: "defaultWarrantyMonths",
+      key: "defaultWarrantyMonths",
+      width: 200,
+      onFilter: (value, record) => record.defaultWarrantyMonths.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.defaultWarrantyMonths))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+    {
+      title: "Unit",
+      dataIndex: "unit",
+      key: "unit",
+      width: 200,
+      onFilter: (value, record) => record.unit.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.unit))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+  ];
+}

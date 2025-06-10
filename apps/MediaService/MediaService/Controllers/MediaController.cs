@@ -75,6 +75,5 @@ namespace MediaService.Controllers
             var url = $"{Request.Scheme}://{Request.Host}{zipPath}";
             return Ok(new { success = true, url });
         }
-
     }
 }

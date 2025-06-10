@@ -181,6 +181,18 @@
         }
       }
     },
+    "/api/AssetTemplates/GetAssetTemplates": {
+      "get": {
+        "tags": [
+          "AssetTemplates"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/AssetTypes/GetAssetTypes": {
       "get": {
         "tags": [

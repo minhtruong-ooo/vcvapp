@@ -11,6 +11,6 @@
         public string? Description { get; set; }
         public DateTime CreatedAt { get; set; }
         public string? Unit { get; set; }
-
+        public string? TypeName { get; set; }
     }
 }

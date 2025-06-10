@@ -17,7 +17,7 @@
   import type { FormInstance } from "antd";
   import { useKeycloak } from "@react-keycloak/web";
   import {
-    GetAssetTemplates_Select,
+    getAssetTemplates_Select,
     getLocations,
     getAssetStatuses,
     createAsset,
@@ -61,7 +61,7 @@
         try {
           setLoadingSelects(true);
           const [templatesData, locationsData, statusesData] = await Promise.all([
-            GetAssetTemplates_Select(token),
+            getAssetTemplates_Select(token),
             getLocations(token),
             getAssetStatuses(token),
           ]);

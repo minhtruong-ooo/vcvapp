@@ -30,7 +30,17 @@ namespace MediaService.Services
         public async Task<string> ExportAssignmentPdfAsync(AssetAssignmentModel model)
         {
             string fileName = $"{Guid.NewGuid()}";
-            string templatePath = Path.Combine(_env.WebRootPath, "templates", "IT_BBBG_Template.xlsx");
+            string templatePath = "";
+
+            if (model.assignmentAction == "Assign")
+            {
+                templatePath = Path.Combine(_env.WebRootPath, "templates", "IT_BBBG_Template.xlsx");
+            }
+            else if (model.assignmentAction == "Return")
+            {
+                templatePath = Path.Combine(_env.WebRootPath, "templates", "IT_BBTH_Template.xlsx");
+            }
+
             string excelPath = Path.Combine(_env.WebRootPath, "excel", $"{fileName}.xlsx");
             string pdfPath = Path.Combine(_env.WebRootPath, "pdf", $"{fileName}.pdf");
 

@@ -1,60 +1,12 @@
 {
   "Files": [
     {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\0d9b7680-0118-4828-a17e-e7506a702267.xlsx",
-      "PackagePath": "staticwebassets\\excel\\0d9b7680-0118-4828-a17e-e7506a702267.xlsx"
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\cd6970e3-8933-4a61-a28f-da884b808730.xlsx",
+      "PackagePath": "staticwebassets\\excel\\cd6970e3-8933-4a61-a28f-da884b808730.xlsx"
     },
     {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\0dd2acde-6e93-4a3f-8b1f-0c2bcce14187.xlsx",
-      "PackagePath": "staticwebassets\\excel\\0dd2acde-6e93-4a3f-8b1f-0c2bcce14187.xlsx"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\11566227-5efa-458d-bd43-ac094806fbdd.xlsx",
-      "PackagePath": "staticwebassets\\excel\\11566227-5efa-458d-bd43-ac094806fbdd.xlsx"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\31cb6ba2-318c-4ea6-832c-dbd7c9414d81.xlsx",
-      "PackagePath": "staticwebassets\\excel\\31cb6ba2-318c-4ea6-832c-dbd7c9414d81.xlsx"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\3d71bc0f-00f0-4759-9407-1182dbabc9d9.xlsx",
-      "PackagePath": "staticwebassets\\excel\\3d71bc0f-00f0-4759-9407-1182dbabc9d9.xlsx"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\6c649f28-7aa9-42e1-8a2a-7f69ca8e8be5.xlsx",
-      "PackagePath": "staticwebassets\\excel\\6c649f28-7aa9-42e1-8a2a-7f69ca8e8be5.xlsx"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\73cb08b8-17f8-4246-b57a-197eb48314c0.xlsx",
-      "PackagePath": "staticwebassets\\excel\\73cb08b8-17f8-4246-b57a-197eb48314c0.xlsx"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\9031748c-3046-40db-bf09-51fa40f4a92e.xlsx",
-      "PackagePath": "staticwebassets\\excel\\9031748c-3046-40db-bf09-51fa40f4a92e.xlsx"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\a23cfc0f-5b6a-44f3-91b6-96e32602b7be.xlsx",
-      "PackagePath": "staticwebassets\\excel\\a23cfc0f-5b6a-44f3-91b6-96e32602b7be.xlsx"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\b214afe0-9133-41e9-b72f-3ea984d29fe3.xlsx",
-      "PackagePath": "staticwebassets\\excel\\b214afe0-9133-41e9-b72f-3ea984d29fe3.xlsx"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\d8f30d78-ea34-417e-ba4b-2a0625f472cf.xlsx",
-      "PackagePath": "staticwebassets\\excel\\d8f30d78-ea34-417e-ba4b-2a0625f472cf.xlsx"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\e3edfe7f-47a0-4845-a942-db61ca5ab508.xlsx",
-      "PackagePath": "staticwebassets\\excel\\e3edfe7f-47a0-4845-a942-db61ca5ab508.xlsx"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\ea4e2758-02f4-42f0-a0f3-0fce98e07c1f.xlsx",
-      "PackagePath": "staticwebassets\\excel\\ea4e2758-02f4-42f0-a0f3-0fce98e07c1f.xlsx"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\ec8d247c-b702-4f62-9880-371b50b36902.xlsx",
-      "PackagePath": "staticwebassets\\excel\\ec8d247c-b702-4f62-9880-371b50b36902.xlsx"
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\cdb1bccd-9c4a-4526-8a5b-c682b2ebb6bb.xlsx",
+      "PackagePath": "staticwebassets\\excel\\cdb1bccd-9c4a-4526-8a5b-c682b2ebb6bb.xlsx"
     },
     {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRI.TTF",
@@ -101,64 +53,12 @@
       "PackagePath": "staticwebassets\\images\\logo\\logo.png"
     },
     {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\0d9b7680-0118-4828-a17e-e7506a702267.pdf",
-      "PackagePath": "staticwebassets\\pdf\\0d9b7680-0118-4828-a17e-e7506a702267.pdf"
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\cd6970e3-8933-4a61-a28f-da884b808730.pdf",
+      "PackagePath": "staticwebassets\\pdf\\cd6970e3-8933-4a61-a28f-da884b808730.pdf"
     },
     {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\0dd2acde-6e93-4a3f-8b1f-0c2bcce14187.pdf",
-      "PackagePath": "staticwebassets\\pdf\\0dd2acde-6e93-4a3f-8b1f-0c2bcce14187.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\11566227-5efa-458d-bd43-ac094806fbdd.pdf",
-      "PackagePath": "staticwebassets\\pdf\\11566227-5efa-458d-bd43-ac094806fbdd.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\31cb6ba2-318c-4ea6-832c-dbd7c9414d81.pdf",
-      "PackagePath": "staticwebassets\\pdf\\31cb6ba2-318c-4ea6-832c-dbd7c9414d81.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\3d71bc0f-00f0-4759-9407-1182dbabc9d9.pdf",
-      "PackagePath": "staticwebassets\\pdf\\3d71bc0f-00f0-4759-9407-1182dbabc9d9.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\6c649f28-7aa9-42e1-8a2a-7f69ca8e8be5.pdf",
-      "PackagePath": "staticwebassets\\pdf\\6c649f28-7aa9-42e1-8a2a-7f69ca8e8be5.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\73cb08b8-17f8-4246-b57a-197eb48314c0.pdf",
-      "PackagePath": "staticwebassets\\pdf\\73cb08b8-17f8-4246-b57a-197eb48314c0.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\9031748c-3046-40db-bf09-51fa40f4a92e.pdf",
-      "PackagePath": "staticwebassets\\pdf\\9031748c-3046-40db-bf09-51fa40f4a92e.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\a23cfc0f-5b6a-44f3-91b6-96e32602b7be.pdf",
-      "PackagePath": "staticwebassets\\pdf\\a23cfc0f-5b6a-44f3-91b6-96e32602b7be.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\b214afe0-9133-41e9-b72f-3ea984d29fe3.pdf",
-      "PackagePath": "staticwebassets\\pdf\\b214afe0-9133-41e9-b72f-3ea984d29fe3.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\d8f30d78-ea34-417e-ba4b-2a0625f472cf.pdf",
-      "PackagePath": "staticwebassets\\pdf\\d8f30d78-ea34-417e-ba4b-2a0625f472cf.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\e3edfe7f-47a0-4845-a942-db61ca5ab508.pdf",
-      "PackagePath": "staticwebassets\\pdf\\e3edfe7f-47a0-4845-a942-db61ca5ab508.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\ea4e2758-02f4-42f0-a0f3-0fce98e07c1f.pdf",
-      "PackagePath": "staticwebassets\\pdf\\ea4e2758-02f4-42f0-a0f3-0fce98e07c1f.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\ec8d247c-b702-4f62-9880-371b50b36902.pdf",
-      "PackagePath": "staticwebassets\\pdf\\ec8d247c-b702-4f62-9880-371b50b36902.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\112ec696-44c1-4598-996e-14bcde207206.pdf",
-      "PackagePath": "staticwebassets\\qr\\112ec696-44c1-4598-996e-14bcde207206.pdf"
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\cdb1bccd-9c4a-4526-8a5b-c682b2ebb6bb.pdf",
+      "PackagePath": "staticwebassets\\pdf\\cdb1bccd-9c4a-4526-8a5b-c682b2ebb6bb.pdf"
     },
     {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\templates\\IT_BBBG_Template.xlsx",
