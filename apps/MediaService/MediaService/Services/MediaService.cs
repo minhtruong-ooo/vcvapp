@@ -13,14 +13,12 @@ using iText.IO.Font;
 using iText.Kernel.Font;
 using OfficeOpenXml;
 using Spire.Xls;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.IO.Compression;
 namespace MediaService.Services
 {
     public class MediaService : IMediaService
     {
         private readonly IWebHostEnvironment _env;
-
 
         public MediaService(IWebHostEnvironment env)
         {
@@ -29,80 +27,86 @@ namespace MediaService.Services
 
         public async Task<string> ExportAssignmentPdfAsync(AssetAssignmentModel model)
         {
-            string fileName = $"{Guid.NewGuid()}";
-            string templatePath = "";
-
-            if (model.assignmentAction == "Assign")
+            return await Task.Run(() =>
             {
-                templatePath = Path.Combine(_env.WebRootPath, "templates", "IT_BBBG_Template.xlsx");
-            }
-            else if (model.assignmentAction == "Return")
-            {
-                templatePath = Path.Combine(_env.WebRootPath, "templates", "IT_BBTH_Template.xlsx");
-            }
+                string fileName = $"{Guid.NewGuid()}";
+                string templatePath = "";
 
-            string excelPath = Path.Combine(_env.WebRootPath, "excel", $"{fileName}.xlsx");
-            string pdfPath = Path.Combine(_env.WebRootPath, "pdf", $"{fileName}.pdf");
+                if (model.assignmentAction == "Assign")
+                {
+                    templatePath = Path.Combine(_env.WebRootPath, "templates", "IT_BBBG_Template.xlsx");
+                }
+                else if (model.assignmentAction == "Return")
+                {
+                    templatePath = Path.Combine(_env.WebRootPath, "templates", "IT_BBTH_Template.xlsx");
+                }
 
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            using (var package = new ExcelPackage(new FileInfo(templatePath)))
-            {
-                var ws = package.Workbook.Worksheets[0];
-                FillAssignmentData(ws, model);
-                package.SaveAs(new FileInfo(excelPath));
-            }
+                string excelPath = Path.Combine(_env.WebRootPath, "excel", $"{fileName}.xlsx");
+                string pdfPath = Path.Combine(_env.WebRootPath, "pdf", $"{fileName}.pdf");
 
-            var workbook = new Workbook();
-            workbook.LoadFromFile(excelPath);
-            workbook.SaveToFile(pdfPath, FileFormat.PDF);
-
-            return $"/pdf/{fileName}.pdf";
-        }
-
-        public async Task<string> ExportAssignmentsZipAsync(List<AssetAssignmentModel> dataList)
-        {
-            string zipName = $"{Guid.NewGuid()}.zip";
-            string zipPath = Path.Combine(_env.WebRootPath, "zip", zipName);
-            Directory.CreateDirectory(Path.GetDirectoryName(zipPath)!);
-
-            List<string> pdfPaths = new();
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-
-            foreach (var data in dataList)
-            {
-                string id = Guid.NewGuid().ToString();
-                string excelPath = Path.Combine(_env.WebRootPath, "excel", $"{id}.xlsx");
-                string pdfPath = Path.Combine(_env.WebRootPath, "pdf", $"{id}.pdf");
-
-                using (var package = new ExcelPackage(new FileInfo(Path.Combine(_env.WebRootPath, "templates", "IT_BBBG_Template.xlsx"))))
+                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+                using (var package = new ExcelPackage(new FileInfo(templatePath)))
                 {
                     var ws = package.Workbook.Worksheets[0];
-                    FillAssignmentData(ws, data);
+                    FillAssignmentData(ws, model);
                     package.SaveAs(new FileInfo(excelPath));
                 }
 
                 var workbook = new Workbook();
                 workbook.LoadFromFile(excelPath);
                 workbook.SaveToFile(pdfPath, FileFormat.PDF);
-                pdfPaths.Add(pdfPath);
-            }
 
-            using (var zipStream = new FileStream(zipPath, FileMode.Create))
-            using (var archive = new ZipArchive(zipStream, ZipArchiveMode.Create))
+                return $"/pdf/{fileName}.pdf";
+            });
+        }
+
+        public async Task<string> ExportAssignmentsZipAsync(List<AssetAssignmentModel> dataList)
+        {
+            return await Task.Run(async () =>
             {
+                string zipName = $"{Guid.NewGuid()}.zip";
+                string zipPath = Path.Combine(_env.WebRootPath, "zip", zipName);
+                Directory.CreateDirectory(Path.GetDirectoryName(zipPath)!);
+
+                List<string> pdfPaths = new();
+                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+                foreach (var data in dataList)
+                {
+                    string id = Guid.NewGuid().ToString();
+                    string excelPath = Path.Combine(_env.WebRootPath, "excel", $"{id}.xlsx");
+                    string pdfPath = Path.Combine(_env.WebRootPath, "pdf", $"{id}.pdf");
+
+                    using (var package = new ExcelPackage(new FileInfo(Path.Combine(_env.WebRootPath, "templates", "IT_BBBG_Template.xlsx"))))
+                    {
+                        var ws = package.Workbook.Worksheets[0];
+                        FillAssignmentData(ws, data);
+                        await Task.Run(() => package.SaveAs(new FileInfo(excelPath)));
+                    }
+
+                    var workbook = new Workbook();
+                    workbook.LoadFromFile(excelPath);
+                    workbook.SaveToFile(pdfPath, FileFormat.PDF);
+                    pdfPaths.Add(pdfPath);
+                }
+
+                using (var zipStream = new FileStream(zipPath, FileMode.Create))
+                using (var archive = new ZipArchive(zipStream, ZipArchiveMode.Create))
+                {
+                    foreach (var pdf in pdfPaths)
+                    {
+                        var entryName = Path.GetFileName(pdf);
+                        archive.CreateEntryFromFile(pdf, entryName);
+                    }
+                }
+
                 foreach (var pdf in pdfPaths)
                 {
-                    var entryName = Path.GetFileName(pdf);
-                    archive.CreateEntryFromFile(pdf, entryName);
+                    if (File.Exists(pdf)) File.Delete(pdf);
                 }
-            }
 
-            foreach (var pdf in pdfPaths)
-            {
-                if (File.Exists(pdf)) File.Delete(pdf);
-            }
-
-            return $"/zip/{zipName}";
+                return $"/zip/{zipName}";
+            });
         }
 
         private void FillAssignmentData(ExcelWorksheet ws, AssetAssignmentModel data)

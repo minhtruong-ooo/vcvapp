@@ -105,6 +105,22 @@
   },
   {
     "ContainingType": "VCV_API.Controllers.AssetTemplatesController",
+    "Method": "DeleteAssetTemplates",
+    "RelativePath": "api/AssetTemplates/DeleteAssetTemplates/delete",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "templateIDs",
+        "Type": "System.Collections.Generic.List\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.AssetTemplatesController",
     "Method": "GetAssetTemplates",
     "RelativePath": "api/AssetTemplates/GetAssetTemplates",
     "HttpMethod": "GET",
@@ -121,6 +137,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.AssetTemplatesController",
+    "Method": "UpdateAssetTemplate",
+    "RelativePath": "api/AssetTemplates/UpdateAssetTemplate/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "VCV_API.Models.AssetTemplate.AssetTemplateDTO",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

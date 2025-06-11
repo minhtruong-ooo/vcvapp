@@ -90,6 +90,47 @@ export const getAssetStatuses = async (token: string) => {
   }
 };
 
+export const getAssetDetail = async (token: string, assetTag: string) => {
+  try {
+    const response = await axios.get<Asset>(
+      `${BASE_URL}/Assets/GetDetailAsset/${encodeURIComponent(assetTag)}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        timeout: 5000,
+      }
+    );
+    return response.data;
+  } catch (error: any) {
+    console.error("❌ Lỗi khi lấy chi tiết tài sản:", error?.response?.data?.details || error.message);
+    throw new Error(error?.response?.data?.details || "Không thể lấy chi tiết tài sản");
+  }
+};
+
+export const getSpecs = async (token: string, templateID: number) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/AssetSpec/GetAssetSpecsByTemplateID/${encodeURIComponent(templateID)}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        timeout: 5000,
+      }
+    );
+    return response.data; // Trả về array luôn
+  } catch (error: any) {
+    console.error("❌ Lỗi khi lấy thông số kỹ thuật:", error?.response?.data?.details || error.message);
+    throw new Error(error?.response?.data?.details || "Lỗi khi lấy thông số kỹ thuật");
+  }
+};
+
+
+
+
+// Create API 
+
 export const createAsset = async (token: string, data: any) => {
   try {
     const response = await axios.post(`${BASE_URL}/Assets/CreateAsset`, data, {
@@ -127,38 +168,39 @@ export const createAssets = async (token: string, data: any) => {
   }
 };
 
-export const getAssetDetail = async (token: string, assetTag: string) => {
+// Update API
+
+export const updateAssetTemplate = async (token: string, data: any) => {
   try {
-    const response = await axios.get<Asset>(
-      `${BASE_URL}/Assets/GetDetailAsset/${encodeURIComponent(assetTag)}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        timeout: 5000,
-      }
-    );
+    const response = await axios.put(`${BASE_URL}/AssetTemplates/UpdateAssetTemplate/update`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      timeout: 5000,
+    });
+
     return response.data;
   } catch (error: any) {
-    console.error("❌ Lỗi khi lấy chi tiết tài sản:", error?.response?.data?.details || error.message);
-    throw new Error(error?.response?.data?.details || "Không thể lấy chi tiết tài sản");
+    console.error("❌ Lỗi khi cập nhật tài sản:", error?.response?.data.details);
+    throw new Error(error?.response?.data.details);
   }
 };
 
-export const getSpecs = async (token: string, templateID: number) => {
+
+// Delete API
+
+export const deleteAssetTemplates = async (token: string, templateIDs: number[]) => {
   try {
-    const response = await axios.get(
-      `${BASE_URL}/AssetSpec/GetAssetSpecsByTemplateID/${encodeURIComponent(templateID)}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        timeout: 5000,
-      }
-    );
-    return response.data; // Trả về array luôn
+    const response = await axios.post(`${BASE_URL}/AssetTemplates/DeleteAssetTemplates/delete`, templateIDs, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+    return response.data;
   } catch (error: any) {
-    console.error("❌ Lỗi khi lấy thông số kỹ thuật:", error?.response?.data?.details || error.message);
-    throw new Error(error?.response?.data?.details || "Lỗi khi lấy thông số kỹ thuật");
+    console.error("❌ Lỗi xoá template:", error?.response?.data?.message);
+    throw new Error(error?.response?.data?.message || "Xoá thất bại");
   }
 };

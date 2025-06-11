@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Services\\MediaService.cs",
               "ToolTip": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Services\\MediaService.cs",
               "RelativeToolTip": "Services\\MediaService.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAADwvx4AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAYwGEAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T10:10:34.434Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "Interfaces\\IMediaService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T10:08:47.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T10:08:47.5Z"
             },
             {
               "$type": "Document",
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T09:39:22.702Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T09:39:22.702Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "Controllers\\MediaController.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAcwD0AAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T09:34:50.095Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T09:34:50.095Z"
             }
           ]
         }

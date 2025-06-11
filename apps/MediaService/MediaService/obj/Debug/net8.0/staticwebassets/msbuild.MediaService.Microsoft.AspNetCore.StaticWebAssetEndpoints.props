@@ -1,5 +1,65 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/MediaService/excel/1d967168-b12f-496b-889d-795acc47241e.34j3m5ead6.xlsx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\1d967168-b12f-496b-889d-795acc47241e.xlsx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"34j3m5ead6"},{"Name":"integrity","Value":"sha256-g\u002B1RsheDgwFThN3XvPnr3Q8HcN0vnJ4rGvauTXZktRc="},{"Name":"label","Value":"_content/MediaService/excel/1d967168-b12f-496b-889d-795acc47241e.xlsx"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"28654"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022g\u002B1RsheDgwFThN3XvPnr3Q8HcN0vnJ4rGvauTXZktRc=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:49:21 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/excel/1d967168-b12f-496b-889d-795acc47241e.xlsx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\1d967168-b12f-496b-889d-795acc47241e.xlsx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-g\u002B1RsheDgwFThN3XvPnr3Q8HcN0vnJ4rGvauTXZktRc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"28654"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022g\u002B1RsheDgwFThN3XvPnr3Q8HcN0vnJ4rGvauTXZktRc=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:49:21 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/excel/49ee6737-d2ac-40e2-87ec-6c30277146a6.s8dqmrw393.xlsx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\49ee6737-d2ac-40e2-87ec-6c30277146a6.xlsx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"s8dqmrw393"},{"Name":"integrity","Value":"sha256-jKe3qYId5qs55cePsDcriL7wlPQi3ukmvN8ZIhK6oTY="},{"Name":"label","Value":"_content/MediaService/excel/49ee6737-d2ac-40e2-87ec-6c30277146a6.xlsx"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"28296"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022jKe3qYId5qs55cePsDcriL7wlPQi3ukmvN8ZIhK6oTY=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:50:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/excel/49ee6737-d2ac-40e2-87ec-6c30277146a6.xlsx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\49ee6737-d2ac-40e2-87ec-6c30277146a6.xlsx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-jKe3qYId5qs55cePsDcriL7wlPQi3ukmvN8ZIhK6oTY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"28296"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022jKe3qYId5qs55cePsDcriL7wlPQi3ukmvN8ZIhK6oTY=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:50:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/excel/7fdb0a42-aa1a-4e63-bf78-0b329e6c7a83.dv2lb2ueok.xlsx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\7fdb0a42-aa1a-4e63-bf78-0b329e6c7a83.xlsx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"dv2lb2ueok"},{"Name":"integrity","Value":"sha256-N2vemnG1PY7AWWSEqZbAv9T6j4/3f2Z2ob5LFbXCs9s="},{"Name":"label","Value":"_content/MediaService/excel/7fdb0a42-aa1a-4e63-bf78-0b329e6c7a83.xlsx"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"28654"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022N2vemnG1PY7AWWSEqZbAv9T6j4/3f2Z2ob5LFbXCs9s=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:48:14 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/excel/7fdb0a42-aa1a-4e63-bf78-0b329e6c7a83.xlsx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\7fdb0a42-aa1a-4e63-bf78-0b329e6c7a83.xlsx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-N2vemnG1PY7AWWSEqZbAv9T6j4/3f2Z2ob5LFbXCs9s="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"28654"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022N2vemnG1PY7AWWSEqZbAv9T6j4/3f2Z2ob5LFbXCs9s=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:48:14 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/excel/987d9d66-ebdb-4719-a92f-84fb91c52724.x8hjw37fg3.xlsx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\987d9d66-ebdb-4719-a92f-84fb91c52724.xlsx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"x8hjw37fg3"},{"Name":"integrity","Value":"sha256-ERr92J2VutAYA2LerIdDWfVV4W97OId9wQOmiyq4Bbo="},{"Name":"label","Value":"_content/MediaService/excel/987d9d66-ebdb-4719-a92f-84fb91c52724.xlsx"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"28380"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022ERr92J2VutAYA2LerIdDWfVV4W97OId9wQOmiyq4Bbo=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:49:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/excel/987d9d66-ebdb-4719-a92f-84fb91c52724.xlsx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\987d9d66-ebdb-4719-a92f-84fb91c52724.xlsx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ERr92J2VutAYA2LerIdDWfVV4W97OId9wQOmiyq4Bbo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"28380"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022ERr92J2VutAYA2LerIdDWfVV4W97OId9wQOmiyq4Bbo=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:49:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/excel/a70f5b9c-77d2-496b-ad96-16a9bd4a831b.3greibkbry.xlsx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\a70f5b9c-77d2-496b-ad96-16a9bd4a831b.xlsx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3greibkbry"},{"Name":"integrity","Value":"sha256-jR92Y/bdo\u002BGz9Mw9XrY9OLpcGfOaxkIq3ldd8zfwpg0="},{"Name":"label","Value":"_content/MediaService/excel/a70f5b9c-77d2-496b-ad96-16a9bd4a831b.xlsx"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"28380"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022jR92Y/bdo\u002BGz9Mw9XrY9OLpcGfOaxkIq3ldd8zfwpg0=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:47:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/excel/a70f5b9c-77d2-496b-ad96-16a9bd4a831b.xlsx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\a70f5b9c-77d2-496b-ad96-16a9bd4a831b.xlsx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-jR92Y/bdo\u002BGz9Mw9XrY9OLpcGfOaxkIq3ldd8zfwpg0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"28380"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022jR92Y/bdo\u002BGz9Mw9XrY9OLpcGfOaxkIq3ldd8zfwpg0=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:47:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MediaService/excel/cd6970e3-8933-4a61-a28f-da884b808730.hqgrknzs6r.xlsx">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\cd6970e3-8933-4a61-a28f-da884b808730.xlsx'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -155,6 +215,66 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zpzw5qk0we"},{"Name":"integrity","Value":"sha256-14kxS/SFEv9q\u002BZHjIRTCigW72HVSOXmMtiDZCrJzRcQ="},{"Name":"label","Value":"_content/MediaService/images/logo/logo.png"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"716"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u002214kxS/SFEv9q\u002BZHjIRTCigW72HVSOXmMtiDZCrJzRcQ=\u0022"},{"Name":"Last-Modified","Value":"Mon, 05 May 2025 00:53:56 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/pdf/1d967168-b12f-496b-889d-795acc47241e.ckwee4d8dh.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\1d967168-b12f-496b-889d-795acc47241e.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ckwee4d8dh"},{"Name":"integrity","Value":"sha256-XMrCsSvX6UFyQ4xIauaTBGV30MHbengz\u002B\u002BHLQgqbAcU="},{"Name":"label","Value":"_content/MediaService/pdf/1d967168-b12f-496b-889d-795acc47241e.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"89745"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022XMrCsSvX6UFyQ4xIauaTBGV30MHbengz\u002B\u002BHLQgqbAcU=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:49:22 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/pdf/1d967168-b12f-496b-889d-795acc47241e.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\1d967168-b12f-496b-889d-795acc47241e.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-XMrCsSvX6UFyQ4xIauaTBGV30MHbengz\u002B\u002BHLQgqbAcU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"89745"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022XMrCsSvX6UFyQ4xIauaTBGV30MHbengz\u002B\u002BHLQgqbAcU=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:49:22 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/pdf/49ee6737-d2ac-40e2-87ec-6c30277146a6.2nddzqjzeg.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\49ee6737-d2ac-40e2-87ec-6c30277146a6.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"2nddzqjzeg"},{"Name":"integrity","Value":"sha256-TiHOuQeF7t9sfj1dafF08CyB8xJ5mANe\u002B46FUil6oLI="},{"Name":"label","Value":"_content/MediaService/pdf/49ee6737-d2ac-40e2-87ec-6c30277146a6.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"85426"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022TiHOuQeF7t9sfj1dafF08CyB8xJ5mANe\u002B46FUil6oLI=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:50:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/pdf/49ee6737-d2ac-40e2-87ec-6c30277146a6.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\49ee6737-d2ac-40e2-87ec-6c30277146a6.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-TiHOuQeF7t9sfj1dafF08CyB8xJ5mANe\u002B46FUil6oLI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"85426"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022TiHOuQeF7t9sfj1dafF08CyB8xJ5mANe\u002B46FUil6oLI=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:50:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/pdf/7fdb0a42-aa1a-4e63-bf78-0b329e6c7a83.ckwee4d8dh.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\7fdb0a42-aa1a-4e63-bf78-0b329e6c7a83.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ckwee4d8dh"},{"Name":"integrity","Value":"sha256-XMrCsSvX6UFyQ4xIauaTBGV30MHbengz\u002B\u002BHLQgqbAcU="},{"Name":"label","Value":"_content/MediaService/pdf/7fdb0a42-aa1a-4e63-bf78-0b329e6c7a83.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"89745"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022XMrCsSvX6UFyQ4xIauaTBGV30MHbengz\u002B\u002BHLQgqbAcU=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:48:14 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/pdf/7fdb0a42-aa1a-4e63-bf78-0b329e6c7a83.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\7fdb0a42-aa1a-4e63-bf78-0b329e6c7a83.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-XMrCsSvX6UFyQ4xIauaTBGV30MHbengz\u002B\u002BHLQgqbAcU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"89745"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022XMrCsSvX6UFyQ4xIauaTBGV30MHbengz\u002B\u002BHLQgqbAcU=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:48:14 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/pdf/987d9d66-ebdb-4719-a92f-84fb91c52724.n5s0po0xji.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\987d9d66-ebdb-4719-a92f-84fb91c52724.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"n5s0po0xji"},{"Name":"integrity","Value":"sha256-dRjOsfKZee6q3pomdLcP5QmarfdV4Pb/GR2b657idsM="},{"Name":"label","Value":"_content/MediaService/pdf/987d9d66-ebdb-4719-a92f-84fb91c52724.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"86813"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022dRjOsfKZee6q3pomdLcP5QmarfdV4Pb/GR2b657idsM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:49:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/pdf/987d9d66-ebdb-4719-a92f-84fb91c52724.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\987d9d66-ebdb-4719-a92f-84fb91c52724.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-dRjOsfKZee6q3pomdLcP5QmarfdV4Pb/GR2b657idsM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"86813"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022dRjOsfKZee6q3pomdLcP5QmarfdV4Pb/GR2b657idsM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:49:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/pdf/a70f5b9c-77d2-496b-ad96-16a9bd4a831b.n5s0po0xji.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\a70f5b9c-77d2-496b-ad96-16a9bd4a831b.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"n5s0po0xji"},{"Name":"integrity","Value":"sha256-dRjOsfKZee6q3pomdLcP5QmarfdV4Pb/GR2b657idsM="},{"Name":"label","Value":"_content/MediaService/pdf/a70f5b9c-77d2-496b-ad96-16a9bd4a831b.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"86813"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022dRjOsfKZee6q3pomdLcP5QmarfdV4Pb/GR2b657idsM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:47:40 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/MediaService/pdf/a70f5b9c-77d2-496b-ad96-16a9bd4a831b.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\a70f5b9c-77d2-496b-ad96-16a9bd4a831b.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-dRjOsfKZee6q3pomdLcP5QmarfdV4Pb/GR2b657idsM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"86813"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022dRjOsfKZee6q3pomdLcP5QmarfdV4Pb/GR2b657idsM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Jun 2025 12:47:40 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MediaService/pdf/cd6970e3-8933-4a61-a28f-da884b808730.hoe8si9agv.pdf">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdf\cd6970e3-8933-4a61-a28f-da884b808730.pdf'))</AssetFile>

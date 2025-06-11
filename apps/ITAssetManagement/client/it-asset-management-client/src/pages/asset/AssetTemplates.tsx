@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Form } from "antd";
 import { useDarkMode } from "../../context/DarkModeContext";
 import { useKeycloak } from "@react-keycloak/web";
-import { getAssetTemplates } from "../../api/assetAPI";
+import { getAssetTemplates, updateAssetTemplate, deleteAssetTemplates } from "../../api/assetAPI";
 
 import {
   Table,
@@ -28,6 +28,7 @@ const AssetTemplates = () => {
   const [form] = Form.useForm();
   const { darkMode } = useDarkMode();
   const { keycloak, initialized } = useKeycloak();
+  const token = keycloak?.token ?? "";
   const navigate = useNavigate();
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -70,25 +71,16 @@ const AssetTemplates = () => {
       });
   };
 
-  const handleDelete = () => {
-    // Ví dụ: gọi API xóa theo assetTag hoặc key
-
-    console.log(selectedRowKeys); // Xóa các asset đã chọn
-    // Promise.all(
-    //   selectedRowKeys.map((key) =>
-    //     deleteAssetById(key, keycloak.token ?? "") // bạn cần implement `deleteAssetById`
-    //   )
-    // )
-    //   .then(() => {
-    //     message.success("Deleted successfully");
-    //     fetchAssets(); // Refresh data
-    //     setSelectedRowKeys([]); // Clear selection
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //     message.error("Failed to delete selected assets");
-    //   });
-  };
+const handleDelete = async () => {
+  try {
+    const result = await deleteAssetTemplates(token, selectedRowKeys.map(Number));
+    message.success(result.message); // "Đã xoá 3 bản ghi"
+    fetchAssetTemplates(); // Refresh data after deletion
+    setSelectedRowKeys([]); // Clear selected keys after deletion
+  } catch (err: any) {
+    message.error(err.message);
+  }
+}
 
 
   return (
@@ -184,10 +176,17 @@ const AssetTemplates = () => {
           form={form}
           onFinish={(values) => {
             console.log("Updated values:", values);
-            // Gọi API cập nhật ở đây nếu có, ví dụ updateAssetTemplateById(values)
-            // Sau khi cập nhật:
-            // fetchAssetTemplates();
-            // setIsDrawerOpen(false);
+            updateAssetTemplate(token, values)
+              .then(() => {
+                message.success("Asset template updated successfully");
+                setIsDrawerOpen(false);
+                form.resetFields();
+                setSelectedRecord(null);
+                fetchAssetTemplates(); // Refresh data after update
+              })
+              .catch((error) => {
+                message.error("Error updating asset template: " + error.message);
+              });
           }}
         >
           <Form.Item name="templateID" label="Template ID">

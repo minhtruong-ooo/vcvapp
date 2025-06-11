@@ -75,23 +75,8 @@ const Assets = () => {
   };
 
   const handleDelete = () => {
-    // Ví dụ: gọi API xóa theo assetTag hoặc key
-
-    console.log(selectedRowKeys); // Xóa các asset đã chọn
-    // Promise.all(
-    //   selectedRowKeys.map((key) =>
-    //     deleteAssetById(key, keycloak.token ?? "") // bạn cần implement `deleteAssetById`
-    //   )
-    // )
-    //   .then(() => {
-    //     message.success("Deleted successfully");
-    //     fetchAssets(); // Refresh data
-    //     setSelectedRowKeys([]); // Clear selection
-    //   })
-    //   .catch((err) => {
-    //     console.error(err);
-    //     message.error("Failed to delete selected assets");
-    //   });
+    console.log(selectedRowKeys);
+    
   };
 
   const handlePrint = async () => {
