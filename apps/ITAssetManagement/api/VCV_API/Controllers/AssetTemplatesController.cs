@@ -54,6 +54,23 @@ namespace VCV_API.Controllers
             }
         }
 
+        [HttpPost("create")]
+        public async Task<IActionResult> CreateAssetTemplate([FromBody] AssetTemplateDTO dto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                var newId = await _assetTemplateService.CreateAssetTemplateAsync(dto);
+                return Ok(new { message = "Create successfully", templateId = newId });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Error: " + ex.Message });
+            }
+        }
+
         [HttpPut("update")]
         public async Task<IActionResult> UpdateAssetTemplate([FromBody] AssetTemplateDTO dto)
         {

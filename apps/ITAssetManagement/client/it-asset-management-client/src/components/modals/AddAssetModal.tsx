@@ -40,22 +40,16 @@
     const token = keycloak?.token;
     const assignmentBy = keycloak.tokenParsed?.employeeID;
 
-    
-
     const [loading, setLoading] = useState(false);
     const [loadingSelects, setLoadingSelects] = useState(true);
     const [addMultiple, setAddMultiple] = useState(false);
     const [tempAssets, setTempAssets] = useState<any[]>([]);
-    // const [specs, setSpecs] = useState<any[]>([]);
-    // const [loadingSpec, setLoadingSpec] = useState(true);
     const [templates, setTemplates] = useState<any[]>([]);
     const [locations, setLocations] = useState<any[]>([]);
     const [statuses, setStatuses] = useState<any[]>([]);
 
     useEffect(() => {
       if (!token) return;
-
-      
 
       const fetchData = async () => {
         try {
@@ -77,26 +71,6 @@
 
       fetchData();
     }, [token]);
-
-
-    // const handleTemplateChange = async (templateID: number) => {
-    //   form.setFieldsValue({ templateID });
-    //   if (!token) {
-    //     message.error("You are not authenticated. Please login again.");
-    //     return;
-    //   }
-    //   try {
-    //     setLoadingSpec(true);
-    //     const specsList = await getSpecs(token, templateID);
-    //     setSpecs(specsList);
-    //   } catch (err) {
-    //     message.error("Không thể tải thông số tài sản.");
-    //     console.error(err);
-    //   } finally {
-    //     setLoadingSpec(false);
-    //   }
-    // };
-
 
     const handleAddToList = async () => {
       try {
@@ -167,10 +141,6 @@
           };
 
           const mappedAsset = mapper.map(singleAsset);
-
-          console.log("Form Values:", values);
-          console.log("Mapped Asset:", mappedAsset);
-          console.log("Templates:", templates);
 
 
           await createAsset(token, mappedAsset);

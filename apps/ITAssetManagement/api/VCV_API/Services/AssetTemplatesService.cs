@@ -98,6 +98,42 @@ namespace VCV_API.Services
             return assetTemplates;
         }
 
+        public async Task<int> CreateAssetTemplateAsync(AssetTemplateDTO dto)
+        {
+            try
+            {
+                var connection = _context.Database.GetDbConnection();
+                await connection.OpenAsync();
+
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "AssetTemplate_CreateAssetTemplate";
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add(new SqlParameter("@AssetTypeID", dto.AssetTypeID));
+                    command.Parameters.Add(new SqlParameter("@TemplateName", dto.TemplateName));
+                    command.Parameters.Add(new SqlParameter("@Model", (object?)dto.Model ?? DBNull.Value));
+                    command.Parameters.Add(new SqlParameter("@Manufacturer", (object?)dto.Manufacturer ?? DBNull.Value));
+                    command.Parameters.Add(new SqlParameter("@DefaultWarrantyMonths", (object?)dto.DefaultWarrantyMonths ?? DBNull.Value));
+                    command.Parameters.Add(new SqlParameter("@Unit", (object?)dto.Unit ?? DBNull.Value));
+
+                    var outputId = new SqlParameter("@NewTemplateID", SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    command.Parameters.Add(outputId);
+
+                    await command.ExecuteNonQueryAsync();
+
+                    return (int)outputId.Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Insert failed: " + ex.Message, ex);
+            }
+        }
+
         public async Task<bool> UpdateAssetTemplateAsync(AssetTemplateDTO dto)
         {
             try

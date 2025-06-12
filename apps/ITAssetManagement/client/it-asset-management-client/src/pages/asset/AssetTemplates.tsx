@@ -4,7 +4,6 @@ import { Form } from "antd";
 import { useDarkMode } from "../../context/DarkModeContext";
 import { useKeycloak } from "@react-keycloak/web";
 import { getAssetTemplates, updateAssetTemplate, deleteAssetTemplates } from "../../api/assetAPI";
-
 import {
   Table,
   Button,
@@ -14,13 +13,16 @@ import {
   message,
   Space,
   Popconfirm,
-  InputNumber 
+  InputNumber,
+  Modal,
 } from "antd";
 import {
   PlusOutlined,
   DeleteOutlined,
 } from "@ant-design/icons";
 import { assetTemplateColumn } from "../../columns";
+import AddAssetTemplateModal from "../../components/modals/AddAssetTemplateModal";
+
 
 const { Title } = Typography;
 
@@ -82,6 +84,9 @@ const handleDelete = async () => {
   }
 }
 
+const handleAddAsset = (newAsset: any) => {
+}
+
 
   return (
     <>
@@ -134,6 +139,7 @@ const handleDelete = async () => {
         loading={loading}
         onRow={(record) => ({
           onClick: () => {
+
             setSelectedRecord(record);
             form.setFieldsValue(record); // Đổ dữ liệu vào form
             setIsDrawerOpen(true);
@@ -215,6 +221,28 @@ const handleDelete = async () => {
           </Form.Item>
         </Form>
       </Drawer>
+
+      <Modal
+        style={{
+          backgroundColor: darkMode ? "#1f1f1f" : "#fff",
+          color: darkMode ? "#fff" : "#000",
+          borderRadius: "5px",
+        }}
+        title="Add New Asset Template"
+        open={isModalOpen}
+        onCancel={handleCancel}
+        centered
+        destroyOnClose
+        width={900}
+        footer={null}
+      >
+        <AddAssetTemplateModal
+          form={form}
+          onCancel={handleCancel}
+          onAdd={handleAddAsset}
+          onSuccess={fetchAssetTemplates}
+        />
+      </Modal>
 
 
     </>

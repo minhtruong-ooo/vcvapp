@@ -6,6 +6,7 @@ namespace VCV_API.Services.Interfaces
     {
         Task<List<AssetTemplate>> GetAssetTemplateAsync();
         Task<List<AssetTemplate_Select>> GetAllAssetTemplatesAsync();
+        Task<int> CreateAssetTemplateAsync(AssetTemplateDTO dto);
         Task<bool> UpdateAssetTemplateAsync(AssetTemplateDTO dto);
         Task<int> DeleteAssetTemplatesAsync(List<int> templateIDs);
     }

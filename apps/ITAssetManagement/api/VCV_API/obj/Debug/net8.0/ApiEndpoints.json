@@ -105,6 +105,22 @@
   },
   {
     "ContainingType": "VCV_API.Controllers.AssetTemplatesController",
+    "Method": "CreateAssetTemplate",
+    "RelativePath": "api/AssetTemplates/CreateAssetTemplate/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "VCV_API.Models.AssetTemplate.AssetTemplateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.AssetTemplatesController",
     "Method": "DeleteAssetTemplates",
     "RelativePath": "api/AssetTemplates/DeleteAssetTemplates/delete",
     "HttpMethod": "POST",

@@ -3,6 +3,8 @@ import { Asset } from "../interfaces/interfaces";
 
 const BASE_URL = import.meta.env.VITE_VCV_API_URL;
 
+// Select API
+
 export const getAssets = async (token: string) => {
   try {
     const response = await axios.get(`${BASE_URL}/Assets/GetAssets`, {
@@ -126,6 +128,21 @@ export const getSpecs = async (token: string, templateID: number) => {
   }
 };
 
+export const getAssetType = async (token: string) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/AssetTypes/GetAssetTypes`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      timeout: 5000,
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Failed to fetch asset type", error);
+    throw error;
+  }
+};
+
 
 
 
@@ -167,6 +184,28 @@ export const createAssets = async (token: string, data: any) => {
     throw new Error(error?.response?.data?.details || "Unknown error occurred");
   }
 };
+
+export const createAssetTemplate = async (token: string, data: any) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/AssetTemplates/CreateAssetTemplate/create`, data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      timeout: 5000,
+    });
+  console.log("✅ Success response:", response);
+    return response.data;
+    
+  } catch (error: any) {
+    console.error(
+      error?.response?.data?.details || error.message
+    );
+    throw new Error(error?.response?.data?.details || "Unknown error occurred");
+  }
+};
+
+
 
 // Update API
 

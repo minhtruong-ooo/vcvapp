@@ -1,10 +1,3 @@
-wwwroot\excel\1d967168-b12f-496b-889d-795acc47241e.xlsx
-wwwroot\excel\49ee6737-d2ac-40e2-87ec-6c30277146a6.xlsx
-wwwroot\excel\7fdb0a42-aa1a-4e63-bf78-0b329e6c7a83.xlsx
-wwwroot\excel\987d9d66-ebdb-4719-a92f-84fb91c52724.xlsx
-wwwroot\excel\a70f5b9c-77d2-496b-ad96-16a9bd4a831b.xlsx
-wwwroot\excel\cd6970e3-8933-4a61-a28f-da884b808730.xlsx
-wwwroot\excel\cdb1bccd-9c4a-4526-8a5b-c682b2ebb6bb.xlsx
 wwwroot\fonts\CALIBRI.TTF
 wwwroot\fonts\CALIBRIB.TTF
 wwwroot\fonts\CALIBRII.TTF
@@ -16,12 +9,5 @@ wwwroot\images\assets\2.jpg
 wwwroot\images\employees\avatar1.jpg
 wwwroot\images\employees\hnp.jpg
 wwwroot\images\logo\logo.png
-wwwroot\pdf\1d967168-b12f-496b-889d-795acc47241e.pdf
-wwwroot\pdf\49ee6737-d2ac-40e2-87ec-6c30277146a6.pdf
-wwwroot\pdf\7fdb0a42-aa1a-4e63-bf78-0b329e6c7a83.pdf
-wwwroot\pdf\987d9d66-ebdb-4719-a92f-84fb91c52724.pdf
-wwwroot\pdf\a70f5b9c-77d2-496b-ad96-16a9bd4a831b.pdf
-wwwroot\pdf\cd6970e3-8933-4a61-a28f-da884b808730.pdf
-wwwroot\pdf\cdb1bccd-9c4a-4526-8a5b-c682b2ebb6bb.pdf
 wwwroot\templates\IT_BBBG_Template.xlsx
 wwwroot\templates\IT_BBTH_Template.xlsx

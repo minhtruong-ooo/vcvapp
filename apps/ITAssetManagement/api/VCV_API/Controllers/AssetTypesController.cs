@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using VCV_API.Data;
+using VCV_API.Services;
+using VCV_API.Services.Interfaces;
 
 namespace VCV_API.Controllers
 {
@@ -11,17 +13,30 @@ namespace VCV_API.Controllers
     [Authorize]
     public class AssetTypesController : ControllerBase
     {
-        private readonly AppDbContext _context;
-
-        public AssetTypesController(AppDbContext context)
+        private readonly IAssetType _assetType;
+        public AssetTypesController(IAssetType assetType)
         {
-            _context = context;
+            _assetType = assetType;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAssetTypes()
         {
-            return Ok();
+            try
+            {
+                var assetTypes = await _assetType.GetAssetTypesAsync();
+
+                if (assetTypes == null || assetTypes.Count == 0)
+                {
+                    return NotFound("Không tìm thấy loại mẫu tài sản.");
+                }
+
+                return Ok(assetTypes);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Lỗi khi lấy dữ liệu: {ex.Message}");
+            }
         }
     }
 }

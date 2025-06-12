@@ -3,6 +3,7 @@
     public class AssetTemplateDTO
     {
         public int TemplateID { get; set; }
+        public int AssetTypeID { get; set; }
         public string? TemplateName { get; set; }
         public string? Model { get; set; }
         public string? Manufacturer { get; set; }
