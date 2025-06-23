@@ -185,6 +185,8 @@
       },
       { title: "Location", dataIndex: "location", key: "location" },
       { title: "Status", dataIndex: "status", key: "status" },
+      { title: "Managed By", dataIndex: "managedBy", key: "managedBy" },
+      { title: "Origin", dataIndex: "origin", key: "origin" },
       {
         title: "Action",
         key: "actions",
@@ -281,44 +283,37 @@
                   </Select>
                 </Form.Item>
               </Col>
+              <Col span={6}>
+                <Form.Item label="Managed By" name="managedBy">
+                  <Select placeholder="Selecting an asset management entity" loading={loadingSelects}>
+                    {statuses.map((status) => (
+                      <Select.Option
+                        key={status.statusID}
+                        value={status.statusName}
+                      >
+                        {status.statusName}
+                      </Select.Option>
+                    ))}
+                  </Select>
+                </Form.Item>
+              </Col>
+              <Col span={6}>
+                <Form.Item label="Status" name="status">
+                  <Select placeholder="Select Status" loading={loadingSelects}>
+                    {statuses.map((status) => (
+                      <Select.Option
+                        key={status.statusID}
+                        value={status.statusName}
+                      >
+                        {status.statusName}
+                      </Select.Option>
+                    ))}
+                  </Select>
+                </Form.Item>
+              </Col>
             </Row>
           </Form>
         </Card>
-
-        {/* <Card
-          loading={loadingSpec}
-          style={{ marginBottom: 16 }}
-          title="Asset Specifications">
-          <Row gutter={16}>
-            {specs.map((spec) => {
-              const name = `spec_${spec.specificationID}`;
-              const label = `${spec.specificationName}${spec.unit ? ` (${spec.unit})` : ""}`;
-              const rules = spec.isRequired
-                ? [{ required: true, message: `Vui lòng nhập ${spec.specificationName}` }]
-                : [];
-
-              const formItem = (() => {
-                switch (spec.dataType?.toLowerCase()) {
-                  case "number":
-                    return <Input type="number" style={{ width: "100%" }} />;
-                  case "date":
-                    return <DatePicker style={{ width: "100%" }} />;
-                  default:
-                    return <Input />;
-                }
-              })();
-
-              return (
-                <Col span={4} key={name}>
-                  <Form.Item name={name} label={label} rules={rules}>
-                    {formItem}
-                  </Form.Item>
-                </Col>
-              );
-            })}
-          </Row>
-
-        </Card> */}
 
         {addMultiple && (
               <div

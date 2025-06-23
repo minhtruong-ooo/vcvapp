@@ -5,10 +5,8 @@ import {
     Col,
     Input,
     Select,
-    DatePicker,
     Button,
     message,
-    Card
 } from "antd";
 import type { FormInstance } from "antd";
 import { useKeycloak } from "@react-keycloak/web";
@@ -26,7 +24,6 @@ const AddAssetTemplateModal = ({
 }: {
     form: FormInstance;
     onCancel: () => void;
-    onAdd: (newAssetTemplate: any) => void;
     onSuccess: () => void;
 }) => {
     const { keycloak } = useKeycloak();

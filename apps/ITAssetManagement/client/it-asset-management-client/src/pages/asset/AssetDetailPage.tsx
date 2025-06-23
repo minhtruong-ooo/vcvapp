@@ -25,6 +25,9 @@ import { Map2D } from "../../components/Map2D";
 import image from "../../assets/images/1F2F.png";
 import logo4x4 from "../../assets/images/logo_main.png";
 
+const FEURL = import.meta.env.VITE_VCV_ITAM_CLIENT_URL;
+
+
 const { Title, Text } = Typography;
 
 const AssetDetailPage = () => {
@@ -108,17 +111,17 @@ const AssetDetailPage = () => {
         assetTag: asset.assetTag,
         assetName: asset.templateName || "Unknown Asset",
         purchaseDate: asset.purchaseDate || undefined,
-        assetURL: `http://localhost:5173/assets/${asset.assetTag}`,
+        assetURL: `${FEURL}{asset.assetTag}`,
       };
 
       const pdfUrl = await generateQrPdfUrl(token, [qrModel]);
       console.log("PDF URL:", pdfUrl);
-      window.open(pdfUrl, "_blank"); // Mở tab mới
+      window.open(pdfUrl, "_blank");
     } catch (error) {
       message.error("Failed to print label.");
       console.error(error);
     } finally {
-      setPrinting(false); // Kết thúc loading
+      setPrinting(false);
     }
   };
 

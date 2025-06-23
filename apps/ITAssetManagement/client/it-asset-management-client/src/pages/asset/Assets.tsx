@@ -39,7 +39,6 @@ const Assets = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
   const [printing, setPrinting] = useState(false);
 
-  // Load dữ liệu khi auth sẵn sàng
   useEffect(() => {
     if (initialized && keycloak?.authenticated) {
       fetchAssets();
@@ -212,7 +211,7 @@ const Assets = () => {
         onCancel={handleCancel}
         centered
         destroyOnClose
-        width={1200}
+        width={1400}
         footer={null}
       >
         <AddAssetModal

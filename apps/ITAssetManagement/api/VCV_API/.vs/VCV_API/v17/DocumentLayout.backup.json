@@ -38,8 +38,7 @@
               "RelativeToolTip": "Controllers\\AssetTemplatesController.cs",
               "ViewState": "AgIAADUAAAAAAAAAAAAjwEcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T10:09:14.986Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-12T10:09:14.986Z"
             },
             {
               "$type": "Document",
@@ -51,8 +50,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAACoAAAAAAAAAAAAAADwAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T10:08:56.367Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-12T10:08:56.367Z"
             },
             {
               "$type": "Document",
@@ -62,7 +60,7 @@
               "RelativeDocumentMoniker": "Services\\AssetTemplatesService.cs",
               "ToolTip": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Services\\AssetTemplatesService.cs",
               "RelativeToolTip": "Services\\AssetTemplatesService.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAjwGUAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGUAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-09T06:20:16.343Z",
               "EditorCaption": ""
@@ -77,8 +75,7 @@
               "RelativeToolTip": "Services\\AssetService.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAArwF8AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T03:06:29.851Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T03:06:29.851Z"
             }
           ]
         }

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Form } from "antd";
 import { useDarkMode } from "../../context/DarkModeContext";
 import { useKeycloak } from "@react-keycloak/web";
@@ -31,7 +30,6 @@ const AssetTemplates = () => {
   const { darkMode } = useDarkMode();
   const { keycloak, initialized } = useKeycloak();
   const token = keycloak?.token ?? "";
-  const navigate = useNavigate();
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -83,10 +81,6 @@ const handleDelete = async () => {
     message.error(err.message);
   }
 }
-
-const handleAddAsset = (newAsset: any) => {
-}
-
 
   return (
     <>
@@ -239,7 +233,6 @@ const handleAddAsset = (newAsset: any) => {
         <AddAssetTemplateModal
           form={form}
           onCancel={handleCancel}
-          onAdd={handleAddAsset}
           onSuccess={fetchAssetTemplates}
         />
       </Modal>

@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|d:\\project\\vcvapp\\apps\\itassetmanagement\\api\\vcv_api\\services\\assettemplatesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|solutionrelative:services\\assettemplatesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|d:\\project\\vcvapp\\apps\\itassetmanagement\\api\\vcv_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|d:\\project\\vcvapp\\apps\\itassetmanagement\\api\\vcv_api\\controllers\\assettemplatescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|solutionrelative:controllers\\assettemplatescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|d:\\project\\vcvapp\\apps\\itassetmanagement\\api\\vcv_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|d:\\project\\vcvapp\\apps\\itassetmanagement\\api\\vcv_api\\services\\assettemplatesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|solutionrelative:services\\assettemplatesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E3EA633E-80C8-42F6-8887-DA22F6B54FCA}|VCV_API.csproj|d:\\project\\vcvapp\\apps\\itassetmanagement\\api\\vcv_api\\services\\assetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -36,33 +36,33 @@
               "RelativeDocumentMoniker": "Controllers\\AssetTemplatesController.cs",
               "ToolTip": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Controllers\\AssetTemplatesController.cs",
               "RelativeToolTip": "Controllers\\AssetTemplatesController.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAjwEcAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAADgv1sAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-12T10:09:14.986Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADwAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAArwFUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-12T10:08:56.367Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AssetTemplatesService.cs",
               "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Services\\AssetTemplatesService.cs",
               "RelativeDocumentMoniker": "Services\\AssetTemplatesService.cs",
               "ToolTip": "D:\\Project\\vcvapp\\apps\\ITAssetManagement\\api\\VCV_API\\Services\\AssetTemplatesService.cs",
               "RelativeToolTip": "Services\\AssetTemplatesService.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAjwGUAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAIwLEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-09T06:20:16.343Z",
               "EditorCaption": ""
@@ -77,8 +77,7 @@
               "RelativeToolTip": "Services\\AssetService.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAArwF8AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T03:06:29.851Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-05T03:06:29.851Z"
             }
           ]
         }
