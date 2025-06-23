@@ -8,8 +8,11 @@ using VCV_API.Services.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 var keycloakConfig = builder.Configuration.GetSection("Keycloak");
+var vcv_client = builder.Configuration.GetSection("VCV_Client");
+
 var authority = keycloakConfig["Authority"];
 var audience = keycloakConfig["Audience"];
+var clientUrl = vcv_client["Url"];
 
 // Add services to the container.
 
@@ -40,7 +43,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins(clientUrl)
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
@@ -75,7 +78,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -83,7 +86,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors("AllowReactApp");
 
 app.UseHttpsRedirection();
-
+app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 

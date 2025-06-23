@@ -292,7 +292,7 @@ const AssignmentDetailPage = () => {
               <Table.Column
                 title="NO."
                 key="NO."
-                render={(text, record, index) =>
+                render={(index) =>
                 (currentPage - 1) * pageSize + index + 1
               }
               />

@@ -11,7 +11,7 @@ export const Map2D = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState(marker || null);
-  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
+  const [, setContainerSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     const updateSize = () => {

@@ -1,19 +1,20 @@
 using MediaService.Interfaces;
-using MediaService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 var keycloakConfig = builder.Configuration.GetSection("Keycloak");
+var vcv_client = builder.Configuration.GetSection("VCV_Client");
 var authority = keycloakConfig["Authority"];
 var audience = keycloakConfig["Audience"];
+var clientUrl = vcv_client["Url"];
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins(clientUrl)
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
@@ -29,6 +30,8 @@ builder.Services.AddAuthentication("Bearer")
         options.Audience = audience;
     });
 
+
+
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -38,7 +41,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -47,7 +50,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors("AllowReactApp");
 
 app.UseHttpsRedirection();
-
+app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
