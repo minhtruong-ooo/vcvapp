@@ -147,7 +147,7 @@ namespace MediaService.Services
                 string filePath = Path.Combine(folderPath, fileName);
 
                 var pageSize = new PageSize(212.6f, 42.5f);
-                string fontPath = Path.Combine(_env.WebRootPath, "fonts", "calibri.ttf");
+                string fontPath = Path.Combine(_env.WebRootPath, "fonts", "CALIBRI.TTF");
                 PdfFont calibri = PdfFontFactory.CreateFont(fontPath, PdfEncodings.WINANSI);
 
                 using (var writer = new PdfWriter(filePath))

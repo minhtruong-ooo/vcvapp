@@ -1,13 +1,9 @@
 wwwroot\fonts\CALIBRI.TTF
-wwwroot\fonts\CALIBRIB.TTF
-wwwroot\fonts\CALIBRII.TTF
-wwwroot\fonts\CALIBRIL.TTF
-wwwroot\fonts\CALIBRILI.TTF
-wwwroot\fonts\CALIBRIZ.TTF
 wwwroot\images\assets\1.jpg
 wwwroot\images\assets\2.jpg
 wwwroot\images\employees\avatar1.jpg
 wwwroot\images\employees\hnp.jpg
 wwwroot\images\logo\logo.png
+wwwroot\qr\796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf
 wwwroot\templates\IT_BBBG_Template.xlsx
 wwwroot\templates\IT_BBTH_Template.xlsx

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1H3BeQq3HkFASMNpmSvoTZ5sCh+HBimeQpInLuxsoyI=",
+  "Hash": "mudSOpMoixfTZSbgRApwSNqIiet6kJtiuWjRPOR70fI=",
   "Source": "MediaService",
   "BasePath": "_content/MediaService",
   "Mode": "Default",
@@ -36,111 +36,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\fonts\\CALIBRI.TTF"
-    },
-    {
-      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRIB.TTF",
-      "SourceId": "MediaService",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
-      "BasePath": "_content/MediaService",
-      "RelativePath": "fonts/CALIBRIB#[.{fingerprint}]?.TTF",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "a1nzc0qw2g",
-      "Integrity": "XosutDD1Q+swTwj0T16wLMvDn/3JVACq6W9dzSrqc9g=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\fonts\\CALIBRIB.TTF"
-    },
-    {
-      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRII.TTF",
-      "SourceId": "MediaService",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
-      "BasePath": "_content/MediaService",
-      "RelativePath": "fonts/CALIBRII#[.{fingerprint}]?.TTF",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "376inc7x0b",
-      "Integrity": "ITkKfoS2EiSRboEP0ANErZrU8dkRUVGlUYRaQ4fSCxA=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\fonts\\CALIBRII.TTF"
-    },
-    {
-      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRIL.TTF",
-      "SourceId": "MediaService",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
-      "BasePath": "_content/MediaService",
-      "RelativePath": "fonts/CALIBRIL#[.{fingerprint}]?.TTF",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "0l8k5sxjyt",
-      "Integrity": "dE0+wbJ342UrqPjUXIn4PJm37PPrLfonMG175W0+4DA=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\fonts\\CALIBRIL.TTF"
-    },
-    {
-      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRILI.TTF",
-      "SourceId": "MediaService",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
-      "BasePath": "_content/MediaService",
-      "RelativePath": "fonts/CALIBRILI#[.{fingerprint}]?.TTF",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "trn93o7vpm",
-      "Integrity": "Z6x4SsOQ9sSBGedvnjRYn5qGuJdPVhphWVRbhYq0zUE=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\fonts\\CALIBRILI.TTF"
-    },
-    {
-      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRIZ.TTF",
-      "SourceId": "MediaService",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
-      "BasePath": "_content/MediaService",
-      "RelativePath": "fonts/CALIBRIZ#[.{fingerprint}]?.TTF",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "iif70vwt0v",
-      "Integrity": "tpmln6rWUnLuSKTRGNa8dD1MxLozjLHGNH3uxYqh4aA=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\fonts\\CALIBRIZ.TTF"
     },
     {
       "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\assets\\1.jpg",
@@ -246,6 +141,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo\\logo.png"
+    },
+    {
+      "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf",
+      "SourceId": "MediaService",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\",
+      "BasePath": "_content/MediaService",
+      "RelativePath": "qr/796cad07-c08b-4fb0-a92c-93b09f1eda88#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3lte3v5lsr",
+      "Integrity": "uSPQMAO9ZifR3FcVErzNlASl8x97OX++st7q6J2GQjc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\qr\\796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf"
     },
     {
       "Identity": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\templates\\IT_BBBG_Template.xlsx",
@@ -370,416 +286,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-3yxpoYpGLly8l9BKAz87180Kv+gYOBZB+MLe57fEPb0="
-        }
-      ]
-    },
-    {
-      "Route": "fonts/CALIBRIB.a1nzc0qw2g.TTF",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRIB.TTF",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1647428"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"XosutDD1Q+swTwj0T16wLMvDn/3JVACq6W9dzSrqc9g=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 01 Apr 2024 07:22:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "a1nzc0qw2g"
-        },
-        {
-          "Name": "label",
-          "Value": "fonts/CALIBRIB.TTF"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-XosutDD1Q+swTwj0T16wLMvDn/3JVACq6W9dzSrqc9g="
-        }
-      ]
-    },
-    {
-      "Route": "fonts/CALIBRIB.TTF",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRIB.TTF",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1647428"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"XosutDD1Q+swTwj0T16wLMvDn/3JVACq6W9dzSrqc9g=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 01 Apr 2024 07:22:39 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-XosutDD1Q+swTwj0T16wLMvDn/3JVACq6W9dzSrqc9g="
-        }
-      ]
-    },
-    {
-      "Route": "fonts/CALIBRII.376inc7x0b.TTF",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRII.TTF",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1228564"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ITkKfoS2EiSRboEP0ANErZrU8dkRUVGlUYRaQ4fSCxA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 01 Apr 2024 07:22:32 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "376inc7x0b"
-        },
-        {
-          "Name": "label",
-          "Value": "fonts/CALIBRII.TTF"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ITkKfoS2EiSRboEP0ANErZrU8dkRUVGlUYRaQ4fSCxA="
-        }
-      ]
-    },
-    {
-      "Route": "fonts/CALIBRII.TTF",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRII.TTF",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1228564"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ITkKfoS2EiSRboEP0ANErZrU8dkRUVGlUYRaQ4fSCxA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 01 Apr 2024 07:22:32 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ITkKfoS2EiSRboEP0ANErZrU8dkRUVGlUYRaQ4fSCxA="
-        }
-      ]
-    },
-    {
-      "Route": "fonts/CALIBRIL.0l8k5sxjyt.TTF",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRIL.TTF",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1471248"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dE0+wbJ342UrqPjUXIn4PJm37PPrLfonMG175W0+4DA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 01 Apr 2024 07:22:43 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "0l8k5sxjyt"
-        },
-        {
-          "Name": "label",
-          "Value": "fonts/CALIBRIL.TTF"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-dE0+wbJ342UrqPjUXIn4PJm37PPrLfonMG175W0+4DA="
-        }
-      ]
-    },
-    {
-      "Route": "fonts/CALIBRIL.TTF",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRIL.TTF",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1471248"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dE0+wbJ342UrqPjUXIn4PJm37PPrLfonMG175W0+4DA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 01 Apr 2024 07:22:43 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-dE0+wbJ342UrqPjUXIn4PJm37PPrLfonMG175W0+4DA="
-        }
-      ]
-    },
-    {
-      "Route": "fonts/CALIBRILI.trn93o7vpm.TTF",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRILI.TTF",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1092612"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Z6x4SsOQ9sSBGedvnjRYn5qGuJdPVhphWVRbhYq0zUE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 01 Apr 2024 07:22:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "trn93o7vpm"
-        },
-        {
-          "Name": "label",
-          "Value": "fonts/CALIBRILI.TTF"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Z6x4SsOQ9sSBGedvnjRYn5qGuJdPVhphWVRbhYq0zUE="
-        }
-      ]
-    },
-    {
-      "Route": "fonts/CALIBRILI.TTF",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRILI.TTF",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1092612"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Z6x4SsOQ9sSBGedvnjRYn5qGuJdPVhphWVRbhYq0zUE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 01 Apr 2024 07:22:44 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Z6x4SsOQ9sSBGedvnjRYn5qGuJdPVhphWVRbhYq0zUE="
-        }
-      ]
-    },
-    {
-      "Route": "fonts/CALIBRIZ.iif70vwt0v.TTF",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRIZ.TTF",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1190004"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"tpmln6rWUnLuSKTRGNa8dD1MxLozjLHGNH3uxYqh4aA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 01 Apr 2024 07:22:42 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "iif70vwt0v"
-        },
-        {
-          "Name": "label",
-          "Value": "fonts/CALIBRIZ.TTF"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-tpmln6rWUnLuSKTRGNa8dD1MxLozjLHGNH3uxYqh4aA="
-        }
-      ]
-    },
-    {
-      "Route": "fonts/CALIBRIZ.TTF",
-      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRIZ.TTF",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1190004"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "application/octet-stream"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"tpmln6rWUnLuSKTRGNa8dD1MxLozjLHGNH3uxYqh4aA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 01 Apr 2024 07:22:42 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-tpmln6rWUnLuSKTRGNa8dD1MxLozjLHGNH3uxYqh4aA="
         }
       ]
     },
@@ -1190,6 +696,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-14kxS/SFEv9q+ZHjIRTCigW72HVSOXmMtiDZCrJzRcQ="
+        }
+      ]
+    },
+    {
+      "Route": "qr/796cad07-c08b-4fb0-a92c-93b09f1eda88.3lte3v5lsr.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "43371"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uSPQMAO9ZifR3FcVErzNlASl8x97OX++st7q6J2GQjc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:16:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3lte3v5lsr"
+        },
+        {
+          "Name": "label",
+          "Value": "qr/796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uSPQMAO9ZifR3FcVErzNlASl8x97OX++st7q6J2GQjc="
+        }
+      ]
+    },
+    {
+      "Route": "qr/796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf",
+      "AssetFile": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "43371"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uSPQMAO9ZifR3FcVErzNlASl8x97OX++st7q6J2GQjc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:16:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uSPQMAO9ZifR3FcVErzNlASl8x97OX++st7q6J2GQjc="
         }
       ]
     },

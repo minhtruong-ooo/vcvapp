@@ -5,26 +5,6 @@
       "PackagePath": "staticwebassets\\fonts\\CALIBRI.TTF"
     },
     {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRIB.TTF",
-      "PackagePath": "staticwebassets\\fonts\\CALIBRIB.TTF"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRII.TTF",
-      "PackagePath": "staticwebassets\\fonts\\CALIBRII.TTF"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRIL.TTF",
-      "PackagePath": "staticwebassets\\fonts\\CALIBRIL.TTF"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRILI.TTF",
-      "PackagePath": "staticwebassets\\fonts\\CALIBRILI.TTF"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRIZ.TTF",
-      "PackagePath": "staticwebassets\\fonts\\CALIBRIZ.TTF"
-    },
-    {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\assets\\1.jpg",
       "PackagePath": "staticwebassets\\images\\assets\\1.jpg"
     },
@@ -43,6 +23,10 @@
     {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\logo\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo\\logo.png"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf",
+      "PackagePath": "staticwebassets\\qr\\796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf"
     },
     {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\templates\\IT_BBBG_Template.xlsx",
