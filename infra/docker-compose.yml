@@ -4,7 +4,7 @@ services:
       context: ../apps/ITAssetManagement/client/it-asset-management-client
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "${CLIENT_PORT}:3000"
     networks:
       - app-network
 
@@ -13,7 +13,7 @@ services:
       context: ../apps/ITAssetManagement/api/VCV_API
       dockerfile: Dockerfile
     ports:
-      - "5000:5000"
+      - "${API_PORT}:5000"
     environment:
       - ASPNETCORE_URLS=http://+:5000
     networks:
@@ -24,7 +24,7 @@ services:
       context: ../apps/MediaService/MediaService
       dockerfile: Dockerfile
     ports:
-      - "5100:5100"
+      - "${MEDIA_PORT}:5100"
     environment:
       - ASPNETCORE_URLS=http://+:5100
     networks:
