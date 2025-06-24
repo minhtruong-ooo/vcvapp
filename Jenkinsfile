@@ -12,6 +12,12 @@ pipeline {
             }
         }
 
+        stage('Check Docker Access') {
+            steps {
+                sh 'whoami && id && docker info'
+            }
+        }
+
         stage('Build Base Image') {
             steps {
                 echo 'Building base image: aspnet-libreoffice:8.0...'
