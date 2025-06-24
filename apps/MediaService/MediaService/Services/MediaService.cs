@@ -14,6 +14,7 @@ using iText.Kernel.Font;
 using OfficeOpenXml;
 using Spire.Xls;
 using System.IO.Compression;
+using System.Diagnostics;
 namespace MediaService.Services
 {
     public class MediaService : IMediaService
@@ -32,6 +33,7 @@ namespace MediaService.Services
                 string fileName = $"{Guid.NewGuid()}";
                 string templatePath = "";
 
+                // Chọn template phù hợp
                 if (model.assignmentAction == "Assign")
                 {
                     templatePath = Path.Combine(_env.WebRootPath, "templates", "IT_BBBG_Template.xlsx");
@@ -41,21 +43,45 @@ namespace MediaService.Services
                     templatePath = Path.Combine(_env.WebRootPath, "templates", "IT_BBTH_Template.xlsx");
                 }
 
-                string excelPath = Path.Combine(_env.WebRootPath, "excel", $"{fileName}.xlsx");
-                string pdfPath = Path.Combine(_env.WebRootPath, "pdf", $"{fileName}.pdf");
+                // Đường dẫn file Excel và PDF tạm thời
+                string excelDir = Path.Combine(_env.WebRootPath, "excel");
+                string pdfDir = Path.Combine(_env.WebRootPath, "pdf");
+                string excelPath = Path.Combine(excelDir, $"{fileName}.xlsx");
+                string pdfPath = Path.Combine(pdfDir, $"{fileName}.pdf");
 
+                // Tạo thư mục nếu chưa tồn tại
+                Directory.CreateDirectory(excelDir);
+                Directory.CreateDirectory(pdfDir);
+
+                // Tạo file Excel từ template
                 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
                 using (var package = new ExcelPackage(new FileInfo(templatePath)))
                 {
                     var ws = package.Workbook.Worksheets[0];
-                    FillAssignmentData(ws, model);
+                    FillAssignmentData(ws, model); // Ghi dữ liệu vào file Excel
                     package.SaveAs(new FileInfo(excelPath));
                 }
 
-                var workbook = new Workbook();
-                workbook.LoadFromFile(excelPath);
-                workbook.SaveToFile(pdfPath, FileFormat.PDF);
+                // Chuyển đổi Excel sang PDF bằng LibreOffice
+                var process = new Process();
+                process.StartInfo.FileName = "libreoffice"; // hoặc "soffice"
+                process.StartInfo.Arguments = $"--headless --convert-to pdf --outdir \"{pdfDir}\" \"{excelPath}\"";
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.RedirectStandardOutput = true;
+                process.StartInfo.RedirectStandardError = true;
+                process.StartInfo.CreateNoWindow = true;
 
+                process.Start();
+                string output = process.StandardOutput.ReadToEnd();
+                string error = process.StandardError.ReadToEnd();
+                process.WaitForExit();
+
+                if (!File.Exists(pdfPath))
+                {
+                    throw new Exception($"Chuyển đổi PDF thất bại.\nLỗi: {error}\nOutput: {output}");
+                }
+
+                // Trả về URL truy cập file PDF
                 return $"/pdf/{fileName}.pdf";
             });
         }
