@@ -32,16 +32,16 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
+        steps {
                 echo 'Deploying app to server...'
                 sshagent(['jenkins-ssh-key']) {
-                    sh """
-                        ssh -o StrictHostKeyChecking=no root@${DEPLOY_HOST} '
-                            cd ${DEPLOY_PATH} && \
-                            git pull origin main && \
+                    sh '''
+                        ssh -o StrictHostKeyChecking=no root@192.168.28.211 '
+                            cd /opt/vcvapp && \
+                            docker compose pull && \
                             docker compose up --build -d
                         '
-                    """
+                    '''
                 }
             }
         }
