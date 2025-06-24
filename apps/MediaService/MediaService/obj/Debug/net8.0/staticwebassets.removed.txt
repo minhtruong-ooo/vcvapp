@@ -1,0 +1,5 @@
+D:\Project\vcvapp\apps\MediaService\MediaService\wwwroot\fonts\CALIBRIB.TTF
+D:\Project\vcvapp\apps\MediaService\MediaService\wwwroot\fonts\CALIBRII.TTF
+D:\Project\vcvapp\apps\MediaService\MediaService\wwwroot\fonts\CALIBRIL.TTF
+D:\Project\vcvapp\apps\MediaService\MediaService\wwwroot\fonts\CALIBRILI.TTF
+D:\Project\vcvapp\apps\MediaService\MediaService\wwwroot\fonts\CALIBRIZ.TTF
