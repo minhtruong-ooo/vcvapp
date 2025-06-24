@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        DEPLOY_HOST = '192.168.28.211'
-        DEPLOY_PATH = '/opt/vcvapp'
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -20,26 +15,26 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building project...'
-                // Add actual build commands here if needed
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // Add actual test commands here
             }
         }
 
         stage('Deploy') {
-        steps {
+            steps {
                 echo 'Deploying app to server...'
                 sshagent(['jenkins-ssh-key']) {
                     sh '''
                         ssh -o StrictHostKeyChecking=no root@192.168.28.211 '
-                            cd /opt/vcvapp && \
-                            docker compose pull && \
-                            docker compose up --build -d
+                            rm -rf /opt/vcvapp &&
+                            git clone https://github.com/minhtruong-ooo/vcvapp.git /opt/vcvapp &&
+                            cd /opt/vcvapp &&
+                            docker compose build &&
+                            docker compose up -d
                         '
                     '''
                 }
