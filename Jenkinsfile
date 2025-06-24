@@ -4,8 +4,11 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'Cloning repo...'
                 checkout scm
+                script {
+                def changes = sh(script: "git log -n 5 --pretty=format:'%h %an %s'", returnStdout: true).trim()
+                echo "Recent changes:\n${changes}"
+                }
             }
         }
         stage('Build') {
