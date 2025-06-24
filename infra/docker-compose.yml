@@ -1,7 +1,7 @@
 services:
   client:
     build:
-      context: ./apps/ITAssetManagement/client/it-asset-management-client
+      context: ../apps/ITAssetManagement/client/it-asset-management-client
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
@@ -10,7 +10,7 @@ services:
 
   api:
     build:
-      context: ./apps/ITAssetManagement/api/VCV_API
+      context: ../apps/ITAssetManagement/api/VCV_API
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
@@ -21,7 +21,7 @@ services:
 
   media:
     build:
-      context: ./apps/MediaService/MediaService
+      context: ../apps/MediaService/MediaService
       dockerfile: Dockerfile
     ports:
       - "5100:5100"
