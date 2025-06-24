@@ -8,10 +8,10 @@ RUN dotnet publish -c Release -o out
 # Stage 2: Runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 
-# Cài LibreOffice và font
+# Cài LibreOffice và font cơ bản (không dùng mscorefonts)
 RUN apt-get update && \
     apt-get install -y libreoffice libreoffice-calc libreoffice-writer \
-    fonts-dejavu ttf-mscorefonts-installer \
+    fonts-dejavu \
     libxrender1 libfontconfig1 libxext6 && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
