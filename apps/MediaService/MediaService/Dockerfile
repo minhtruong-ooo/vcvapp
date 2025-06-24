@@ -2,6 +2,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
+# Copy font Calibri vào image
+COPY ./wwwroot/fonts /usr/share/fonts/truetype/custom
+
+# Cập nhật font cache
+RUN fc-cache -f -v
+
 COPY . ./
 RUN dotnet publish -c Release -o out
 
