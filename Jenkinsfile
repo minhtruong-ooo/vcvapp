@@ -43,9 +43,10 @@ pipeline {
                 sshagent(['jenkins-ssh-key']) {
                     sh '''
                         ssh -o StrictHostKeyChecking=no root@192.168.28.211 '
-                            cd /opt/vcvapp || git clone https://github.com/minhtruong-ooo/vcvapp.git /opt/vcvapp &&
                             cd /opt/vcvapp &&
-                            git pull origin main &&
+                            git fetch --all &&
+                            git reset --hard origin/main &&
+                            git clean -fd &&
                             docker compose -f infra/docker-compose.yml build &&
                             docker compose -f infra/docker-compose.yml up -d
                         '
