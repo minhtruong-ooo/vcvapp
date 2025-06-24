@@ -12,6 +12,13 @@ pipeline {
             }
         }
 
+        stage('Build Base Image') {
+            steps {
+                echo 'Building base image: aspnet-libreoffice:8.0...'
+                sh 'docker build -t aspnet-libreoffice:8.0 -f infra/docker/Dockerfile.base .'
+            }
+        }
+
         stage('Build') {
             steps {
                 echo 'Building project...'
@@ -33,13 +40,12 @@ pipeline {
                             cd /opt/vcvapp || git clone https://github.com/minhtruong-ooo/vcvapp.git /opt/vcvapp &&
                             cd /opt/vcvapp &&
                             git pull origin main &&
-                            docker compose build &&
-                            docker compose up -d
+                            docker compose -f infra/docker-compose.yml build &&
+                            docker compose -f infra/docker-compose.yml up -d
                         '
                     '''
                 }
             }
         }
-
     }
 }
