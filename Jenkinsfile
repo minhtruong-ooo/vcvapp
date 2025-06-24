@@ -35,7 +35,7 @@ pipeline {
                             git pull origin main
 
                             echo "[2/4] Building base image aspnet-libreoffice:8.0..."
-                            docker build -t aspnet-libreoffice:8.0 -f infra/docker/Dockerfile.base infra
+                            docker build -t aspnet-libreoffice:8.0 -f infra/Dockerfile.base infra
 
                             echo "[3/4] Building services..."
                             docker compose -f infra/docker-compose.yml build
