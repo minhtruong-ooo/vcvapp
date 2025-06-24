@@ -14,26 +14,7 @@ pipeline {
 
         stage('Check Docker Access') {
             steps {
-                sh 'whoami && id && docker info'
-            }
-        }
-
-        stage('Build Base Image') {
-            steps {
-                echo 'Building base image: aspnet-libreoffice:8.0...'
-                sh 'docker build -t aspnet-libreoffice:8.0 -f infra/docker/Dockerfile.base .'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                echo 'Building project...'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
+                sh 'whoami && id && docker info || true'
             }
         }
 
@@ -43,11 +24,23 @@ pipeline {
                 sshagent(['jenkins-ssh-key']) {
                     sh '''
                         ssh -o StrictHostKeyChecking=no root@192.168.28.211 '
-                            cd /opt/vcvapp &&
-                            git fetch --all &&
-                            git reset --hard origin/main &&
-                            git clean -fd &&
-                            docker compose -f infra/docker-compose.yml build &&
+                            set -e
+
+                            echo "[1/4] Cloning or pulling latest repo..."
+                            if [ ! -d /opt/vcvapp ]; then
+                                git clone https://github.com/minhtruong-ooo/vcvapp.git /opt/vcvapp
+                            fi
+
+                            cd /opt/vcvapp
+                            git pull origin main
+
+                            echo "[2/4] Building base image aspnet-libreoffice:8.0..."
+                            docker build -t aspnet-libreoffice:8.0 -f infra/docker/Dockerfile.base .
+
+                            echo "[3/4] Building services..."
+                            docker compose -f infra/docker-compose.yml build
+
+                            echo "[4/4] Starting services..."
                             docker compose -f infra/docker-compose.yml up -d
                         '
                     '''
