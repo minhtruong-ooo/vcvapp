@@ -47,10 +47,11 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
     app.UseSwaggerUI();
 }
 
-app.UseCors("AllowReactApp");
 
-app.UseHttpsRedirection();
 app.UseRouting();
+
+app.UseCors("AllowReactApp");
+app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 

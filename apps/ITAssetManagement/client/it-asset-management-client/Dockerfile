@@ -1,21 +1,14 @@
-# Base image
-FROM oven/bun:1.0.25
-
-# Set working directory
 WORKDIR /app
 
-# Copy necessary files
-COPY bun.lockb package.json tsconfig.json vite.config.ts ./
+# Copy toàn bộ project
 COPY . .
 
-# Install dependencies
-RUN bun install
+# ✅ Cài đầy đủ dependencies và devDependencies
+RUN bun install --development
 
-# Build React app
+# ✅ Build project (đảm bảo vite đã được cài)
 RUN bun run build
 
-# Start Bun server
-CMD ["bun", "bun-server.ts"]
-
-# Expose port
 EXPOSE 3000
+
+CMD ["bun", "bun-server.ts"]

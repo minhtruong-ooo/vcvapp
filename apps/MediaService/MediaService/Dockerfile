@@ -8,6 +8,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build /app/out .
 
-ENV ASPNETCORE_URLS=http://+:6000
-EXPOSE 6000
+ENV ASPNETCORE_URLS=http://+:5100
+EXPOSE 5100
 ENTRYPOINT ["dotnet", "MediaService.dll"]
