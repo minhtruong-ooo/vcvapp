@@ -30,9 +30,9 @@ pipeline {
                 sshagent(['jenkins-ssh-key']) {
                     sh '''
                         ssh -o StrictHostKeyChecking=no root@192.168.28.211 '
-                            rm -rf /opt/vcvapp &&
-                            git clone https://github.com/minhtruong-ooo/vcvapp.git /opt/vcvapp &&
+                            cd /opt/vcvapp || git clone https://github.com/minhtruong-ooo/vcvapp.git /opt/vcvapp &&
                             cd /opt/vcvapp &&
+                            git pull origin main &&
                             docker compose build &&
                             docker compose up -d
                         '
@@ -40,5 +40,6 @@ pipeline {
                 }
             }
         }
+
     }
 }
