@@ -397,10 +397,34 @@
         }
       }
     },
+    "/api/Company/GetCompany": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Employee/GetAllEmployeesSingle": {
       "get": {
         "tags": [
           "Employee"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Origin/GetCompany": {
+      "get": {
+        "tags": [
+          "Origin"
         ],
         "responses": {
           "200": {

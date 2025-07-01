@@ -143,6 +143,41 @@ export const getAssetType = async (token: string) => {
   }
 };
 
+export const getCompany = async (token: string) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/Company/GetCompany`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        timeout: 5000,
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Failed to fetch asset statuses", error);
+    throw error;
+  }
+};
+
+export const getOrigin = async (token: string) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/Origin/GetCompany`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        timeout: 5000,
+      }
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Failed to fetch asset statuses", error);
+    throw error;
+  }
+};
 
 
 

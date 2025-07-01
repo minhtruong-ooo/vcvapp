@@ -7,7 +7,13 @@ export const fetchImage = async (
   token: string,
   imageUrl: string
 ): Promise<Blob> => {
-  const response = await fetch(imageUrl, {
+
+  // Nếu imageUrl không bắt đầu bằng http, gắn thêm domain
+  const url = imageUrl.startsWith("http")
+    ? imageUrl
+    : `${API_URL}${imageUrl}`;
+
+  const response = await fetch(url, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

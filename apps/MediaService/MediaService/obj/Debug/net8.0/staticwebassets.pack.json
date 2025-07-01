@@ -1,8 +1,24 @@
 {
   "Files": [
     {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\.gitkeep",
+      "PackagePath": "staticwebassets\\excel\\.gitkeep"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\01993867-a942-48db-89cb-0f5e8690dce9.xlsx",
+      "PackagePath": "staticwebassets\\excel\\01993867-a942-48db-89cb-0f5e8690dce9.xlsx"
+    },
+    {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRI.TTF",
       "PackagePath": "staticwebassets\\fonts\\CALIBRI.TTF"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\.gitkeep",
+      "PackagePath": "staticwebassets\\images\\.gitkeep"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\assets\\.gitkeep",
+      "PackagePath": "staticwebassets\\images\\assets\\.gitkeep"
     },
     {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\assets\\1.jpg",
@@ -13,6 +29,10 @@
       "PackagePath": "staticwebassets\\images\\assets\\2.jpg"
     },
     {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\employees\\.gitkeep",
+      "PackagePath": "staticwebassets\\images\\employees\\.gitkeep"
+    },
+    {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\employees\\avatar1.jpg",
       "PackagePath": "staticwebassets\\images\\employees\\avatar1.jpg"
     },
@@ -21,12 +41,20 @@
       "PackagePath": "staticwebassets\\images\\employees\\hnp.jpg"
     },
     {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\logo\\.gitkeep",
+      "PackagePath": "staticwebassets\\images\\logo\\.gitkeep"
+    },
+    {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\logo\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo\\logo.png"
     },
     {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf",
-      "PackagePath": "staticwebassets\\qr\\796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf"
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\pdf\\.gitkeep",
+      "PackagePath": "staticwebassets\\pdf\\.gitkeep"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\.gitkeep",
+      "PackagePath": "staticwebassets\\qr\\.gitkeep"
     },
     {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\templates\\IT_BBBG_Template.xlsx",
@@ -35,6 +63,10 @@
     {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\templates\\IT_BBTH_Template.xlsx",
       "PackagePath": "staticwebassets\\templates\\IT_BBTH_Template.xlsx"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\zip\\.gitkeep",
+      "PackagePath": "staticwebassets\\zip\\.gitkeep"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MediaService.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

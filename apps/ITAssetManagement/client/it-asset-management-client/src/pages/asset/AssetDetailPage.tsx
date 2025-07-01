@@ -26,6 +26,7 @@ import image from "../../assets/images/1F2F.png";
 import logo4x4 from "../../assets/images/logo_main.png";
 
 const FEURL = import.meta.env.VITE_VCV_ITAM_CLIENT_URL;
+const MEDIAURL = import.meta.env.VITE_VCV_ITAM_CLIENT_URL;
 
 
 const { Title, Text } = Typography;
@@ -68,6 +69,7 @@ const AssetDetailPage = () => {
             const blob = await fetchImage(token, img.imageUrl);
             const objectUrl = URL.createObjectURL(blob);
             urls.push(objectUrl);
+            console.log(objectUrl);
           } catch (err) {
             console.error("Failed to fetch image", img.imageUrl, err);
           }
@@ -184,7 +186,7 @@ const AssetDetailPage = () => {
               <Col span={3}>
                 <QRCode
                   errorLevel="H"
-                  value={`http://localhost:5173/assets/${asset.assetTag}`}
+                  value={`${FEURL}{asset.assetTag}`}
                   icon={logo4x4}
                 />
               </Col>

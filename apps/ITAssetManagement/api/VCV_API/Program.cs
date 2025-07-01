@@ -12,7 +12,8 @@ var vcv_client = builder.Configuration.GetSection("VCV_Client");
 
 var authority = keycloakConfig["Authority"];
 var audience = keycloakConfig["Audience"];
-var clientUrl = vcv_client["Url"];
+//var clientUrl = vcv_client["Url"];
+var clientUrl = vcv_client["URL_Dev"];
 
 // Add services to the container.
 
@@ -24,7 +25,7 @@ builder.Services.AddAuthentication("Bearer")
         options.Audience = audience;
         options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
         {
-            ValidIssuer = authority, // hoặc issuer lấy từ metadata
+            ValidIssuer = authority,
             ValidateIssuer = true,
             ValidateAudience = true,
         };
@@ -62,13 +63,15 @@ builder.Services.AddScoped<IAssetAssign, AssetAssignment>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IAssetSpec, AssetSpecService>();
 builder.Services.AddScoped<IAssetType, AssetTypeService>();
+builder.Services.AddScoped<IAssetOrigin, OriginService>();
+builder.Services.AddScoped<IAssetCompany, CompanyService>();
 
 
 
-builder.Services.AddHttpClient("media", client =>
-{
-    client.BaseAddress = new Uri("https://localhost:7299");
-});
+//builder.Services.AddHttpClient("media", client =>
+//{
+//    client.BaseAddress = new Uri("https://localhost:7299");
+//});
 
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();

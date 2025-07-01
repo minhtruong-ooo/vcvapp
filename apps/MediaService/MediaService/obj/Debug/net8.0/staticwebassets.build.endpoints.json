@@ -3,6 +3,170 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
+      "Route": "excel/.5ipweew5fc.gitkeep",
+      "AssetFile": "excel/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        },
+        {
+          "Name": "label",
+          "Value": "excel/.gitkeep"
+        }
+      ]
+    },
+    {
+      "Route": "excel/.gitkeep",
+      "AssetFile": "excel/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "excel/01993867-a942-48db-89cb-0f5e8690dce9.d93wqwe04s.xlsx",
+      "AssetFile": "excel/01993867-a942-48db-89cb-0f5e8690dce9.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28532"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"f20D/X1iVwLSpAzPjPsTg1mW0mbXeYbvBh/5j+0VSgs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Jul 2025 08:47:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d93wqwe04s"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-f20D/X1iVwLSpAzPjPsTg1mW0mbXeYbvBh/5j+0VSgs="
+        },
+        {
+          "Name": "label",
+          "Value": "excel/01993867-a942-48db-89cb-0f5e8690dce9.xlsx"
+        }
+      ]
+    },
+    {
+      "Route": "excel/01993867-a942-48db-89cb-0f5e8690dce9.xlsx",
+      "AssetFile": "excel/01993867-a942-48db-89cb-0f5e8690dce9.xlsx",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28532"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"f20D/X1iVwLSpAzPjPsTg1mW0mbXeYbvBh/5j+0VSgs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Jul 2025 08:47:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-f20D/X1iVwLSpAzPjPsTg1mW0mbXeYbvBh/5j+0VSgs="
+        }
+      ]
+    },
+    {
       "Route": "fonts/CALIBRI.TTF",
       "AssetFile": "fonts/CALIBRI.TTF",
       "Selectors": [],
@@ -81,6 +245,170 @@
         {
           "Name": "label",
           "Value": "fonts/CALIBRI.TTF"
+        }
+      ]
+    },
+    {
+      "Route": "images/.5ipweew5fc.gitkeep",
+      "AssetFile": "images/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        },
+        {
+          "Name": "label",
+          "Value": "images/.gitkeep"
+        }
+      ]
+    },
+    {
+      "Route": "images/.gitkeep",
+      "AssetFile": "images/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "images/assets/.5ipweew5fc.gitkeep",
+      "AssetFile": "images/assets/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        },
+        {
+          "Name": "label",
+          "Value": "images/assets/.gitkeep"
+        }
+      ]
+    },
+    {
+      "Route": "images/assets/.gitkeep",
+      "AssetFile": "images/assets/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
         }
       ]
     },
@@ -249,6 +577,88 @@
       ]
     },
     {
+      "Route": "images/employees/.5ipweew5fc.gitkeep",
+      "AssetFile": "images/employees/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        },
+        {
+          "Name": "label",
+          "Value": "images/employees/.gitkeep"
+        }
+      ]
+    },
+    {
+      "Route": "images/employees/.gitkeep",
+      "AssetFile": "images/employees/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
       "Route": "images/employees/avatar1.hiyhty0cwy.jpg",
       "AssetFile": "images/employees/avatar1.jpg",
       "Selectors": [],
@@ -413,6 +823,88 @@
       ]
     },
     {
+      "Route": "images/logo/.5ipweew5fc.gitkeep",
+      "AssetFile": "images/logo/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        },
+        {
+          "Name": "label",
+          "Value": "images/logo/.gitkeep"
+        }
+      ]
+    },
+    {
+      "Route": "images/logo/.gitkeep",
+      "AssetFile": "images/logo/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
       "Route": "images/logo/logo.png",
       "AssetFile": "images/logo/logo.png",
       "Selectors": [],
@@ -495,8 +987,8 @@
       ]
     },
     {
-      "Route": "qr/796cad07-c08b-4fb0-a92c-93b09f1eda88.3lte3v5lsr.pdf",
-      "AssetFile": "qr/796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf",
+      "Route": "pdf/.5ipweew5fc.gitkeep",
+      "AssetFile": "pdf/.gitkeep",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -509,39 +1001,39 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "43371"
+          "Value": "0"
         },
         {
           "Name": "Content-Type",
-          "Value": "application/pdf"
+          "Value": "application/octet-stream"
         },
         {
           "Name": "ETag",
-          "Value": "\"uSPQMAO9ZifR3FcVErzNlASl8x97OX++st7q6J2GQjc=\""
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 24 Jun 2025 08:16:03 GMT"
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "3lte3v5lsr"
+          "Value": "5ipweew5fc"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-uSPQMAO9ZifR3FcVErzNlASl8x97OX++st7q6J2GQjc="
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
         },
         {
           "Name": "label",
-          "Value": "qr/796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf"
+          "Value": "pdf/.gitkeep"
         }
       ]
     },
     {
-      "Route": "qr/796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf",
-      "AssetFile": "qr/796cad07-c08b-4fb0-a92c-93b09f1eda88.pdf",
+      "Route": "pdf/.gitkeep",
+      "AssetFile": "pdf/.gitkeep",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -554,30 +1046,112 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "43371"
+          "Value": "0"
         },
         {
           "Name": "Content-Type",
-          "Value": "application/pdf"
+          "Value": "application/octet-stream"
         },
         {
           "Name": "ETag",
-          "Value": "\"uSPQMAO9ZifR3FcVErzNlASl8x97OX++st7q6J2GQjc=\""
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 24 Jun 2025 08:16:03 GMT"
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-uSPQMAO9ZifR3FcVErzNlASl8x97OX++st7q6J2GQjc="
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
         }
       ]
     },
     {
-      "Route": "templates/IT_BBBG_Template.0hv98puo6z.xlsx",
+      "Route": "qr/.5ipweew5fc.gitkeep",
+      "AssetFile": "qr/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        },
+        {
+          "Name": "label",
+          "Value": "qr/.gitkeep"
+        }
+      ]
+    },
+    {
+      "Route": "qr/.gitkeep",
+      "AssetFile": "qr/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "templates/IT_BBBG_Template.a8dit10epv.xlsx",
       "AssetFile": "templates/IT_BBBG_Template.xlsx",
       "Selectors": [],
       "ResponseHeaders": [
@@ -591,7 +1165,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "34872"
+          "Value": "34865"
         },
         {
           "Name": "Content-Type",
@@ -599,21 +1173,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"lPO5DW8nT0sZNhgZa+2NaPFYbHMfGDqg9etV+vUa6ds=\""
+          "Value": "\"hosUFGrgYnCkTQE85nb2b/ztDNWa/t+jXc5eI8ur0As=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 12:37:23 GMT"
+          "Value": "Tue, 24 Jun 2025 10:02:37 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "0hv98puo6z"
+          "Value": "a8dit10epv"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-lPO5DW8nT0sZNhgZa+2NaPFYbHMfGDqg9etV+vUa6ds="
+          "Value": "sha256-hosUFGrgYnCkTQE85nb2b/ztDNWa/t+jXc5eI8ur0As="
         },
         {
           "Name": "label",
@@ -636,7 +1210,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "34872"
+          "Value": "34865"
         },
         {
           "Name": "Content-Type",
@@ -644,22 +1218,22 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"lPO5DW8nT0sZNhgZa+2NaPFYbHMfGDqg9etV+vUa6ds=\""
+          "Value": "\"hosUFGrgYnCkTQE85nb2b/ztDNWa/t+jXc5eI8ur0As=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 12:37:23 GMT"
+          "Value": "Tue, 24 Jun 2025 10:02:37 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-lPO5DW8nT0sZNhgZa+2NaPFYbHMfGDqg9etV+vUa6ds="
+          "Value": "sha256-hosUFGrgYnCkTQE85nb2b/ztDNWa/t+jXc5eI8ur0As="
         }
       ]
     },
     {
-      "Route": "templates/IT_BBTH_Template.a27c1btl2j.xlsx",
+      "Route": "templates/IT_BBTH_Template.aiwyu73zmx.xlsx",
       "AssetFile": "templates/IT_BBTH_Template.xlsx",
       "Selectors": [],
       "ResponseHeaders": [
@@ -673,7 +1247,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "34646"
+          "Value": "34664"
         },
         {
           "Name": "Content-Type",
@@ -681,21 +1255,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wmvlOFRDHjtOTg9I2dEkea+lREFhAPps+mVQRayH3vY=\""
+          "Value": "\"EiMu2QGhmiVzolrPH/Geg5XeOZco+8a/u5BzBdtKB1Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 12:46:31 GMT"
+          "Value": "Tue, 24 Jun 2025 10:02:53 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "a27c1btl2j"
+          "Value": "aiwyu73zmx"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-wmvlOFRDHjtOTg9I2dEkea+lREFhAPps+mVQRayH3vY="
+          "Value": "sha256-EiMu2QGhmiVzolrPH/Geg5XeOZco+8a/u5BzBdtKB1Q="
         },
         {
           "Name": "label",
@@ -718,7 +1292,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "34646"
+          "Value": "34664"
         },
         {
           "Name": "Content-Type",
@@ -726,17 +1300,99 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"wmvlOFRDHjtOTg9I2dEkea+lREFhAPps+mVQRayH3vY=\""
+          "Value": "\"EiMu2QGhmiVzolrPH/Geg5XeOZco+8a/u5BzBdtKB1Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 10 Jun 2025 12:46:31 GMT"
+          "Value": "Tue, 24 Jun 2025 10:02:53 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-wmvlOFRDHjtOTg9I2dEkea+lREFhAPps+mVQRayH3vY="
+          "Value": "sha256-EiMu2QGhmiVzolrPH/Geg5XeOZco+8a/u5BzBdtKB1Q="
+        }
+      ]
+    },
+    {
+      "Route": "zip/.5ipweew5fc.gitkeep",
+      "AssetFile": "zip/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        },
+        {
+          "Name": "label",
+          "Value": "zip/.gitkeep"
+        }
+      ]
+    },
+    {
+      "Route": "zip/.gitkeep",
+      "AssetFile": "zip/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Jun 2025 08:42:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
         }
       ]
     }
