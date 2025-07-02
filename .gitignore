@@ -1,3 +1,21 @@
-*.vsidx
-*.vsidx
-*.db-shm
+# Visual Studio
+.vs/
+*.suo
+*.user
+
+# Build files
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.db
+*.db-wal
+
+# Node.js
+node_modules/
+dist/
+
+# Others
+.env
