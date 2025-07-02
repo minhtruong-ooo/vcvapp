@@ -35,7 +35,7 @@ namespace VCV_API.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Lỗi khi lấy dữ liệu: {ex.Message}");
+                return StatusCode(500, $"Error: {ex.Message}");
             }
         }
 

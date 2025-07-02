@@ -5,7 +5,8 @@ export class AssetMapper {
   constructor(private lookups: LookupLists) {}
 
   public map(asset: AssetInput): AssetMapped {
-    const { templates, statuses, locations } = this.lookups;
+    const { templates, statuses } = this.lookups;
+
     return {
       TemplateID: templates.find((t) => t.templateID === asset.templateID)
         ?.templateID,
@@ -17,8 +18,8 @@ export class AssetMapper {
         ? dayjs(asset.warrantyExpiry).format("YYYY-MM-DD")
         : null,
       StatusID: statuses.find((s) => s.statusName === asset.status)?.statusID,
-      LocationID: locations.find((l) => l.locationName === asset.location)
-        ?.locationID,
+      LocationID: typeof asset.location === "number" ? asset.location : undefined,
+      OriginID: typeof asset.origin === "number" ? asset.origin : undefined,
       ChangeBy: asset.changeBy,
     };
   }

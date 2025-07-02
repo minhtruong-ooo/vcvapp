@@ -45,11 +45,14 @@ namespace VCV_API.Services
                                 SerialNumber = reader.IsDBNull(reader.GetOrdinal("SerialNumber")) ? null : reader.GetString(reader.GetOrdinal("SerialNumber")),
                                 PurchaseDate = reader.IsDBNull(reader.GetOrdinal("PurchaseDate")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("PurchaseDate")),
                                 WarrantyExpiry = reader.IsDBNull(reader.GetOrdinal("WarrantyExpiry")) ? (DateTime?)null : reader.GetDateTime(reader.GetOrdinal("WarrantyExpiry")),
+                                OriginID = reader.IsDBNull(reader.GetOrdinal("OriginID")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("OriginID")),
+                                OriginName = reader.IsDBNull(reader.GetOrdinal("OriginName")) ? null : reader.GetString(reader.GetOrdinal("OriginName")),
                                 StatusID = reader.IsDBNull(reader.GetOrdinal("StatusID")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("StatusID")),
                                 StatusName = reader.IsDBNull(reader.GetOrdinal("StatusName")) ? null : reader.GetString(reader.GetOrdinal("StatusName")),
                                 LocationID = reader.IsDBNull(reader.GetOrdinal("LocationID")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("LocationID")),
                                 LocationName = reader.IsDBNull(reader.GetOrdinal("LocationName")) ? null : reader.GetString(reader.GetOrdinal("LocationName")),
-                                AssignedTo = reader.IsDBNull(reader.GetOrdinal("AssignedTo")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("AssignedTo")),
+                                CompanyID = reader.IsDBNull(reader.GetOrdinal("CompanyID")) ? (int?)null : reader.GetInt32(reader.GetOrdinal("CompanyID")),
+                                CompanyNameShort = reader.IsDBNull(reader.GetOrdinal("CompanyNameShort")) ? null : reader.GetString(reader.GetOrdinal("CompanyNameShort")),
                                 CreatedAt = reader.GetDateTime(reader.GetOrdinal("CreatedAt")),
                                 UpdatedAt = reader.GetDateTime(reader.GetOrdinal("UpdatedAt"))
                             };
@@ -87,6 +90,7 @@ namespace VCV_API.Services
                     command.Parameters.Add(new SqlParameter("@WarrantyExpiry", (object?)assetDto.WarrantyExpiry ?? DBNull.Value));
                     command.Parameters.Add(new SqlParameter("@StatusID", (object?)assetDto.StatusID ?? DBNull.Value));
                     command.Parameters.Add(new SqlParameter("@LocationID", (object?)assetDto.LocationID ?? DBNull.Value));
+                    command.Parameters.Add(new SqlParameter("@OriginID", (object?)assetDto.OriginID ?? DBNull.Value));
                     command.Parameters.Add(new SqlParameter("@ChangedBy", (object?)assetDto.ChangeBy ?? DBNull.Value));
 
                     var result = await command.ExecuteReaderAsync();
@@ -124,19 +128,21 @@ namespace VCV_API.Services
                 table.Columns.Add("WarrantyExpiry", typeof(DateTime));
                 table.Columns.Add("StatusID", typeof(int));
                 table.Columns.Add("LocationID", typeof(int));
+                table.Columns.Add("OriginID", typeof(int));
+
 
 
                 foreach (var a in assets)
                 {
                     table.Rows.Add(a.TemplateID, a.SerialNumber ?? (object)DBNull.Value, a.PurchaseDate ?? (object)DBNull.Value,
-                                   a.WarrantyExpiry ?? (object)DBNull.Value, a.StatusID ?? (object)DBNull.Value, a.LocationID ?? (object)DBNull.Value);
+                                   a.WarrantyExpiry ?? (object)DBNull.Value, a.StatusID ?? (object)DBNull.Value, a.LocationID ?? (object)DBNull.Value, a.OriginID ?? (object)DBNull.Value);
                 }
 
                 var parameter = new SqlParameter
                 {
                     ParameterName = "@Assets",
                     SqlDbType = SqlDbType.Structured,
-                    TypeName = "dbo.AssetCreateTableType",
+                    TypeName = "dbo.AssetCreateTableType1",
                     Value = table
                 };
 

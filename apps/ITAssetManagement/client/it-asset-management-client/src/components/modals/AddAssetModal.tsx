@@ -49,8 +49,9 @@ const AddAssetModal = ({
   const [templates, setTemplates] = useState<any[]>([]);
   const [locations, setLocations] = useState<any[]>([]);
   const [statuses, setStatuses] = useState<any[]>([]);
-  const [origin, setOrigin] = useState<any[]>([]);
+  const [origins, setOrigin] = useState<any[]>([]);
   const [company, setCompany] = useState<any[]>([]);
+  const [selectedCompanyID, setSelectedCompanyID] = useState<number | null>(null);
 
   useEffect(() => {
     if (!token) return;
@@ -79,6 +80,10 @@ const AddAssetModal = ({
 
     fetchData();
   }, [token]);
+
+  const filteredLocations = selectedCompanyID
+    ? locations.filter((loc) => loc.companyID === selectedCompanyID)
+    : [];
 
 
   const handleAddToList = async () => {
@@ -123,7 +128,7 @@ const AddAssetModal = ({
         return;
       }
 
-      const mapper = new AssetMapper({ templates, statuses, locations });
+      const mapper = new AssetMapper({ templates, statuses, locations, origins });
 
       if (addMultiple) {
         if (tempAssets.length === 0) {
@@ -132,13 +137,13 @@ const AddAssetModal = ({
         }
 
         const assetList = mapper.mapMany(tempAssets as AssetInput[]);
+
+        console.log("Multiple Assets Input:", assetList);
         await createAssets(token, assetList);
         message.success("Assets created successfully!");
       } else {
 
         const values = await form.validateFields();
-
-        console.log("Form Values:", values);
 
         const singleAsset: AssetInput = {
           templateID: values.templateID,
@@ -146,12 +151,14 @@ const AddAssetModal = ({
           purchaseDate: values.purchaseDate,
           warrantyExpiry: values.warrantyExpiry,
           status: values.status,
+          origin: values.origin,
           location: values.location,
           changeBy: assignmentBy || "Unknown",
         };
 
-        const mappedAsset = mapper.map(singleAsset);
+        console.log("Single Asset Input:", singleAsset);
 
+        const mappedAsset = mapper.map(singleAsset);
 
         await createAsset(token, mappedAsset);
         message.success("Asset created successfully!");
@@ -211,11 +218,20 @@ const AddAssetModal = ({
       },
     },
     {
+      title: "Location",
+      dataIndex: "location",
+      key: "location",
+      render: (value: any) => {
+        const locationName = locations.find((l) => l.locationID === value)?.locationName;
+        return locationName || value;
+      },
+    },
+    {
       title: "Origin",
       dataIndex: "origin",
       key: "origin",
       render: (value: any) => {
-        const originName = origin.find((o) => o.originID === value)?.originName;
+        const originName = origins.find((o) => o.originID === value)?.originName;
         return originName || value;
       },
     },
@@ -256,7 +272,7 @@ const AddAssetModal = ({
 
 
       <Card
-        title="Asset Information"
+        title="General Information"
         style={{ marginBottom: 16 }}>
         <Form form={form} layout="vertical" name="assetForm">
           <Row gutter={16}>
@@ -289,7 +305,7 @@ const AddAssetModal = ({
               </Form.Item>
             </Col>
             <Col span={6}>
-              <Form.Item label="Purchase Date" name="purchaseDate">
+              <Form.Item label="Purchase Date" name="purchaseDate" rules={[{ required: true }]}>
                 <DatePicker style={{ width: "100%" }} />
               </Form.Item>
             </Col>
@@ -299,14 +315,17 @@ const AddAssetModal = ({
               </Form.Item>
             </Col>
             <Col span={6}>
-              <Form.Item label="Managed By" name="managedBy">
-                <Select placeholder="Select an asset management entity" loading={loadingSelects}>
+              <Form.Item label="Managed By" name="managedBy" rules={[{ required: true }]}>
+                <Select
+                  placeholder="Select an asset management entity"
+                  loading={loadingSelects}
+                  onChange={(value) => {
+                    setSelectedCompanyID(value);
+                    form.setFieldsValue({ location: undefined }); // reset location khi đổi company
+                  }}
+                >
                   {company.map((com) => (
-
-                    <Select.Option
-                      key={com.companyID}
-                      value={com.companyID}
-                    >
+                    <Select.Option key={com.companyID} value={com.companyID}>
                       {com.companyName}
                     </Select.Option>
                   ))}
@@ -314,19 +333,40 @@ const AddAssetModal = ({
               </Form.Item>
             </Col>
             <Col span={6}>
-              <Form.Item label="Origin" name="origin">
+              <Form.Item label="Location" name="location" rules={[{ required: true }]}>
+                <Select
+                  placeholder={
+                    selectedCompanyID
+                      ? "Select Location"
+                      : "Please select a company first"
+                  }
+                  loading={loadingSelects}
+                  disabled={!selectedCompanyID}
+                >
+                  {filteredLocations.map((location) => (
+                    <Select.Option
+                      key={location.locationID}
+                      value={location.locationID}
+                    >
+                      {location.locationName}
+                    </Select.Option>
+                  ))}
+                </Select>
+              </Form.Item>
+            </Col>
+            <Col span={6}>
+              <Form.Item label="Origin" name="origin" rules={[{ required: true }]}>
                 <Select placeholder="Select Origin" loading={loadingSelects}>
-                  {origin.map((ori) => (
+                  {origins.map((ori) => (
                     <Select.Option key={ori.originID} value={ori.originID}>
                       {ori.originName}
                     </Select.Option>
                   ))}
                 </Select>
               </Form.Item>
-
             </Col>
             <Col span={6}>
-              <Form.Item label="Status" name="status">
+              <Form.Item label="Status" name="status" rules={[{ required: true }]}>
                 <Select placeholder="Select Status" loading={loadingSelects}>
                   {statuses.map((status) => (
                     <Select.Option
@@ -338,9 +378,6 @@ const AddAssetModal = ({
                   ))}
                 </Select>
               </Form.Item>
-            </Col>
-            <Col span={6}>
-
             </Col>
           </Row>
         </Form>

@@ -159,7 +159,7 @@ const Assets = () => {
 
       <Table
         key={darkMode ? "dark" : "light"}
-        size="middle"
+        size="small"
         bordered
         dataSource={data}
         columns={assetColumn(data)}

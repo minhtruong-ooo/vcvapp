@@ -94,6 +94,7 @@ export interface AssetMapped {
   WarrantyExpiry: string | null;
   StatusID?: number;
   LocationID?: number;
+  OriginID?: number;
   ChangeBy: string;
 }
 
@@ -101,6 +102,7 @@ export interface LookupLists {
   templates: { templateID: number; templateName: string }[];
   statuses: { statusID: number; statusName: string }[];
   locations: { locationID: number; locationName: string }[];
+  origins: { originID: number; originName: string }[];
 }
 
 export interface AssetInput {
@@ -110,6 +112,7 @@ export interface AssetInput {
   warrantyExpiry?: string | null;
   status: string;
   location: string;
+  origin: string;
   changeBy: string;
 }
 

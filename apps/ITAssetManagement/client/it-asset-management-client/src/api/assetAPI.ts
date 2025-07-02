@@ -15,7 +15,7 @@ export const getAssets = async (token: string) => {
     });
     return response.data;
   } catch (error) {
-    console.error("Failed to fetch asset templates", error);
+    console.error("Failed to fetch asset", error);
     throw error;
   }
 };

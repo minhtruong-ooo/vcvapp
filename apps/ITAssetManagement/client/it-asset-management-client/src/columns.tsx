@@ -97,14 +97,26 @@ export const assetColumn = (data: any[]): ColumnType<any>[] => {
         new Date(b.warrantyExpiry).getTime(),
     },
     {
-      title: "Status",
-      dataIndex: "statusName",
-      key: "statusName",
-      width: 150,
-      sorter: (a, b) => a.statusName.localeCompare(b.statusName),
-      onFilter: (value, record) => record.statusName.includes(value),
+      title: "Origin",
+      dataIndex: "originName",
+      key: "originName",
+      width: 100,
+      sorter: (a, b) => a.originName.localeCompare(b.originName),
+      onFilter: (value, record) => record.originName.includes(value),
       filterSearch: true,
-      filters: Array.from(new Set(data.map((item) => item.statusName))).map(
+      filters: Array.from(new Set(data.map((item) => item.originName))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+    {
+      title: "Managed By",
+      dataIndex: "companyNameShort",
+      key: "companyNameShort",
+      width: 150,
+      sorter: (a, b) => a.companyNameShort.localeCompare(b.companyNameShort),
+      onFilter: (value, record) => record.companyNameShort.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.companyNameShort))).map(
         (tag) => ({ text: tag, value: tag })
       ),
     },
@@ -117,6 +129,18 @@ export const assetColumn = (data: any[]): ColumnType<any>[] => {
       onFilter: (value, record) => record.locationName.includes(value),
       filterSearch: true,
       filters: Array.from(new Set(data.map((item) => item.locationName))).map(
+        (tag) => ({ text: tag, value: tag })
+      ),
+    },
+    {
+      title: "Status",
+      dataIndex: "statusName",
+      key: "statusName",
+      width: 150,
+      sorter: (a, b) => a.statusName.localeCompare(b.statusName),
+      onFilter: (value, record) => record.statusName.includes(value),
+      filterSearch: true,
+      filters: Array.from(new Set(data.map((item) => item.statusName))).map(
         (tag) => ({ text: tag, value: tag })
       ),
     },

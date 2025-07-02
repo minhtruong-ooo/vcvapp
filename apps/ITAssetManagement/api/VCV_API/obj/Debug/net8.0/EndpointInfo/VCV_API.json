@@ -482,6 +482,11 @@
             "format": "int32",
             "nullable": true
           },
+          "originID": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
           "changeBy": {
             "type": "string",
             "nullable": true

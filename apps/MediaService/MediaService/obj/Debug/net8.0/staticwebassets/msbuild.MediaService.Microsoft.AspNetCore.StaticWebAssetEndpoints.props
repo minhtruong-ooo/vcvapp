@@ -16,13 +16,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\01993867-a942-48db-89cb-0f5e8690dce9.xlsx'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"d93wqwe04s"},{"Name":"integrity","Value":"sha256-f20D/X1iVwLSpAzPjPsTg1mW0mbXeYbvBh/5j\u002B0VSgs="},{"Name":"label","Value":"_content/MediaService/excel/01993867-a942-48db-89cb-0f5e8690dce9.xlsx"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"28532"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022f20D/X1iVwLSpAzPjPsTg1mW0mbXeYbvBh/5j\u002B0VSgs=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Jul 2025 08:47:14 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"28532"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022f20D/X1iVwLSpAzPjPsTg1mW0mbXeYbvBh/5j\u002B0VSgs=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Jul 2025 10:33:34 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MediaService/excel/01993867-a942-48db-89cb-0f5e8690dce9.xlsx">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\excel\01993867-a942-48db-89cb-0f5e8690dce9.xlsx'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-f20D/X1iVwLSpAzPjPsTg1mW0mbXeYbvBh/5j\u002B0VSgs="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"28532"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022f20D/X1iVwLSpAzPjPsTg1mW0mbXeYbvBh/5j\u002B0VSgs=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Jul 2025 08:47:14 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"28532"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022f20D/X1iVwLSpAzPjPsTg1mW0mbXeYbvBh/5j\u002B0VSgs=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Jul 2025 10:33:34 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/MediaService/fonts/CALIBRI.t5t2ravmyq.TTF">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\fonts\CALIBRI.TTF'))</AssetFile>

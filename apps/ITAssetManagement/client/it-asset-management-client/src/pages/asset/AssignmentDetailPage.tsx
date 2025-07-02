@@ -60,50 +60,50 @@ const AssignmentDetailPage = () => {
   };
 
   const handlePrint = async () => {
-  if (!assignment) {
-    message.error("Assignment data is not available.");
-    return;
-  }
-
-  try {
-    const token = keycloak.token;
-    if (!token) {
-      message.error("Authentication token not found.");
+    if (!assignment) {
+      message.error("Assignment data is not available.");
       return;
     }
 
-    setPrinting(true);
+    try {
+      const token = keycloak.token;
+      if (!token) {
+        message.error("Authentication token not found.");
+        return;
+      }
 
-    console.log(assignment.assignerDepartment);
+      setPrinting(true);
 
-    const assignmentModel: AssetAssignmentPrintModel = {
-      assignmentCode: assignment.assignmentCode,
-      employeeCode: assignment.employeeCode,
-      employeeName: assignment.employeeName,
-      departmentName: assignment.departmentName ?? "",
-      assignmentBy: assignment.assignmentBy,
-      assignerCode: assignment.assignerCode,
-      assignerDepartment: assignment.assignerDepartment ?? "",
-      assignmentByName: assignment.assignmentByName,
-      assignmentDate: assignment.assignmentDate,
-      assignmentAction: assignment.assignmentAction,
-      notes: assignment.notes ?? "",
-      assignStatus: assignment.assignStatus ?? "1",
-      assetAssignments: assignment.assetAssignments ?? [],
-    };
+      console.log(assignment.assignerDepartment);
 
-    console.log(assignmentModel);
+      const assignmentModel: AssetAssignmentPrintModel = {
+        assignmentCode: assignment.assignmentCode,
+        employeeCode: assignment.employeeCode,
+        employeeName: assignment.employeeName,
+        departmentName: assignment.departmentName ?? "",
+        assignmentBy: assignment.assignmentBy,
+        assignerCode: assignment.assignerCode,
+        assignerDepartment: assignment.assignerDepartment ?? "",
+        assignmentByName: assignment.assignmentByName,
+        assignmentDate: assignment.assignmentDate,
+        assignmentAction: assignment.assignmentAction,
+        notes: assignment.notes ?? "",
+        assignStatus: assignment.assignStatus ?? "1",
+        assetAssignments: assignment.assetAssignments ?? [],
+      };
 
-    const pdfUrl = await generateAssignmentPdfUrl(token, assignmentModel);
-    console.log("PDF URL:", pdfUrl);
-    window.open(pdfUrl, "_blank"); // Mở tab mới để in
-  } catch (error) {
-    message.error("Failed to print assignment.");
-    console.error(error);
-  } finally {
-    setPrinting(false);
-  }
-};
+      console.log(assignmentModel);
+
+      const pdfUrl = await generateAssignmentPdfUrl(token, assignmentModel);
+      console.log("PDF URL:", pdfUrl);
+      window.open(pdfUrl, "_blank"); // Mở tab mới để in
+    } catch (error) {
+      message.error("Failed to print assignment.");
+      console.error(error);
+    } finally {
+      setPrinting(false);
+    }
+  };
 
 
   if (!assignment) return <p>No assignment found.</p>;
@@ -146,7 +146,7 @@ const AssignmentDetailPage = () => {
           <Button
             onClick={handlePrint}
             icon={<PrinterOutlined />}
-          loading={printing}
+            loading={printing}
           >
             Print Assignment
           </Button>
@@ -284,17 +284,17 @@ const AssignmentDetailPage = () => {
               bordered
               size="small"
               pagination={{
-              pageSize,
-              current: currentPage,
-              onChange: (page) => setCurrentPage(page),
-            }}
+                pageSize,
+                current: currentPage,
+                onChange: (page) => setCurrentPage(page),
+              }}
             >
               <Table.Column
                 title="NO."
                 key="NO."
-                render={(index) =>
-                (currentPage - 1) * pageSize + index + 1
-              }
+                render={(_, __, index) =>
+                  (currentPage - 1) * pageSize + index + 1
+                }
               />
               <Table.Column
                 title="Asset Tag"

@@ -18,11 +18,18 @@
 
         public DateTime? WarrantyExpiry { get; set; }
 
+        public int? OriginID { get; set; }
+        public string? OriginName { get; set; }
+
         public int? StatusID { get; set; }
         public string? StatusName { get; set; }
 
         public int? LocationID { get; set; }
         public string? LocationName { get; set; }
+
+        public int? CompanyID { get; set; }
+        public string? CompanyName { get; set; }
+        public string? CompanyNameShort { get; set; }
 
         public int? AssignedTo { get; set; }
 

@@ -37,6 +37,7 @@ namespace VCV_API.Services
                             {
                                 LocationID = reader.GetInt32(reader.GetOrdinal("LocationID")),
                                 LocationName = reader.IsDBNull(reader.GetOrdinal("LocationName")) ? null : reader.GetString(reader.GetOrdinal("LocationName")),
+                                CompanyID = reader.GetInt32(reader.GetOrdinal("CompanyID")),
                             };
 
                             assetLocation.Add(asset);
