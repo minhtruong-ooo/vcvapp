@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\services\\mediaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:services\\mediaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\services\\mediaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:services\\mediaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -54,7 +54,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -62,12 +62,11 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-24T11:52:57.075Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T11:52:57.075Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
@@ -75,18 +74,17 @@
               "RelativeToolTip": "appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-24T11:52:48.515Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-24T11:52:48.515Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "MediaService.cs",
               "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Services\\MediaService.cs",
               "RelativeDocumentMoniker": "Services\\MediaService.cs",
               "ToolTip": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Services\\MediaService.cs",
               "RelativeToolTip": "Services\\MediaService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwEYAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T10:10:34.434Z",
               "EditorCaption": ""
@@ -105,13 +103,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T09:39:22.702Z",
               "EditorCaption": ""

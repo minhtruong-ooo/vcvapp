@@ -43,6 +43,22 @@
   },
   {
     "ContainingType": "VCV_API.Controllers.AssetsController",
+    "Method": "DeleteAssets",
+    "RelativePath": "api/Assets/DeleteAssets",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "assetsToDelete",
+        "Type": "System.Collections.Generic.List\u00601[[VCV_API.Models.Asset.AssetDeleteDto, VCV_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "VCV_API.Controllers.AssetsController",
     "Method": "GetAssets",
     "RelativePath": "api/Assets/GetAssets",
     "HttpMethod": "GET",

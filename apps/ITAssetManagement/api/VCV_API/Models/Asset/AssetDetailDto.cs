@@ -18,6 +18,10 @@ namespace VCV_API.Models.Asset
         public string? StatusName { get; set; }
         public int LocationID { get; set; }
         public string? LocationName { get; set; }
+        public int? CompanyID { get; set; }
+        public string? CompanyName { get; set; }
+        public int? OriginID { get; set; }
+        public string? OriginName { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public string? Unit { get; set; }

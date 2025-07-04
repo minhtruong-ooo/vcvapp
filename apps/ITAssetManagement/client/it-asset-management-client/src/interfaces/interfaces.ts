@@ -11,6 +11,10 @@ export interface Asset {
   warrantyExpiry: string | null;
   statusID: number;
   statusName: string;
+  originID: number;
+  originName: string;
+  companyID: number | null;
+  companyName: string | null;
   locationID: number;
   locationName: string;
   createdAt: string;

@@ -10,6 +10,6 @@ namespace VCV_API.Services.Interfaces
         Task<AssetDetailDto?> GetAssetDetailByTagAsync(string assetTag);
         Task<string?> CreateAssetAsync(AssetCreateDto assetDto);
         Task<List<(int AssetID, string AssetTag)>> CreateAssetsAsync(List<AssetCreateDto> assets);
-        Task<int?> DeleteAssetsAsync(List<AssetDeleteDto> assetDeleteDtos);
+        Task<DeleteAssetsResult> DeleteAssetsAsync(List<AssetDeleteDto> assetDeleteDtos);
     }
 }

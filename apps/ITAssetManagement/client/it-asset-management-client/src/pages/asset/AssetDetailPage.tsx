@@ -226,17 +226,25 @@ const AssetDetailPage = () => {
                   <Text>{asset.unit}</Text>
                 </div>
               </Col>
-              <Col span={4}>
+              <Col span={6}>
                 <div className="asset_info">
                   <Text strong>Status: </Text>
                   <Tag color="#87d068">{asset.statusName}</Tag>
+                </div>
+                 <div className="asset_info">
+                  <Text strong>Company: </Text>
+                  <Text>{asset.companyName}</Text>
                 </div>
                 <div className="asset_info">
                   <Text strong>Location: </Text>
                   <Text>{asset.locationName}</Text>
                 </div>
+                <div className="asset_info">
+                  <Text strong>Origin: </Text>
+                  <Text>{asset.originName}</Text>
+                </div>
               </Col>
-              <Col span={5}>
+              <Col span={3}>
                 <div className="asset_info">
                   <Text strong>Purchase Date: </Text>
                   <Text>{asset.purchaseDate}</Text>

@@ -1,0 +1,6 @@
+D:\Project\vcvapp\apps\MediaService\MediaService\wwwroot\excel\01993867-a942-48db-89cb-0f5e8690dce9.xlsx
+D:\Project\vcvapp\apps\MediaService\MediaService\wwwroot\excel\033bae61-0094-4ff5-b9a5-54a6e7690d5b.xlsx
+D:\Project\vcvapp\apps\MediaService\MediaService\wwwroot\qr\15403505-5b26-4841-b6a7-e6559e6a447f.pdf
+D:\Project\vcvapp\apps\MediaService\MediaService\wwwroot\qr\16f8f18a-e131-4c41-a3a9-8c4090cec2d7.pdf
+D:\Project\vcvapp\apps\MediaService\MediaService\wwwroot\qr\5bb4a120-5a1b-4765-bcaf-3fee77feb048.pdf
+D:\Project\vcvapp\apps\MediaService\MediaService\wwwroot\qr\74ffeaf1-aa68-4284-831d-7788fe126103.pdf

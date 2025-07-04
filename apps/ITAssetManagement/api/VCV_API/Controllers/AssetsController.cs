@@ -97,5 +97,47 @@ namespace VCV_API.Controllers
                 return StatusCode(500, $"Lỗi khi lấy dữ liệu: {ex.Message}");
             }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteAssets([FromBody] List<AssetDeleteDto> assetsToDelete)
+        {
+            try
+            {
+                var result = await _assetService.DeleteAssetsAsync(assetsToDelete);
+
+                var responseMessage = "";
+
+                if (result.DeletedCount > 0 && result.NotDeletedAssetTags.Any())
+                {
+                    responseMessage = $"Successfully deleted {result.DeletedCount} asset(s), " +
+                                      $"{result.NotDeletedAssetTags.Count} asset(s) could not be deleted because they are in use: " +
+                                      string.Join(", ", result.NotDeletedAssetTags);
+                }
+                else if (result.DeletedCount > 0)
+                {
+                    responseMessage = $"Successfully deleted {result.DeletedCount} asset(s)";
+                }
+                else if (result.NotDeletedAssetTags.Any())
+                {
+                    responseMessage = $"No assets were deleted. {result.NotDeletedAssetTags.Count} asset(s) could not be deleted because they are in use: " +
+                                      string.Join(", ", result.NotDeletedAssetTags);
+                }
+                else
+                {
+                    responseMessage = "No assets were deleted.";
+                }
+
+                return Ok(new
+                {
+                    message = responseMessage,
+                    deletedCount = result.DeletedCount,
+                    notDeleted = result.NotDeletedAssetTags
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Lỗi: {ex.Message}");
+            }
+        }
     }
 }

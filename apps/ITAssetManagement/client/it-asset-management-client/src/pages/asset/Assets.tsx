@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form } from "antd";
 import { useKeycloak } from "@react-keycloak/web";
-import { getAssets } from "../../api/assetAPI";
+import { getAssets, deleteAssets } from "../../api/assetAPI";
 import { generateQrPdfUrl } from "../../api/mediaAPI";
 import {
   Table,
@@ -73,10 +73,29 @@ const Assets = () => {
     setPaginationState({ current: page, pageSize });
   };
 
-  const handleDelete = () => {
-    console.log(selectedRowKeys);
-    
-  };
+const handleDelete = async () => {
+  if (!selectedRowKeys.length) {
+    message.warning("Please select at least one asset to delete");
+    return;
+  }
+
+  try {
+    // Convert selectedRowKeys to AssetDeleteDto[] with AssetTag as string
+    const payload = selectedRowKeys.map((tag) => ({ AssetTag: String(tag) }));
+
+    const response = await deleteAssets(keycloak.token ?? "", payload);
+     if (response.deletedCount > 0) {
+      message.success(response.message);
+    } else {
+      message.error(response.message);
+    }
+    setSelectedRowKeys([]); // Clear selection
+    fetchAssets(); // Reload asset list
+  } catch (error: any) {
+    console.error("Delete failed:", error.message);
+    message.error(error.message || "Delete failed");
+  }
+};
 
   const handlePrint = async () => {
     if (!selectedRowKeys.length) {

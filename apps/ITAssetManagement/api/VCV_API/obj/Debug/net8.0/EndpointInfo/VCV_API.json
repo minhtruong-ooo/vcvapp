@@ -134,6 +134,46 @@
         }
       }
     },
+    "/api/Assets/DeleteAssets": {
+      "post": {
+        "tags": [
+          "Assets"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AssetDeleteDto"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AssetDeleteDto"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AssetDeleteDto"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/AssetSpec/GetAssetSpecsByTemplateID/{templateID}": {
       "get": {
         "tags": [
@@ -488,6 +528,16 @@
             "nullable": true
           },
           "changeBy": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssetDeleteDto": {
+        "type": "object",
+        "properties": {
+          "assetTag": {
             "type": "string",
             "nullable": true
           }

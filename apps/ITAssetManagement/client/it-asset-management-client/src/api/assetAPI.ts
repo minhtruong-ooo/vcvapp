@@ -229,9 +229,9 @@ export const createAssetTemplate = async (token: string, data: any) => {
       },
       timeout: 5000,
     });
-  console.log("✅ Success response:", response);
+    console.log("✅ Success response:", response);
     return response.data;
-    
+
   } catch (error: any) {
     console.error(
       error?.response?.data?.details || error.message
@@ -263,6 +263,25 @@ export const updateAssetTemplate = async (token: string, data: any) => {
 
 
 // Delete API
+export const deleteAssets = async (
+  token: string,
+  assetDtos: { AssetTag: string }[]
+) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/Assets/DeleteAssets`, assetDtos, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+    return response.data;
+  } catch (error: any) {
+    console.error("❌ Delete asset error:", error?.response?.data?.message);
+    throw new Error(error?.response?.data?.message || "Delete failed");
+  }
+};
+
+
 
 export const deleteAssetTemplates = async (token: string, templateIDs: number[]) => {
   try {
@@ -271,6 +290,7 @@ export const deleteAssetTemplates = async (token: string, templateIDs: number[])
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
+      timeout: 5000,
     });
     return response.data;
   } catch (error: any) {

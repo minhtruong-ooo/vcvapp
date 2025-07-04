@@ -128,7 +128,7 @@ const AssetAssignment = () => {
 
             <Table
                 key={darkMode ? "dark" : "light"}
-                size="middle"
+                size="small"
                 bordered
                 dataSource={data}
                 columns={assetAssignmentColumn(data)}

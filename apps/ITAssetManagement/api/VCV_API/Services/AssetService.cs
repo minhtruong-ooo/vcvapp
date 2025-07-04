@@ -162,18 +162,24 @@ namespace VCV_API.Services
             return result;
         }
 
-        public async Task<int?> DeleteAssetsAsync(List<AssetDeleteDto> assetDeleteDtos)
+        public async Task<DeleteAssetsResult> DeleteAssetsAsync(List<AssetDeleteDto> assetDeleteDtos)
         {
-            if (assetDeleteDtos == null || assetDeleteDtos.Count == 0)
+            var result = new DeleteAssetsResult
             {
-                return 0;
-            }
+                DeletedCount = 0,
+                NotDeletedAssetTags = new List<string>()
+            };
+
+            if (assetDeleteDtos == null || assetDeleteDtos.Count == 0)
+                return result;
 
             var table = new DataTable();
-            table.Columns.Add("AssetTag", typeof(int));
+            table.Columns.Add("AssetTag", typeof(string));
 
-            foreach (var id in assetDeleteDtos)
-                table.Rows.Add(id);
+            foreach (var dto in assetDeleteDtos)
+            {
+                table.Rows.Add(dto.AssetTag);
+            }
 
             var connection = _context.Database.GetDbConnection();
             await connection.OpenAsync();
@@ -184,25 +190,33 @@ namespace VCV_API.Services
 
             var parameter = new SqlParameter
             {
-                ParameterName = "@AssetIDs",
+                ParameterName = "@AssetTags",
                 SqlDbType = SqlDbType.Structured,
-                TypeName = "dbo.AssetIdTableType",
+                TypeName = "dbo.AssetTagTableType",
                 Value = table
             };
 
             command.Parameters.Add(parameter);
 
-            int result = 0;
-            using (var reader = await command.ExecuteReaderAsync())
+            using var reader = await command.ExecuteReaderAsync();
+
+            if (await reader.ReadAsync())
             {
-                if (await reader.ReadAsync())
+                result.DeletedCount = reader.GetInt32(reader.GetOrdinal("DeletedCount"));
+            }
+
+            if (await reader.NextResultAsync())
+            {
+                while (await reader.ReadAsync())
                 {
-                    result = reader.GetInt32(reader.GetOrdinal("DeletedCount"));
+                    var assetTag = reader["AssetTag"].ToString();
+                    result.NotDeletedAssetTags.Add(assetTag);
                 }
             }
 
             return result;
         }
+
 
         public async Task<AssetDetailDto?> GetAssetDetailByTagAsync(string assetTag)
         {
@@ -247,6 +261,10 @@ namespace VCV_API.Services
                         CreatedAt = reader.GetDateTime(reader.GetOrdinal("CreatedAt")),
                         UpdatedAt = reader.GetDateTime(reader.GetOrdinal("UpdatedAt")),
                         Unit = reader.IsDBNull(reader.GetOrdinal("Unit")) ? null : reader.GetString(reader.GetOrdinal("Unit")),
+                        OriginID = reader.IsDBNull(reader.GetOrdinal("OriginID")) ? null : reader.GetInt32(reader.GetOrdinal("OriginID")),
+                        OriginName = reader.IsDBNull(reader.GetOrdinal("OriginName")) ? null : reader.GetString(reader.GetOrdinal("OriginName")),
+                        CompanyID = reader.IsDBNull(reader.GetOrdinal("CompanyID")) ? null : reader.GetInt32(reader.GetOrdinal("CompanyID")),
+                        CompanyName = reader.IsDBNull(reader.GetOrdinal("CompanyName")) ? null : reader.GetString(reader.GetOrdinal("CompanyName")),
                     };
                 }
 
