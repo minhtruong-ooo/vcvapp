@@ -68,3 +68,23 @@ export const generateAssignmentPdfUrl = async (
   const data = await response.json();
   return data.url;
 };
+
+export const importAssetsFromExcel = async (token: string, file: File) => {
+  const formData = new FormData();
+  formData.append("file", file);
+
+  const response = await fetch(`${API_URL}/api/Media/ImportAssets`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    body: formData,
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.message || "Failed to import assets");
+  }
+
+  return await response.json();
+};

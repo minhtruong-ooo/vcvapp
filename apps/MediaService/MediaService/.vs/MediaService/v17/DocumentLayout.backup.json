@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\services\\mediaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:services\\mediaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\services\\mediaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:services\\mediaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\interfaces\\imediaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:interfaces\\imediaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\models\\importassetresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:models\\importassetresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\controllers\\mediacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:controllers\\mediacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\interfaces\\imediaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:interfaces\\imediaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|d:\\project\\vcvapp\\apps\\mediaservice\\mediaservice\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11038D08-716C-4E53-A6E3-E44EAFC03240}|MediaService.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,78 +38,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACEAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-01T08:04:18.052Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-24T11:52:57.075Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "appsettings.Development.json",
-              "ToolTip": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\appsettings.Development.json",
-              "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-24T11:52:48.515Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MediaService.cs",
-              "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Services\\MediaService.cs",
-              "RelativeDocumentMoniker": "Services\\MediaService.cs",
-              "ToolTip": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Services\\MediaService.cs",
-              "RelativeToolTip": "Services\\MediaService.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAYwEkAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T10:10:34.434Z",
+              "WhenOpened": "2025-07-05T09:32:47.807Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
+              "Title": "ImportAssetResult.cs",
+              "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Models\\ImportAssetResult.cs",
+              "RelativeDocumentMoniker": "Models\\ImportAssetResult.cs",
+              "ToolTip": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Models\\ImportAssetResult.cs",
+              "RelativeToolTip": "Models\\ImportAssetResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T09:29:22.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "IMediaService.cs",
               "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Interfaces\\IMediaService.cs",
               "RelativeDocumentMoniker": "Interfaces\\IMediaService.cs",
               "ToolTip": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Interfaces\\IMediaService.cs",
               "RelativeToolTip": "Interfaces\\IMediaService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T10:08:47.5Z"
+              "WhenOpened": "2025-07-05T09:17:08.602Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MediaService.cs",
+              "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Services\\MediaService.cs",
+              "RelativeDocumentMoniker": "Services\\MediaService.cs",
+              "ToolTip": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Services\\MediaService.cs*",
+              "RelativeToolTip": "Services\\MediaService.cs*",
+              "ViewState": "AgIAACMBAAAAAAAAAAAcwDwBAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T09:12:19.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppDBContext.cs",
+              "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Data\\AppDBContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDBContext.cs",
+              "ToolTip": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Data\\AppDBContext.cs",
+              "RelativeToolTip": "Data\\AppDBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T08:59:55.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADIAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T09:39:22.702Z",
               "EditorCaption": ""
@@ -122,9 +126,10 @@
               "RelativeDocumentMoniker": "Controllers\\MediaController.cs",
               "ToolTip": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\Controllers\\MediaController.cs",
               "RelativeToolTip": "Controllers\\MediaController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAAD0AAABOAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAcwE8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T09:34:50.095Z"
+              "WhenOpened": "2025-06-05T09:34:50.095Z",
+              "EditorCaption": ""
             }
           ]
         }

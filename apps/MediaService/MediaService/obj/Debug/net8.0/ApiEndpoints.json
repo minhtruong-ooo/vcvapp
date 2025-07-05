@@ -67,5 +67,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MediaService.Controllers.MediaController",
+    "Method": "ImportAssets",
+    "RelativePath": "api/Media/ImportAssets",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

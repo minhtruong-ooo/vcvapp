@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form } from "antd";
 import { useKeycloak } from "@react-keycloak/web";
@@ -20,6 +20,8 @@ import {
 } from "@ant-design/icons";
 import { assetColumn } from "../../columns";
 import AddAssetModal from "../../components/modals/AddAssetModal";
+import AddAssetImportFileModal from "../../components/modals/AddAssetImportFileModal";
+import ActionsDropdown from "../../components/ActionsDropdown";
 import { useDarkMode } from "../../context/DarkModeContext";
 
 const { Title } = Typography;
@@ -31,6 +33,7 @@ const Assets = () => {
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalImportOpen, setIsModalImportOpen] = useState(false);
   const [form] = Form.useForm();
   const [paginationState, setPaginationState] = useState({
     current: 1,
@@ -38,6 +41,8 @@ const Assets = () => {
   });
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
   const [printing, setPrinting] = useState(false);
+  const importRef = useRef<any>(null);
+
 
   useEffect(() => {
     if (initialized && keycloak?.authenticated) {
@@ -60,6 +65,7 @@ const Assets = () => {
   };
 
   const showModal = () => setIsModalOpen(true);
+
   const handleCancel = () => {
     setIsModalOpen(false);
     form.resetFields();
@@ -73,29 +79,58 @@ const Assets = () => {
     setPaginationState({ current: page, pageSize });
   };
 
-const handleDelete = async () => {
-  if (!selectedRowKeys.length) {
-    message.warning("Please select at least one asset to delete");
-    return;
-  }
-
-  try {
-    // Convert selectedRowKeys to AssetDeleteDto[] with AssetTag as string
-    const payload = selectedRowKeys.map((tag) => ({ AssetTag: String(tag) }));
-
-    const response = await deleteAssets(keycloak.token ?? "", payload);
-     if (response.deletedCount > 0) {
-      message.success(response.message);
-    } else {
-      message.error(response.message);
+  const handleDelete = async () => {
+    if (!selectedRowKeys.length) {
+      message.warning("Please select at least one asset to delete");
+      return;
     }
-    setSelectedRowKeys([]); // Clear selection
-    fetchAssets(); // Reload asset list
-  } catch (error: any) {
-    console.error("Delete failed:", error.message);
-    message.error(error.message || "Delete failed");
-  }
-};
+
+    try {
+      // Convert selectedRowKeys to AssetDeleteDto[] with AssetTag as string
+      const payload = selectedRowKeys.map((tag) => ({ AssetTag: String(tag) }));
+
+      const response = await deleteAssets(keycloak.token ?? "", payload);
+      if (response.deletedCount > 0) {
+        message.success(response.message);
+      } else {
+        message.error(response.message);
+      }
+      setSelectedRowKeys([]); // Clear selection
+      fetchAssets(); // Reload asset list
+    } catch (error: any) {
+      console.error("Delete failed:", error.message);
+      message.error(error.message || "Delete failed");
+    }
+  };
+
+  const handleDownloadTemplate = async () => {
+    const response = await fetch(`${import.meta.env.VITE_MEDIA_API_URL}/templates_public/AssetImportTemplate.xlsx`, {
+      method: "GET",
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to download template");
+    }
+
+    const blob = await response.blob();
+
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "AssetImportTemplate.xlsx";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
+
+
+  const handleImportOk = async () => {
+    const success = await importRef.current?.uploadFile();
+    if (success) {
+      setIsModalImportOpen(false);
+      fetchAssets(); // reload bảng sau khi import thành công
+    }
+  };
 
   const handlePrint = async () => {
     if (!selectedRowKeys.length) {
@@ -147,6 +182,11 @@ const handleDelete = async () => {
             <Button icon={<PlusOutlined />} type="default" onClick={showModal}>
               Add
             </Button>
+            <ActionsDropdown
+              onImport={() => setIsModalImportOpen(true)}
+              // onExport={() => handleExportExcel()}
+              onDownloadTemplate={() => handleDownloadTemplate()}
+            />
             <Popconfirm
               title="Are you sure to delete selected assets?"
               onConfirm={handleDelete}
@@ -239,6 +279,16 @@ const handleDelete = async () => {
           onAdd={handleAddAsset}
           onSuccess={fetchAssets}
         />
+      </Modal>
+      <Modal
+        open={isModalImportOpen}
+        onCancel={() => setIsModalImportOpen(false)}
+        onOk={handleImportOk}
+        centered
+        width={800}
+        title="Import Assets"
+      >
+        <AddAssetImportFileModal ref={importRef} />
       </Modal>
     </>
   );
