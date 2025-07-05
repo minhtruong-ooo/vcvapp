@@ -11,8 +11,8 @@ var vcv_client = builder.Configuration.GetSection("VCV_Client");
 
 var authority = keycloakConfig["Authority"];
 var audience = keycloakConfig["Audience"];
-//var clientUrl = vcv_client["Url"];
-var clientUrl = vcv_client["URL_Dev"];
+var clientUrl = vcv_client["Url"];
+//var clientUrl = vcv_client["URL_Dev"];
 
 // Add services to the container.
 

@@ -305,10 +305,9 @@ namespace MediaService.Services
 
             try
             {
-                var client = _httpClientFactory.CreateClient();
-                client.BaseAddress = new Uri("https://localhost:7142"); // Hoặc lấy từ config
+                var client = _httpClientFactory.CreateClient("VCV_API");
 
-                // ✅ Gắn lại token từ Header
+                // Gắn lại Bearer token từ request gốc
                 var tokenHeader = _httpContextAccessor.HttpContext?.Request.Headers["Authorization"].ToString();
                 if (!string.IsNullOrEmpty(tokenHeader) && tokenHeader.StartsWith("Bearer "))
                 {
