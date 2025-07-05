@@ -1,4 +1,7 @@
+using MediaService.Data;
 using MediaService.Interfaces;
+using MediaService.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +24,9 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddDbContext<AppDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 builder.Services.AddScoped<IMediaService, MediaService.Services.MediaService>();
 
 builder.Services.AddAuthentication("Bearer")
@@ -31,12 +37,18 @@ builder.Services.AddAuthentication("Bearer")
         options.Audience = audience;
     });
 
+builder.Services.AddHttpClient("VCV_API", client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["VCV_API_URL"]);
+});
 
 
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient();
+builder.Services.AddHttpContextAccessor();
 
 
 var app = builder.Build();

@@ -15,15 +15,27 @@ using OfficeOpenXml;
 using Spire.Xls;
 using System.IO.Compression;
 using System.Diagnostics;
+using MediaService.Data;
+using System;
+using System.Net.Http;
 namespace MediaService.Services
 {
     public class MediaService : IMediaService
     {
         private readonly IWebHostEnvironment _env;
+        private readonly AppDBContext _context;
+        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IConfiguration _configuration;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public MediaService(IWebHostEnvironment env)
+
+        public MediaService(IWebHostEnvironment env, IHttpClientFactory httpClientFactory, IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
         {
             _env = env;
+            _httpClientFactory = httpClientFactory;
+            _configuration = configuration;
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<string> ExportAssignmentPdfAsync(AssetAssignmentModel model)
@@ -54,7 +66,7 @@ namespace MediaService.Services
                 Directory.CreateDirectory(pdfDir);
 
                 // Tạo file Excel từ template
-                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+                
                 using (var package = new ExcelPackage(new FileInfo(templatePath)))
                 {
                     var ws = package.Workbook.Worksheets[0];
@@ -85,7 +97,6 @@ namespace MediaService.Services
                 return $"/pdf/{fileName}.pdf";
             });
         }
-
         public async Task<string> ExportAssignmentsZipAsync(List<AssetAssignmentModel> dataList)
         {
             return await Task.Run(async () =>
@@ -134,7 +145,6 @@ namespace MediaService.Services
                 return $"/zip/{zipName}";
             });
         }
-
         private void FillAssignmentData(ExcelWorksheet ws, AssetAssignmentModel data)
         {
             ws.Cells["C11"].Value = data.assignmentCode;
@@ -159,7 +169,6 @@ namespace MediaService.Services
                 ws.Cells[rowStart + i, 8].Value = item.quantity ?? "1";
             }
         }
-
         public Task<string> GeneratePdfWithQRCodes(List<QRModel> items)
         {
             return Task.Run(() =>
@@ -236,8 +245,6 @@ namespace MediaService.Services
                 return $"/{folder}/{fileName}".Replace("\\", "/");
             });
         }
-
-
         public async Task<string> SaveImageAsync(IFormFile imageFile, string folder = "images")
         {
             var folderPath = Path.Combine(_env.WebRootPath, folder);
@@ -254,6 +261,81 @@ namespace MediaService.Services
             }
 
             return $"/{folder}/{fileName}".Replace("\\", "/"); // Return relative path
+        }
+        public async Task<ImportAssetResult> ImportAssetsFromExcelAsync(IFormFile file)
+        {
+            var result = new ImportAssetResult();
+            var assetList = new List<AssetCreateDTO>();
+
+            using var stream = new MemoryStream();
+            await file.CopyToAsync(stream);
+
+            using var package = new ExcelPackage(stream);
+            var worksheet = package.Workbook.Worksheets[0];
+
+            for (int row = 2; row <= worksheet.Dimension.Rows; row++)
+            {
+                try
+                {
+                    var asset = new AssetCreateDTO
+                    {
+                        TemplateID = int.Parse(worksheet.Cells[row, 1].Text),
+                        SerialNumber = worksheet.Cells[row, 2].Text,
+                        PurchaseDate = DateTime.TryParse(worksheet.Cells[row, 3].Text, out var pd) ? pd : null,
+                        WarrantyExpiry = DateTime.TryParse(worksheet.Cells[row, 4].Text, out var we) ? we : null,
+                        StatusID = int.TryParse(worksheet.Cells[row, 5].Text, out var s) ? s : null,
+                        LocationID = int.TryParse(worksheet.Cells[row, 6].Text, out var l) ? l : null,
+                        OriginID = int.TryParse(worksheet.Cells[row, 7].Text, out var o) ? o : null
+                    };
+
+                    assetList.Add(asset);
+                }
+                catch (Exception ex)
+                {
+                    result.FailedCount++;
+                    result.FailedMessages.Add($"Row {row}: {ex.Message}");
+                }
+            }
+
+            if (!assetList.Any())
+            {
+                result.FailedMessages.Add("No valid asset data found.");
+                return result;
+            }
+
+            try
+            {
+                var client = _httpClientFactory.CreateClient("VCV_API");
+
+                // Gắn lại Bearer token từ request gốc
+                var tokenHeader = _httpContextAccessor.HttpContext?.Request.Headers["Authorization"].ToString();
+                if (!string.IsNullOrEmpty(tokenHeader) && tokenHeader.StartsWith("Bearer "))
+                {
+                    client.DefaultRequestHeaders.Authorization =
+                        new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", tokenHeader.Replace("Bearer ", ""));
+                }
+
+                var response = await client.PostAsJsonAsync("api/Assets/CreateAssets", assetList);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var createdAssets = await response.Content.ReadFromJsonAsync<List<object>>(); // You can strongly type this if needed
+                    result.SuccessCount = createdAssets?.Count ?? 0;
+                }
+                else
+                {
+                    var error = await response.Content.ReadAsStringAsync();
+                    result.FailedCount += assetList.Count;
+                    result.FailedMessages.Add($"VCV_API error: {error}");
+                }
+            }
+            catch (Exception ex)
+            {
+                result.FailedCount += assetList.Count;
+                result.FailedMessages.Add($"Error calling VCV_API: {ex.Message}");
+            }
+
+            return result;
         }
     }
 }

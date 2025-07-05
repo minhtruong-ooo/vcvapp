@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using System.Net.Http.Headers;
 using VCV_API.Data;
 using VCV_API.Services;
 using VCV_API.Services.Interfaces;
@@ -55,6 +54,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
 builder.Services.AddScoped<IAssetService, AssetService>();
 builder.Services.AddScoped<IAssetTemplates, AssetTemplatesService>();
 builder.Services.AddScoped<IAssetStatus, AssetStatusService>();
@@ -66,12 +66,6 @@ builder.Services.AddScoped<IAssetType, AssetTypeService>();
 builder.Services.AddScoped<IAssetOrigin, OriginService>();
 builder.Services.AddScoped<IAssetCompany, CompanyService>();
 
-
-
-//builder.Services.AddHttpClient("media", client =>
-//{
-//    client.BaseAddress = new Uri("https://localhost:7299");
-//});
 
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();

@@ -1,7 +1,9 @@
-# Visual Studio
+# Visual Studio temp files
 .vs/
 *.suo
 *.user
+*.db
+*.pdb
 
 # Build files
 bin/

@@ -5,14 +5,6 @@
       "PackagePath": "staticwebassets\\excel\\.gitkeep"
     },
     {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\01993867-a942-48db-89cb-0f5e8690dce9.xlsx",
-      "PackagePath": "staticwebassets\\excel\\01993867-a942-48db-89cb-0f5e8690dce9.xlsx"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\excel\\033bae61-0094-4ff5-b9a5-54a6e7690d5b.xlsx",
-      "PackagePath": "staticwebassets\\excel\\033bae61-0094-4ff5-b9a5-54a6e7690d5b.xlsx"
-    },
-    {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\fonts\\CALIBRI.TTF",
       "PackagePath": "staticwebassets\\fonts\\CALIBRI.TTF"
     },
@@ -61,20 +53,8 @@
       "PackagePath": "staticwebassets\\qr\\.gitkeep"
     },
     {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\15403505-5b26-4841-b6a7-e6559e6a447f.pdf",
-      "PackagePath": "staticwebassets\\qr\\15403505-5b26-4841-b6a7-e6559e6a447f.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\16f8f18a-e131-4c41-a3a9-8c4090cec2d7.pdf",
-      "PackagePath": "staticwebassets\\qr\\16f8f18a-e131-4c41-a3a9-8c4090cec2d7.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\5bb4a120-5a1b-4765-bcaf-3fee77feb048.pdf",
-      "PackagePath": "staticwebassets\\qr\\5bb4a120-5a1b-4765-bcaf-3fee77feb048.pdf"
-    },
-    {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\74ffeaf1-aa68-4284-831d-7788fe126103.pdf",
-      "PackagePath": "staticwebassets\\qr\\74ffeaf1-aa68-4284-831d-7788fe126103.pdf"
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\8ee557b6-35b2-44ef-af23-adf88590614c.pdf",
+      "PackagePath": "staticwebassets\\qr\\8ee557b6-35b2-44ef-af23-adf88590614c.pdf"
     },
     {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\templates\\IT_BBBG_Template.xlsx",
@@ -83,6 +63,10 @@
     {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\templates\\IT_BBTH_Template.xlsx",
       "PackagePath": "staticwebassets\\templates\\IT_BBTH_Template.xlsx"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\templates_public\\AssetImportTemplate.xlsx",
+      "PackagePath": "staticwebassets\\templates_public\\AssetImportTemplate.xlsx"
     },
     {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\zip\\.gitkeep",

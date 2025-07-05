@@ -75,5 +75,14 @@ namespace MediaService.Controllers
             var url = $"{Request.Scheme}://{Request.Host}{zipPath}";
             return Ok(new { success = true, url });
         }
+        [HttpPost("ImportAssets")]
+        public async Task<IActionResult> ImportAssets(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest(new { message = "No file uploaded." });
+
+            var result = await _mediaService.ImportAssetsFromExcelAsync(file);
+            return Ok(result);
+        }
     }
 }
