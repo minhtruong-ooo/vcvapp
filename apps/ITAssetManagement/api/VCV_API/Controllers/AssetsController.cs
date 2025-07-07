@@ -63,11 +63,9 @@ namespace VCV_API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAssets([FromBody] List<AssetCreateDto> assetList)
         {
-            var user = HttpContext.User;
-            if (!user.Identity.IsAuthenticated)
-            {
-                return Unauthorized("Not authenticated");
-            }
+            var authHeader = HttpContext.Request.Headers["Authorization"].ToString();
+            Console.WriteLine("=== VCV_API Authorization Header ===");
+            Console.WriteLine(authHeader); // <- dòng này rất quan trọng
 
             try
             {

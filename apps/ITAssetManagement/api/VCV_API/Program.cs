@@ -32,15 +32,6 @@ builder.Services.AddAuthentication("Bearer")
             ValidateIssuer = true,
             ValidateAudience = true,
         };
-        options.Events = new JwtBearerEvents
-        {
-            OnAuthenticationFailed = context =>
-            {
-                var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
-                logger.LogError(context.Exception, "Authentication failed.");
-                return Task.CompletedTask;
-            }
-        };
     });
 
 builder.Services.AddCors(options =>
