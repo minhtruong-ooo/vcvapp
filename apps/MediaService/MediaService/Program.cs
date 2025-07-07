@@ -1,20 +1,25 @@
 using MediaService.Data;
 using MediaService.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 var keycloakConfig = builder.Configuration.GetSection("Keycloak");
-var vcv_client = builder.Configuration.GetSection("VCV_Client");
-var vcv_api = builder.Configuration.GetSection("VCV_API");
 var authority = keycloakConfig["Authority"];
 var audience = keycloakConfig["Audience"];
+var vcv_client = builder.Configuration.GetSection("VCV_Client");
 var clientUrl = vcv_client["URL"];
-var vcv_api_url = vcv_api["VCV_API_URL"];
 //var clientUrl = vcv_client["URL_Dev"];
+
+var vcv_api = builder.Configuration.GetSection("VCV_API");
+var vcv_api_url = vcv_api["VCV_API_URL"];
 //var vcv_api_url = vcv_api["VCV_API_URL_DEV"];
+
+
+
 
 builder.Services.AddCors(options =>
 {

@@ -7,12 +7,16 @@ using VCV_API.Services.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 var keycloakConfig = builder.Configuration.GetSection("Keycloak");
-var vcv_client = builder.Configuration.GetSection("VCV_Client");
-
 var authority = keycloakConfig["Authority"];
 var audience = keycloakConfig["Audience"];
+
+var vcv_client = builder.Configuration.GetSection("VCV_Client");
 var clientUrl = vcv_client["Url"];
 //var clientUrl = vcv_client["URL_Dev"];
+
+
+var vcv_media = builder.Configuration.GetSection("VCV_MEDIA_SERVICE");
+var vcv_media_url = vcv_media["VCV_MEDIA_SERVICE_URL"];
 
 // Add services to the container.
 
@@ -46,6 +50,16 @@ builder.Services.AddCors(options =>
         policy.WithOrigins(clientUrl)
               .AllowAnyMethod()
               .AllowAnyHeader();
+    });
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowMediaService", policy =>
+    {
+        policy.WithOrigins(vcv_media_url)
+              .AllowAnyHeader()
+              .AllowAnyMethod();
     });
 });
 
@@ -85,6 +99,8 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 app.UseRouting();
 
 app.UseCors("AllowReactApp");
+app.UseCors("AllowMediaService");
+
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
