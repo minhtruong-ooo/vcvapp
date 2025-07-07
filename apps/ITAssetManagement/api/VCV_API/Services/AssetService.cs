@@ -148,15 +148,19 @@ namespace VCV_API.Services
 
                 command.Parameters.Add(parameter);
 
+                Console.WriteLine(">> Bắt đầu đọc kết quả từ stored procedure");
                 using (var reader = await command.ExecuteReaderAsync())
                 {
+                    Console.WriteLine(">> Đã có reader, bắt đầu đọc từng dòng");
                     while (await reader.ReadAsync())
                     {
                         var id = reader.GetInt32(reader.GetOrdinal("AssetID"));
                         var tag = reader.GetString(reader.GetOrdinal("AssetTag"));
                         result.Add((id, tag));
+                        Console.WriteLine($"AssetID: {id}, AssetTag: {tag}");
                     }
                 }
+                Console.WriteLine(">> Kết thúc đọc kết quả");
             }
 
             return result;
