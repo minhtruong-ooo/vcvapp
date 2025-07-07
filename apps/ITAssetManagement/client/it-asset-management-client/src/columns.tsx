@@ -43,6 +43,7 @@ export const assetColumn = (data: any[]): ColumnType<any>[] => {
       title: "Purchase Date",
       dataIndex: "purchaseDate",
       key: "purchaseDate",
+      width: 150,
       render: (text: string) => (text ? dayjs(text).format("YYYY-MM-DD") : ""),
       sorter: (a, b) =>
         new Date(a.purchaseDate).getTime() - new Date(b.purchaseDate).getTime(),
@@ -125,7 +126,7 @@ export const assetColumn = (data: any[]): ColumnType<any>[] => {
       title: "Location",
       dataIndex: "locationName",
       key: "locationName",
-      width: 200,
+      width: 100,
       sorter: (a, b) => a.locationName.localeCompare(b.locationName),
       onFilter: (value, record) => record.locationName.includes(value),
       filterSearch: true,
