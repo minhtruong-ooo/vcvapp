@@ -11,8 +11,8 @@ var vcv_client = builder.Configuration.GetSection("VCV_Client");
 var vcv_api = builder.Configuration.GetSection("VCV_API");
 var authority = keycloakConfig["Authority"];
 var audience = keycloakConfig["Audience"];
-var clientUrl = vcv_client["Url"];
-var vcv_api_url = vcv_client["VCV_API_URL"];
+var clientUrl = vcv_client["URL"];
+var vcv_api_url = vcv_api["VCV_API_URL"];
 //var clientUrl = vcv_client["URL_Dev"];
 //var vcv_api_url = vcv_api["VCV_API_URL_DEV"];
 
