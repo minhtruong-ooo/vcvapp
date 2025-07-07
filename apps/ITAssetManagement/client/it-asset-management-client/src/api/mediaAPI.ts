@@ -73,6 +73,8 @@ export const importAssetsFromExcel = async (token: string, file: File) => {
   const formData = new FormData();
   formData.append("file", file);
 
+  console.log(token);
+
   const response = await fetch(`${API_URL}/api/Media/ImportAssets`, {
     method: "POST",
     headers: {
