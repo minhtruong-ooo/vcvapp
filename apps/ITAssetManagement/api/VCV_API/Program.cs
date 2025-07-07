@@ -99,7 +99,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 app.UseRouting();
 
 app.UseCors("AllowReactApp");
-app.UseCors("AllowMediaService");
+//app.UseCors("AllowMediaService");
 
 app.UseHttpsRedirection();
 app.UseAuthentication();
