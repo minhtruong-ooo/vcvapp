@@ -93,6 +93,15 @@ app.UseCors("AllowReactApp");
 //app.UseCors("AllowMediaService");
 
 app.UseHttpsRedirection();
+
+app.Use(async (context, next) =>
+{
+    var authHeader = context.Request.Headers["Authorization"].ToString();
+    Console.WriteLine("=== Middleware Authorization Header ===");
+    Console.WriteLine(string.IsNullOrWhiteSpace(authHeader) ? "Không có Authorization" : authHeader);
+    await next.Invoke();
+});
+
 app.UseAuthentication();
 app.UseAuthorization();
 
