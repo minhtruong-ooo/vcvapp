@@ -319,6 +319,7 @@ export const assetTemplateColumn = (data: any[]): ColumnType<any>[] => {
       title: "Type",
       dataIndex: "typeName",
       key: "typeName",
+      width: 150,
       sorter: (a, b) => a.typeName.localeCompare(b.typeName),
       onFilter: (value, record) => record.typeName.includes(value),
       filterSearch: true,
