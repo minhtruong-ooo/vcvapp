@@ -319,7 +319,7 @@ namespace MediaService.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var createdAssets = await response.Content.ReadFromJsonAsync<List<object>>(); // You can strongly type this if needed
+                    var createdAssets = await response.Content.ReadFromJsonAsync<List<object>>();
                     result.SuccessCount = createdAssets?.Count ?? 0;
                 }
                 else
