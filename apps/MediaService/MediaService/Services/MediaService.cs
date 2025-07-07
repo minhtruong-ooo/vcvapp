@@ -311,8 +311,13 @@ namespace MediaService.Services
                 var tokenHeader = _httpContextAccessor.HttpContext?.Request.Headers["Authorization"].ToString();
                 if (!string.IsNullOrEmpty(tokenHeader) && tokenHeader.StartsWith("Bearer "))
                 {
+                    var tokenValue = tokenHeader.Replace("Bearer ", "");
+
                     client.DefaultRequestHeaders.Authorization =
-                        new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", tokenHeader.Replace("Bearer ", ""));
+                        new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", tokenValue);
+
+                    Console.WriteLine("VCV_API Bearer Token:");
+                    Console.WriteLine(tokenValue);
                 }
 
                 var response = await client.PostAsJsonAsync("api/Assets/CreateAssets", assetList);

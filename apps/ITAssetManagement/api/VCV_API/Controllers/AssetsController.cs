@@ -63,6 +63,12 @@ namespace VCV_API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAssets([FromBody] List<AssetCreateDto> assetList)
         {
+            var user = HttpContext.User;
+            if (!user.Identity.IsAuthenticated)
+            {
+                return Unauthorized("Not authenticated");
+            }
+
             try
             {
                 var createdAssets = await _assetService.CreateAssetsAsync(assetList);
