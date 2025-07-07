@@ -245,7 +245,7 @@ const Assets = () => {
         pagination={{
           current: paginationState.current, // Trang hiện tại từ state
           pageSize: paginationState.pageSize, // Số lượng hàng trên mỗi trang từ state
-          pageSizeOptions: ["15", "25", "50"], // Các tùy chọn số lượng hàng trên mỗi trang
+          pageSizeOptions: ["15", "50", "100"], // Các tùy chọn số lượng hàng trên mỗi trang
           total: data.length, // Tổng số bản ghi
           showSizeChanger: true, // Cho phép thay đổi số lượng hàng trên mỗi trang
           onChange: handlePaginationChange, // Cập nhật state khi thay đổi trang

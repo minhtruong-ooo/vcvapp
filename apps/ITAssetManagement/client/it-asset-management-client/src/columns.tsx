@@ -9,6 +9,7 @@ export const assetColumn = (data: any[]): ColumnType<any>[] => {
       title: "Asset Tag",
       dataIndex: "assetTag",
       key: "assetTag",
+      width: 150,
       sorter: (a, b) => a.assetTag.localeCompare(b.assetTag),
       onFilter: (value, record) => record.assetTag.includes(value),
       filterSearch: true,
