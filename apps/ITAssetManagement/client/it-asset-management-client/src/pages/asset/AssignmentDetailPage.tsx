@@ -220,7 +220,7 @@ const AssignmentDetailPage = () => {
             {assignment.employeeInfomation.length > 0 ? (
               assignment.employeeInfomation.map((employeeInfomation) => (
                 <Row key={employeeInfomation.employeeCode} style={{ marginBottom: 16 }}>
-                  <Col span={10}>
+                  <Col span={8}>
                     <div
                       style={{
                         width: 140,
@@ -245,7 +245,7 @@ const AssignmentDetailPage = () => {
                       />
                     </div>
                   </Col>
-                  <Col span={10}>
+                  <Col span={12}>
                     <div style={{ marginBottom: 8 }}>
                       <div className="assign_user_info">
                         <Text strong>Employee ID: </Text>
