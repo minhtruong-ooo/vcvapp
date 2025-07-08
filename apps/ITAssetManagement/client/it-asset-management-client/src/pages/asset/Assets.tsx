@@ -149,6 +149,7 @@ const Assets = () => {
       assetName: asset.templateName,
       purchaseDate: asset.purchaseDate?.split("T")[0],
       assetURL: asset.assetTag,
+      serialNumber: asset.serialNumber,
     }));
 
     try {

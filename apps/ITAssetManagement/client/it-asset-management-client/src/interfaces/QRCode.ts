@@ -3,4 +3,5 @@ export interface QRModel {
   assetName?: string;
   purchaseDate?: string;
   assetURL?: string;
+  serialNumber?: string;
 }

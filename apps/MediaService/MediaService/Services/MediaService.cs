@@ -215,7 +215,7 @@ namespace MediaService.Services
                                     .Add($"VCV - IT Asset Management Label\n")
                                     .Add($"Asset Tag: {item.AssetTag}\n")
                                     .Add($"Asset Name: {item.AssetName}\n")
-                                    .Add($"Purchase Date: {item.PurchaseDate}")
+                                    .Add($"Purchase Date: {item.PurchaseDate} | Serial Number: {item.SerialNumber}")
                                     .SetFontSize(5).SetFont(calibri);
 
                                 // Create table for QR and text layout
