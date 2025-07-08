@@ -111,6 +111,7 @@ const AssetDetailPage = () => {
         assetName: asset.templateName || "Unknown Asset",
         purchaseDate: asset.purchaseDate || undefined,
         assetURL: asset.assetTag,
+        serialNumber: asset.serialNumber || "N/A",
       };
 
       const pdfUrl = await generateQrPdfUrl(token, [qrModel]);
