@@ -148,7 +148,7 @@ const Assets = () => {
       assetTag: asset.assetTag,
       assetName: asset.templateName,
       purchaseDate: asset.purchaseDate?.split("T")[0],
-      assetURL: `${window.location.origin}/assets/${asset.assetTag}`,
+      assetURL: asset.assetTag,
     }));
 
     try {

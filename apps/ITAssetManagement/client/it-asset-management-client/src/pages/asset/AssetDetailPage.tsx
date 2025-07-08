@@ -25,9 +25,6 @@ import { Map2D } from "../../components/Map2D";
 import image from "../../assets/images/1F2F.png";
 import logo4x4 from "../../assets/images/logo_main.png";
 
-const FEURL = import.meta.env.VITE_VCV_ITAM_CLIENT_URL;
-const MEDIAURL = import.meta.env.VITE_VCV_ITAM_CLIENT_URL;
-
 
 const { Title, Text } = Typography;
 
@@ -113,7 +110,7 @@ const AssetDetailPage = () => {
         assetTag: asset.assetTag,
         assetName: asset.templateName || "Unknown Asset",
         purchaseDate: asset.purchaseDate || undefined,
-        assetURL: `${FEURL}{asset.assetTag}`,
+        assetURL: asset.assetTag,
       };
 
       const pdfUrl = await generateQrPdfUrl(token, [qrModel]);
@@ -186,7 +183,7 @@ const AssetDetailPage = () => {
               <Col span={3}>
                 <QRCode
                   errorLevel="H"
-                  value={`${FEURL}{asset.assetTag}`}
+                  value={asset.assetTag}
                   icon={logo4x4}
                 />
               </Col>
