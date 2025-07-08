@@ -29,12 +29,16 @@
       "PackagePath": "staticwebassets\\images\\employees\\.gitkeep"
     },
     {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\employees\\avatar1.jpg",
-      "PackagePath": "staticwebassets\\images\\employees\\avatar1.jpg"
-    },
-    {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\employees\\hnp.jpg",
       "PackagePath": "staticwebassets\\images\\employees\\hnp.jpg"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\employees\\minh.jpg",
+      "PackagePath": "staticwebassets\\images\\employees\\minh.jpg"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\employees\\no-avatar.png",
+      "PackagePath": "staticwebassets\\images\\employees\\no-avatar.png"
     },
     {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\images\\logo\\.gitkeep",
@@ -53,8 +57,24 @@
       "PackagePath": "staticwebassets\\qr\\.gitkeep"
     },
     {
-      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\8ee557b6-35b2-44ef-af23-adf88590614c.pdf",
-      "PackagePath": "staticwebassets\\qr\\8ee557b6-35b2-44ef-af23-adf88590614c.pdf"
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\13a0dcb1-149a-4738-9e15-33d446cc4b84.pdf",
+      "PackagePath": "staticwebassets\\qr\\13a0dcb1-149a-4738-9e15-33d446cc4b84.pdf"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\4d5f1b54-f434-48f2-a8e2-bbc067c86357.pdf",
+      "PackagePath": "staticwebassets\\qr\\4d5f1b54-f434-48f2-a8e2-bbc067c86357.pdf"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\71514208-9eb9-4f13-b4e4-c1decbd1d93e.pdf",
+      "PackagePath": "staticwebassets\\qr\\71514208-9eb9-4f13-b4e4-c1decbd1d93e.pdf"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\aa6e3cef-6677-4436-9258-1b96c0bf4442.pdf",
+      "PackagePath": "staticwebassets\\qr\\aa6e3cef-6677-4436-9258-1b96c0bf4442.pdf"
+    },
+    {
+      "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\qr\\c9ddb9ea-41b0-49bd-9857-132969589ca9.pdf",
+      "PackagePath": "staticwebassets\\qr\\c9ddb9ea-41b0-49bd-9857-132969589ca9.pdf"
     },
     {
       "Id": "D:\\Project\\vcvapp\\apps\\MediaService\\MediaService\\wwwroot\\templates\\IT_BBBG_Template.xlsx",

@@ -286,6 +286,10 @@
           "assetURL": {
             "type": "string",
             "nullable": true
+          },
+          "serialNumber": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

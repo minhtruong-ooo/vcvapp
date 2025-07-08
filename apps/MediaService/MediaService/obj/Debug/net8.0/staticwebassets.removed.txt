@@ -1,2 +1,0 @@
-D:\Project\vcvapp\apps\MediaService\MediaService\wwwroot\images\employees\avatar1.jpg
-D:\Project\vcvapp\apps\MediaService\MediaService\wwwroot\qr\8ee557b6-35b2-44ef-af23-adf88590614c.pdf

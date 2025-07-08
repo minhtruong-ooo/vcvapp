@@ -181,7 +181,7 @@ namespace MediaService.Services
                 string fileName = $"{Guid.NewGuid()}.pdf";
                 string filePath = Path.Combine(folderPath, fileName);
 
-                var pageSize = new PageSize(212.6f, 42.5f);
+                var pageSize = new PageSize(198.43f, 42.52f);
                 string fontPath = Path.Combine(_env.WebRootPath, "fonts", "CALIBRI.TTF");
                 PdfFont calibri = PdfFontFactory.CreateFont(fontPath, PdfEncodings.WINANSI);
 
@@ -213,9 +213,9 @@ namespace MediaService.Services
                                 // Create text paragraph
                                 Paragraph para = new Paragraph()
                                     .Add($"VCV - IT Asset Management Label\n")
-                                    .Add($"Asset Tag: {item.AssetTag}\n")
+                                    .Add($"Asset Tag: {item.AssetTag} | Purchase Date: {item.PurchaseDate}\n")
                                     .Add($"Asset Name: {item.AssetName}\n")
-                                    .Add($"Purchase Date: {item.PurchaseDate} | Serial Number: {item.SerialNumber}")
+                                    .Add($"Serial Number: {item.SerialNumber}")
                                     .SetFontSize(5).SetFont(calibri);
 
                                 // Create table for QR and text layout
@@ -230,7 +230,8 @@ namespace MediaService.Services
                                 var textCell = new Cell()
                                     .Add(para)
                                     .SetBorder(Border.NO_BORDER)
-                                    .SetVerticalAlignment(VerticalAlignment.MIDDLE);
+                                    .SetVerticalAlignment(VerticalAlignment.MIDDLE)
+                                    .SetPaddingLeft(-5);
 
                                 table.AddCell(qrCell);
                                 table.AddCell(textCell);
