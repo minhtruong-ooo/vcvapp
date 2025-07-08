@@ -292,7 +292,7 @@ export const assetUnUsedColumn = (data: any[]): ColumnType<any>[] => {
     },
     {
       title: "Asset Name",
-      dataIndex: ["templateName"],
+      dataIndex: "templateName",
       key: "templateName",
       sorter: (a, b) => a.templateName.localeCompare(b.templateName),
       onFilter: (value, record) => record.templateName.includes(value),
