@@ -7,7 +7,7 @@ import type { TransferItem } from 'antd/es/transfer';
 interface AssetItem extends TransferItem {
   assetID: string;
   assetTag: string;
-  assetName: string;
+  templateName: string;
   serialNumber: string;
 }
 
@@ -54,7 +54,7 @@ const TableTransfer: React.FC<TableTransferProps> = ({
       showSelectAll={false}
       filterOption={(inputValue, item) =>
         item.assetTag?.toLowerCase().includes(inputValue.toLowerCase()) ||
-        item.assetName?.toLowerCase().includes(inputValue.toLowerCase()) ||
+        item.templateName?.toLowerCase().includes(inputValue.toLowerCase()) ||
         item.serialNumber?.toLowerCase().includes(inputValue.toLowerCase())
       }
       rowKey={(record) => record.assetID} // Đổi sang assetID
