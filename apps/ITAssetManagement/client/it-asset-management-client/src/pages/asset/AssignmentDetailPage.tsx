@@ -40,9 +40,6 @@ const AssignmentDetailPage = () => {
 
       setAssignment(assignmentDetails);
 
-      console.log("Assignment Details:", assignmentDetails);
-
-
       if (assignmentDetails?.employeeInfomation?.[0]?.avatar) {
         const fetchAva = await fetchImage(
           token,
@@ -106,7 +103,7 @@ const AssignmentDetailPage = () => {
   };
 
 
-  if (!assignment) return <p>No assignment found.</p>;
+  if (!assignment) return <p>No assign found.</p>;
 
   return (
     <>
@@ -134,7 +131,7 @@ const AssignmentDetailPage = () => {
                 title: <HomeOutlined />,
               },
               {
-                title: <a href="/assignments">Assignment</a>,
+                title: <a href="/assignment">Assign</a>,
               },
               {
                 title: <strong>{id}</strong>,
@@ -148,7 +145,7 @@ const AssignmentDetailPage = () => {
             icon={<PrinterOutlined />}
             loading={printing}
           >
-            Print Assignment
+            Print
           </Button>
         </Space>
       </div>
@@ -170,11 +167,11 @@ const AssignmentDetailPage = () => {
               </Col>
               <Col span={9}>
                 <div className="asset_info">
-                  <Text strong>Assignment ID: </Text>
+                  <Text strong>Assign ID: </Text>
                   <Text>{assignment.assignmentID}</Text>
                 </div>
                 <div className="asset_info">
-                  <Text strong>Assignment Code: </Text>
+                  <Text strong>Assign Code: </Text>
                   <Text>{assignment.assignmentCode}</Text>
                 </div>
                 <div className="asset_info">
@@ -196,11 +193,11 @@ const AssignmentDetailPage = () => {
                   <Text>{assignment.assignmentByName}</Text>
                 </div>
                 <div className="asset_info">
-                  <Text strong>Assignment Date: </Text>
+                  <Text strong>Assign Date: </Text>
                   <Text>{assignment.assignmentDate}</Text>
                 </div>
                 <div className="asset_info">
-                  <Text strong>Assignment Action: </Text>
+                  <Text strong>Assign Action: </Text>
                   <Tag color="#87d068">{assignment.assignmentAction}</Tag>
                 </div>
                 <div className="asset_info">

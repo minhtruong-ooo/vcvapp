@@ -152,7 +152,7 @@ export const assetColumn = (data: any[]): ColumnType<any>[] => {
 export const assetAssignmentColumn = (data: any[]): ColumnType<any>[] => {
   return [
     {
-      title: "Assignment Code",
+      title: "Assign Code",
       dataIndex: "assignmentCode",
       key: "assignmentCode",
       sorter: (a, b) => a.assignmentCode.localeCompare(b.assignmentCode),
@@ -196,7 +196,7 @@ export const assetAssignmentColumn = (data: any[]): ColumnType<any>[] => {
       ),
     },
     {
-      title: "Assignment Date",
+      title: "Assign Date",
       dataIndex: "assignmentDate",
       key: "assignmentDate",
       render: (text: string) => (text ? dayjs(text).format("YYYY-MM-DD") : ""),
@@ -245,7 +245,7 @@ export const assetAssignmentColumn = (data: any[]): ColumnType<any>[] => {
       },
     },
     {
-      title: "Assignment Action",
+      title: "Assign Action",
       dataIndex: "assignmentAction",
       key: "assignmentAction",
       width: 200,
