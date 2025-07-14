@@ -2,7 +2,7 @@
 
 const Maintenance = () => {
   return (
-    <div>Coming Soon 123123</div>
+    <div>Coming Soon</div>
   )
 }
 
